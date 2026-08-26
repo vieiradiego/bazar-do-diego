@@ -1,6 +1,6 @@
 # Apple AirTag 2ª geração
 
-**Preço:** R$ 259 (cada)
+**Preço:** R$ 259 (cada) · 30% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** airtags-01.jpg
 
@@ -10,6 +10,8 @@ Apple AirTag 2ª geração
 ## Descrição para o Marketplace
 AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
 
+Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
+
 Disponíveis: 3 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
@@ -18,6 +20,8 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Apple AirTag 2ª geração — R$ 259 cada
 
 AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
+
+Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 

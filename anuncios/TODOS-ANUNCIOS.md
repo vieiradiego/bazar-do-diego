@@ -55,7 +55,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB
 
-**Preço:** R$ 2.790
+**Preço:** R$ 2.790 · 18% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** tablet-galaxy-tab-s9-fe-01.jpg, tablet-galaxy-tab-s9-fe-02.jpg, tablet-galaxy-tab-s9-fe-03.jpg
 
@@ -65,12 +65,16 @@ Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB
 ## Descrição para o Marketplace
 Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado, sem marcas de uso na tela.
 
+Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.790, 18% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — R$ 2.790
 
 Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado, sem marcas de uso na tela.
+
+Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.790, 18% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -155,7 +159,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Teclado Mecânico Gamer Logitech G PRO TKL
 
-**Preço:** R$ 379
+**Preço:** R$ 379 · 41% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg
 
@@ -165,12 +169,16 @@ Teclado Mecânico Gamer Logitech G PRO TKL
 ## Descrição para o Marketplace
 Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
 
+Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 379, 41% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Teclado Mecânico Gamer Logitech G PRO TKL — R$ 379
 
 Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
+
+Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 379, 41% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -180,7 +188,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Apple AirTag 2ª geração
 
-**Preço:** R$ 259 (cada)
+**Preço:** R$ 259 (cada) · 30% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** airtags-01.jpg
 
@@ -190,6 +198,8 @@ Apple AirTag 2ª geração
 ## Descrição para o Marketplace
 AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
 
+Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
+
 Disponíveis: 3 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
@@ -198,6 +208,8 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Apple AirTag 2ª geração — R$ 259 cada
 
 AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
+
+Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -238,7 +250,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Abafador Eletrônico Howard Leight + óculos + estojo
 
-**Preço:** R$ 249
+**Preço:** R$ 249 · 62% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-kit-01.jpg
 
@@ -248,12 +260,16 @@ Abafador Eletrônico Howard Leight + óculos + estojo
 ## Descrição para o Marketplace
 Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
 
+Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 249, 62% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + óculos + estojo — R$ 249
 
 Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
+
+Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 249, 62% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -313,7 +329,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Abafador Eletrônico Howard Leight + estojo
 
-**Preço:** R$ 190
+**Preço:** R$ 190 · 71% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-01.jpg, abafador-howard-leight-02.jpg
 
@@ -323,12 +339,16 @@ Abafador Eletrônico Howard Leight + estojo
 ## Descrição para o Marketplace
 Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável, com estojo rígido. Amplificação de som ambiente e corte automático de ruído. Funcionando, pilhas testadas.
 
+Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 190, 71% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + estojo — R$ 190
 
 Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável, com estojo rígido. Amplificação de som ambiente e corte automático de ruído. Funcionando, pilhas testadas.
+
+Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 190, 71% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -440,7 +460,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Kit de limpeza e manutenção
 
-**Preço:** R$ 70
+**Preço:** R$ 70 · 29% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** kit-limpeza-01.jpg
 
@@ -450,12 +470,16 @@ Kit de limpeza e manutenção
 ## Descrição para o Marketplace
 Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
 
+Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 70, 29% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Kit de limpeza e manutenção — R$ 70
 
 Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
+
+Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 70, 29% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
@@ -490,7 +514,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 # Mouse Logitech Pebble 2 M350s sem fio
 
-**Preço:** R$ 49
+**Preço:** R$ 49 · 51% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** mouse-logitech-pebble-01.jpg, mouse-logitech-pebble-02.jpg
 
@@ -500,12 +524,16 @@ Mouse Logitech Pebble 2 M350s sem fio
 ## Descrição para o Marketplace
 Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambidestro. Conexão Bluetooth. Compacto, ideal para levar na mochila junto com o notebook.
 
+Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 49, 51% abaixo.
+
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 
 ## Legenda para o Instagram
 Mouse Logitech Pebble 2 M350s sem fio — R$ 49
 
 Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambidestro. Conexão Bluetooth. Compacto, ideal para levar na mochila junto com o notebook.
+
+Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 49, 51% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
