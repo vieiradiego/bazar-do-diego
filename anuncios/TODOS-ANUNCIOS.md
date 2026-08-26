@@ -7,24 +7,32 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.790 · `anuncios/tablet-galaxy-tab-s9-fe.md`
 3. **Bicicleta Masculina — MTB aro 29** — R$ 1.299 · `anuncios/bicicleta-masculina.md`
 4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.199 · `anuncios/bicicleta-feminina-fks.md`
-5. **LEGO Game Boy 72046 — lacrado** — R$ 479 · `anuncios/lego-game-boy.md`
-6. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 379 · `anuncios/teclado-logitech-gpro.md`
-7. **Apple AirTag 2ª geração** — R$ 259 · `anuncios/airtags.md`
-8. **Cadeira Pingo — assento gota com pés de madeira** — R$ 249 · `anuncios/cadeiras-pingo.md`
-9. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 249 · `anuncios/abafador-howard-leight-kit.md`
-10. **Cadeirinha de bicicleta para criança** — R$ 245 · `anuncios/suporte-crianca.md`
-11. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 230 · `anuncios/roteador-tplink.md`
-12. **Abafador Eletrônico Howard Leight + estojo** — R$ 190 · `anuncios/abafador-howard-leight.md`
-13. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 189 · `anuncios/capacete-rockrider.md`
-14. **Teclado Logitech K400 Plus sem fio com touchpad** — R$ 149 · `anuncios/teclado-logitech-k400.md`
-15. **Bolsa Trader Joe's — sacola de lona importada** — R$ 147 · `anuncios/bolsa-trader-joes.md`
-16. **Teclado HP slim USB empresarial** — R$ 99 · `anuncios/teclado-hp-slim.md`
-17. **Kit de limpeza e manutenção** — R$ 70 · `anuncios/kit-limpeza.md`
-18. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 59,90 · `anuncios/oculos-protetor-3m.md`
-19. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 49 · `anuncios/mouse-logitech-pebble.md`
-20. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45,90 · `anuncios/gancho-bike-decathlon.md`
-21. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-22. **Cheirinho Little Trees — pack com 3** — R$ 35 · `anuncios/cheirinhos-little-trees.md`
+5. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 599 · `anuncios/memoria-corsair-ddr4-16gb.md`
+6. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 549 · `anuncios/fonte-corsair-rm850i.md`
+7. **LEGO Game Boy 72046 — lacrado** — R$ 479 · `anuncios/lego-game-boy.md`
+8. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 379 · `anuncios/teclado-logitech-gpro.md`
+9. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 289 · `anuncios/fans-corsair-sp140.md`
+10. **Water Cooler Cooler Master MasterLiquid 240** — R$ 279 · `anuncios/watercooler-masterliquid-240.md`
+11. **Apple AirTag 2ª geração** — R$ 259 · `anuncios/airtags.md`
+12. **Cadeira Pingo — assento gota com pés de madeira** — R$ 249 · `anuncios/cadeiras-pingo.md`
+13. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 249 · `anuncios/abafador-howard-leight-kit.md`
+14. **Cadeirinha de bicicleta para criança** — R$ 245 · `anuncios/suporte-crianca.md`
+15. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 230 · `anuncios/roteador-tplink.md`
+16. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 199 · `anuncios/hd-wd-purple-2tb.md`
+17. **Abafador Eletrônico Howard Leight + estojo** — R$ 190 · `anuncios/abafador-howard-leight.md`
+18. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 189 · `anuncios/capacete-rockrider.md`
+19. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 179 · `anuncios/hd-seagate-3tb.md`
+20. **Teclado Logitech K400 Plus sem fio com touchpad** — R$ 149 · `anuncios/teclado-logitech-k400.md`
+21. **Bolsa Trader Joe's — sacola de lona importada** — R$ 147 · `anuncios/bolsa-trader-joes.md`
+22. **Teclado HP slim USB empresarial** — R$ 99 · `anuncios/teclado-hp-slim.md`
+23. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 99 · `anuncios/hd-toshiba-1tb.md`
+24. **SSD Corsair Force LE 240GB — SATA 3** — R$ 89 · `anuncios/ssd-corsair-240gb.md`
+25. **Kit de limpeza e manutenção** — R$ 70 · `anuncios/kit-limpeza.md`
+26. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 59,90 · `anuncios/oculos-protetor-3m.md`
+27. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 49 · `anuncios/mouse-logitech-pebble.md`
+28. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45,90 · `anuncios/gancho-bike-decathlon.md`
+29. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+30. **Cheirinho Little Trees — pack com 3** — R$ 35 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -140,6 +148,70 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 ---
 
+# Memória Corsair Vengeance LPX 16GB DDR4 2400MHz
+
+**Preço:** R$ 599 (cada) · 45% abaixo do novo
+**Categoria:** PC e Hardware
+**Fotos:** memoria-corsair-ddr4-16gb-01.jpg, memoria-corsair-ddr4-16gb-02.jpg, memoria-corsair-ddr4-16gb-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-memoria-corsair-ddr4-16gb
+
+## Título para o Marketplace
+Memória Corsair Vengeance LPX 16GB DDR4 2400MHz
+
+## Descrição para o Marketplace
+Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V — part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente.
+
+Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 599, 45% abaixo.
+
+Disponíveis: 2 unidades (preço por unidade).
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+Memória Corsair Vengeance LPX 16GB DDR4 2400MHz — R$ 599 cada
+
+Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V — part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente.
+
+Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 599, 45% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
+
+---
+
+# Fonte Corsair RM850i 850W 80 Plus Gold Modular
+
+**Preço:** R$ 549 · 34% abaixo do novo
+**Categoria:** PC e Hardware
+**Fotos:** fonte-corsair-rm850i-01.jpg, fonte-corsair-rm850i-02.jpg, fonte-corsair-rm850i-03.jpg, fonte-corsair-rm850i-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-fonte-corsair-rm850i
+
+## Título para o Marketplace
+Fonte Corsair RM850i 850W 80 Plus Gold Modular
+
+## Descrição para o Marketplace
+Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento totalmente modular. Linha RMi, superior à RMe atual: traz monitoramento digital por USB via Corsair Link (tensão, corrente, temperatura e rotação em tempo real) e capacitores japoneses. Acompanha a bolsa original com todos os cabos modulares e o cabo de força. Ventoinha silenciosa com modo zero RPM em baixa carga. Funcionando perfeitamente.
+
+Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 549, 34% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+Fonte Corsair RM850i 850W 80 Plus Gold Modular — R$ 549
+
+Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento totalmente modular. Linha RMi, superior à RMe atual: traz monitoramento digital por USB via Corsair Link (tensão, corrente, temperatura e rotação em tempo real) e capacitores japoneses. Acompanha a bolsa original com todos os cabos modulares e o cabo de força. Ventoinha silenciosa com modo zero RPM em baixa carga. Funcionando perfeitamente.
+
+Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 549, 34% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
+
+---
+
 # LEGO Game Boy 72046 — lacrado
 
 **Preço:** R$ 479
@@ -195,6 +267,64 @@ Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 379, 41% abaixo.
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
+# Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE
+
+**Preço:** R$ 289
+**Categoria:** PC e Hardware
+**Fotos:** fans-corsair-sp140-01.jpg, fans-corsair-sp140-02.jpg, fans-corsair-sp140-03.jpg, fans-corsair-sp140-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-fans-corsair-sp140
+
+## Título para o Marketplace
+Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE
+
+## Descrição para o Marketplace
+Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE — R$ 289
+
+Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
+
+---
+
+# Water Cooler Cooler Master MasterLiquid 240
+
+**Preço:** R$ 279 · 41% abaixo do novo
+**Categoria:** PC e Hardware
+**Fotos:** watercooler-masterliquid-240-01.jpg, watercooler-masterliquid-240-02.jpg, watercooler-masterliquid-240-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-watercooler-masterliquid-240
+
+## Título para o Marketplace
+Water Cooler Cooler Master MasterLiquid 240
+
+## Descrição para o Marketplace
+Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
+
+Novo custa cerca de R$ 474,99 (Mercado Livre (240 Core II)) — aqui sai por R$ 279, 41% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+Water Cooler Cooler Master MasterLiquid 240 — R$ 279
+
+Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
+
+Novo custa cerca de R$ 474,99 (Mercado Livre (240 Core II)) — aqui sai por R$ 279, 41% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
 
 ---
 
@@ -349,6 +479,37 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 ---
 
+# HD WD Purple 2TB — SATA 3.5 para CFTV
+
+**Preço:** R$ 199 · 66% abaixo do novo
+**Categoria:** PC e Hardware
+**Fotos:** hd-wd-purple-2tb-01.jpg, hd-wd-purple-2tb-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-wd-purple-2tb
+
+## Título para o Marketplace
+HD WD Purple 2TB — SATA 3.5 para CFTV
+
+## Descrição para o Marketplace
+HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras. Fabricado em 2015, então é um disco com bastante uso — posso rodar o teste SMART e mandar o print antes da compra, para você ver horas ligadas e setores realocados. Preço já considera a idade do disco.
+
+Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 199, 66% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+HD WD Purple 2TB — SATA 3.5 para CFTV — R$ 199
+
+HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras. Fabricado em 2015, então é um disco com bastante uso — posso rodar o teste SMART e mandar o print antes da compra, para você ver horas ligadas e setores realocados. Preço já considera a idade do disco.
+
+Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 199, 66% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
+
+---
+
 # Abafador Eletrônico Howard Leight + estojo
 
 **Preço:** R$ 190 · 71% abaixo do novo
@@ -404,6 +565,33 @@ Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste g
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
+
+---
+
+# HD Seagate Desktop 3TB — SATA 3.5
+
+**Preço:** R$ 179
+**Categoria:** PC e Hardware
+**Fotos:** hd-seagate-3tb-01.jpg, hd-seagate-3tb-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-seagate-3tb
+
+## Título para o Marketplace
+HD Seagate Desktop 3TB — SATA 3.5
+
+## Descrição para o Marketplace
+HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+HD Seagate Desktop 3TB — SATA 3.5 — R$ 179
+
+HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
 
 ---
 
@@ -487,6 +675,60 @@ Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
+# HD Toshiba 1TB 2.5 para notebook — 5400RPM
+
+**Preço:** R$ 99
+**Categoria:** PC e Hardware
+**Fotos:** hd-toshiba-1tb-01.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-toshiba-1tb
+
+## Título para o Marketplace
+HD Toshiba 1TB 2.5 para notebook — 5400RPM
+
+## Descrição para o Marketplace
+HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+HD Toshiba 1TB 2.5 para notebook — 5400RPM — R$ 99
+
+HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
+
+---
+
+# SSD Corsair Force LE 240GB — SATA 3
+
+**Preço:** R$ 89
+**Categoria:** PC e Hardware
+**Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-ssd-corsair-240gb
+
+## Título para o Marketplace
+SSD Corsair Force LE 240GB — SATA 3
+
+## Descrição para o Marketplace
+SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+
+## Legenda para o Instagram
+SSD Corsair Force LE 240GB — SATA 3 — R$ 89
+
+SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+#bazar #desapego #caxiasdosul
 
 ---
 
