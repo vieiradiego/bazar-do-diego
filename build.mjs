@@ -58,6 +58,8 @@ const ico = {
   whats: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4S7.4 12.5 7.5 12.7c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>`,
   pin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
   share: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m8 7 4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>`,
+  elo: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>`,
+  ok: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9 17.5 20 6.5"/></svg>`,
   lupa: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>`,
   x: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>`,
   seta: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>`,
@@ -161,7 +163,10 @@ function cardHTML(item) {
       ${vendido
         ? '<span class="btn inativo">Vendido</span>'
         : `<a class="btn primario" href="${linkWhats}" target="_blank" rel="noopener">${ico.whats}<span>Tenho interesse</span></a>`}
-      <button class="btn secundario compartilhar" type="button">${ico.share}<span>Compartilhar</span></button>
+      <div class="acoes-sec">
+        <button class="btn secundario compartilhar" type="button">${ico.share}<span>Compartilhar</span></button>
+        <button class="btn secundario copiar-link" type="button">${ico.elo}<span>Copiar link</span></button>
+      </div>
     </div>
   </div>
 </article>`;
@@ -309,11 +314,12 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
   .ref{font-size:15px;color:var(--terciaria);text-decoration:line-through}
   .off{font-size:13px;font-weight:500;color:var(--economia)}
   .fonte{font-size:12px;color:var(--terciaria);margin:-3px 0 0}
-  .acoes{display:flex;gap:8px;margin-top:12px}
-  .acoes .primario{flex:1}
-  .acoes .compartilhar{padding-left:18px;padding-right:18px}
-  .acoes .compartilhar span{display:none}
-  @media(min-width:420px){.acoes .compartilhar span{display:inline}}
+  .acoes{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .acoes .primario,.acoes .inativo{width:100%}
+  .acoes-sec{display:flex;gap:8px}
+  .acoes-sec .btn{flex:1;font-size:15px;padding:11px 10px;min-height:44px}
+  .acoes-sec .btn svg{width:17px;height:17px}
+  .btn.feito{color:var(--economia);border-color:var(--economia)}
   .vazio{text-align:center;color:var(--secundaria);padding:60px 0;font-size:17px}
 
   /* ---- rodapé ---- */
@@ -670,8 +676,7 @@ ${itens.map(cardHTML).join('\n')}
           a.download = 'bazar-' + card.id + '.png';
           a.click();
           setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
-          try { await navigator.clipboard.writeText(link); avisar('Imagem baixada e link copiado'); }
-          catch(e){ avisar('Imagem do story baixada'); }
+          avisar(await copiar(link) ? 'Imagem baixada e link copiado' : 'Imagem do story baixada');
         }
       } catch (err) {
         if (err && err.name === 'AbortError') { /* o usuário cancelou */ }
@@ -679,11 +684,57 @@ ${itens.map(cardHTML).join('\n')}
           try { await navigator.share({ title:'Bazar do Diego — ' + nome, text: texto, url: link }); }
           catch(e2){ if (!e2 || e2.name !== 'AbortError') avisar('Não consegui compartilhar'); }
         } else {
-          try { await navigator.clipboard.writeText(link); avisar('Link copiado'); }
-          catch(e3){ avisar('Não consegui compartilhar'); }
+          avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
         }
       } finally {
         if (rotulo) rotulo.textContent = original;
+      }
+    });
+  });
+
+  /* ---------- copiar o link do item ---------- */
+  async function copiar(texto){
+    try {
+      if (navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(texto);
+        return true;
+      }
+    } catch(e){ /* cai no plano B */ }
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = texto;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, texto.length);
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch(e){ return false; }
+  }
+
+  var ICO_ELO = ${JSON.stringify(ico.elo)}, ICO_OK = ${JSON.stringify(ico.ok)};
+
+  document.querySelectorAll('.copiar-link').forEach(function(btn){
+    var rotulo = btn.querySelector('span');
+    var original = rotulo ? rotulo.textContent : 'Copiar link';
+    var voltar;
+    btn.addEventListener('click', async function(){
+      var card = btn.closest('.card');
+      var link = SITE + '#' + card.id;
+      if (await copiar(link)){
+        clearTimeout(voltar);
+        btn.classList.add('feito');
+        btn.innerHTML = ICO_OK + '<span>Copiado!</span>';
+        avisar('Link copiado — é só colar onde quiser');
+        voltar = setTimeout(function(){
+          btn.classList.remove('feito');
+          btn.innerHTML = ICO_ELO + '<span>' + original + '</span>';
+        }, 2200);
+      } else {
+        avisar('Não consegui copiar. O link é ' + link);
       }
     });
   });
