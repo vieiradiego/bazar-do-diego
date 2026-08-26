@@ -314,6 +314,74 @@ ${itens.map(cardHTML).join('\n')}
 </html>`;
 }
 
+// ---------- anúncios ----------
+const HASHTAGS = {
+  'Eletrônicos': '#eletronicos #tecnologia #usadoseminovos',
+  'Esporte e Bike': '#bike #ciclismo #mtb #aro29',
+  'Casa': '#decoracao #moveis #casa',
+  'Brinquedos': '#lego #colecionador #brinquedos',
+  'Acessórios': '#acessorios #importado',
+  'Tiro Esportivo': '#tiroesportivo #epi #protecao',
+};
+
+function anuncioMD(item) {
+  const preco = Number(item.preco);
+  const ref = item.preco_referencia ? Number(item.preco_referencia) : null;
+  const desconto = ref && ref > preco ? Math.round(((ref - preco) / ref) * 100) : null;
+  const qtd = Number(item.quantidade || 1);
+  const comparacao = desconto
+    ? `\n\nNovo custa cerca de R$ ${brl(ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(preco)}, ${desconto}% abaixo.`
+    : '';
+  const unidades = qtd > 1 ? `\n\nDisponíveis: ${qtd} unidades (preço por unidade).` : '';
+  const tags = `#bazar #desapego #caxiasdosul ${HASHTAGS[item.categoria] ?? ''}`.trim();
+
+  return `# ${item.nome}
+
+**Preço:** R$ ${brl(preco)}${qtd > 1 ? ' (cada)' : ''}${desconto ? ` · ${desconto}% abaixo do novo` : ''}
+**Categoria:** ${item.categoria}
+**Fotos:** ${item.fotos.length ? item.fotos.join(', ') : '— (pendente)'}
+
+## Título para o Marketplace
+${item.nome.slice(0, 99)}
+
+## Descrição para o Marketplace
+${item.descricao}${comparacao}${unidades}
+
+Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.
+
+## Legenda para o Instagram
+${item.nome} — R$ ${brl(preco)}${qtd > 1 ? ' cada' : ''}
+
+${item.descricao}${comparacao}
+
+Retirada em ${CIDADE}. Chama no direct ou no WhatsApp (54) 99184-5555.
+
+${tags}
+`;
+}
+
+function gerarAnuncios(itens) {
+  const dir = join(ROOT, 'anuncios');
+  rmSync(dir, { recursive: true, force: true });
+  mkdirSync(dir, { recursive: true });
+  const publicaveis = itens.filter((i) => i.status !== 'vendido');
+  for (const item of publicaveis) writeFileSync(join(dir, `${item.slug}.md`), anuncioMD(item));
+
+  const porValor = [...publicaveis].sort((a, b) => Number(b.preco) - Number(a.preco));
+  const consolidado = `# Todos os anúncios — Bazar do Diego
+
+Gerado por \`build.mjs\` a partir de \`catalogo.csv\`. Ordem sugerida de publicação:
+do item de maior valor para o menor (os caros atraem mais contatos no começo).
+
+${porValor.map((i, n) => `${n + 1}. **${i.nome}** — R$ ${brl(Number(i.preco))} · \`anuncios/${i.slug}.md\``).join('\n')}
+
+---
+
+${porValor.map(anuncioMD).join('\n---\n\n')}`;
+  writeFileSync(join(dir, 'TODOS-ANUNCIOS.md'), consolidado);
+  return publicaveis.length;
+}
+
 // ---------- main ----------
 const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i) => ({
   ...i,
@@ -331,6 +399,9 @@ const nFotos = prepararFotos(itens);
 writeFileSync(join(SITE, 'index.html'), paginaHTML(itens, categorias));
 writeFileSync(join(SITE, '.nojekyll'), '');
 
+const nAnuncios = gerarAnuncios(itens);
+
 const semFoto = itens.filter((i) => !i.fotos.length).map((i) => i.slug);
 console.log(`docs/ gerado — ${itens.length} itens, ${nFotos} fotos, ${categorias.length} categorias`);
+console.log(`anuncios/ gerado — ${nAnuncios} textos + TODOS-ANUNCIOS.md`);
 if (semFoto.length) console.log(`sem foto: ${semFoto.join(', ')}`);

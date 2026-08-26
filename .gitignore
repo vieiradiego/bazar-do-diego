@@ -8,7 +8,8 @@ Bazar do Diego Vieira.xlsx
 
 # Fotos originais — inclui itens restritos e a etiqueta do roteador com a
 # senha do Wi-Fi. Só as versões tratadas em fotos-ecommerce/ vão para o site.
-fotos/
+# A barra inicial ancora na raiz: sem ela, docs/fotos/ do site também seria ignorada.
+/fotos/
 
 # Vídeos
 *.MOV
