@@ -64,7 +64,24 @@
     backdrop-filter:saturate(180%) blur(20px);
     -webkit-backdrop-filter:saturate(180%) blur(20px);
     border-bottom:1px solid var(--risco)}
-  .barra .larg{padding-top:12px;padding-bottom:12px}
+  .barra .larg{padding-top:10px;padding-bottom:10px}
+  .busca{position:relative;display:flex;align-items:center;margin-bottom:9px}
+  .busca-ico{position:absolute;left:13px;display:flex;color:var(--terciaria);
+    pointer-events:none;font-size:17px}
+  .busca input{width:100%;font-family:inherit;font-size:17px;line-height:1.2;
+    /* 17px evita o zoom automático do iOS ao focar o campo */
+    padding:11px 40px 11px 38px;border-radius:12px;border:1px solid transparent;
+    background:var(--superficie);color:var(--tinta);min-height:44px;
+    -webkit-appearance:none;appearance:none}
+  .busca input::placeholder{color:var(--terciaria)}
+  .busca input:focus{outline:none;border-color:var(--azul);background:var(--cartao)}
+  .busca input::-webkit-search-cancel-button,
+  .busca input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
+  .busca-limpar{position:absolute;right:5px;width:34px;height:34px;border:0;
+    border-radius:50%;background:transparent;color:var(--terciaria);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .busca-limpar:hover{background:var(--risco)}
+  .busca-limpar[hidden]{display:none}
   .filtros{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;padding-bottom:2px}
   .filtros::-webkit-scrollbar{display:none}
@@ -74,7 +91,8 @@
     transition:background .18s,color .18s}
   .chip:hover{background:var(--risco)}
   .chip[aria-pressed="true"]{background:var(--tinta);color:var(--fundo)}
-  .conta{font-size:13px;color:var(--terciaria);margin:9px 0 0}
+  .conta{font-size:13px;color:var(--terciaria);margin:8px 0 0}
+  .conta[hidden]{display:none}   /* só aparece com busca ou filtro ativo */
 
   /* ---- grade ---- */
   main{padding:30px 0 10px}
@@ -193,6 +211,12 @@
 
 <div class="barra">
   <div class="larg">
+    <form class="busca" role="search" onsubmit="return false">
+      <span class="busca-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></span>
+      <input type="search" id="busca" placeholder="Buscar no bazar" aria-label="Buscar item"
+             autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+      <button type="button" class="busca-limpar" id="busca-limpar" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </form>
     <div class="filtros" role="group" aria-label="Filtrar por categoria">
       <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
       <button class="chip" data-f="Eletrônicos" aria-pressed="false">Eletrônicos</button>
@@ -203,7 +227,7 @@
       <button class="chip" data-f="Tiro Esportivo" aria-pressed="false">Tiro Esportivo</button>
       <button class="chip" data-f="Acessórios" aria-pressed="false">Acessórios</button>
     </div>
-    <p class="conta" id="conta">30 itens · 30 disponíveis</p>
+    <p class="conta" id="conta" hidden>30 itens · 30 disponíveis</p>
   </div>
 </div>
 
@@ -213,7 +237,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB" data-preco="2.999"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/notebook-dell-01.jpg","./fotos/notebook-dell-02.jpg","./fotos/notebook-dell-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/notebook-dell-01.jpg","./fotos/notebook-dell-02.jpg","./fotos/notebook-dell-03.jpg"]'
+  data-busca="notebook dell inspiron i7 — 16gb ram, ssd 512gb eletronicos notebook dell inspiron com processador intel core i7, 16gb de memoria ram e ssd de 512gb. placa de video nvidia dedicada. tela sem bordas, acabamento em aluminio. funcionando perfeitamente, sem travamentos. ideal para trabalho, estudo e edicao leve.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/notebook-dell-01.jpg" alt="Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -247,7 +272,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB" data-preco="2.790"
   data-ref="3.385" data-desconto="18"
-  data-qtd="1" data-fotos='["./fotos/tablet-galaxy-tab-s9-fe-01.jpg","./fotos/tablet-galaxy-tab-s9-fe-02.jpg","./fotos/tablet-galaxy-tab-s9-fe-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/tablet-galaxy-tab-s9-fe-01.jpg","./fotos/tablet-galaxy-tab-s9-fe-02.jpg","./fotos/tablet-galaxy-tab-s9-fe-03.jpg"]'
+  data-busca="tablet samsung galaxy tab s9 fe+ wi-fi 128gb eletronicos galaxy tab s9 fe plus com 128gb de armazenamento, wi-fi. acompanha a s pen original e capa com suporte. tela grande, otima para leitura, estudo e streaming. bateria em bom estado, sem marcas de uso na tela.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/tablet-galaxy-tab-s9-fe-01.jpg" alt="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -281,7 +307,8 @@
   data-categoria="Esporte e Bike" data-status="disponivel"
   data-nome="Bicicleta Masculina — MTB aro 29" data-preco="1.299"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='[]'>
+  data-qtd="1" data-fotos='[]'
+  data-busca="bicicleta masculina — mtb aro 29 esporte e bike mountain bike masculina aro 29 em otimo estado de conservacao. fotos detalhadas em breve — chame no whatsapp que envio na hora.">
   <div class="visual">
       <div class="ilustra">
         <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -315,7 +342,8 @@
   data-categoria="Esporte e Bike" data-status="disponivel"
   data-nome="Bicicleta Feminina FKS SPEC — MTB aro 29" data-preco="1.199"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/bicicleta-feminina-fks-01.jpg","./fotos/bicicleta-feminina-fks-02.jpg","./fotos/bicicleta-feminina-fks-03.jpg","./fotos/bicicleta-feminina-fks-04.jpg","./fotos/bicicleta-feminina-fks-05.jpg","./fotos/bicicleta-feminina-fks-06.jpg","./fotos/bicicleta-feminina-fks-07.jpg","./fotos/bicicleta-feminina-fks-08.jpg","./fotos/bicicleta-feminina-fks-09.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/bicicleta-feminina-fks-01.jpg","./fotos/bicicleta-feminina-fks-02.jpg","./fotos/bicicleta-feminina-fks-03.jpg","./fotos/bicicleta-feminina-fks-04.jpg","./fotos/bicicleta-feminina-fks-05.jpg","./fotos/bicicleta-feminina-fks-06.jpg","./fotos/bicicleta-feminina-fks-07.jpg","./fotos/bicicleta-feminina-fks-08.jpg","./fotos/bicicleta-feminina-fks-09.jpg"]'
+  data-busca="bicicleta feminina fks spec — mtb aro 29 esporte e bike mountain bike aro 29 quadro em aluminio 6061, 21 marchas, freio a disco nas duas rodas e suspensao dianteira com trava. selim yamada, pedais com refletivo e descanso lateral. cor rosa/preto. pronta para pedalar.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 9">
           <img src="./fotos/bicicleta-feminina-fks-01.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -361,7 +389,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="Fonte Corsair RM850i 850W 80 Plus Gold Modular" data-preco="650"
   data-ref="831,99" data-desconto="22"
-  data-qtd="1" data-fotos='["./fotos/fonte-corsair-rm850i-01.jpg","./fotos/fonte-corsair-rm850i-02.jpg","./fotos/fonte-corsair-rm850i-03.jpg","./fotos/fonte-corsair-rm850i-04.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/fonte-corsair-rm850i-01.jpg","./fotos/fonte-corsair-rm850i-02.jpg","./fotos/fonte-corsair-rm850i-03.jpg","./fotos/fonte-corsair-rm850i-04.jpg"]'
+  data-busca="fonte corsair rm850i 850w 80 plus gold modular pc e hardware fonte corsair rm850i, 850w reais, certificacao 80 plus gold e cabeamento totalmente modular. linha rmi, superior a rme atual: traz monitoramento digital por usb via corsair link (tensao, corrente, temperatura e rotacao em tempo real) e capacitores japoneses. acompanha a bolsa original com todos os cabos modulares e o cabo de forca. ventoinha silenciosa com modo zero rpm em baixa carga. funcionando perfeitamente.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 4">
           <img src="./fotos/fonte-corsair-rm850i-01.jpg" alt="Fonte Corsair RM850i 850W 80 Plus Gold Modular — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -397,7 +426,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="Memória Corsair Vengeance LPX 16GB DDR4 2400MHz" data-preco="599"
   data-ref="1.079,90" data-desconto="45"
-  data-qtd="2" data-fotos='["./fotos/memoria-corsair-ddr4-16gb-01.jpg","./fotos/memoria-corsair-ddr4-16gb-02.jpg","./fotos/memoria-corsair-ddr4-16gb-03.jpg"]'>
+  data-qtd="2" data-fotos='["./fotos/memoria-corsair-ddr4-16gb-01.jpg","./fotos/memoria-corsair-ddr4-16gb-02.jpg","./fotos/memoria-corsair-ddr4-16gb-03.jpg"]'
+  data-busca="memoria corsair vengeance lpx 16gb ddr4 2400mhz pc e hardware memoria corsair vengeance lpx ddr4 de 16gb, 2400mhz, cl14 (14-16-16-31), 1.20v — part number cmk16gx4m1a2400c14. dissipador de aluminio em perfil baixo, compativel com qualquer cooler. sao duas unidades identicas, do mesmo lote: levando as duas voce fecha 32gb em dual channel. testadas e funcionando, sem erro de memoria. preco por pente.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/memoria-corsair-ddr4-16gb-01.jpg" alt="Memória Corsair Vengeance LPX 16GB DDR4 2400MHz — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -431,7 +461,8 @@
   data-categoria="Brinquedos" data-status="disponivel"
   data-nome="LEGO Game Boy 72046 — lacrado" data-preco="479"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/lego-game-boy-01.jpg","./fotos/lego-game-boy-02.jpg","./fotos/lego-game-boy-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/lego-game-boy-01.jpg","./fotos/lego-game-boy-02.jpg","./fotos/lego-game-boy-03.jpg"]'
+  data-busca="lego game boy 72046 — lacrado brinquedos set lego game boy (72046) com 421 pecas, indicado para 18+. caixa lacrada, nunca aberta. replica do game boy classico com cartuchos montaveis. item de colecionador.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/lego-game-boy-01.jpg" alt="LEGO Game Boy 72046 — lacrado — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -465,7 +496,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="Water Cooler Cooler Master MasterLiquid 240" data-preco="399"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/watercooler-masterliquid-240-01.jpg","./fotos/watercooler-masterliquid-240-02.jpg","./fotos/watercooler-masterliquid-240-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/watercooler-masterliquid-240-01.jpg","./fotos/watercooler-masterliquid-240-02.jpg","./fotos/watercooler-masterliquid-240-03.jpg"]'
+  data-busca="water cooler cooler master masterliquid 240 pc e hardware water cooler all-in-one cooler master masterliquid 240, radiador de 240mm com bomba de dupla camara e perfil baixo. acompanha a caixa original, o espumado interno e os suportes de instalacao. refrigeracao liquida fechada, sem manutencao. atencao: nao acompanha as duas ventoinhas do radiador — leve junto o kit corsair sp140 se precisar.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/watercooler-masterliquid-240-01.jpg" alt="Water Cooler Cooler Master MasterLiquid 240 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -499,7 +531,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="HD Seagate Desktop 3TB — SATA 3.5" data-preco="399"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/hd-seagate-3tb-01.jpg","./fotos/hd-seagate-3tb-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/hd-seagate-3tb-01.jpg","./fotos/hd-seagate-3tb-02.jpg"]'
+  data-busca="hd seagate desktop 3tb — sata 3.5 pc e hardware hd seagate desktop de 3tb, modelo st3000dm003, sata 3.5 polegadas. bom para armazenamento em massa, backup e biblioteca de midia. disco usado — posso rodar o teste smart e mandar o print antes da compra. preco abaixo do mercado justamente por ser um disco antigo: leve isso em conta e nao use como unica copia dos seus arquivos.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/hd-seagate-3tb-01.jpg" alt="HD Seagate Desktop 3TB — SATA 3.5 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -531,7 +564,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Teclado Mecânico Gamer Logitech G PRO TKL" data-preco="379"
   data-ref="639,99" data-desconto="41"
-  data-qtd="1" data-fotos='["./fotos/teclado-logitech-gpro-01.jpg","./fotos/teclado-logitech-gpro-02.jpg","./fotos/teclado-logitech-gpro-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/teclado-logitech-gpro-01.jpg","./fotos/teclado-logitech-gpro-02.jpg","./fotos/teclado-logitech-gpro-03.jpg"]'
+  data-busca="teclado mecanico gamer logitech g pro tkl eletronicos teclado mecanico logitech g pro no formato tkl (sem teclado numerico), layout us. switches gx blue clicky, iluminacao rgb lightsync e cabo destacavel. todas as teclas funcionando, sem falhas.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/teclado-logitech-gpro-01.jpg" alt="Teclado Mecânico Gamer Logitech G PRO TKL — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -565,7 +599,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE" data-preco="319"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/fans-corsair-sp140-01.jpg","./fotos/fans-corsair-sp140-02.jpg","./fotos/fans-corsair-sp140-03.jpg","./fotos/fans-corsair-sp140-04.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/fans-corsair-sp140-01.jpg","./fotos/fans-corsair-sp140-02.jpg","./fotos/fans-corsair-sp140-03.jpg","./fotos/fans-corsair-sp140-04.jpg"]'
+  data-busca="kit corsair sp140 rgb pro — 2 ventoinhas 140mm + lighting node core pc e hardware kit corsair sp140 rgb pro com duas ventoinhas de 140mm rgb enderecaveis e a controladora lighting node core, tudo na caixa original. cada ventoinha tem 8 leds rgb independentes, controlados pelo software icue. alta pressao estatica, indicadas para radiador de water cooler ou entrada de ar do gabinete. acompanha os cabos e os parafusos.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 4">
           <img src="./fotos/fans-corsair-sp140-01.jpg" alt="Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -601,7 +636,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="HD WD Purple 2TB — SATA 3.5 para CFTV" data-preco="299"
   data-ref="582" data-desconto="49"
-  data-qtd="1" data-fotos='["./fotos/hd-wd-purple-2tb-01.jpg","./fotos/hd-wd-purple-2tb-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/hd-wd-purple-2tb-01.jpg","./fotos/hd-wd-purple-2tb-02.jpg"]'
+  data-busca="hd wd purple 2tb — sata 3.5 para cftv pc e hardware hd western digital purple de 2tb, modelo wd20purx, sata com 64mb de cache. linha purple e feita para gravacao 24/7 em dvr e nvr de cameras. fabricado em 2015, entao e um disco com bastante uso — posso rodar o teste smart e mandar o print antes da compra, para voce ver horas ligadas e setores realocados. preco ja considera a idade do disco.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/hd-wd-purple-2tb-01.jpg" alt="HD WD Purple 2TB — SATA 3.5 para CFTV — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -633,7 +669,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Apple AirTag 2ª geração" data-preco="259"
   data-ref="369" data-desconto="30"
-  data-qtd="3" data-fotos='["./fotos/airtags-01.jpg","./fotos/airtags-02.jpg"]'>
+  data-qtd="3" data-fotos='["./fotos/airtags-01.jpg","./fotos/airtags-02.jpg"]'
+  data-busca="apple airtag 2ª geracao eletronicos airtag da apple para rastrear chaves, mochila, mala ou carro pelo app buscar. unidades avulsas, em otimo estado. bateria substituivel (cr2032). preco por unidade.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/airtags-01.jpg" alt="Apple AirTag 2ª geração — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -665,7 +702,8 @@
   data-categoria="Casa" data-status="disponivel"
   data-nome="Cadeira Pingo — assento gota com pés de madeira" data-preco="249"
   data-ref="295,65" data-desconto="16"
-  data-qtd="4" data-fotos='["./fotos/cadeiras-pingo-01.jpg","./fotos/cadeiras-pingo-02.jpg"]'>
+  data-qtd="4" data-fotos='["./fotos/cadeiras-pingo-01.jpg","./fotos/cadeiras-pingo-02.jpg"]'
+  data-busca="cadeira pingo — assento gota com pes de madeira casa cadeira design pingo com assento em polipropileno no formato gota e pes de madeira macica com estrutura metalica cruzada. suporta ate 120kg. disponiveis 2 turquesa e 2 vermelhas. sem rachaduras ou manchas. preco por unidade.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/cadeiras-pingo-01.jpg" alt="Cadeira Pingo — assento gota com pés de madeira — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -697,7 +735,8 @@
   data-categoria="Tiro Esportivo" data-status="disponivel"
   data-nome="Abafador Eletrônico Howard Leight + óculos + estojo" data-preco="249"
   data-ref="649" data-desconto="62"
-  data-qtd="1" data-fotos='["./fotos/abafador-howard-leight-kit-01.jpg","./fotos/abafador-howard-leight-kit-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/abafador-howard-leight-kit-01.jpg","./fotos/abafador-howard-leight-kit-02.jpg"]'
+  data-busca="abafador eletronico howard leight + oculos + estojo tiro esportivo protetor auricular eletronico howard leight impact sport (honeywell) — amplifica sons ambientes e corta o ruido de impacto. acompanha oculos de protecao lente amarela e estojo rigido. funcionando, pilhas testadas.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/abafador-howard-leight-kit-01.jpg" alt="Abafador Eletrônico Howard Leight + óculos + estojo — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -729,7 +768,8 @@
   data-categoria="Esporte e Bike" data-status="disponivel"
   data-nome="Cadeirinha de bicicleta para criança" data-preco="245"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='[]'>
+  data-qtd="1" data-fotos='[]'
+  data-busca="cadeirinha de bicicleta para crianca esporte e bike cadeirinha para transporte de crianca na bicicleta, com cinto de seguranca e apoio para os pes. fotos em breve — chame no whatsapp que envio na hora.">
   <div class="visual">
       <div class="ilustra">
         <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -763,7 +803,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)" data-preco="230"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/roteador-tplink-01.jpg","./fotos/roteador-tplink-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/roteador-tplink-01.jpg","./fotos/roteador-tplink-02.jpg"]'
+  data-busca="roteador tp-link n750 dual band gigabit (tl-wdr4300) eletronicos roteador tp-link n750 dual band (2.4ghz + 5ghz), portas gigabit e 3 antenas destacaveis. modelo tl-wdr4300. funcionando perfeitamente, resetado de fabrica antes da entrega.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/roteador-tplink-01.jpg" alt="Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300) — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -795,7 +836,8 @@
   data-categoria="Tiro Esportivo" data-status="disponivel"
   data-nome="Abafador Eletrônico Howard Leight + estojo" data-preco="190"
   data-ref="649" data-desconto="71"
-  data-qtd="1" data-fotos='["./fotos/abafador-howard-leight-01.jpg","./fotos/abafador-howard-leight-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/abafador-howard-leight-01.jpg","./fotos/abafador-howard-leight-02.jpg"]'
+  data-busca="abafador eletronico howard leight + estojo tiro esportivo protetor auricular eletronico howard leight impact sport (honeywell), dobravel, com estojo rigido. amplificacao de som ambiente e corte automatico de ruido. funcionando, pilhas testadas.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/abafador-howard-leight-01.jpg" alt="Abafador Eletrônico Howard Leight + estojo — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -827,7 +869,8 @@
   data-categoria="Esporte e Bike" data-status="disponivel"
   data-nome="Capacete Rockrider Decathlon — tam. 59-62" data-preco="189"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/capacete-rockrider-01.jpg","./fotos/capacete-rockrider-02.jpg","./fotos/capacete-rockrider-03.jpg","./fotos/capacete-rockrider-04.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/capacete-rockrider-01.jpg","./fotos/capacete-rockrider-02.jpg","./fotos/capacete-rockrider-03.jpg","./fotos/capacete-rockrider-04.jpg"]'
+  data-busca="capacete rockrider decathlon — tam. 59-62 esporte e bike capacete de ciclismo rockrider (decathlon), tamanho 59-62cm (adulto g). ajuste giratorio na nuca, boa ventilacao, sem trincas ou quedas. cor cinza/azul.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 4">
           <img src="./fotos/capacete-rockrider-01.jpg" alt="Capacete Rockrider Decathlon — tam. 59-62 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -863,7 +906,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Teclado Logitech K400 Plus sem fio com touchpad" data-preco="149"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/teclado-logitech-k400-01.jpg","./fotos/teclado-logitech-k400-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/teclado-logitech-k400-01.jpg","./fotos/teclado-logitech-k400-02.jpg"]'
+  data-busca="teclado logitech k400 plus sem fio com touchpad eletronicos teclado sem fio logitech k400 plus com touchpad integrado — perfeito para usar com smart tv ou pc na sala. cor preta, receptor usb unifying incluso. funcionando perfeitamente.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/teclado-logitech-k400-01.jpg" alt="Teclado Logitech K400 Plus sem fio com touchpad — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -895,7 +939,8 @@
   data-categoria="Acessórios" data-status="disponivel"
   data-nome="Bolsa Trader Joe's — sacola de lona importada" data-preco="147"
   data-ref="" data-desconto=""
-  data-qtd="4" data-fotos='["./fotos/bolsa-trader-joes-01.jpg","./fotos/bolsa-trader-joes-02.jpg"]'>
+  data-qtd="4" data-fotos='["./fotos/bolsa-trader-joes-01.jpg","./fotos/bolsa-trader-joes-02.jpg"]'
+  data-busca="bolsa trader joe's — sacola de lona importada acessorios sacola reutilizavel trader joe's original, trazida dos eua. lona resistente com fundo e alcas reforcadas em azul-marinho, bolso interno. novas, com etiqueta. preco por unidade.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/bolsa-trader-joes-01.jpg" alt="Bolsa Trader Joe's — sacola de lona importada — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -927,7 +972,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="HD Toshiba 1TB 2.5 para notebook — 5400RPM" data-preco="129"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/hd-toshiba-1tb-01.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/hd-toshiba-1tb-01.jpg"]'
+  data-busca="hd toshiba 1tb 2.5 para notebook — 5400rpm pc e hardware hd toshiba de 1tb no formato 2.5 polegadas, modelo mq01abd100, sata 5400rpm. serve para notebook ou para montar um hd externo com um case usb. fabricado em 2015 — posso rodar o teste smart e mandar o print antes da compra. boa opcao de capacidade barata para guardar arquivos.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 1">
           <img src="./fotos/hd-toshiba-1tb-01.jpg" alt="HD Toshiba 1TB 2.5 para notebook — 5400RPM — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -957,7 +1003,8 @@
   data-categoria="PC e Hardware" data-status="disponivel"
   data-nome="SSD Corsair Force LE 240GB — SATA 3" data-preco="129"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/ssd-corsair-240gb-01.jpg","./fotos/ssd-corsair-240gb-02.jpg","./fotos/ssd-corsair-240gb-03.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/ssd-corsair-240gb-01.jpg","./fotos/ssd-corsair-240gb-02.jpg","./fotos/ssd-corsair-240gb-03.jpg"]'
+  data-busca="ssd corsair force le 240gb — sata 3 pc e hardware ssd corsair force le de 240gb, sata 3, formato 2.5 polegadas — part number cssd-f240gbleb. otimo para dar sobrevida a um pc ou notebook antigo trocando o hd mecanico pelo ssd: o boot e a abertura de programas ficam muito mais rapidos. funcionando, sem setores defeituosos.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 3">
           <img src="./fotos/ssd-corsair-240gb-01.jpg" alt="SSD Corsair Force LE 240GB — SATA 3 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -991,7 +1038,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Teclado HP slim USB empresarial" data-preco="99"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/teclado-hp-slim-01.jpg","./fotos/teclado-hp-slim-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/teclado-hp-slim-01.jpg","./fotos/teclado-hp-slim-02.jpg"]'
+  data-busca="teclado hp slim usb empresarial eletronicos teclado hp slim com fio usb, layout abnt2 completo com teclado numerico. perfil baixo, digitacao silenciosa. linha empresarial, bem conservado e funcionando.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/teclado-hp-slim-01.jpg" alt="Teclado HP slim USB empresarial — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1023,7 +1071,8 @@
   data-categoria="Tiro Esportivo" data-status="disponivel"
   data-nome="Kit de limpeza e manutenção" data-preco="70"
   data-ref="99" data-desconto="29"
-  data-qtd="1" data-fotos='["./fotos/kit-limpeza-01.jpg","./fotos/kit-limpeza-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/kit-limpeza-01.jpg","./fotos/kit-limpeza-02.jpg"]'
+  data-busca="kit de limpeza e manutencao tiro esportivo kit completo de limpeza e manutencao em estojo de madeira: hastes, escovas de cerdas e latao, escovilhoes, ponteiras e frascos de oleo lubrificante e solvente. pouco usado.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/kit-limpeza-01.jpg" alt="Kit de limpeza e manutenção — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1055,7 +1104,8 @@
   data-categoria="Tiro Esportivo" data-status="disponivel"
   data-nome="Óculos de proteção + protetor auricular 3M + estojo" data-preco="59,90"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/oculos-protetor-3m-01.jpg","./fotos/oculos-protetor-3m-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/oculos-protetor-3m-01.jpg","./fotos/oculos-protetor-3m-02.jpg"]'
+  data-busca="oculos de protecao + protetor auricular 3m + estojo tiro esportivo oculos de protecao com lente transparente antirrisco, protetor auricular 3m com cordao em caixinha propria e bolsa de tecido + estojo rigido. conjunto completo de epi.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/oculos-protetor-3m-01.jpg" alt="Óculos de proteção + protetor auricular 3M + estojo — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1087,7 +1137,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Mouse Logitech Pebble 2 M350s sem fio" data-preco="49"
   data-ref="99,90" data-desconto="51"
-  data-qtd="1" data-fotos='["./fotos/mouse-logitech-pebble-01.jpg","./fotos/mouse-logitech-pebble-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/mouse-logitech-pebble-01.jpg","./fotos/mouse-logitech-pebble-02.jpg"]'
+  data-busca="mouse logitech pebble 2 m350s sem fio eletronicos mouse sem fio logitech pebble 2 m350s com clique silencioso e design slim ambidestro. conexao bluetooth. compacto, ideal para levar na mochila junto com o notebook.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/mouse-logitech-pebble-01.jpg" alt="Mouse Logitech Pebble 2 M350s sem fio — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1119,7 +1170,8 @@
   data-categoria="Esporte e Bike" data-status="disponivel"
   data-nome="Gancho de parede e teto para bicicleta — Decathlon" data-preco="45,90"
   data-ref="49,99" data-desconto="8"
-  data-qtd="2" data-fotos='["./fotos/gancho-bike-decathlon-01.jpg","./fotos/gancho-bike-decathlon-02.jpg"]'>
+  data-qtd="2" data-fotos='["./fotos/gancho-bike-decathlon-01.jpg","./fotos/gancho-bike-decathlon-02.jpg"]'
+  data-busca="gancho de parede e teto para bicicleta — decathlon esporte e bike suporte gancho decathlon para pendurar a bicicleta na parede ou no teto. suporta ate 25kg, compativel com bikes de 16 a 29 polegadas e eletricas. novo, ainda na embalagem. preco por unidade.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/gancho-bike-decathlon-01.jpg" alt="Gancho de parede e teto para bicicleta — Decathlon — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1151,7 +1203,8 @@
   data-categoria="Eletrônicos" data-status="disponivel"
   data-nome="Mouse sem fio C3 Tech M-W20BK" data-preco="39"
   data-ref="" data-desconto=""
-  data-qtd="1" data-fotos='["./fotos/mouse-c3tech-01.jpg","./fotos/mouse-c3tech-02.jpg"]'>
+  data-qtd="1" data-fotos='["./fotos/mouse-c3tech-01.jpg","./fotos/mouse-c3tech-02.jpg"]'
+  data-busca="mouse sem fio c3 tech m-w20bk eletronicos mouse sem fio c3 tech m-w20bk, 2.4ghz com receptor usb, 1000dpi, cor preta. botao de ajuste de dpi. funcionando perfeitamente.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="./fotos/mouse-c3tech-01.jpg" alt="Mouse sem fio C3 Tech M-W20BK — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1183,7 +1236,8 @@
   data-categoria="Acessórios" data-status="disponivel"
   data-nome="Cheirinho Little Trees — pack com 3" data-preco="35"
   data-ref="37,90" data-desconto="8"
-  data-qtd="4" data-fotos='["./fotos/cheirinhos-little-trees-01.jpg","./fotos/cheirinhos-little-trees-02.jpg","./fotos/cheirinhos-little-trees-03.jpg","./fotos/cheirinhos-little-trees-04.jpg"]'>
+  data-qtd="4" data-fotos='["./fotos/cheirinhos-little-trees-01.jpg","./fotos/cheirinhos-little-trees-02.jpg","./fotos/cheirinhos-little-trees-03.jpg","./fotos/cheirinhos-little-trees-04.jpg"]'
+  data-busca="cheirinho little trees — pack com 3 acessorios aromatizante little trees original importado, pack com 3 unidades lacrado. disponiveis: 2 packs black ice, 1 supernova e 1 caribbean colada. preco por pack.">
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 4">
           <img src="./fotos/cheirinhos-little-trees-01.jpg" alt="Cheirinho Little Trees — pack com 3 — foto 1" loading="lazy" decoding="async" width="1000" height="1000">
@@ -1252,23 +1306,60 @@
     clearTimeout(tAviso); tAviso = setTimeout(function(){ elAviso.classList.remove('on'); }, 3200);
   }
 
-  /* ---------- filtros ---------- */
+  /* ---------- busca + filtro de categoria (combinados) ---------- */
   var chips = document.querySelectorAll('.chip');
   var conta = document.getElementById('conta');
   var vazio = document.getElementById('vazio');
+  var campo = document.getElementById('busca');
+  var limpar = document.getElementById('busca-limpar');
+  var categoria = 'todos';
+
+  function semAcento(s){
+    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+  }
+
+  function aplicar(){
+    var termo = semAcento(campo.value);
+    // cada palavra digitada precisa aparecer: "hd wd" acha o WD Purple
+    var palavras = termo ? termo.split(/s+/) : [];
+    var vis = 0, disp = 0;
+    cards.forEach(function(card){
+      var okCat = categoria === 'todos' || card.dataset.categoria === categoria;
+      var alvo = card.dataset.busca || '';
+      var okTermo = palavras.every(function(p){ return alvo.indexOf(p) !== -1; });
+      var ok = okCat && okTermo;
+      card.hidden = !ok;
+      if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
+    });
+    var filtrando = categoria !== 'todos' || palavras.length > 0;
+    conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
+    conta.hidden = !filtrando;
+    vazio.hidden = vis > 0;
+    vazio.textContent = palavras.length
+      ? 'Nada encontrado para “' + campo.value.trim() + '”.'
+      : 'Nenhum item nesta categoria.';
+    limpar.hidden = !campo.value;
+  }
+
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
       chip.setAttribute('aria-pressed','true');
-      var f = chip.dataset.f, vis = 0, disp = 0;
-      cards.forEach(function(card){
-        var ok = f === 'todos' || card.dataset.categoria === f;
-        card.hidden = !ok;
-        if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
-      });
-      conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
-      vazio.hidden = vis > 0;
+      categoria = chip.dataset.f;
+      aplicar();
     });
+  });
+
+  campo.addEventListener('input', aplicar);
+  campo.addEventListener('search', aplicar);   // o "x" nativo do iOS
+  campo.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){ e.preventDefault(); campo.blur(); }  // fecha o teclado
+    if (e.key === 'Escape'){ campo.value = ''; aplicar(); }
+  });
+  limpar.addEventListener('click', function(){
+    campo.value = '';
+    aplicar();
+    campo.focus();
   });
 
   /* ---------- carrossel: pontinhos + avanço automático ---------- */

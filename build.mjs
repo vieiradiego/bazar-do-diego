@@ -48,6 +48,10 @@ const brl = (n) =>
 const esc = (s = '') =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+// texto de busca: minúsculo e sem acento, para "memoria" achar "Memória"
+const semAcento = (s = '') =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+
 const STATUS = {
   disponivel: { rotulo: 'Disponível', cor: 'ok' },
   reservado: { rotulo: 'Reservado', cor: 'warn' },
@@ -60,6 +64,7 @@ const ico = {
   share: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m8 7 4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>`,
   elo: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>`,
   ok: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9 17.5 20 6.5"/></svg>`,
+  busca: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>`,
   lupa: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>`,
   x: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>`,
   seta: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>`,
@@ -148,7 +153,8 @@ function cardHTML(item) {
   data-categoria="${esc(item.categoria)}" data-status="${item.status}"
   data-nome="${esc(item.nome)}" data-preco="${brl(preco)}"
   data-ref="${ref && desconto ? brl(ref) : ''}" data-desconto="${desconto ?? ''}"
-  data-qtd="${qtd}" data-fotos='${JSON.stringify(item.fotos.map((f) => './fotos/' + f))}'>
+  data-qtd="${qtd}" data-fotos='${JSON.stringify(item.fotos.map((f) => './fotos/' + f))}'
+  data-busca="${esc(semAcento(`${item.nome} ${item.categoria} ${item.descricao}`))}">
   ${visual}
   <div class="corpo">
     <p class="meta"><span class="badge ${st.cor}">${st.rotulo}</span>${qtd > 1 && !vendido ? `<span class="qtd">${qtd} unidades</span>` : ''}</p>
@@ -243,7 +249,24 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
     backdrop-filter:saturate(180%) blur(20px);
     -webkit-backdrop-filter:saturate(180%) blur(20px);
     border-bottom:1px solid var(--risco)}
-  .barra .larg{padding-top:12px;padding-bottom:12px}
+  .barra .larg{padding-top:10px;padding-bottom:10px}
+  .busca{position:relative;display:flex;align-items:center;margin-bottom:9px}
+  .busca-ico{position:absolute;left:13px;display:flex;color:var(--terciaria);
+    pointer-events:none;font-size:17px}
+  .busca input{width:100%;font-family:inherit;font-size:17px;line-height:1.2;
+    /* 17px evita o zoom automático do iOS ao focar o campo */
+    padding:11px 40px 11px 38px;border-radius:12px;border:1px solid transparent;
+    background:var(--superficie);color:var(--tinta);min-height:44px;
+    -webkit-appearance:none;appearance:none}
+  .busca input::placeholder{color:var(--terciaria)}
+  .busca input:focus{outline:none;border-color:var(--azul);background:var(--cartao)}
+  .busca input::-webkit-search-cancel-button,
+  .busca input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
+  .busca-limpar{position:absolute;right:5px;width:34px;height:34px;border:0;
+    border-radius:50%;background:transparent;color:var(--terciaria);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .busca-limpar:hover{background:var(--risco)}
+  .busca-limpar[hidden]{display:none}
   .filtros{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;padding-bottom:2px}
   .filtros::-webkit-scrollbar{display:none}
@@ -253,7 +276,8 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
     transition:background .18s,color .18s}
   .chip:hover{background:var(--risco)}
   .chip[aria-pressed="true"]{background:var(--tinta);color:var(--fundo)}
-  .conta{font-size:13px;color:var(--terciaria);margin:9px 0 0}
+  .conta{font-size:13px;color:var(--terciaria);margin:8px 0 0}
+  .conta[hidden]{display:none}   /* só aparece com busca ou filtro ativo */
 
   /* ---- grade ---- */
   main{padding:30px 0 10px}
@@ -372,11 +396,17 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
 
 <div class="barra">
   <div class="larg">
+    <form class="busca" role="search" onsubmit="return false">
+      <span class="busca-ico">${ico.busca}</span>
+      <input type="search" id="busca" placeholder="Buscar no bazar" aria-label="Buscar item"
+             autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+      <button type="button" class="busca-limpar" id="busca-limpar" aria-label="Limpar busca" hidden>${ico.x}</button>
+    </form>
     <div class="filtros" role="group" aria-label="Filtrar por categoria">
       <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
       ${categorias.map((c) => `<button class="chip" data-f="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('\n      ')}
     </div>
-    <p class="conta" id="conta">${itens.length} itens · ${disponiveis} disponíveis</p>
+    <p class="conta" id="conta" hidden>${itens.length} itens · ${disponiveis} disponíveis</p>
   </div>
 </div>
 
@@ -420,23 +450,60 @@ ${itens.map(cardHTML).join('\n')}
     clearTimeout(tAviso); tAviso = setTimeout(function(){ elAviso.classList.remove('on'); }, 3200);
   }
 
-  /* ---------- filtros ---------- */
+  /* ---------- busca + filtro de categoria (combinados) ---------- */
   var chips = document.querySelectorAll('.chip');
   var conta = document.getElementById('conta');
   var vazio = document.getElementById('vazio');
+  var campo = document.getElementById('busca');
+  var limpar = document.getElementById('busca-limpar');
+  var categoria = 'todos';
+
+  function semAcento(s){
+    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+  }
+
+  function aplicar(){
+    var termo = semAcento(campo.value);
+    // cada palavra digitada precisa aparecer: "hd wd" acha o WD Purple
+    var palavras = termo ? termo.split(/\s+/) : [];
+    var vis = 0, disp = 0;
+    cards.forEach(function(card){
+      var okCat = categoria === 'todos' || card.dataset.categoria === categoria;
+      var alvo = card.dataset.busca || '';
+      var okTermo = palavras.every(function(p){ return alvo.indexOf(p) !== -1; });
+      var ok = okCat && okTermo;
+      card.hidden = !ok;
+      if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
+    });
+    var filtrando = categoria !== 'todos' || palavras.length > 0;
+    conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
+    conta.hidden = !filtrando;
+    vazio.hidden = vis > 0;
+    vazio.textContent = palavras.length
+      ? 'Nada encontrado para “' + campo.value.trim() + '”.'
+      : 'Nenhum item nesta categoria.';
+    limpar.hidden = !campo.value;
+  }
+
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
       chip.setAttribute('aria-pressed','true');
-      var f = chip.dataset.f, vis = 0, disp = 0;
-      cards.forEach(function(card){
-        var ok = f === 'todos' || card.dataset.categoria === f;
-        card.hidden = !ok;
-        if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
-      });
-      conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
-      vazio.hidden = vis > 0;
+      categoria = chip.dataset.f;
+      aplicar();
     });
+  });
+
+  campo.addEventListener('input', aplicar);
+  campo.addEventListener('search', aplicar);   // o "x" nativo do iOS
+  campo.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){ e.preventDefault(); campo.blur(); }  // fecha o teclado
+    if (e.key === 'Escape'){ campo.value = ''; aplicar(); }
+  });
+  limpar.addEventListener('click', function(){
+    campo.value = '';
+    aplicar();
+    campo.focus();
   });
 
   /* ---------- carrossel: pontinhos + avanço automático ---------- */
