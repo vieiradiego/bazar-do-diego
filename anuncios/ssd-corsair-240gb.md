@@ -1,6 +1,6 @@
 # SSD Corsair Force LE 240GB — SATA 3
 
-**Preço:** R$ 89
+**Preço:** R$ 129
 **Categoria:** PC e Hardware
 **Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-ssd-corsair-240gb
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
-SSD Corsair Force LE 240GB — SATA 3 — R$ 89
+SSD Corsair Force LE 240GB — SATA 3 — R$ 129
 
 SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
 
