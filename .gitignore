@@ -1,0 +1,18 @@
+# ATENÇÃO: este repositório é PÚBLICO (exigência do GitHub Pages gratuito).
+# Nada aqui embaixo pode ser versionado.
+
+# Planilha original — contém o inventário completo, incluindo itens restritos
+# que ficam fora de qualquer material público.
+Bazar do Diego Vieira.xlsx
+*.xlsx
+
+# Fotos originais — inclui itens restritos e a etiqueta do roteador com a
+# senha do Wi-Fi. Só as versões tratadas em fotos-ecommerce/ vão para o site.
+fotos/
+
+# Vídeos
+*.MOV
+*.mov
+
+# macOS
+.DS_Store

@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bazar do Diego — desapego com preço bom em Caxias do Sul</title>
+<meta name="description" content="Itens em ótimo estado com preço abaixo do mercado: eletrônicos, bicicletas, móveis e acessórios. Retirada em Caxias do Sul.">
+<meta property="og:title" content="Bazar do Diego">
+<meta property="og:description" content="Desapego de itens em ótimo estado, com preços abaixo do mercado. Retirada em Caxias do Sul.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%9B%8D%EF%B8%8F</text></svg>">
+<style>
+  :root{
+    --bg:#FAF6EF; --tinta:#221D15; --suave:#6E6558; --tenue:#A39A8B;
+    --papel:#FFFFFF; --borda:#EDE5D6; --terra:#C4501F;
+    --verde:#1B7A45; --whats:#1DA851; --ambar:#B98413;
+    --raio:16px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  svg{width:1em;height:1em}
+  .capa{background:var(--tinta);color:var(--bg);padding:32px 20px 26px}
+  .capa .dentro{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  h1{font-family:'Bricolage Grotesque','Archivo',sans-serif;font-weight:800;
+    font-size:clamp(32px,7vw,52px);line-height:1.04;margin:0;letter-spacing:-.02em}
+  .sub{color:#D8CFC2;font-size:clamp(14px,2.2vw,17px);max-width:56ch;margin:0}
+  .local{display:flex;align-items:center;gap:8px;color:#D8CFC2;font-size:14px}
+  .local svg{color:#E8A87C}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    border-radius:999px;padding:13px 20px;font-weight:600;font-size:15px;
+    text-decoration:none;border:0;cursor:pointer;min-height:48px}
+  .btn.whats{background:var(--whats);color:#fff}
+  .btn.whats:hover{background:#178f45}
+  .capa .btn.whats{align-self:flex-start;margin-top:4px}
+  .barra{position:sticky;top:0;z-index:10;background:rgba(250,246,239,.94);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+  .barra .dentro{max-width:1120px;margin:0 auto;padding:14px 20px 12px;
+    display:flex;flex-direction:column;gap:10px}
+  .filtros{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:var(--papel);border:1px solid var(--borda);color:var(--suave);
+    border-radius:999px;padding:9px 15px;font-size:14px;font-family:inherit;
+    cursor:pointer;min-height:40px}
+  .chip:hover{border-color:var(--tenue)}
+  .chip[aria-pressed="true"]{background:var(--tinta);color:var(--bg);border-color:var(--tinta);font-weight:600}
+  .conta{font-size:13px;color:var(--suave)}
+  main{max-width:1120px;margin:0 auto;padding:20px 20px 8px}
+  .grade{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:640px){.grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(min-width:1000px){.grade{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{background:var(--papel);border:1px solid var(--borda);border-radius:var(--raio);
+    overflow:hidden;display:flex;flex-direction:column}
+  .card.vendido{opacity:.6}
+  .galeria{position:relative;background:var(--bg)}
+  .trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;aspect-ratio:1/1}
+  .trilho::-webkit-scrollbar{display:none}
+  .trilho img{width:100%;height:100%;object-fit:cover;flex:0 0 100%;
+    scroll-snap-align:center;display:block}
+  .card.vendido .trilho img{filter:grayscale(65%)}
+  .pontos{position:absolute;bottom:10px;left:0;right:0;display:flex;
+    justify-content:center;gap:6px;pointer-events:none}
+  .pontos span{width:7px;height:7px;border-radius:50%;background:rgba(34,29,21,.25);
+    transition:background .2s}
+  .pontos span.on{background:var(--tinta)}
+  .sem-foto{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;
+    border-bottom:1px dashed var(--borda)}
+  .aviso-foto{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--tenue)}
+  .aviso-foto svg{width:34px;height:34px}
+  .aviso-foto span{font-size:14px}
+  .corpo{display:flex;flex-direction:column;gap:10px;padding:16px 16px 18px;flex:1}
+  .linha-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600}
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+  .badge.ok{color:var(--verde)} .badge.warn{color:var(--ambar)} .badge.off{color:var(--suave)}
+  .qtd{font-size:12px;color:var(--suave)}
+  h2{font-family:'Bricolage Grotesque','Archivo',sans-serif;font-weight:700;
+    font-size:18px;line-height:1.25;margin:0;text-wrap:pretty}
+  .desc{font-size:13.5px;color:var(--suave);margin:0;text-wrap:pretty}
+  .precos{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+  .preco{font-family:'Bricolage Grotesque','Archivo',sans-serif;font-weight:800;font-size:25px}
+  .card.vendido .preco{text-decoration:line-through;color:var(--suave)}
+  .cada{font-size:13px;color:var(--suave)}
+  .ref{font-size:14px;color:var(--suave);text-decoration:line-through}
+  .off{background:#E1F2E7;color:var(--verde);font-size:12px;font-weight:700;
+    border-radius:6px;padding:3px 8px}
+  .fonte{font-size:11.5px;color:var(--tenue);margin:-4px 0 0}
+  .corpo .btn{width:100%;border-radius:12px;margin-top:4px}
+  .btn.desativado{background:#F1EADD;color:var(--tenue);cursor:default}
+  .vazio{text-align:center;color:var(--suave);padding:48px 0;font-size:15px}
+  footer{max-width:1120px;margin:0 auto;padding:30px 20px 44px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:14px}
+  .rodape-txt{font-size:14px;color:var(--suave);max-width:46ch;margin:0}
+  .btn.escuro{background:var(--tinta);color:var(--bg)}
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#17130E;--tinta:#F2EDE3;--suave:#A89F8E;--tenue:#7C7365;
+      --papel:#211B14;--borda:#302820}
+    .capa{background:#0F0C08}
+    .barra{background:rgba(23,19,14,.94)}
+    .chip[aria-pressed="true"]{background:#F2EDE3;color:#17130E;border-color:#F2EDE3}
+    .off{background:#16321F;color:#5FCB8C}
+    .btn.desativado{background:#2A231A}
+    .btn.escuro{background:#F2EDE3;color:#17130E}
+    .pontos span{background:rgba(242,237,227,.3)}
+    .pontos span.on{background:#F2EDE3}
+  }
+</style>
+</head>
+<body>
+
+<header class="capa">
+  <div class="dentro">
+    <h1>Bazar do Diego</h1>
+    <p class="sub">Desapego de itens em ótimo estado, com preço abaixo do mercado. Escolha o que gostou e fale comigo direto no WhatsApp.</p>
+    <div class="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Retirada em Caxias do Sul — RS</span></div>
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Vi%20o%20Bazar%20do%20Diego%20e%20queria%20saber%20mais." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Chamar no WhatsApp</span></a>
+  </div>
+</header>
+
+<div class="barra">
+  <div class="dentro">
+    <div class="filtros" role="group" aria-label="Filtrar por categoria">
+      <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="chip" data-f="Eletrônicos" aria-pressed="false">Eletrônicos</button>
+      <button class="chip" data-f="Esporte e Bike" aria-pressed="false">Esporte e Bike</button>
+      <button class="chip" data-f="Brinquedos" aria-pressed="false">Brinquedos</button>
+      <button class="chip" data-f="Casa" aria-pressed="false">Casa</button>
+      <button class="chip" data-f="Tiro Esportivo" aria-pressed="false">Tiro Esportivo</button>
+      <button class="chip" data-f="Acessórios" aria-pressed="false">Acessórios</button>
+    </div>
+    <p class="conta" id="conta">22 itens — 22 disponíveis</p>
+  </div>
+</div>
+
+<main>
+  <div class="grade" id="grade">
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB">
+        <div class="trilho"><img src="./fotos/notebook-dell-01.jpg" alt="Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/notebook-dell-02.jpg" alt="Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — foto 2" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/notebook-dell-03.jpg" alt="Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — foto 3" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB</h2>
+    <p class="desc">Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.</p>
+    <div class="precos">
+      <span class="preco">R$ 2.999</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Notebook%20Dell%20Inspiron%20i7%20%E2%80%94%2016GB%20RAM%2C%20SSD%20512GB%20(R%24%202.999)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB">
+        <div class="trilho"><img src="./fotos/tablet-galaxy-tab-s9-fe-01.jpg" alt="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/tablet-galaxy-tab-s9-fe-02.jpg" alt="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — foto 2" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/tablet-galaxy-tab-s9-fe-03.jpg" alt="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — foto 3" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB</h2>
+    <p class="desc">Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado, sem marcas de uso na tela.</p>
+    <div class="precos">
+      <span class="preco">R$ 2.790</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Tablet%20Samsung%20Galaxy%20Tab%20S9%20FE%2B%20Wi-Fi%20128GB%20(R%24%202.790)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Esporte e Bike" data-status="disponivel">
+  <div class="galeria sem-foto"><div class="aviso-foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Fotos em breve</span></div></div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Bicicleta Masculina — MTB aro 29</h2>
+    <p class="desc">Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.</p>
+    <div class="precos">
+      <span class="preco">R$ 1.299</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Bicicleta%20Masculina%20%E2%80%94%20MTB%20aro%2029%20(R%24%201.299)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Esporte e Bike" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Bicicleta Feminina FKS SPEC — MTB aro 29">
+        <div class="trilho"><img src="./fotos/bicicleta-feminina-fks-01.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-02.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 2" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-03.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 3" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-04.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 4" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-05.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 5" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-06.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 6" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-07.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 7" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-08.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 8" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bicicleta-feminina-fks-09.jpg" alt="Bicicleta Feminina FKS SPEC — MTB aro 29 — foto 9" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Bicicleta Feminina FKS SPEC — MTB aro 29</h2>
+    <p class="desc">Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.</p>
+    <div class="precos">
+      <span class="preco">R$ 1.199</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Bicicleta%20Feminina%20FKS%20SPEC%20%E2%80%94%20MTB%20aro%2029%20(R%24%201.199)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Brinquedos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de LEGO Game Boy 72046 — lacrado">
+        <div class="trilho"><img src="./fotos/lego-game-boy-01.jpg" alt="LEGO Game Boy 72046 — lacrado — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/lego-game-boy-02.jpg" alt="LEGO Game Boy 72046 — lacrado — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>LEGO Game Boy 72046 — lacrado</h2>
+    <p class="desc">Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.</p>
+    <div class="precos">
+      <span class="preco">R$ 479</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20LEGO%20Game%20Boy%2072046%20%E2%80%94%20lacrado%20(R%24%20479)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Teclado Mecânico Gamer Logitech G PRO TKL">
+        <div class="trilho"><img src="./fotos/teclado-logitech-gpro-01.jpg" alt="Teclado Mecânico Gamer Logitech G PRO TKL — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/teclado-logitech-gpro-02.jpg" alt="Teclado Mecânico Gamer Logitech G PRO TKL — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Teclado Mecânico Gamer Logitech G PRO TKL</h2>
+    <p class="desc">Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.</p>
+    <div class="precos">
+      <span class="preco">R$ 379</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Teclado%20Mec%C3%A2nico%20Gamer%20Logitech%20G%20PRO%20TKL%20(R%24%20379)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Apple AirTag 2ª geração">
+        <div class="trilho"><img src="./fotos/airtags-01.jpg" alt="Apple AirTag 2ª geração — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      <span class="qtd">3 unidades</span>
+    </div>
+    <h2>Apple AirTag 2ª geração</h2>
+    <p class="desc">AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.</p>
+    <div class="precos">
+      <span class="preco">R$ 259</span>
+      <span class="cada">cada</span>
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Apple%20AirTag%202%C2%AA%20gera%C3%A7%C3%A3o%20(R%24%20259)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Casa" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Cadeira Pingo — assento gota com pés de madeira">
+        <div class="trilho"><img src="./fotos/cadeiras-pingo-01.jpg" alt="Cadeira Pingo — assento gota com pés de madeira — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/cadeiras-pingo-02.jpg" alt="Cadeira Pingo — assento gota com pés de madeira — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      <span class="qtd">4 unidades</span>
+    </div>
+    <h2>Cadeira Pingo — assento gota com pés de madeira</h2>
+    <p class="desc">Cadeira design Pingo com assento em polipropileno no formato gota e pés de madeira maciça com estrutura metálica cruzada. Suporta até 120kg. Disponíveis 2 turquesa e 2 vermelhas. Sem rachaduras ou manchas. Preço por unidade.</p>
+    <div class="precos">
+      <span class="preco">R$ 249</span>
+      <span class="cada">cada</span>
+      <span class="ref">novo R$ 295,65</span><span class="off">−16%</span>
+    </div>
+    <p class="fonte">Referência: Móveis do Limar (novo)</p>
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Cadeira%20Pingo%20%E2%80%94%20assento%20gota%20com%20p%C3%A9s%20de%20madeira%20(R%24%20249)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Tiro Esportivo" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Abafador Eletrônico Howard Leight + óculos + estojo">
+        <div class="trilho"><img src="./fotos/abafador-howard-leight-kit-01.jpg" alt="Abafador Eletrônico Howard Leight + óculos + estojo — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Abafador Eletrônico Howard Leight + óculos + estojo</h2>
+    <p class="desc">Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.</p>
+    <div class="precos">
+      <span class="preco">R$ 249</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Abafador%20Eletr%C3%B4nico%20Howard%20Leight%20%2B%20%C3%B3culos%20%2B%20estojo%20(R%24%20249)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Esporte e Bike" data-status="disponivel">
+  <div class="galeria sem-foto"><div class="aviso-foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Fotos em breve</span></div></div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Cadeirinha de bicicleta para criança</h2>
+    <p class="desc">Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.</p>
+    <div class="precos">
+      <span class="preco">R$ 245</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Cadeirinha%20de%20bicicleta%20para%20crian%C3%A7a%20(R%24%20245)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)">
+        <div class="trilho"><img src="./fotos/roteador-tplink-01.jpg" alt="Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300) — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/roteador-tplink-02.jpg" alt="Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300) — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)</h2>
+    <p class="desc">Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.</p>
+    <div class="precos">
+      <span class="preco">R$ 230</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Roteador%20TP-Link%20N750%20Dual%20Band%20Gigabit%20(TL-WDR4300)%20(R%24%20230)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Tiro Esportivo" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Abafador Eletrônico Howard Leight + estojo">
+        <div class="trilho"><img src="./fotos/abafador-howard-leight-01.jpg" alt="Abafador Eletrônico Howard Leight + estojo — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/abafador-howard-leight-02.jpg" alt="Abafador Eletrônico Howard Leight + estojo — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Abafador Eletrônico Howard Leight + estojo</h2>
+    <p class="desc">Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável, com estojo rígido. Amplificação de som ambiente e corte automático de ruído. Funcionando, pilhas testadas.</p>
+    <div class="precos">
+      <span class="preco">R$ 190</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Abafador%20Eletr%C3%B4nico%20Howard%20Leight%20%2B%20estojo%20(R%24%20190)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Esporte e Bike" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Capacete Rockrider Decathlon — tam. 59-62">
+        <div class="trilho"><img src="./fotos/capacete-rockrider-01.jpg" alt="Capacete Rockrider Decathlon — tam. 59-62 — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/capacete-rockrider-02.jpg" alt="Capacete Rockrider Decathlon — tam. 59-62 — foto 2" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/capacete-rockrider-03.jpg" alt="Capacete Rockrider Decathlon — tam. 59-62 — foto 3" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/capacete-rockrider-04.jpg" alt="Capacete Rockrider Decathlon — tam. 59-62 — foto 4" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span><span></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Capacete Rockrider Decathlon — tam. 59-62</h2>
+    <p class="desc">Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.</p>
+    <div class="precos">
+      <span class="preco">R$ 189</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Capacete%20Rockrider%20Decathlon%20%E2%80%94%20tam.%2059-62%20(R%24%20189)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Teclado Logitech K400 Plus sem fio com touchpad">
+        <div class="trilho"><img src="./fotos/teclado-logitech-k400-01.jpg" alt="Teclado Logitech K400 Plus sem fio com touchpad — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Teclado Logitech K400 Plus sem fio com touchpad</h2>
+    <p class="desc">Teclado sem fio Logitech K400 Plus com touchpad integrado — perfeito para usar com Smart TV ou PC na sala. Cor preta, receptor USB unifying incluso. Funcionando perfeitamente.</p>
+    <div class="precos">
+      <span class="preco">R$ 149</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Teclado%20Logitech%20K400%20Plus%20sem%20fio%20com%20touchpad%20(R%24%20149)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Acessórios" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Bolsa Trader Joe's — sacola de lona importada">
+        <div class="trilho"><img src="./fotos/bolsa-trader-joes-01.jpg" alt="Bolsa Trader Joe's — sacola de lona importada — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/bolsa-trader-joes-02.jpg" alt="Bolsa Trader Joe's — sacola de lona importada — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      <span class="qtd">4 unidades</span>
+    </div>
+    <h2>Bolsa Trader Joe's — sacola de lona importada</h2>
+    <p class="desc">Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com fundo e alças reforçadas em azul-marinho, bolso interno. Novas, com etiqueta. Preço por unidade.</p>
+    <div class="precos">
+      <span class="preco">R$ 147</span>
+      <span class="cada">cada</span>
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Bolsa%20Trader%20Joe's%20%E2%80%94%20sacola%20de%20lona%20importada%20(R%24%20147)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Teclado HP slim USB empresarial">
+        <div class="trilho"><img src="./fotos/teclado-hp-slim-01.jpg" alt="Teclado HP slim USB empresarial — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Teclado HP slim USB empresarial</h2>
+    <p class="desc">Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.</p>
+    <div class="precos">
+      <span class="preco">R$ 99</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Teclado%20HP%20slim%20USB%20empresarial%20(R%24%2099)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Tiro Esportivo" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Kit de limpeza e manutenção">
+        <div class="trilho"><img src="./fotos/kit-limpeza-01.jpg" alt="Kit de limpeza e manutenção — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Kit de limpeza e manutenção</h2>
+    <p class="desc">Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.</p>
+    <div class="precos">
+      <span class="preco">R$ 70</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Kit%20de%20limpeza%20e%20manuten%C3%A7%C3%A3o%20(R%24%2070)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Tiro Esportivo" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Óculos de proteção + protetor auricular 3M + estojo">
+        <div class="trilho"><img src="./fotos/oculos-protetor-3m-01.jpg" alt="Óculos de proteção + protetor auricular 3M + estojo — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/oculos-protetor-3m-02.jpg" alt="Óculos de proteção + protetor auricular 3M + estojo — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Óculos de proteção + protetor auricular 3M + estojo</h2>
+    <p class="desc">Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.</p>
+    <div class="precos">
+      <span class="preco">R$ 59,90</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20%C3%93culos%20de%20prote%C3%A7%C3%A3o%20%2B%20protetor%20auricular%203M%20%2B%20estojo%20(R%24%2059%2C90)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Mouse Logitech Pebble 2 M350s sem fio">
+        <div class="trilho"><img src="./fotos/mouse-logitech-pebble-01.jpg" alt="Mouse Logitech Pebble 2 M350s sem fio — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/mouse-logitech-pebble-02.jpg" alt="Mouse Logitech Pebble 2 M350s sem fio — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Mouse Logitech Pebble 2 M350s sem fio</h2>
+    <p class="desc">Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambidestro. Conexão Bluetooth. Compacto, ideal para levar na mochila junto com o notebook.</p>
+    <div class="precos">
+      <span class="preco">R$ 49</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Mouse%20Logitech%20Pebble%202%20M350s%20sem%20fio%20(R%24%2049)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Esporte e Bike" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Gancho de parede e teto para bicicleta — Decathlon">
+        <div class="trilho"><img src="./fotos/gancho-bike-decathlon-01.jpg" alt="Gancho de parede e teto para bicicleta — Decathlon — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/gancho-bike-decathlon-02.jpg" alt="Gancho de parede e teto para bicicleta — Decathlon — foto 2" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      <span class="qtd">2 unidades</span>
+    </div>
+    <h2>Gancho de parede e teto para bicicleta — Decathlon</h2>
+    <p class="desc">Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta até 25kg, compatível com bikes de 16 a 29 polegadas e elétricas. Novo, ainda na embalagem. Preço por unidade.</p>
+    <div class="precos">
+      <span class="preco">R$ 45,90</span>
+      <span class="cada">cada</span>
+      <span class="ref">novo R$ 49,99</span><span class="off">−8%</span>
+    </div>
+    <p class="fonte">Referência: Decathlon Brasil (novo)</p>
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Gancho%20de%20parede%20e%20teto%20para%20bicicleta%20%E2%80%94%20Decathlon%20(R%24%2045%2C90)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Eletrônicos" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Mouse sem fio C3 Tech M-W20BK">
+        <div class="trilho"><img src="./fotos/mouse-c3tech-01.jpg" alt="Mouse sem fio C3 Tech M-W20BK — foto 1" loading="lazy" decoding="async" width="900" height="900"></div>
+        
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      
+    </div>
+    <h2>Mouse sem fio C3 Tech M-W20BK</h2>
+    <p class="desc">Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.</p>
+    <div class="precos">
+      <span class="preco">R$ 39</span>
+      
+      
+    </div>
+    
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Mouse%20sem%20fio%20C3%20Tech%20M-W20BK%20(R%24%2039)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+<article class="card" data-categoria="Acessórios" data-status="disponivel">
+  <div class="galeria" role="group" aria-label="Fotos de Cheirinho Little Trees — pack com 3">
+        <div class="trilho"><img src="./fotos/cheirinhos-little-trees-01.jpg" alt="Cheirinho Little Trees — pack com 3 — foto 1" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/cheirinhos-little-trees-02.jpg" alt="Cheirinho Little Trees — pack com 3 — foto 2" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/cheirinhos-little-trees-03.jpg" alt="Cheirinho Little Trees — pack com 3 — foto 3" loading="lazy" decoding="async" width="900" height="900"><img src="./fotos/cheirinhos-little-trees-04.jpg" alt="Cheirinho Little Trees — pack com 3 — foto 4" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pontos"><span class="on"></span><span></span><span></span><span></span></div>
+      </div>
+  <div class="corpo">
+    <div class="linha-status">
+      <span class="badge ok">Disponível</span>
+      <span class="qtd">4 unidades</span>
+    </div>
+    <h2>Cheirinho Little Trees — pack com 3</h2>
+    <p class="desc">Aromatizante Little Trees original importado, pack com 3 unidades lacrado. Disponíveis: 2 packs Black Ice, 1 Supernova e 1 Caribbean Colada. Preço por pack.</p>
+    <div class="precos">
+      <span class="preco">R$ 35</span>
+      <span class="cada">cada</span>
+      <span class="ref">novo R$ 37,90</span><span class="off">−8%</span>
+    </div>
+    <p class="fonte">Referência: Mercado Livre (novo)</p>
+    <a class="btn whats" href="https://wa.me/5554991845555?text=Ol%C3%A1!%20Tenho%20interesse%20no%20item%3A%20Cheirinho%20Little%20Trees%20%E2%80%94%20pack%20com%203%20(R%24%2035)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>Tenho interesse</span></a>
+  </div>
+</article>
+  </div>
+  <p class="vazio" id="vazio" hidden>Nenhum item nesta categoria.</p>
+</main>
+
+<footer>
+  <p class="rodape-txt">Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada. Itens usados vendidos no estado em que se encontram — pode conferir tudo antes de levar.</p>
+  <a class="btn escuro" href="https://wa.me/5554991845555" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg><span>WhatsApp: +55 54 99184-5555</span></a>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.card');
+  var conta = document.getElementById('conta');
+  var vazio = document.getElementById('vazio');
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.dataset.f, vis = 0, disp = 0;
+      cards.forEach(function(card){
+        var ok = f === 'todos' || card.dataset.categoria === f;
+        card.hidden = !ok;
+        if (ok) { vis++; if (card.dataset.status === 'disponivel') disp++; }
+      });
+      conta.textContent = vis + (vis === 1 ? ' item — ' : ' itens — ') + disp + ' disponíveis';
+      vazio.hidden = vis > 0;
+    });
+  });
+
+  // pontinhos do carrossel acompanham a rolagem
+  document.querySelectorAll('.galeria').forEach(function(g){
+    var trilho = g.querySelector('.trilho');
+    var pontos = g.querySelectorAll('.pontos span');
+    if (!trilho || !pontos.length) return;
+    trilho.addEventListener('scroll', function(){
+      var i = Math.round(trilho.scrollLeft / trilho.clientWidth);
+      pontos.forEach(function(p, j){ p.classList.toggle('on', j === i); });
+    }, { passive: true });
+  });
+})();
+</script>
+</body>
+</html>
