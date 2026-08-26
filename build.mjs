@@ -462,10 +462,10 @@ ${itens.map(cardHTML).join('\n')}
     return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
   }
 
-  function aplicar(){
+  function filtrar(){
     var termo = semAcento(campo.value);
     // cada palavra digitada precisa aparecer: "hd wd" acha o WD Purple
-    var palavras = termo ? termo.split(/\s+/) : [];
+    var palavras = termo ? termo.split(/\\s+/) : [];
     var vis = 0, disp = 0;
     cards.forEach(function(card){
       var okCat = categoria === 'todos' || card.dataset.categoria === categoria;
@@ -490,19 +490,19 @@ ${itens.map(cardHTML).join('\n')}
       chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
       chip.setAttribute('aria-pressed','true');
       categoria = chip.dataset.f;
-      aplicar();
+      filtrar();
     });
   });
 
-  campo.addEventListener('input', aplicar);
-  campo.addEventListener('search', aplicar);   // o "x" nativo do iOS
+  campo.addEventListener('input', filtrar);
+  campo.addEventListener('search', filtrar);   // o "x" nativo do iOS
   campo.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){ e.preventDefault(); campo.blur(); }  // fecha o teclado
-    if (e.key === 'Escape'){ campo.value = ''; aplicar(); }
+    if (e.key === 'Escape'){ campo.value = ''; filtrar(); }
   });
   limpar.addEventListener('click', function(){
     campo.value = '';
-    aplicar();
+    filtrar();
     campo.focus();
   });
 
@@ -565,11 +565,11 @@ ${itens.map(cardHTML).join('\n')}
   var vProx = document.getElementById('visor-prox');
   var lista = [], idx = 0, escala = 1, px = 0, py = 0, arrastando = false, x0 = 0, y0 = 0;
 
-  function aplicar(){
+  function aplicarZoom(){
     vImg.style.transform = 'translate(' + px + 'px,' + py + 'px) scale(' + escala + ')';
     vImg.classList.toggle('ampliado', escala > 1);
   }
-  function zerarZoom(){ escala = 1; px = 0; py = 0; aplicar(); }
+  function zerarZoom(){ escala = 1; px = 0; py = 0; aplicarZoom(); }
   function mostrar(i){
     idx = (i + lista.length) % lista.length;
     vImg.src = lista[idx];
@@ -610,7 +610,7 @@ ${itens.map(cardHTML).join('\n')}
     escala = 2.6;
     px = (r.left + r.width/2 - e.clientX) * (escala - 1) / escala * 1.0;
     py = (r.top + r.height/2 - e.clientY) * (escala - 1) / escala * 1.0;
-    aplicar();
+    aplicarZoom();
   });
   vImg.addEventListener('pointerdown', function(e){
     if (escala === 1) return;
@@ -622,7 +622,7 @@ ${itens.map(cardHTML).join('\n')}
     if (x0 === 0 && y0 === 0) return;
     var nx = e.clientX - x0, ny = e.clientY - y0;
     if (Math.abs(nx - px) > 2 || Math.abs(ny - py) > 2) arrastando = true;
-    px = nx; py = ny; aplicar();
+    px = nx; py = ny; aplicarZoom();
   });
   vImg.addEventListener('pointerup', function(){ setTimeout(function(){ arrastando = false; }, 30); });
 
@@ -893,6 +893,40 @@ ${porValor.map(anuncioMD).join('\n---\n\n')}`;
   return publicaveis.length;
 }
 
+// ---------- conferência do script gerado ----------
+// Duas `function x(){}` no mesmo escopo não dão erro: a última vence, em
+// silêncio. Foi assim que o filtro de categoria parou de funcionar — o
+// `aplicar()` do zoom sobrescreveu o `aplicar()` do filtro. Esta trava
+// quebra o build em vez de publicar a página quebrada.
+function conferirScript(html) {
+  const js = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+  if (!js) throw new Error('build: não achei o <script> da página');
+
+  const nomes = [...js.matchAll(/^\s*function\s+([A-Za-z_$][\w$]*)\s*\(/gm)].map((m) => m[1]);
+  const repetidos = [...new Set(nomes.filter((n, i) => nomes.indexOf(n) !== i))];
+  if (repetidos.length) {
+    throw new Error(
+      `build: função declarada mais de uma vez no mesmo escopo: ${repetidos.join(', ')}. ` +
+      `A última sobrescreve as anteriores — renomeie.`
+    );
+  }
+
+  // \s, \d e afins somem dentro do template literal (viram s, d).
+  // Se um /.../ do script tiver essas letras logo após "[" ou no lugar de
+  // uma classe de caracteres, quase certamente era para ser \s ou \d.
+  for (const m of js.matchAll(/\.split\((\/[^/\n]+\/)\)/g)) {
+    if (/\/[sdwSDW]\+?\//.test(m[1])) {
+      throw new Error(
+        `build: ${m[1]} no script parece um \\s ou \\d que perdeu a barra no ` +
+        `template literal. Escreva \\\\s no gerador.`
+      );
+    }
+  }
+
+  new Function(js); // erro de sintaxe estoura aqui, e não no navegador do comprador
+  return js.length;
+}
+
 // ---------- main ----------
 const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i) => ({
   ...i,
@@ -907,7 +941,9 @@ const categorias = [...new Set(itens.map((i) => i.categoria))];
 rmSync(SITE, { recursive: true, force: true });
 mkdirSync(SITE, { recursive: true });
 const nFotos = prepararFotos(itens);
-writeFileSync(join(SITE, 'index.html'), paginaHTML(itens, categorias));
+const pagina = paginaHTML(itens, categorias);
+conferirScript(pagina);
+writeFileSync(join(SITE, 'index.html'), pagina);
 writeFileSync(join(SITE, '.nojekyll'), '');
 const nAnuncios = gerarAnuncios(itens);
 
