@@ -3,6 +3,7 @@
 **Preço:** R$ 35 (cada) · 8% abaixo do novo
 **Categoria:** Acessórios
 **Fotos:** cheirinhos-little-trees-01.jpg, cheirinhos-little-trees-02.jpg, cheirinhos-little-trees-03.jpg, cheirinhos-little-trees-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cheirinhos-little-trees
 
 ## Título para o Marketplace
 Cheirinho Little Trees — pack com 3
@@ -15,6 +16,7 @@ Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 35, 8% abaixo.
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Cheirinho Little Trees — pack com 3 — R$ 35 cada

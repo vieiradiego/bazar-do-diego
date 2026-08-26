@@ -3,6 +3,7 @@
 **Preço:** R$ 190 · 71% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-01.jpg, abafador-howard-leight-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-abafador-howard-leight
 
 ## Título para o Marketplace
 Abafador Eletrônico Howard Leight + estojo
@@ -13,6 +14,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 190, 71% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + estojo — R$ 190

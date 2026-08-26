@@ -3,6 +3,7 @@
 **Preço:** R$ 249 (cada) · 16% abaixo do novo
 **Categoria:** Casa
 **Fotos:** cadeiras-pingo-01.jpg, cadeiras-pingo-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cadeiras-pingo
 
 ## Título para o Marketplace
 Cadeira Pingo — assento gota com pés de madeira
@@ -15,6 +16,7 @@ Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 249, 16% ab
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Cadeira Pingo — assento gota com pés de madeira — R$ 249 cada

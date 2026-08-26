@@ -3,6 +3,7 @@
 **Preço:** R$ 1.299
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bicicleta-masculina
 
 ## Título para o Marketplace
 Bicicleta Masculina — MTB aro 29
@@ -11,6 +12,7 @@ Bicicleta Masculina — MTB aro 29
 Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Bicicleta Masculina — MTB aro 29 — R$ 1.299

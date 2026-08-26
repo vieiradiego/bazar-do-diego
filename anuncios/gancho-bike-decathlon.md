@@ -3,6 +3,7 @@
 **Preço:** R$ 45,90 (cada) · 8% abaixo do novo
 **Categoria:** Esporte e Bike
 **Fotos:** gancho-bike-decathlon-01.jpg, gancho-bike-decathlon-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-gancho-bike-decathlon
 
 ## Título para o Marketplace
 Gancho de parede e teto para bicicleta — Decathlon
@@ -15,6 +16,7 @@ Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45,90, 8% ab
 Disponíveis: 2 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Gancho de parede e teto para bicicleta — Decathlon — R$ 45,90 cada

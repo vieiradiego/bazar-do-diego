@@ -2,7 +2,8 @@
 
 **Preço:** R$ 259 (cada) · 30% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** airtags-01.jpg
+**Fotos:** airtags-01.jpg, airtags-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-airtags
 
 ## Título para o Marketplace
 Apple AirTag 2ª geração
@@ -15,6 +16,7 @@ Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
 Disponíveis: 3 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Apple AirTag 2ª geração — R$ 259 cada

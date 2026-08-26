@@ -3,6 +3,7 @@
 **Preço:** R$ 2.790 · 18% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** tablet-galaxy-tab-s9-fe-01.jpg, tablet-galaxy-tab-s9-fe-02.jpg, tablet-galaxy-tab-s9-fe-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-tablet-galaxy-tab-s9-fe
 
 ## Título para o Marketplace
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB
@@ -13,6 +14,7 @@ Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen origi
 Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.790, 18% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — R$ 2.790

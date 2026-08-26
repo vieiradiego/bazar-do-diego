@@ -33,6 +33,7 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 **Preço:** R$ 2.999
 **Categoria:** Eletrônicos
 **Fotos:** notebook-dell-01.jpg, notebook-dell-02.jpg, notebook-dell-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-notebook-dell
 
 ## Título para o Marketplace
 Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
@@ -41,6 +42,7 @@ Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
 Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — R$ 2.999
@@ -58,6 +60,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 2.790 · 18% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** tablet-galaxy-tab-s9-fe-01.jpg, tablet-galaxy-tab-s9-fe-02.jpg, tablet-galaxy-tab-s9-fe-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-tablet-galaxy-tab-s9-fe
 
 ## Título para o Marketplace
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB
@@ -68,6 +71,7 @@ Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen origi
 Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.790, 18% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — R$ 2.790
@@ -87,6 +91,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 1.299
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bicicleta-masculina
 
 ## Título para o Marketplace
 Bicicleta Masculina — MTB aro 29
@@ -95,6 +100,7 @@ Bicicleta Masculina — MTB aro 29
 Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Bicicleta Masculina — MTB aro 29 — R$ 1.299
@@ -112,6 +118,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 1.199
 **Categoria:** Esporte e Bike
 **Fotos:** bicicleta-feminina-fks-01.jpg, bicicleta-feminina-fks-02.jpg, bicicleta-feminina-fks-03.jpg, bicicleta-feminina-fks-04.jpg, bicicleta-feminina-fks-05.jpg, bicicleta-feminina-fks-06.jpg, bicicleta-feminina-fks-07.jpg, bicicleta-feminina-fks-08.jpg, bicicleta-feminina-fks-09.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bicicleta-feminina-fks
 
 ## Título para o Marketplace
 Bicicleta Feminina FKS SPEC — MTB aro 29
@@ -120,6 +127,7 @@ Bicicleta Feminina FKS SPEC — MTB aro 29
 Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Bicicleta Feminina FKS SPEC — MTB aro 29 — R$ 1.199
@@ -136,7 +144,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 479
 **Categoria:** Brinquedos
-**Fotos:** lego-game-boy-01.jpg, lego-game-boy-02.jpg
+**Fotos:** lego-game-boy-01.jpg, lego-game-boy-02.jpg, lego-game-boy-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-lego-game-boy
 
 ## Título para o Marketplace
 LEGO Game Boy 72046 — lacrado
@@ -145,6 +154,7 @@ LEGO Game Boy 72046 — lacrado
 Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 LEGO Game Boy 72046 — lacrado — R$ 479
@@ -161,7 +171,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 379 · 41% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg
+**Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg, teclado-logitech-gpro-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-logitech-gpro
 
 ## Título para o Marketplace
 Teclado Mecânico Gamer Logitech G PRO TKL
@@ -172,6 +183,7 @@ Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 379, 41% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Teclado Mecânico Gamer Logitech G PRO TKL — R$ 379
@@ -190,7 +202,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 259 (cada) · 30% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** airtags-01.jpg
+**Fotos:** airtags-01.jpg, airtags-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-airtags
 
 ## Título para o Marketplace
 Apple AirTag 2ª geração
@@ -203,6 +216,7 @@ Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 259, 30% abaixo.
 Disponíveis: 3 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Apple AirTag 2ª geração — R$ 259 cada
@@ -222,6 +236,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 249 (cada) · 16% abaixo do novo
 **Categoria:** Casa
 **Fotos:** cadeiras-pingo-01.jpg, cadeiras-pingo-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cadeiras-pingo
 
 ## Título para o Marketplace
 Cadeira Pingo — assento gota com pés de madeira
@@ -234,6 +249,7 @@ Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 249, 16% ab
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Cadeira Pingo — assento gota com pés de madeira — R$ 249 cada
@@ -252,7 +268,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 249 · 62% abaixo do novo
 **Categoria:** Tiro Esportivo
-**Fotos:** abafador-howard-leight-kit-01.jpg
+**Fotos:** abafador-howard-leight-kit-01.jpg, abafador-howard-leight-kit-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-abafador-howard-leight-kit
 
 ## Título para o Marketplace
 Abafador Eletrônico Howard Leight + óculos + estojo
@@ -263,6 +280,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplif
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 249, 62% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + óculos + estojo — R$ 249
@@ -282,6 +300,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 245
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-suporte-crianca
 
 ## Título para o Marketplace
 Cadeirinha de bicicleta para criança
@@ -290,6 +309,7 @@ Cadeirinha de bicicleta para criança
 Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Cadeirinha de bicicleta para criança — R$ 245
@@ -307,6 +327,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 230
 **Categoria:** Eletrônicos
 **Fotos:** roteador-tplink-01.jpg, roteador-tplink-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-roteador-tplink
 
 ## Título para o Marketplace
 Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)
@@ -315,6 +336,7 @@ Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)
 Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300) — R$ 230
@@ -332,6 +354,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 190 · 71% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-01.jpg, abafador-howard-leight-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-abafador-howard-leight
 
 ## Título para o Marketplace
 Abafador Eletrônico Howard Leight + estojo
@@ -342,6 +365,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 190, 71% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + estojo — R$ 190
@@ -361,6 +385,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 189
 **Categoria:** Esporte e Bike
 **Fotos:** capacete-rockrider-01.jpg, capacete-rockrider-02.jpg, capacete-rockrider-03.jpg, capacete-rockrider-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-capacete-rockrider
 
 ## Título para o Marketplace
 Capacete Rockrider Decathlon — tam. 59-62
@@ -369,6 +394,7 @@ Capacete Rockrider Decathlon — tam. 59-62
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Capacete Rockrider Decathlon — tam. 59-62 — R$ 189
@@ -385,7 +411,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 149
 **Categoria:** Eletrônicos
-**Fotos:** teclado-logitech-k400-01.jpg
+**Fotos:** teclado-logitech-k400-01.jpg, teclado-logitech-k400-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-logitech-k400
 
 ## Título para o Marketplace
 Teclado Logitech K400 Plus sem fio com touchpad
@@ -394,6 +421,7 @@ Teclado Logitech K400 Plus sem fio com touchpad
 Teclado sem fio Logitech K400 Plus com touchpad integrado — perfeito para usar com Smart TV ou PC na sala. Cor preta, receptor USB unifying incluso. Funcionando perfeitamente.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Teclado Logitech K400 Plus sem fio com touchpad — R$ 149
@@ -411,6 +439,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 147 (cada)
 **Categoria:** Acessórios
 **Fotos:** bolsa-trader-joes-01.jpg, bolsa-trader-joes-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bolsa-trader-joes
 
 ## Título para o Marketplace
 Bolsa Trader Joe's — sacola de lona importada
@@ -421,6 +450,7 @@ Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Bolsa Trader Joe's — sacola de lona importada — R$ 147 cada
@@ -437,7 +467,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 99
 **Categoria:** Eletrônicos
-**Fotos:** teclado-hp-slim-01.jpg
+**Fotos:** teclado-hp-slim-01.jpg, teclado-hp-slim-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-hp-slim
 
 ## Título para o Marketplace
 Teclado HP slim USB empresarial
@@ -446,6 +477,7 @@ Teclado HP slim USB empresarial
 Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Teclado HP slim USB empresarial — R$ 99
@@ -462,7 +494,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 70 · 29% abaixo do novo
 **Categoria:** Tiro Esportivo
-**Fotos:** kit-limpeza-01.jpg
+**Fotos:** kit-limpeza-01.jpg, kit-limpeza-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-kit-limpeza
 
 ## Título para o Marketplace
 Kit de limpeza e manutenção
@@ -473,6 +506,7 @@ Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de 
 Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 70, 29% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Kit de limpeza e manutenção — R$ 70
@@ -492,6 +526,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 59,90
 **Categoria:** Tiro Esportivo
 **Fotos:** oculos-protetor-3m-01.jpg, oculos-protetor-3m-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-oculos-protetor-3m
 
 ## Título para o Marketplace
 Óculos de proteção + protetor auricular 3M + estojo
@@ -500,6 +535,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Óculos de proteção + protetor auricular 3M + estojo — R$ 59,90
@@ -517,6 +553,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 49 · 51% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** mouse-logitech-pebble-01.jpg, mouse-logitech-pebble-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-logitech-pebble
 
 ## Título para o Marketplace
 Mouse Logitech Pebble 2 M350s sem fio
@@ -527,6 +564,7 @@ Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambide
 Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 49, 51% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Mouse Logitech Pebble 2 M350s sem fio — R$ 49
@@ -546,6 +584,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 45,90 (cada) · 8% abaixo do novo
 **Categoria:** Esporte e Bike
 **Fotos:** gancho-bike-decathlon-01.jpg, gancho-bike-decathlon-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-gancho-bike-decathlon
 
 ## Título para o Marketplace
 Gancho de parede e teto para bicicleta — Decathlon
@@ -558,6 +597,7 @@ Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45,90, 8% ab
 Disponíveis: 2 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Gancho de parede e teto para bicicleta — Decathlon — R$ 45,90 cada
@@ -576,7 +616,8 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 
 **Preço:** R$ 39
 **Categoria:** Eletrônicos
-**Fotos:** mouse-c3tech-01.jpg
+**Fotos:** mouse-c3tech-01.jpg, mouse-c3tech-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-c3tech
 
 ## Título para o Marketplace
 Mouse sem fio C3 Tech M-W20BK
@@ -585,6 +626,7 @@ Mouse sem fio C3 Tech M-W20BK
 Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Mouse sem fio C3 Tech M-W20BK — R$ 39
@@ -602,6 +644,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 35 (cada) · 8% abaixo do novo
 **Categoria:** Acessórios
 **Fotos:** cheirinhos-little-trees-01.jpg, cheirinhos-little-trees-02.jpg, cheirinhos-little-trees-03.jpg, cheirinhos-little-trees-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cheirinhos-little-trees
 
 ## Título para o Marketplace
 Cheirinho Little Trees — pack com 3
@@ -614,6 +657,7 @@ Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 35, 8% abaixo.
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Cheirinho Little Trees — pack com 3 — R$ 35 cada

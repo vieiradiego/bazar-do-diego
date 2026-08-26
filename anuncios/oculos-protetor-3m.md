@@ -3,6 +3,7 @@
 **Preço:** R$ 59,90
 **Categoria:** Tiro Esportivo
 **Fotos:** oculos-protetor-3m-01.jpg, oculos-protetor-3m-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-oculos-protetor-3m
 
 ## Título para o Marketplace
 Óculos de proteção + protetor auricular 3M + estojo
@@ -11,6 +12,7 @@
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
 Óculos de proteção + protetor auricular 3M + estojo — R$ 59,90
