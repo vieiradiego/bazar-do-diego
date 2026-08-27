@@ -22,17 +22,16 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 17. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 230 · `anuncios/roteador-tplink.md`
 18. **Abafador Eletrônico Howard Leight + estojo** — R$ 190 · `anuncios/abafador-howard-leight.md`
 19. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 189 · `anuncios/capacete-rockrider.md`
-20. **Teclado Logitech K400 Plus sem fio com touchpad** — R$ 149 · `anuncios/teclado-logitech-k400.md`
-21. **Bolsa Trader Joe's — sacola de lona importada** — R$ 147 · `anuncios/bolsa-trader-joes.md`
-22. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 129 · `anuncios/hd-toshiba-1tb.md`
-23. **SSD Corsair Force LE 240GB — SATA 3** — R$ 129 · `anuncios/ssd-corsair-240gb.md`
-24. **Teclado HP slim USB empresarial** — R$ 99 · `anuncios/teclado-hp-slim.md`
-25. **Kit de limpeza e manutenção** — R$ 70 · `anuncios/kit-limpeza.md`
-26. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 59,90 · `anuncios/oculos-protetor-3m.md`
-27. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 49 · `anuncios/mouse-logitech-pebble.md`
-28. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45,90 · `anuncios/gancho-bike-decathlon.md`
-29. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-30. **Cheirinho Little Trees — pack com 3** — R$ 35 · `anuncios/cheirinhos-little-trees.md`
+20. **Bolsa Trader Joe's — sacola de lona importada** — R$ 147 · `anuncios/bolsa-trader-joes.md`
+21. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 129 · `anuncios/hd-toshiba-1tb.md`
+22. **SSD Corsair Force LE 240GB — SATA 3** — R$ 129 · `anuncios/ssd-corsair-240gb.md`
+23. **Teclado HP slim USB empresarial** — R$ 99 · `anuncios/teclado-hp-slim.md`
+24. **Kit de limpeza e manutenção** — R$ 70 · `anuncios/kit-limpeza.md`
+25. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 59,90 · `anuncios/oculos-protetor-3m.md`
+26. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 49 · `anuncios/mouse-logitech-pebble.md`
+27. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45,90 · `anuncios/gancho-bike-decathlon.md`
+28. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+29. **Cheirinho Little Trees — pack com 3** — R$ 35 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -588,33 +587,6 @@ Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste g
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
-
----
-
-# Teclado Logitech K400 Plus sem fio com touchpad
-
-**Preço:** R$ 149
-**Categoria:** Eletrônicos
-**Fotos:** teclado-logitech-k400-01.jpg, teclado-logitech-k400-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-logitech-k400
-
-## Título para o Marketplace
-Teclado Logitech K400 Plus sem fio com touchpad
-
-## Descrição para o Marketplace
-Teclado sem fio Logitech K400 Plus com touchpad integrado — perfeito para usar com Smart TV ou PC na sala. Cor preta, receptor USB unifying incluso. Funcionando perfeitamente.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
-
-## Legenda para o Instagram
-Teclado Logitech K400 Plus sem fio com touchpad — R$ 149
-
-Teclado sem fio Logitech K400 Plus com touchpad integrado — perfeito para usar com Smart TV ou PC na sala. Cor preta, receptor USB unifying incluso. Funcionando perfeitamente.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
