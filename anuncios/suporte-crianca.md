@@ -1,6 +1,6 @@
 # Cadeirinha de bicicleta para criança
 
-**Preço:** R$ 245
+**Preço:** R$ 220
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-suporte-crianca
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
-Cadeirinha de bicicleta para criança — R$ 245
+Cadeirinha de bicicleta para criança — R$ 220
 
 Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
 

@@ -1,6 +1,6 @@
 # Mouse sem fio C3 Tech M-W20BK
 
-**Preço:** R$ 39
+**Preço:** R$ 35
 **Categoria:** Eletrônicos
 **Fotos:** mouse-c3tech-01.jpg, mouse-c3tech-02.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-c3tech
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
-Mouse sem fio C3 Tech M-W20BK — R$ 39
+Mouse sem fio C3 Tech M-W20BK — R$ 35
 
 Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 

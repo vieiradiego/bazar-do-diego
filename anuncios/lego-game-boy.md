@@ -1,6 +1,6 @@
 # LEGO Game Boy 72046 — lacrado
 
-**Preço:** R$ 479
+**Preço:** R$ 431
 **Categoria:** Brinquedos
 **Fotos:** lego-game-boy-01.jpg, lego-game-boy-02.jpg, lego-game-boy-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-lego-game-boy
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
-LEGO Game Boy 72046 — lacrado — R$ 479
+LEGO Game Boy 72046 — lacrado — R$ 431
 
 Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 

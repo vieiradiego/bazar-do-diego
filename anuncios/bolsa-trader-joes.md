@@ -1,6 +1,6 @@
 # Bolsa Trader Joe's — sacola de lona importada
 
-**Preço:** R$ 147 (cada)
+**Preço:** R$ 99 (cada)
 **Categoria:** Acessórios
 **Fotos:** bolsa-trader-joes-01.jpg, bolsa-trader-joes-02.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bolsa-trader-joes
@@ -17,7 +17,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
 
 ## Legenda para o Instagram
-Bolsa Trader Joe's — sacola de lona importada — R$ 147 cada
+Bolsa Trader Joe's — sacola de lona importada — R$ 99 cada
 
 Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com fundo e alças reforçadas em azul-marinho, bolso interno. Novas, com etiqueta. Preço por unidade.
 
