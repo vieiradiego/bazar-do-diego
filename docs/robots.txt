@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vieiradiego.github.io/bazar-do-diego/sitemap.xml

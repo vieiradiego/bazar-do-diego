@@ -57,7 +57,7 @@ const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i)
   return {
     ...i, fotos, preco, ref, desconto, qtd,
     urls: fotos.map((f) => `${URL_SITE}fotos/${f}`),
-    link: `${URL_SITE}#item-${i.slug}`,
+    link: `${URL_SITE}item/${i.slug}/`,
     descricaoAnuncio: [
       i.descricao,
       desconto ? `Novo custa cerca de R$ ${brl(ref)} (${i.fonte_referencia}) — aqui sai por R$ ${brl(preco)}, ${desconto}% abaixo.` : '',
@@ -86,6 +86,7 @@ const COLUNAS = [
   { t: 'Link do item', l: 46, v: (i) => i.link },
   { t: 'Nº de fotos', l: 10, n: true, v: (i) => i.fotos.length },
   { t: 'Foto principal (URL)', l: 54, v: (i) => i.urls[0] ?? '' },
+  { t: 'Cartão de compartilhamento', l: 54, v: (i) => (i.fotos.length ? `${URL_SITE}social/${i.slug}.jpg` : `${URL_SITE}social/capa.jpg`) },
   { t: 'Demais fotos (URLs)', l: 60, v: (i) => i.urls.slice(1).join('\n') },
   { t: 'Arquivos das fotos', l: 40, v: (i) => i.fotos.join(', ') },
 ];

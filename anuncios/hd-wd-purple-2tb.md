@@ -3,7 +3,7 @@
 **Preço:** R$ 269 · 54% abaixo do novo
 **Categoria:** PC e Hardware
 **Fotos:** hd-wd-purple-2tb-01.jpg, hd-wd-purple-2tb-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-wd-purple-2tb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/
 
 ## Título para o Marketplace
 HD WD Purple 2TB — SATA 3.5 para CFTV
@@ -14,7 +14,7 @@ HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha
 Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 269, 54% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/
 
 ## Legenda para o Instagram
 HD WD Purple 2TB — SATA 3.5 para CFTV — R$ 269
@@ -23,6 +23,6 @@ HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha
 
 Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 269, 54% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup

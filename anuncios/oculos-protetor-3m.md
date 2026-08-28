@@ -3,7 +3,7 @@
 **Preço:** R$ 53
 **Categoria:** Tiro Esportivo
 **Fotos:** oculos-protetor-3m-01.jpg, oculos-protetor-3m-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-oculos-protetor-3m
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/
 
 ## Título para o Marketplace
 Óculos de proteção + protetor auricular 3M + estojo
@@ -12,13 +12,13 @@
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/
 
 ## Legenda para o Instagram
 Óculos de proteção + protetor auricular 3M + estojo — R$ 53
 
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao

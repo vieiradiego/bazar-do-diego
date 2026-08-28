@@ -1,5 +1,14 @@
 #!/usr/bin/env node
-// Gera o site estático do Bazar do Diego a partir de catalogo.csv + fotos-ecommerce/
+// Gera o site do Bazar do Diego a partir de catalogo.csv + fotos-ecommerce/
+//
+//   docs/index.html           catálogo
+//   docs/item/<slug>/         uma página por produto (é o que conserta a prévia
+//                             do WhatsApp: o trecho depois do # nunca chega ao
+//                             servidor, então cada item precisa de URL própria)
+//   docs/social/<slug>.jpg    cartão 1200x630 da prévia
+//   docs/sitemap.xml, robots.txt, favicon.svg, icone-180.png
+//   anuncios/*.md             textos prontos para publicar
+//
 // Uso: node build.mjs
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
@@ -9,11 +18,14 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const FOTOS = join(ROOT, 'fotos-ecommerce');
-const SITE = join(ROOT, 'docs'); // docs/ = pasta que o GitHub Pages publica
+const SITE = join(ROOT, 'docs');
 const WHATSAPP = '5554991845555';
+const FONE = '+55 54 99184-5555';
 const CIDADE = 'Caxias do Sul — RS';
 const URL_SITE = 'https://vieiradiego.github.io/bazar-do-diego/';
 const LARGURA_WEB = 1000;
+
+const urlItem = (slug) => `${URL_SITE}item/${slug}/`;
 
 // ---------- CSV ----------
 function parseCSV(text) {
@@ -22,10 +34,8 @@ function parseCSV(text) {
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
     if (quoted) {
-      if (c === '"') {
-        if (text[i + 1] === '"') { field += '"'; i++; }
-        else quoted = false;
-      } else field += c;
+      if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else quoted = false; }
+      else field += c;
     } else if (c === '"') quoted = true;
     else if (c === ',') { row.push(field); field = ''; }
     else if (c === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
@@ -48,15 +58,24 @@ const brl = (n) =>
 const esc = (s = '') =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// texto de busca: minúsculo e sem acento, para "memoria" achar "Memória"
+// minúsculo e sem acento, para "memoria" achar "Memória"
 const semAcento = (s = '') =>
   s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
 
+// JSON-LD dentro de <script>: "<" precisa virar escape ou fecha a tag antes da hora
+const ld = (o) => JSON.stringify(o, null, 0).replace(/</g, '\\u003c');
+
 const STATUS = {
-  disponivel: { rotulo: 'Disponível', cor: 'ok' },
-  reservado: { rotulo: 'Reservado', cor: 'warn' },
-  vendido: { rotulo: 'Vendido', cor: 'off' },
+  disponivel: { rotulo: 'Disponível', cor: 'ok', schema: 'InStock' },
+  reservado: { rotulo: 'Reservado', cor: 'warn', schema: 'LimitedAvailability' },
+  vendido: { rotulo: 'Vendido', cor: 'off', schema: 'SoldOut' },
 };
+
+// a etiqueta da marca, em três tamanhos de traço
+const marca = (lado, cor = 'currentColor', traco = 3.2) =>
+  `<svg viewBox="0 0 48 48" width="${lado}" height="${lado}" fill="none" aria-hidden="true">` +
+  `<path d="M25.6 4.5H39.5a4 4 0 0 1 4 4v13.9a4 4 0 0 1-1.17 2.83L24.4 43.16a4 4 0 0 1-5.66 0L4.84 29.26a4 4 0 0 1 0-5.66L22.77 5.67a4 4 0 0 1 2.83-1.17Z" stroke="${cor}" stroke-width="${traco}"/>` +
+  `<circle cx="33.4" cy="14.6" r="3.4" fill="${cor}"/></svg>`;
 
 const ico = {
   whats: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4S7.4 12.5 7.5 12.7c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>`,
@@ -68,11 +87,13 @@ const ico = {
   lupa: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>`,
   x: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>`,
   seta: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>`,
+  pix: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/></svg>`,
+  olho: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg>`,
 };
 
 // Ilustrações para itens ainda sem foto real. Desenhadas aqui — nada vem da
-// internet, para não usar foto de terceiro nem induzir o comprador a achar
-// que aquela imagem é o produto.
+// internet, para não usar foto de terceiro nem induzir o comprador a achar que
+// aquela imagem é o produto.
 const ILUSTRACAO = {
   'bicicleta-masculina': `<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <circle cx="46" cy="84" r="27"/><circle cx="154" cy="84" r="27"/>
@@ -103,11 +124,8 @@ function prepararFotos(itens) {
   for (const item of itens) {
     for (const f of item.fotos) {
       execFileSync('/usr/bin/sips', [
-        '-s', 'format', 'jpeg',
-        '-s', 'formatOptions', '72',
-        '-Z', String(LARGURA_WEB),
-        join(FOTOS, f),
-        '--out', join(dest, f),
+        '-s', 'format', 'jpeg', '-s', 'formatOptions', '72', '-Z', String(LARGURA_WEB),
+        join(FOTOS, f), '--out', join(dest, f),
       ], { stdio: 'ignore' });
       n++;
     }
@@ -115,122 +133,104 @@ function prepararFotos(itens) {
   return n;
 }
 
-// ---------- cartão ----------
-function cardHTML(item) {
-  const st = STATUS[item.status] ?? STATUS.disponivel;
-  const vendido = item.status === 'vendido';
-  const preco = Number(item.preco);
-  const ref = item.preco_referencia ? Number(item.preco_referencia) : null;
-  const desconto = ref && ref > preco ? Math.round(((ref - preco) / ref) * 100) : null;
-  const qtd = Number(item.quantidade || 1);
-  const linkWhats = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá! Tenho interesse no item: ${item.nome} (R$ ${brl(preco)})`
-  )}`;
+// ---------- cartões de compartilhamento (1200x630) ----------
+const CARTAO = join(ROOT, 'ferramentas', 'cartao');
 
-  const visual = item.fotos.length
-    ? `<div class="visual">
-      <div class="trilho">${item.fotos
-        .map(
-          (f, i) =>
-            `<button class="quadro" type="button" data-i="${i}" aria-label="Ampliar foto ${i + 1} de ${item.fotos.length}">
-          <img src="./fotos/${f}" alt="${esc(item.nome)} — foto ${i + 1}" loading="lazy" decoding="async" width="1000" height="1000">
-        </button>`
-        )
-        .join('')}</div>
-      ${item.fotos.length > 1
-        ? `<div class="pontos" aria-hidden="true">${item.fotos.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('')}</div>`
-        : ''}
-      <span class="dica-zoom" aria-hidden="true">${ico.lupa}</span>
-    </div>`
-    : `<div class="visual">
-      <div class="ilustra">
-        ${ILUSTRACAO[item.slug] ?? ''}
-        <span>Ilustração — fotos reais em breve</span>
-      </div>
-    </div>`;
-
-  return `<article class="card${vendido ? ' vendido' : ''}" id="item-${item.slug}"
-  data-categoria="${esc(item.categoria)}" data-status="${item.status}"
-  data-nome="${esc(item.nome)}" data-preco="${brl(preco)}"
-  data-ref="${ref && desconto ? brl(ref) : ''}" data-desconto="${desconto ?? ''}"
-  data-qtd="${qtd}" data-fotos='${JSON.stringify(item.fotos.map((f) => './fotos/' + f))}'
-  data-busca="${esc(semAcento(`${item.nome} ${item.categoria} ${item.descricao}`))}">
-  ${visual}
-  <div class="corpo">
-    <p class="meta"><span class="badge ${st.cor}">${st.rotulo}</span>${qtd > 1 && !vendido ? `<span class="qtd">${qtd} unidades</span>` : ''}</p>
-    <h2>${esc(item.nome)}</h2>
-    <p class="desc">${esc(item.descricao)}</p>
-    <p class="precos">
-      <span class="preco">R$ ${brl(preco)}</span>${qtd > 1 && !vendido ? '<span class="cada">cada</span>' : ''}
-      ${ref && desconto ? `<span class="ref">R$ ${brl(ref)}</span><span class="off">Economize ${desconto}%</span>` : ''}
-    </p>
-    ${ref && desconto ? `<p class="fonte">Novo em ${esc(item.fonte_referencia)}</p>` : ''}
-    <div class="acoes">
-      ${vendido
-        ? '<span class="btn inativo">Vendido</span>'
-        : `<a class="btn primario" href="${linkWhats}" target="_blank" rel="noopener">${ico.whats}<span>Tenho interesse</span></a>`}
-      <div class="acoes-sec">
-        <button class="btn secundario compartilhar" type="button">${ico.share}<span>Compartilhar</span></button>
-        <button class="btn secundario copiar-link" type="button">${ico.elo}<span>Copiar link</span></button>
-      </div>
-    </div>
-  </div>
-</article>`;
+function compilarCartao() {
+  const fonte = join(ROOT, 'ferramentas', 'cartao.swift');
+  if (!existsSync(fonte)) return false;
+  try {
+    execFileSync('/usr/bin/xcrun', ['swiftc', '-O', fonte, '-o', CARTAO], { stdio: 'ignore' });
+    return true;
+  } catch { return existsSync(CARTAO); }
 }
 
-// ---------- página ----------
-function paginaHTML(itens, categorias) {
-  const disponiveis = itens.filter((i) => i.status === 'disponivel').length;
-  const capa = itens.find((i) => i.fotos.length)?.fotos[0];
+function gerarCartoes(itens) {
+  if (!existsSync(CARTAO) && !compilarCartao()) {
+    console.warn('aviso: ferramenta de cartões indisponível — prévia usará a capa');
+    return 0;
+  }
+  const dest = join(SITE, 'social');
+  mkdirSync(dest, { recursive: true });
+  execFileSync(CARTAO, ['capa', join(dest, 'capa.jpg')], { stdio: 'ignore' });
+  execFileSync(CARTAO, ['icone', join(SITE, 'icone-180.png'), '180'], { stdio: 'ignore' });
 
-  return `<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
+  let n = 0;
+  for (const item of itens) {
+    if (!item.fotos.length) continue;   // sem foto real, cai na capa
+    const args = ['produto', join(dest, `${item.slug}.jpg`),
+      '--foto', join(FOTOS, item.fotos[0]),
+      '--nome', item.nome,
+      '--preco', `R$ ${brl(item.preco)}`,
+      '--qtd', String(item.qtd)];
+    if (item.desconto) args.push('--ref', `R$ ${brl(item.ref)}`, '--desconto', String(item.desconto));
+    execFileSync(CARTAO, args, { stdio: 'ignore' });
+    n++;
+  }
+  return n;
+}
+
+const imagemSocial = (item) =>
+  item.fotos.length ? `${URL_SITE}social/${item.slug}.jpg` : `${URL_SITE}social/capa.jpg`;
+
+// ---------- <head> comum ----------
+function cabeca({ titulo, descricao, url, imagem, tipo = 'website', json = [], base = './' }) {
+  return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bazar do Diego</title>
-<meta name="description" content="Itens em ótimo estado com preço abaixo do mercado: eletrônicos, bicicletas, móveis e acessórios. Retirada em Caxias do Sul.">
+<title>${esc(titulo)}</title>
+<meta name="description" content="${esc(descricao)}">
+<link rel="canonical" href="${url}">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Bazar do Diego">
-<meta property="og:description" content="Desapego de itens em ótimo estado, com preço abaixo do mercado. Retirada em Caxias do Sul.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="${URL_SITE}">
-${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
+<meta property="og:site_name" content="Bazar do Diego">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="${tipo}">
+<meta property="og:title" content="${esc(titulo)}">
+<meta property="og:description" content="${esc(descricao)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${imagem}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(titulo)}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%9B%8D%EF%B8%8F</text></svg>">
-<style>
+<meta name="twitter:title" content="${esc(titulo)}">
+<meta name="twitter:description" content="${esc(descricao)}">
+<meta name="twitter:image" content="${imagem}">
+<link rel="icon" href="${base}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${base}icone-180.png">
+${json.map((j) => `<script type="application/ld+json">${ld(j)}</script>`).join('\n')}
+<style>${ESTILOS}</style>`;
+}
+
+// ---------- estilos ----------
+const ESTILOS = `
   :root{
-    --tinta:#1D1D1F; --secundaria:#6E6E73; --terciaria:#86868B;
-    --fundo:#FFFFFF; --superficie:#F5F5F7; --cartao:#FFFFFF;
-    --risco:#D2D2D7; --azul:#0071E3; --verde:#1FA855; --economia:#087443;
+    --tinta:#1D1D1F; --pedra:#6E6A66; --terciaria:#8E8A85;
+    --fundo:#FFFFFF; --areia:#F4F2EF; --cartao:#FFFFFF;
+    --traco:#DDD9D3; --verde:#1FA855; --economia:#087443; --alerta:#B25000;
     --raio:20px; --sombra:0 4px 20px rgba(0,0,0,.06);
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --tinta:#F5F5F7; --secundaria:#A1A1A6; --terciaria:#86868B;
-      --fundo:#000000; --superficie:#1D1D1F; --cartao:#1D1D1F;
-      --risco:#424245; --azul:#2997FF; --verde:#25D366; --economia:#41D07D;
+      --tinta:#F4F2EF; --pedra:#A8A29B; --terciaria:#8E8A85;
+      --fundo:#0B0A09; --areia:#1A1917; --cartao:#1A1917;
+      --traco:#332F2B; --verde:#25D366; --economia:#41D07D; --alerta:#FF9F0A;
       --sombra:none;
     }
   }
-  *{box-sizing:border-box}
+  *,*::before,*::after{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--fundo);color:var(--tinta);
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:17px;line-height:1.47;letter-spacing:-.012em;
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   svg{width:1em;height:1em;flex:none}
+  a{color:inherit}
   .larg{max-width:1120px;margin:0 auto;padding:0 22px}
+  .marca{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--tinta)}
+  .marca svg{width:19px;height:19px}
+  .marca b{font-size:15px;font-weight:600}
 
-  /* ---- capa ---- */
-  .capa{padding:72px 0 46px;text-align:center}
-  h1{font-size:clamp(40px,9vw,72px);font-weight:600;line-height:1.05;
-    letter-spacing:-.022em;margin:0 0 16px}
-  .chamada{font-size:clamp(19px,3.4vw,23px);color:var(--secundaria);
-    max-width:34ch;margin:0 auto 22px;letter-spacing:-.01em}
-  .local{display:inline-flex;align-items:center;gap:7px;color:var(--terciaria);
-    font-size:15px;margin-bottom:26px}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
     border-radius:980px;padding:13px 24px;font-size:17px;font-weight:400;
     font-family:inherit;letter-spacing:-.012em;text-decoration:none;
@@ -238,17 +238,29 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
     transition:opacity .18s,background .18s}
   .btn:active{opacity:.75}
   .btn.primario{background:var(--verde);color:#fff}
-  .btn.secundario{background:transparent;color:var(--azul);border-color:var(--risco)}
-  .btn.secundario:hover{background:var(--superficie)}
-  .btn.inativo{background:var(--superficie);color:var(--terciaria);cursor:default}
+  .btn.primario:hover{background:#178f45}
+  .btn.secundario{background:transparent;color:var(--tinta);border-color:var(--traco)}
+  .btn.secundario:hover{background:var(--areia)}
+  .btn.inativo{background:var(--areia);color:var(--terciaria);cursor:default}
   .btn svg{width:19px;height:19px}
+  .btn.feito{color:var(--economia);border-color:var(--economia)}
 
-  /* ---- barra de filtros ---- */
+  .capa{padding:60px 0 40px;text-align:center}
+  .capa .selo{width:62px;height:62px;border-radius:16px;background:var(--tinta);
+    display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .capa .selo svg{width:34px;height:34px}
+  h1{font-size:clamp(38px,9vw,66px);font-weight:600;line-height:1.05;
+    letter-spacing:-.024em;margin:0 0 14px}
+  .chamada{font-size:clamp(19px,3.4vw,23px);color:var(--pedra);
+    max-width:32ch;margin:0 auto 20px;letter-spacing:-.01em}
+  .local{display:inline-flex;align-items:center;gap:7px;color:var(--terciaria);
+    font-size:15px;margin:0 0 24px}
+
   .barra{position:sticky;top:0;z-index:30;
     background:color-mix(in srgb,var(--fundo) 82%,transparent);
     backdrop-filter:saturate(180%) blur(20px);
     -webkit-backdrop-filter:saturate(180%) blur(20px);
-    border-bottom:1px solid var(--risco)}
+    border-bottom:1px solid var(--traco)}
   .barra .larg{padding-top:10px;padding-bottom:10px}
   .busca{position:relative;display:flex;align-items:center;margin-bottom:9px}
   .busca-ico{position:absolute;left:13px;display:flex;color:var(--terciaria);
@@ -256,30 +268,29 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
   .busca input{width:100%;font-family:inherit;font-size:17px;line-height:1.2;
     /* 17px evita o zoom automático do iOS ao focar o campo */
     padding:11px 40px 11px 38px;border-radius:12px;border:1px solid transparent;
-    background:var(--superficie);color:var(--tinta);min-height:44px;
+    background:var(--areia);color:var(--tinta);min-height:44px;
     -webkit-appearance:none;appearance:none}
   .busca input::placeholder{color:var(--terciaria)}
-  .busca input:focus{outline:none;border-color:var(--azul);background:var(--cartao)}
+  .busca input:focus{outline:none;border-color:var(--tinta);background:var(--cartao)}
   .busca input::-webkit-search-cancel-button,
   .busca input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
   .busca-limpar{position:absolute;right:5px;width:34px;height:34px;border:0;
     border-radius:50%;background:transparent;color:var(--terciaria);cursor:pointer;
     display:flex;align-items:center;justify-content:center;font-size:15px}
-  .busca-limpar:hover{background:var(--risco)}
+  .busca-limpar:hover{background:var(--traco)}
   .busca-limpar[hidden]{display:none}
   .filtros{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;padding-bottom:2px}
   .filtros::-webkit-scrollbar{display:none}
-  .chip{flex:none;background:var(--superficie);border:0;color:var(--tinta);
+  .chip{flex:none;background:var(--areia);border:0;color:var(--tinta);
     border-radius:980px;padding:8px 16px;font-size:15px;font-family:inherit;
     letter-spacing:-.01em;cursor:pointer;min-height:38px;white-space:nowrap;
     transition:background .18s,color .18s}
-  .chip:hover{background:var(--risco)}
+  .chip:hover{background:var(--traco)}
   .chip[aria-pressed="true"]{background:var(--tinta);color:var(--fundo)}
   .conta{font-size:13px;color:var(--terciaria);margin:8px 0 0}
-  .conta[hidden]{display:none}   /* só aparece com busca ou filtro ativo */
+  .conta[hidden]{display:none}
 
-  /* ---- grade ---- */
   main{padding:30px 0 10px}
   .grade{display:grid;grid-template-columns:1fr;gap:20px}
   @media(min-width:660px){.grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -289,13 +300,10 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
     scroll-margin-top:110px}
   .card[hidden]{display:none}          /* precisa vir depois do display:flex */
   .card.vendido{opacity:.55}
-  .card.alvo{outline:3px solid var(--azul);outline-offset:2px}
 
   .visual{position:relative;background:#fff;border-radius:var(--raio) var(--raio) 0 0;
     overflow:hidden}
-  @media (prefers-color-scheme:dark){
-    .visual{margin:10px 10px 0;border-radius:14px}
-  }
+  @media (prefers-color-scheme:dark){.visual{margin:10px 10px 0;border-radius:14px}}
   .trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
     scrollbar-width:none;aspect-ratio:1/1}
   .trilho::-webkit-scrollbar{display:none}
@@ -305,15 +313,15 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
   .card.vendido .quadro img{filter:grayscale(70%)}
   .pontos{position:absolute;bottom:12px;left:0;right:0;display:flex;
     justify-content:center;gap:6px;pointer-events:none}
-  .pontos i{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.22);
+  .pontos i{width:6px;height:6px;border-radius:50%;background:rgba(29,29,31,.22);
     transition:background .2s,transform .2s}
-  .pontos i.on{background:rgba(0,0,0,.7);transform:scale(1.25)}
+  .pontos i.on{background:rgba(29,29,31,.72);transform:scale(1.25)}
   .dica-zoom{position:absolute;top:12px;right:12px;width:32px;height:32px;
-    border-radius:50%;background:rgba(255,255,255,.82);color:#1D1D1F;
+    border-radius:50%;background:rgba(255,255,255,.85);color:#1D1D1F;
     display:flex;align-items:center;justify-content:center;pointer-events:none;
     backdrop-filter:blur(8px)}
   .dica-zoom svg{width:17px;height:17px}
-  .ilustra{aspect-ratio:1/1;background:var(--superficie);display:flex;
+  .ilustra{aspect-ratio:1/1;background:var(--areia);display:flex;
     flex-direction:column;align-items:center;justify-content:center;gap:16px;
     color:var(--terciaria);text-align:center;padding:24px}
   .ilustra svg{width:min(58%,190px);height:auto}
@@ -323,17 +331,17 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
   .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0}
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500}
   .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-  .badge.ok{color:var(--economia)} .badge.warn{color:#B25000} .badge.off{color:var(--terciaria)}
-  @media (prefers-color-scheme:dark){.badge.warn{color:#FF9F0A}}
+  .badge.ok{color:var(--economia)} .badge.warn{color:var(--alerta)} .badge.off{color:var(--terciaria)}
   .qtd{font-size:12px;color:var(--terciaria)}
-  h2{font-size:21px;font-weight:600;line-height:1.19;letter-spacing:-.016em;
-    margin:0;text-wrap:pretty}
-  .desc{font-size:14.5px;line-height:1.45;color:var(--secundaria);margin:0;
-    text-wrap:pretty}
+  h2{font-size:21px;font-weight:600;line-height:1.19;letter-spacing:-.016em;margin:0}
+  h2 a{text-decoration:none;display:inline-flex;align-items:baseline;gap:6px;text-wrap:pretty}
+  h2 a:hover{color:var(--pedra)}
+  h2 a svg{width:13px;height:13px;transform:rotate(180deg);color:var(--terciaria);align-self:center}
+  .desc{font-size:14.5px;line-height:1.45;color:var(--pedra);margin:0;text-wrap:pretty}
   .precos{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
     margin:auto 0 0;padding-top:8px}
   .preco{font-size:26px;font-weight:600;letter-spacing:-.02em}
-  .card.vendido .preco{text-decoration:line-through;color:var(--secundaria)}
+  .card.vendido .preco{text-decoration:line-through;color:var(--pedra)}
   .cada{font-size:13px;color:var(--terciaria)}
   .ref{font-size:15px;color:var(--terciaria);text-decoration:line-through}
   .off{font-size:13px;font-weight:500;color:var(--economia)}
@@ -343,14 +351,59 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
   .acoes-sec{display:flex;gap:8px}
   .acoes-sec .btn{flex:1;font-size:15px;padding:11px 10px;min-height:44px}
   .acoes-sec .btn svg{width:17px;height:17px}
-  .btn.feito{color:var(--economia);border-color:var(--economia)}
-  .vazio{text-align:center;color:var(--secundaria);padding:60px 0;font-size:17px}
+  .vazio{text-align:center;color:var(--pedra);padding:60px 0;font-size:17px}
 
-  /* ---- rodapé ---- */
-  footer{background:var(--superficie);margin-top:44px;padding:44px 0 54px;text-align:center}
-  footer p{font-size:14px;color:var(--secundaria);max-width:52ch;margin:0 auto 20px}
+  footer{background:var(--areia);margin-top:44px;padding:40px 0 50px;text-align:center}
+  footer p{font-size:14px;color:var(--pedra);max-width:52ch;margin:0 auto 20px}
+  footer .marca{margin-bottom:18px}
 
-  /* ---- visor de foto (zoom) ---- */
+  /* ---- página do produto ---- */
+  .topo{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;
+    padding:11px 22px;border-bottom:1px solid var(--traco);
+    background:color-mix(in srgb,var(--fundo) 86%,transparent);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px)}
+  .voltar{width:34px;height:34px;border-radius:50%;background:var(--areia);
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+    color:var(--tinta);text-decoration:none}
+  .voltar svg{width:17px;height:17px}
+  .produto{max-width:1120px;margin:0 auto}
+  @media(min-width:860px){
+    .produto{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+      gap:44px;padding:34px 22px 0;align-items:start}
+    .produto .visual{border-radius:var(--raio);position:sticky;top:88px}
+  }
+  .ficha{padding:22px 22px 28px;display:flex;flex-direction:column;gap:16px}
+  @media(min-width:860px){.ficha{padding:0 0 28px}}
+  .ficha h1{font-size:clamp(26px,5.6vw,38px);line-height:1.14;letter-spacing:-.02em;margin:0}
+  .ficha .precos{margin:0;padding-top:0}
+  .ficha .preco{font-size:34px;letter-spacing:-.022em}
+  .ficha .desc{font-size:16px}
+  .condicoes{display:flex;flex-direction:column;gap:10px;background:var(--areia);
+    border-radius:16px;padding:16px 18px}
+  .condicoes div{display:flex;align-items:center;gap:10px;font-size:14px}
+  .condicoes svg{width:17px;height:17px;color:var(--terciaria)}
+  .tambem{padding:26px 22px 34px;max-width:1120px;margin:0 auto}
+  .tambem h2{margin-bottom:16px}
+  .tambem .lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  @media(min-width:660px){.tambem .lista{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .tambem a{text-decoration:none;display:flex;flex-direction:column;gap:8px}
+  .tambem img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;
+    display:block;background:#fff}
+  .tambem .n{font-size:14px;font-weight:500;line-height:1.25}
+  .tambem .p{font-size:15px;font-weight:600}
+  .acao-fixa{position:sticky;bottom:0;z-index:20;border-top:1px solid var(--traco);
+    background:color-mix(in srgb,var(--fundo) 94%,transparent);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    padding:12px 22px calc(12px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;gap:14px}
+  .acao-fixa .valor{display:flex;flex-direction:column;line-height:1.15}
+  .acao-fixa .valor b{font-size:20px;font-weight:600;letter-spacing:-.02em}
+  .acao-fixa .valor span{font-size:11px;color:var(--terciaria)}
+  .acao-fixa .btn{flex:1}
+  @media(min-width:860px){.acao-fixa{display:none}}
+
+  /* ---- visor de foto ---- */
   .visor{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);
     display:none;align-items:center;justify-content:center;touch-action:none}
   .visor[open]{display:flex}
@@ -376,146 +429,143 @@ ${capa ? `<meta property="og:image" content="${URL_SITE}fotos/${capa}">` : ''}
     color:#fff;padding:16px;padding-bottom:max(18px,env(safe-area-inset-bottom));
     font-size:13px;background:linear-gradient(transparent,rgba(0,0,0,.5))}
 
-  /* ---- aviso ---- */
   .aviso{position:fixed;left:50%;bottom:26px;transform:translate(-50%,90px);
     background:var(--tinta);color:var(--fundo);padding:12px 20px;border-radius:980px;
     font-size:14px;z-index:120;opacity:0;transition:transform .28s,opacity .28s;
     max-width:calc(100vw - 40px);text-align:center}
   .aviso.on{transform:translate(-50%,0);opacity:1}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
-</head>
-<body>
+`;
 
-<header class="capa larg">
-  <h1>Bazar do Diego</h1>
-  <p class="chamada">Itens em ótimo estado, com preço abaixo do que custa novo.</p>
-  <p class="local">${ico.pin}<span>Retirada em ${CIDADE}</span></p>
-  <p><a class="btn primario" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá! Vi o Bazar do Diego e queria saber mais.')}" target="_blank" rel="noopener">${ico.whats}<span>Falar no WhatsApp</span></a></p>
-</header>
+// ---------- pedaços reaproveitados ----------
+function galeriaHTML(item, { zoom = true } = {}) {
+  if (!item.fotos.length) {
+    return `<div class="visual"><div class="ilustra">${ILUSTRACAO[item.slug] ?? ''}<span>Ilustração — fotos reais em breve</span></div></div>`;
+  }
+  return `<div class="visual">
+      <div class="trilho">${item.fotos
+        .map((f, i) => `<button class="quadro" type="button" data-i="${i}" aria-label="Ampliar foto ${i + 1} de ${item.fotos.length}">
+          <img src="${item.base}fotos/${f}" alt="${esc(item.nome)} — foto ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" width="1000" height="1000">
+        </button>`).join('')}</div>
+      ${item.fotos.length > 1 ? `<div class="pontos" aria-hidden="true">${item.fotos.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}
+      ${zoom ? `<span class="dica-zoom" aria-hidden="true">${ico.lupa}</span>` : ''}
+    </div>`;
+}
 
-<div class="barra">
-  <div class="larg">
-    <form class="busca" role="search" onsubmit="return false">
-      <span class="busca-ico">${ico.busca}</span>
-      <input type="search" id="busca" placeholder="Buscar no bazar" aria-label="Buscar item"
-             autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
-      <button type="button" class="busca-limpar" id="busca-limpar" aria-label="Limpar busca" hidden>${ico.x}</button>
-    </form>
-    <div class="filtros" role="group" aria-label="Filtrar por categoria">
-      <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
-      ${categorias.map((c) => `<button class="chip" data-f="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('\n      ')}
-    </div>
-    <p class="conta" id="conta" hidden>${itens.length} itens · ${disponiveis} disponíveis</p>
+const dadosDoItem = (item) =>
+  `data-url="${urlItem(item.slug)}" data-nome="${esc(item.nome)}" data-preco="${brl(item.preco)}"` +
+  ` data-ref="${item.desconto ? brl(item.ref) : ''}" data-desconto="${item.desconto ?? ''}"` +
+  ` data-qtd="${item.qtd}" data-fotos='${JSON.stringify(item.fotos.map((f) => item.base + 'fotos/' + f))}'`;
+
+function precosHTML(item) {
+  return `<p class="precos">
+      <span class="preco">R$ ${brl(item.preco)}</span>${item.qtd > 1 && !item.vendido ? '<span class="cada">cada</span>' : ''}
+      ${item.desconto ? `<span class="ref">R$ ${brl(item.ref)}</span><span class="off">Economize ${item.desconto}%</span>` : ''}
+    </p>
+    ${item.desconto ? `<p class="fonte">Novo em ${esc(item.fonte_referencia)}</p>` : ''}`;
+}
+
+function acoesHTML(item) {
+  const msg = encodeURIComponent(`Olá! Tenho interesse no item: ${item.nome} (R$ ${brl(item.preco)})\n${urlItem(item.slug)}`);
+  return `<div class="acoes">
+      ${item.vendido
+        ? '<span class="btn inativo">Vendido</span>'
+        : `<a class="btn primario" href="https://wa.me/${WHATSAPP}?text=${msg}" target="_blank" rel="noopener">${ico.whats}<span>Tenho interesse</span></a>`}
+      <div class="acoes-sec">
+        <button class="btn secundario compartilhar" type="button">${ico.share}<span>Compartilhar</span></button>
+        <button class="btn secundario copiar-link" type="button">${ico.elo}<span>Copiar link</span></button>
+      </div>
+    </div>`;
+}
+
+// ---------- cartão do catálogo ----------
+function cardHTML(item) {
+  const st = STATUS[item.status] ?? STATUS.disponivel;
+  return `<article class="card item${item.vendido ? ' vendido' : ''}" id="item-${item.slug}"
+  data-categoria="${esc(item.categoria)}" data-status="${item.status}"
+  data-busca="${esc(semAcento(`${item.nome} ${item.categoria} ${item.descricao}`))}"
+  ${dadosDoItem(item)}>
+  ${galeriaHTML(item)}
+  <div class="corpo">
+    <p class="meta"><span class="badge ${st.cor}">${st.rotulo}</span>${item.qtd > 1 && !item.vendido ? `<span class="qtd">${item.qtd} unidades</span>` : ''}</p>
+    <h2><a href="./item/${item.slug}/">${esc(item.nome)}${ico.seta}</a></h2>
+    <p class="desc">${esc(item.descricao)}</p>
+    ${precosHTML(item)}
+    ${acoesHTML(item)}
   </div>
-</div>
+</article>`;
+}
 
-<main class="larg">
-  <div class="grade" id="grade">
-${itens.map(cardHTML).join('\n')}
-  </div>
-  <p class="vazio" id="vazio" hidden>Nenhum item nesta categoria.</p>
-</main>
-
-<footer>
-  <div class="larg">
-    <p>Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada. Itens usados vendidos no estado em que se encontram — pode conferir tudo antes de levar.</p>
-    <a class="btn primario" href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">${ico.whats}<span>+55 54 99184-5555</span></a>
-  </div>
-</footer>
-
-<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
-  <div class="visor-topo">
-    <span id="visor-conta"></span>
-    <button class="visor-btn" id="visor-fechar" aria-label="Fechar">${ico.x}</button>
-  </div>
-  <button class="visor-btn visor-nav ant" id="visor-ant" aria-label="Foto anterior">${ico.seta}</button>
-  <div class="visor-palco" id="visor-palco"><img id="visor-img" alt=""></div>
-  <button class="visor-btn visor-nav prox" id="visor-prox" aria-label="Próxima foto">${ico.seta}</button>
-  <p class="visor-rodape">Toque na foto para ampliar · arraste para mover</p>
-</div>
-
-<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
-
-<script>
+// ---------- script da página ----------
+const SCRIPT = `
 (function(){
   'use strict';
-  var SITE = ${JSON.stringify(URL_SITE)};
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var itens = Array.prototype.slice.call(document.querySelectorAll('.item'));
 
-  /* ---------- aviso ---------- */
   var elAviso = document.getElementById('aviso'), tAviso;
   function avisar(txt){
+    if (!elAviso) return;
     elAviso.textContent = txt; elAviso.classList.add('on');
     clearTimeout(tAviso); tAviso = setTimeout(function(){ elAviso.classList.remove('on'); }, 3200);
   }
 
-  /* ---------- busca + filtro de categoria (combinados) ---------- */
-  var chips = document.querySelectorAll('.chip');
-  var conta = document.getElementById('conta');
-  var vazio = document.getElementById('vazio');
+  /* ---------- busca + filtro de categoria (só no catálogo) ---------- */
   var campo = document.getElementById('busca');
-  var limpar = document.getElementById('busca-limpar');
-  var categoria = 'todos';
+  if (campo){
+    var chips = document.querySelectorAll('.chip');
+    var conta = document.getElementById('conta');
+    var vazio = document.getElementById('vazio');
+    var limpar = document.getElementById('busca-limpar');
+    var categoria = 'todos';
 
-  function semAcento(s){
-    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    function semAcento(s){
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    }
+    function filtrar(){
+      var termo = semAcento(campo.value);
+      // cada palavra digitada precisa aparecer: "hd wd" acha o WD Purple
+      var palavras = termo ? termo.split(/\\s+/) : [];
+      var vis = 0, disp = 0;
+      itens.forEach(function(card){
+        var okCat = categoria === 'todos' || card.dataset.categoria === categoria;
+        var alvo = card.dataset.busca || '';
+        var okTermo = palavras.every(function(p){ return alvo.indexOf(p) !== -1; });
+        var ok = okCat && okTermo;
+        card.hidden = !ok;
+        if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
+      });
+      var filtrando = categoria !== 'todos' || palavras.length > 0;
+      conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
+      conta.hidden = !filtrando;
+      vazio.hidden = vis > 0;
+      vazio.textContent = palavras.length
+        ? 'Nada encontrado para “' + campo.value.trim() + '”.'
+        : 'Nenhum item nesta categoria.';
+      limpar.hidden = !campo.value;
+    }
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+        chip.setAttribute('aria-pressed','true');
+        categoria = chip.dataset.f;
+        filtrar();
+      });
+    });
+    campo.addEventListener('input', filtrar);
+    campo.addEventListener('search', filtrar);   // o "x" nativo do iOS
+    campo.addEventListener('keydown', function(e){
+      if (e.key === 'Enter'){ e.preventDefault(); campo.blur(); }
+      if (e.key === 'Escape'){ campo.value = ''; filtrar(); }
+    });
+    limpar.addEventListener('click', function(){ campo.value = ''; filtrar(); campo.focus(); });
   }
 
-  function filtrar(){
-    var termo = semAcento(campo.value);
-    // cada palavra digitada precisa aparecer: "hd wd" acha o WD Purple
-    var palavras = termo ? termo.split(/\\s+/) : [];
-    var vis = 0, disp = 0;
-    cards.forEach(function(card){
-      var okCat = categoria === 'todos' || card.dataset.categoria === categoria;
-      var alvo = card.dataset.busca || '';
-      var okTermo = palavras.every(function(p){ return alvo.indexOf(p) !== -1; });
-      var ok = okCat && okTermo;
-      card.hidden = !ok;
-      if (ok){ vis++; if (card.dataset.status === 'disponivel') disp++; }
-    });
-    var filtrando = categoria !== 'todos' || palavras.length > 0;
-    conta.textContent = vis + (vis === 1 ? ' item · ' : ' itens · ') + disp + ' disponíveis';
-    conta.hidden = !filtrando;
-    vazio.hidden = vis > 0;
-    vazio.textContent = palavras.length
-      ? 'Nada encontrado para “' + campo.value.trim() + '”.'
-      : 'Nenhum item nesta categoria.';
-    limpar.hidden = !campo.value;
-  }
-
-  chips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
-      chip.setAttribute('aria-pressed','true');
-      categoria = chip.dataset.f;
-      filtrar();
-    });
-  });
-
-  campo.addEventListener('input', filtrar);
-  campo.addEventListener('search', filtrar);   // o "x" nativo do iOS
-  campo.addEventListener('keydown', function(e){
-    if (e.key === 'Enter'){ e.preventDefault(); campo.blur(); }  // fecha o teclado
-    if (e.key === 'Escape'){ campo.value = ''; filtrar(); }
-  });
-  limpar.addEventListener('click', function(){
-    campo.value = '';
-    filtrar();
-    campo.focus();
-  });
-
-  /* ---------- carrossel: pontinhos + avanço automático ---------- */
+  /* ---------- carrossel ---------- */
   var poucoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var INTERVALO = 4000;      // troca de foto
-  var PAUSA_APOS_TOQUE = 9000; // silêncio depois que a pessoa mexe
-
   document.querySelectorAll('.visual').forEach(function(v){
     var trilho = v.querySelector('.trilho'), pontos = v.querySelectorAll('.pontos i');
     if (!trilho) return;
     var total = trilho.children.length;
-
     if (pontos.length){
       trilho.addEventListener('scroll', function(){
         var i = Math.round(trilho.scrollLeft / trilho.clientWidth);
@@ -523,35 +573,25 @@ ${itens.map(cardHTML).join('\n')}
       }, { passive:true });
     }
     if (total < 2 || poucoMovimento) return;
-
     var timer = null, visivel = false, pausadoAte = 0;
-
     function avancar(){
-      // não mexe enquanto o visor está aberto nem logo após interação
-      var v0 = document.getElementById('visor');
-      if (!visivel || Date.now() < pausadoAte || (v0 && v0.hasAttribute('open'))) return;
+      var vz = document.getElementById('visor');
+      if (!visivel || Date.now() < pausadoAte || (vz && vz.hasAttribute('open'))) return;
       var i = Math.round(trilho.scrollLeft / trilho.clientWidth);
-      var prox = (i + 1) % total;
-      trilho.scrollTo({ left: prox * trilho.clientWidth, behavior:'smooth' });
+      trilho.scrollTo({ left: ((i + 1) % total) * trilho.clientWidth, behavior:'smooth' });
     }
-    function ligar(){ if (!timer) timer = setInterval(avancar, INTERVALO); }
+    function ligar(){ if (!timer) timer = setInterval(avancar, 4000); }
     function desligar(){ clearInterval(timer); timer = null; }
-    function adiar(){ pausadoAte = Date.now() + PAUSA_APOS_TOQUE; }
-
+    function adiar(){ pausadoAte = Date.now() + 9000; }
     ['pointerdown','touchstart','wheel'].forEach(function(ev){
       trilho.addEventListener(ev, adiar, { passive:true });
     });
     v.addEventListener('mouseenter', adiar);
-
     if ('IntersectionObserver' in window){
-      new IntersectionObserver(function(entradas){
-        entradas.forEach(function(e){
-          visivel = e.isIntersecting;
-          visivel ? ligar() : desligar();
-        });
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ visivel = e.isIntersecting; visivel ? ligar() : desligar(); });
       }, { threshold: 0.35 }).observe(v);
     } else { visivel = true; ligar(); }
-
     document.addEventListener('visibilitychange', function(){
       document.hidden ? desligar() : (visivel && ligar());
     });
@@ -582,200 +622,68 @@ ${itens.map(cardHTML).join('\n')}
   }
   function fechar(){ visor.removeAttribute('open'); document.body.style.overflow = ''; }
 
-  cards.forEach(function(card){
-    var fotos;
-    try { fotos = JSON.parse(card.dataset.fotos || '[]'); } catch(e){ fotos = []; }
-    if (!fotos.length) return;
-    card.querySelectorAll('.quadro').forEach(function(q){
-      q.addEventListener('click', function(){ abrir(fotos, Number(q.dataset.i) || 0); });
-    });
-  });
-
-  document.getElementById('visor-fechar').addEventListener('click', fechar);
-  vAnt.addEventListener('click', function(e){ e.stopPropagation(); mostrar(idx - 1); });
-  vProx.addEventListener('click', function(e){ e.stopPropagation(); mostrar(idx + 1); });
-  visor.addEventListener('click', function(e){ if (e.target === visor || e.target.id === 'visor-palco') fechar(); });
-  document.addEventListener('keydown', function(e){
-    if (!visor.hasAttribute('open')) return;
-    if (e.key === 'Escape') fechar();
-    if (e.key === 'ArrowLeft') mostrar(idx - 1);
-    if (e.key === 'ArrowRight') mostrar(idx + 1);
-  });
-
-  // toque/clique alterna o zoom no ponto tocado; arrastar move a imagem ampliada
-  vImg.addEventListener('click', function(e){
-    if (arrastando) return;
-    if (escala > 1){ zerarZoom(); return; }
-    var r = vImg.getBoundingClientRect();
-    escala = 2.6;
-    px = (r.left + r.width/2 - e.clientX) * (escala - 1) / escala * 1.0;
-    py = (r.top + r.height/2 - e.clientY) * (escala - 1) / escala * 1.0;
-    aplicarZoom();
-  });
-  vImg.addEventListener('pointerdown', function(e){
-    if (escala === 1) return;
-    arrastando = false; x0 = e.clientX - px; y0 = e.clientY - py;
-    vImg.setPointerCapture(e.pointerId);
-  });
-  vImg.addEventListener('pointermove', function(e){
-    if (!vImg.hasPointerCapture || escala === 1 || !e.buttons && e.pointerType === 'mouse') return;
-    if (x0 === 0 && y0 === 0) return;
-    var nx = e.clientX - x0, ny = e.clientY - y0;
-    if (Math.abs(nx - px) > 2 || Math.abs(ny - py) > 2) arrastando = true;
-    px = nx; py = ny; aplicarZoom();
-  });
-  vImg.addEventListener('pointerup', function(){ setTimeout(function(){ arrastando = false; }, 30); });
-
-  // deslizar para trocar de foto quando não está ampliada
-  var sx = null;
-  visor.addEventListener('touchstart', function(e){ if (escala === 1) sx = e.touches[0].clientX; }, { passive:true });
-  visor.addEventListener('touchend', function(e){
-    if (sx === null || escala > 1) { sx = null; return; }
-    var d = e.changedTouches[0].clientX - sx; sx = null;
-    if (Math.abs(d) > 55) mostrar(idx + (d < 0 ? 1 : -1));
-  }, { passive:true });
-
-  /* ---------- compartilhar (com story para o Instagram) ---------- */
-  function quebrar(ctx, txt, larg){
-    var linhas = [], atual = '';
-    txt.split(' ').forEach(function(p){
-      var teste = atual ? atual + ' ' + p : p;
-      if (ctx.measureText(teste).width > larg && atual){ linhas.push(atual); atual = p; }
-      else atual = teste;
-    });
-    if (atual) linhas.push(atual);
-    return linhas;
-  }
-
-  function gerarStory(card){
-    return new Promise(function(resolve, reject){
+  if (visor){
+    itens.forEach(function(card){
       var fotos;
       try { fotos = JSON.parse(card.dataset.fotos || '[]'); } catch(e){ fotos = []; }
-      if (!fotos.length) return reject(new Error('sem foto'));
-      var img = new Image();
-      img.onerror = function(){ reject(new Error('falha ao carregar')); };
-      img.onload = function(){
-        var W = 1080, H = 1920;
-        var c = document.createElement('canvas'); c.width = W; c.height = H;
-        var x = c.getContext('2d');
-        var F = '-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif';
-
-        x.fillStyle = '#FFFFFF'; x.fillRect(0, 0, W, H);
-
-        // marca
-        x.fillStyle = '#6E6E73'; x.font = '500 30px ' + F;
-        x.textAlign = 'center'; x.letterSpacing = '3px';
-        x.fillText('BAZAR DO DIEGO', W/2, 132);
-        x.letterSpacing = '0px';
-
-        // foto quadrada com cantos arredondados
-        var S = 860, fx = (W - S)/2, fy = 200, r = 44;
-        x.save();
-        x.beginPath();
-        if (x.roundRect) x.roundRect(fx, fy, S, S, r);
-        else x.rect(fx, fy, S, S);
-        x.clip();
-        var lado = Math.min(img.width, img.height);
-        x.drawImage(img, (img.width-lado)/2, (img.height-lado)/2, lado, lado, fx, fy, S, S);
-        x.restore();
-
-        var y = fy + S + 92;
-
-        // nome
-        x.fillStyle = '#1D1D1F'; x.font = '600 58px ' + F; x.textAlign = 'center';
-        var linhas = quebrar(x, card.dataset.nome, W - 160).slice(0, 3);
-        linhas.forEach(function(l){ x.fillText(l, W/2, y); y += 70; });
-
-        // preço
-        y += 26;
-        x.font = '600 96px ' + F; x.fillStyle = '#1D1D1F';
-        var precoTxt = 'R$ ' + card.dataset.preco;
-        x.fillText(precoTxt, W/2, y);
-
-        // referência riscada + economia
-        if (card.dataset.ref){
-          y += 62;
-          x.font = '400 38px ' + F; x.fillStyle = '#86868B';
-          var refTxt = 'R$ ' + card.dataset.ref + ' novo';
-          x.fillText(refTxt, W/2, y);
-          var w = x.measureText(refTxt).width;
-          x.strokeStyle = '#86868B'; x.lineWidth = 2.5;
-          x.beginPath(); x.moveTo(W/2 - w/2, y - 12); x.lineTo(W/2 + w/2, y - 12); x.stroke();
-          y += 56;
-          x.font = '500 38px ' + F; x.fillStyle = '#087443';
-          x.fillText('Economize ' + card.dataset.desconto + '%', W/2, y);
-        }
-
-        // rodapé
-        x.font = '400 34px ' + F; x.fillStyle = '#6E6E73';
-        x.fillText('Retirada em Caxias do Sul', W/2, H - 190);
-        x.font = '500 36px ' + F; x.fillStyle = '#1D1D1F';
-        x.fillText('vieiradiego.github.io/bazar-do-diego', W/2, H - 128);
-        x.font = '400 32px ' + F; x.fillStyle = '#1FA855';
-        x.fillText('WhatsApp (54) 99184-5555', W/2, H - 72);
-
-        c.toBlob(function(b){ b ? resolve(b) : reject(new Error('sem blob')); }, 'image/png');
-      };
-      img.src = fotos[0];
+      if (!fotos.length) return;
+      card.querySelectorAll('.quadro').forEach(function(q){
+        q.addEventListener('click', function(){ abrir(fotos, Number(q.dataset.i) || 0); });
+      });
     });
+    document.getElementById('visor-fechar').addEventListener('click', fechar);
+    vAnt.addEventListener('click', function(e){ e.stopPropagation(); mostrar(idx - 1); });
+    vProx.addEventListener('click', function(e){ e.stopPropagation(); mostrar(idx + 1); });
+    visor.addEventListener('click', function(e){ if (e.target === visor || e.target.id === 'visor-palco') fechar(); });
+    document.addEventListener('keydown', function(e){
+      if (!visor.hasAttribute('open')) return;
+      if (e.key === 'Escape') fechar();
+      if (e.key === 'ArrowLeft') mostrar(idx - 1);
+      if (e.key === 'ArrowRight') mostrar(idx + 1);
+    });
+    vImg.addEventListener('click', function(e){
+      if (arrastando) return;
+      if (escala > 1){ zerarZoom(); return; }
+      var r = vImg.getBoundingClientRect();
+      escala = 2.6;
+      px = (r.left + r.width/2 - e.clientX) * (escala - 1) / escala;
+      py = (r.top + r.height/2 - e.clientY) * (escala - 1) / escala;
+      aplicarZoom();
+    });
+    vImg.addEventListener('pointerdown', function(e){
+      if (escala === 1) return;
+      arrastando = false; x0 = e.clientX - px; y0 = e.clientY - py;
+      vImg.setPointerCapture(e.pointerId);
+    });
+    vImg.addEventListener('pointermove', function(e){
+      if (escala === 1 || (!e.buttons && e.pointerType === 'mouse')) return;
+      if (x0 === 0 && y0 === 0) return;
+      var nx = e.clientX - x0, ny = e.clientY - y0;
+      if (Math.abs(nx - px) > 2 || Math.abs(ny - py) > 2) arrastando = true;
+      px = nx; py = ny; aplicarZoom();
+    });
+    vImg.addEventListener('pointerup', function(){ setTimeout(function(){ arrastando = false; }, 30); });
+    var sx = null;
+    visor.addEventListener('touchstart', function(e){ if (escala === 1) sx = e.touches[0].clientX; }, { passive:true });
+    visor.addEventListener('touchend', function(e){
+      if (sx === null || escala > 1) { sx = null; return; }
+      var d = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(d) > 55) mostrar(idx + (d < 0 ? 1 : -1));
+    }, { passive:true });
   }
 
-  document.querySelectorAll('.compartilhar').forEach(function(btn){
-    btn.addEventListener('click', async function(){
-      var card = btn.closest('.card');
-      var nome = card.dataset.nome;
-      var link = SITE + '#' + card.id;
-      var texto = nome + ' — R$ ' + card.dataset.preco + '\\nBazar do Diego, retirada em Caxias do Sul.';
-      var rotulo = btn.querySelector('span');
-      var original = rotulo ? rotulo.textContent : '';
-      if (rotulo) rotulo.textContent = 'Gerando…';
-
-      try {
-        var blob = await gerarStory(card);
-        var arq = new File([blob], 'bazar-' + card.id + '.png', { type:'image/png' });
-        if (navigator.canShare && navigator.canShare({ files:[arq] })){
-          await navigator.share({ files:[arq], text: texto + '\\n' + link });
-        } else if (navigator.share){
-          await navigator.share({ title:'Bazar do Diego — ' + nome, text: texto, url: link });
-        } else {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'bazar-' + card.id + '.png';
-          a.click();
-          setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
-          avisar(await copiar(link) ? 'Imagem baixada e link copiado' : 'Imagem do story baixada');
-        }
-      } catch (err) {
-        if (err && err.name === 'AbortError') { /* o usuário cancelou */ }
-        else if (navigator.share){
-          try { await navigator.share({ title:'Bazar do Diego — ' + nome, text: texto, url: link }); }
-          catch(e2){ if (!e2 || e2.name !== 'AbortError') avisar('Não consegui compartilhar'); }
-        } else {
-          avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
-        }
-      } finally {
-        if (rotulo) rotulo.textContent = original;
-      }
-    });
-  });
-
-  /* ---------- copiar o link do item ---------- */
+  /* ---------- copiar e compartilhar ---------- */
   async function copiar(texto){
     try {
       if (navigator.clipboard && window.isSecureContext){
-        await navigator.clipboard.writeText(texto);
-        return true;
+        await navigator.clipboard.writeText(texto); return true;
       }
     } catch(e){ /* cai no plano B */ }
     try {
       var ta = document.createElement('textarea');
-      ta.value = texto;
-      ta.setAttribute('readonly', '');
-      ta.style.position = 'fixed';
-      ta.style.top = '-1000px';
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, texto.length);
+      ta.value = texto; ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, texto.length);
       var ok = document.execCommand('copy');
       document.body.removeChild(ta);
       return ok;
@@ -783,15 +691,13 @@ ${itens.map(cardHTML).join('\n')}
   }
 
   var ICO_ELO = ${JSON.stringify(ico.elo)}, ICO_OK = ${JSON.stringify(ico.ok)};
-
   document.querySelectorAll('.copiar-link').forEach(function(btn){
     var rotulo = btn.querySelector('span');
     var original = rotulo ? rotulo.textContent : 'Copiar link';
     var voltar;
     btn.addEventListener('click', async function(){
-      var card = btn.closest('.card');
-      var link = SITE + '#' + card.id;
-      if (await copiar(link)){
+      var it = btn.closest('.item');
+      if (await copiar(it.dataset.url)){
         clearTimeout(voltar);
         btn.classList.add('feito');
         btn.innerHTML = ICO_OK + '<span>Copiado!</span>';
@@ -801,27 +707,237 @@ ${itens.map(cardHTML).join('\n')}
           btn.innerHTML = ICO_ELO + '<span>' + original + '</span>';
         }, 2200);
       } else {
-        avisar('Não consegui copiar. O link é ' + link);
+        avisar('Não consegui copiar. O link é ' + it.dataset.url);
       }
     });
   });
 
-  /* ---------- destaque ao abrir com #item-... ---------- */
-  function destacar(){
-    if (!location.hash) return;
-    var alvo = document.querySelector(location.hash);
-    if (!alvo || !alvo.classList.contains('card')) return;
-    alvo.scrollIntoView({ block:'center' });
-    alvo.classList.add('alvo');
-    setTimeout(function(){ alvo.classList.remove('alvo'); }, 2600);
-  }
-  window.addEventListener('hashchange', destacar);
-  destacar();
+  document.querySelectorAll('.compartilhar').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var it = btn.closest('.item');
+      var link = it.dataset.url;
+      var texto = it.dataset.nome + ' — R$ ' + it.dataset.preco
+        + '\\nBazar do Diego, retirada em ${CIDADE}.';
+      try {
+        if (navigator.share){
+          await navigator.share({ title: it.dataset.nome + ' — Bazar do Diego', text: texto, url: link });
+        } else {
+          avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
+        }
+      } catch (err) {
+        if (!err || err.name !== 'AbortError'){
+          avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
+        }
+      }
+    });
+  });
 })();
-</script>
+`;
+
+const VISOR = `
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="visor-topo">
+    <span id="visor-conta"></span>
+    <button class="visor-btn" id="visor-fechar" aria-label="Fechar">${ico.x}</button>
+  </div>
+  <button class="visor-btn visor-nav ant" id="visor-ant" aria-label="Foto anterior">${ico.seta}</button>
+  <div class="visor-palco" id="visor-palco"><img id="visor-img" alt=""></div>
+  <button class="visor-btn visor-nav prox" id="visor-prox" aria-label="Próxima foto">${ico.seta}</button>
+  <p class="visor-rodape">Toque na foto para ampliar · arraste para mover</p>
+</div>
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+<script>${SCRIPT}</script>`;
+
+const RODAPE = (base) => `<footer>
+  <div class="larg">
+    <a class="marca" href="${base}">${marca(19)}<b>Bazar do Diego</b></a>
+    <p>Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada. Itens usados vendidos no estado em que se encontram — pode conferir tudo antes de levar.</p>
+    <a class="btn primario" href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">${ico.whats}<span>${FONE}</span></a>
+  </div>
+</footer>`;
+
+// ---------- catálogo ----------
+function paginaIndex(itens, categorias) {
+  const disponiveis = itens.filter((i) => i.status === 'disponivel').length;
+  const json = [
+    {
+      '@context': 'https://schema.org', '@type': 'WebSite', name: 'Bazar do Diego',
+      url: URL_SITE, inLanguage: 'pt-BR',
+      description: 'Itens usados em ótimo estado com preço abaixo do novo, em Caxias do Sul.',
+    },
+    {
+      '@context': 'https://schema.org', '@type': 'ItemList',
+      numberOfItems: itens.length,
+      itemListElement: itens.map((i, n) => ({
+        '@type': 'ListItem', position: n + 1, url: urlItem(i.slug), name: i.nome,
+      })),
+    },
+  ];
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+${cabeca({
+  titulo: 'Bazar do Diego — desapego com preço bom em Caxias do Sul',
+  descricao: `${disponiveis} itens em ótimo estado com preço abaixo do que custa novo: eletrônicos, peças de PC, bicicletas, móveis e acessórios. Retirada em Caxias do Sul.`,
+  url: URL_SITE, imagem: `${URL_SITE}social/capa.jpg`, json, base: './',
+})}
+</head>
+<body>
+
+<header class="capa larg">
+  <span class="selo">${marca(34, '#fff')}</span>
+  <h1>Bazar do Diego</h1>
+  <p class="chamada">Itens em ótimo estado, com preço abaixo do que custa novo.</p>
+  <p class="local">${ico.pin}<span>Retirada em ${CIDADE}</span></p>
+  <p><a class="btn primario" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá! Vi o Bazar do Diego e queria saber mais.')}" target="_blank" rel="noopener">${ico.whats}<span>Falar no WhatsApp</span></a></p>
+</header>
+
+<div class="barra">
+  <div class="larg">
+    <form class="busca" role="search" onsubmit="return false">
+      <span class="busca-ico">${ico.busca}</span>
+      <input type="search" id="busca" placeholder="Buscar no bazar" aria-label="Buscar item"
+             autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+      <button type="button" class="busca-limpar" id="busca-limpar" aria-label="Limpar busca" hidden>${ico.x}</button>
+    </form>
+    <div class="filtros" role="group" aria-label="Filtrar por categoria">
+      <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
+      ${categorias.map((c) => `<button class="chip" data-f="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('\n      ')}
+    </div>
+    <p class="conta" id="conta" hidden>${itens.length} itens · ${disponiveis} disponíveis</p>
+  </div>
+</div>
+
+<main class="larg">
+  <div class="grade" id="grade">
+${itens.map(cardHTML).join('\n')}
+  </div>
+  <p class="vazio" id="vazio" hidden>Nenhum item nesta categoria.</p>
+</main>
+
+${RODAPE('./')}
+${VISOR}
 </body>
 </html>`;
 }
+
+// ---------- página do produto ----------
+function paginaProduto(item, vizinhos) {
+  const st = STATUS[item.status] ?? STATUS.disponivel;
+  const msg = encodeURIComponent(`Olá! Tenho interesse no item: ${item.nome} (R$ ${brl(item.preco)})\n${urlItem(item.slug)}`);
+  const resumo = [
+    `R$ ${brl(item.preco)}${item.qtd > 1 ? ' cada' : ''}`,
+    item.desconto ? `${item.desconto}% abaixo do novo (R$ ${brl(item.ref)} em ${item.fonte_referencia})` : '',
+    item.qtd > 1 ? `${item.qtd} unidades` : '',
+    `Retirada em ${CIDADE}`,
+  ].filter(Boolean).join(' · ');
+
+  const json = [{
+    '@context': 'https://schema.org', '@type': 'Product',
+    name: item.nome,
+    description: item.descricao,
+    image: item.fotos.length ? item.fotos.map((f) => `${URL_SITE}fotos/${f}`) : [`${URL_SITE}social/capa.jpg`],
+    category: item.categoria,
+    itemCondition: 'https://schema.org/UsedCondition',
+    offers: {
+      '@type': 'Offer',
+      url: urlItem(item.slug),
+      price: Number(item.preco).toFixed(2),
+      priceCurrency: 'BRL',
+      availability: `https://schema.org/${st.schema}`,
+      itemCondition: 'https://schema.org/UsedCondition',
+      seller: { '@type': 'Person', name: 'Bazar do Diego' },
+      areaServed: { '@type': 'City', name: 'Caxias do Sul' },
+    },
+  }, {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Bazar do Diego', item: URL_SITE },
+      { '@type': 'ListItem', position: 2, name: item.categoria, item: URL_SITE },
+      { '@type': 'ListItem', position: 3, name: item.nome, item: urlItem(item.slug) },
+    ],
+  }];
+
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+${cabeca({
+  titulo: `${item.nome} — R$ ${brl(item.preco)} · Bazar do Diego`,
+  descricao: `${item.descricao.slice(0, 155)}`,
+  url: urlItem(item.slug), imagem: imagemSocial(item), tipo: 'product', json, base: '../../',
+})}
+</head>
+<body>
+
+<div class="topo">
+  <a class="voltar" href="../../" aria-label="Voltar ao catálogo">${ico.seta}</a>
+  <a class="marca" href="../../">${marca(19)}<b>Bazar do Diego</b></a>
+</div>
+
+<article class="produto item${item.vendido ? ' vendido' : ''}" ${dadosDoItem(item)}>
+  ${galeriaHTML(item)}
+  <div class="ficha">
+    <p class="meta"><span class="badge ${st.cor}">${st.rotulo}</span><span class="qtd">${item.qtd > 1 ? `${item.qtd} unidades · ` : ''}${esc(item.categoria)}</span></p>
+    <h1>${esc(item.nome)}</h1>
+    ${precosHTML(item)}
+    <p class="desc">${esc(item.descricao)}</p>
+    <div class="condicoes">
+      <div>${ico.pin}<span>Retirada em ${CIDADE}</span></div>
+      <div>${ico.pix}<span>Dinheiro ou Pix na retirada</span></div>
+      <div>${ico.olho}<span>Pode conferir tudo antes de levar</span></div>
+    </div>
+    ${acoesHTML(item)}
+  </div>
+</article>
+
+${vizinhos.length ? `<section class="tambem">
+  <h2>Também no bazar</h2>
+  <div class="lista">
+    ${vizinhos.map((v) => `<a href="../${v.slug}/">
+      ${v.fotos.length ? `<img src="../../fotos/${v.fotos[0]}" alt="${esc(v.nome)}" loading="lazy" decoding="async" width="1000" height="1000">` : `<span class="ilustra" style="border-radius:14px">${ILUSTRACAO[v.slug] ?? ''}</span>`}
+      <span class="n">${esc(v.nome)}</span>
+      <span class="p">R$ ${brl(v.preco)}</span>
+    </a>`).join('\n    ')}
+  </div>
+</section>` : ''}
+
+${item.vendido ? '' : `<div class="acao-fixa">
+  <span class="valor"><b>R$ ${brl(item.preco)}</b>${item.qtd > 1 ? '<span>cada</span>' : ''}</span>
+  <a class="btn primario" href="https://wa.me/${WHATSAPP}?text=${msg}" target="_blank" rel="noopener">${ico.whats}<span>Tenho interesse</span></a>
+</div>`}
+
+${RODAPE('../../')}
+${VISOR}
+</body>
+</html>`;
+}
+
+// ---------- favicon, sitemap, robots ----------
+const FAVICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="11" fill="#1D1D1F"/>
+  <g transform="translate(24 24) scale(.58) translate(-24 -24)">
+    <path d="M25.6 4.5H39.5a4 4 0 0 1 4 4v13.9a4 4 0 0 1-1.17 2.83L24.4 43.16a4 4 0 0 1-5.66 0L4.84 29.26a4 4 0 0 1 0-5.66L22.77 5.67a4 4 0 0 1 2.83-1.17Z" fill="none" stroke="#fff" stroke-width="4"/>
+    <circle cx="33.4" cy="14.6" r="4" fill="#fff"/>
+  </g>
+</svg>`;
+
+function gerarSitemap(itens) {
+  const hoje = DATA_BUILD;
+  const urls = [
+    { loc: URL_SITE, pri: '1.0' },
+    ...itens.filter((i) => !i.vendido).map((i) => ({ loc: urlItem(i.slug), pri: '0.8' })),
+  ];
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${hoje}</lastmod><priority>${u.pri}</priority></url>`).join('\n')}
+</urlset>`;
+}
+
+const ROBOTS = `User-agent: *
+Allow: /
+
+Sitemap: ${URL_SITE}sitemap.xml
+`;
 
 // ---------- anúncios ----------
 const HASHTAGS = {
@@ -831,25 +947,22 @@ const HASHTAGS = {
   'Brinquedos': '#lego #colecionador #brinquedos',
   'Acessórios': '#acessorios #importado',
   'Tiro Esportivo': '#tiroesportivo #epi #protecao',
+  'PC e Hardware': '#pcgamer #hardware #setup',
 };
 
 function anuncioMD(item) {
-  const preco = Number(item.preco);
-  const ref = item.preco_referencia ? Number(item.preco_referencia) : null;
-  const desconto = ref && ref > preco ? Math.round(((ref - preco) / ref) * 100) : null;
-  const qtd = Number(item.quantidade || 1);
-  const comparacao = desconto
-    ? `\n\nNovo custa cerca de R$ ${brl(ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(preco)}, ${desconto}% abaixo.`
+  const comparacao = item.desconto
+    ? `\n\nNovo custa cerca de R$ ${brl(item.ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.`
     : '';
-  const unidades = qtd > 1 ? `\n\nDisponíveis: ${qtd} unidades (preço por unidade).` : '';
+  const unidades = item.qtd > 1 ? `\n\nDisponíveis: ${item.qtd} unidades (preço por unidade).` : '';
   const tags = `#bazar #desapego #caxiasdosul ${HASHTAGS[item.categoria] ?? ''}`.trim();
 
   return `# ${item.nome}
 
-**Preço:** R$ ${brl(preco)}${qtd > 1 ? ' (cada)' : ''}${desconto ? ` · ${desconto}% abaixo do novo` : ''}
+**Preço:** R$ ${brl(item.preco)}${item.qtd > 1 ? ' (cada)' : ''}${item.desconto ? ` · ${item.desconto}% abaixo do novo` : ''}
 **Categoria:** ${item.categoria}
 **Fotos:** ${item.fotos.length ? item.fotos.join(', ') : '— (pendente)'}
-**Link direto:** ${URL_SITE}#item-${item.slug}
+**Link direto:** ${urlItem(item.slug)}
 
 ## Título para o Marketplace
 ${item.nome.slice(0, 99)}
@@ -858,14 +971,14 @@ ${item.nome.slice(0, 99)}
 ${item.descricao}${comparacao}${unidades}
 
 Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: ${URL_SITE}
+Página do item: ${urlItem(item.slug)}
 
 ## Legenda para o Instagram
-${item.nome} — R$ ${brl(preco)}${qtd > 1 ? ' cada' : ''}
+${item.nome} — R$ ${brl(item.preco)}${item.qtd > 1 ? ' cada' : ''}
 
 ${item.descricao}${comparacao}
 
-Retirada em ${CIDADE}. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em ${CIDADE}. Chama no direct ou no WhatsApp ${FONE}.
 
 ${tags}
 `;
@@ -875,79 +988,102 @@ function gerarAnuncios(itens) {
   const dir = join(ROOT, 'anuncios');
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
-  const publicaveis = itens.filter((i) => i.status !== 'vendido');
+  const publicaveis = itens.filter((i) => !i.vendido);
   for (const item of publicaveis) writeFileSync(join(dir, `${item.slug}.md`), anuncioMD(item));
 
-  const porValor = [...publicaveis].sort((a, b) => Number(b.preco) - Number(a.preco));
-  const consolidado = `# Todos os anúncios — Bazar do Diego
+  const porValor = [...publicaveis].sort((a, b) => b.preco - a.preco);
+  writeFileSync(join(dir, 'TODOS-ANUNCIOS.md'), `# Todos os anúncios — Bazar do Diego
 
 Gerado por \`build.mjs\` a partir de \`catalogo.csv\`. Ordem sugerida de publicação:
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
-${porValor.map((i, n) => `${n + 1}. **${i.nome}** — R$ ${brl(Number(i.preco))} · \`anuncios/${i.slug}.md\``).join('\n')}
+${porValor.map((i, n) => `${n + 1}. **${i.nome}** — R$ ${brl(i.preco)} · \`anuncios/${i.slug}.md\``).join('\n')}
 
 ---
 
-${porValor.map(anuncioMD).join('\n---\n\n')}`;
-  writeFileSync(join(dir, 'TODOS-ANUNCIOS.md'), consolidado);
+${porValor.map(anuncioMD).join('\n---\n\n')}`);
   return publicaveis.length;
 }
 
-// ---------- conferência do script gerado ----------
+// ---------- conferência do que foi gerado ----------
 // Duas `function x(){}` no mesmo escopo não dão erro: a última vence, em
 // silêncio. Foi assim que o filtro de categoria parou de funcionar — o
 // `aplicar()` do zoom sobrescreveu o `aplicar()` do filtro. Esta trava
 // quebra o build em vez de publicar a página quebrada.
-function conferirScript(html) {
+function conferirScript(html, onde) {
   const js = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
-  if (!js) throw new Error('build: não achei o <script> da página');
+  if (!js) throw new Error(`build: ${onde} sem <script>`);
 
   const nomes = [...js.matchAll(/^\s*function\s+([A-Za-z_$][\w$]*)\s*\(/gm)].map((m) => m[1]);
   const repetidos = [...new Set(nomes.filter((n, i) => nomes.indexOf(n) !== i))];
   if (repetidos.length) {
-    throw new Error(
-      `build: função declarada mais de uma vez no mesmo escopo: ${repetidos.join(', ')}. ` +
-      `A última sobrescreve as anteriores — renomeie.`
-    );
+    throw new Error(`build: ${onde}: função declarada mais de uma vez no mesmo escopo: ${repetidos.join(', ')}. A última sobrescreve as anteriores — renomeie.`);
   }
-
-  // \s, \d e afins somem dentro do template literal (viram s, d).
-  // Se um /.../ do script tiver essas letras logo após "[" ou no lugar de
-  // uma classe de caracteres, quase certamente era para ser \s ou \d.
+  // \s, \d e afins somem dentro do template literal (viram s, d)
   for (const m of js.matchAll(/\.split\((\/[^/\n]+\/)\)/g)) {
     if (/\/[sdwSDW]\+?\//.test(m[1])) {
-      throw new Error(
-        `build: ${m[1]} no script parece um \\s ou \\d que perdeu a barra no ` +
-        `template literal. Escreva \\\\s no gerador.`
-      );
+      throw new Error(`build: ${onde}: ${m[1]} parece um \\s que perdeu a barra no template literal. Escreva \\\\s no gerador.`);
     }
   }
+  new Function(js); // erro de sintaxe estoura aqui, não no navegador do comprador
 
-  new Function(js); // erro de sintaxe estoura aqui, e não no navegador do comprador
-  return js.length;
+  for (const tag of ['og:image', 'og:url', 'og:title', 'og:description']) {
+    if (!html.includes(`property="${tag}"`)) throw new Error(`build: ${onde} sem ${tag}`);
+  }
 }
 
 // ---------- main ----------
-const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i) => ({
-  ...i,
-  fotos: fotosDoItem(i.slug),
-}));
+const DATA_BUILD = new Date().toISOString().slice(0, 10);
+
+const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i) => {
+  const preco = Number(i.preco);
+  const ref = i.preco_referencia ? Number(i.preco_referencia) : null;
+  return {
+    ...i,
+    fotos: fotosDoItem(i.slug),
+    preco,
+    ref,
+    desconto: ref && ref > preco ? Math.round(((ref - preco) / ref) * 100) : null,
+    qtd: Number(i.quantidade || 1),
+    vendido: i.status === 'vendido',
+    base: './',
+  };
+});
 
 const ordem = { disponivel: 0, reservado: 1, vendido: 2 };
-itens.sort((a, b) => (ordem[a.status] ?? 0) - (ordem[b.status] ?? 0) || Number(b.preco) - Number(a.preco));
-
+itens.sort((a, b) => (ordem[a.status] ?? 0) - (ordem[b.status] ?? 0) || b.preco - a.preco);
 const categorias = [...new Set(itens.map((i) => i.categoria))];
 
 rmSync(SITE, { recursive: true, force: true });
 mkdirSync(SITE, { recursive: true });
 const nFotos = prepararFotos(itens);
-const pagina = paginaHTML(itens, categorias);
-conferirScript(pagina);
-writeFileSync(join(SITE, 'index.html'), pagina);
+const nCartoes = gerarCartoes(itens);
+
+const paginaCatalogo = paginaIndex(itens, categorias);
+conferirScript(paginaCatalogo, 'index.html');
+writeFileSync(join(SITE, 'index.html'), paginaCatalogo);
+
+let nPaginas = 0;
+for (const item of itens) {
+  const vizinhos = itens
+    .filter((v) => v.slug !== item.slug && !v.vendido)
+    .sort((a, b) => (a.categoria === item.categoria ? -1 : 1) - (b.categoria === item.categoria ? -1 : 1))
+    .slice(0, 4);
+  const alvo = { ...item, base: '../../' };
+  const html = paginaProduto(alvo, vizinhos);
+  if (nPaginas === 0) conferirScript(html, `item/${item.slug}`);
+  mkdirSync(join(SITE, 'item', item.slug), { recursive: true });
+  writeFileSync(join(SITE, 'item', item.slug, 'index.html'), html);
+  nPaginas++;
+}
+
+writeFileSync(join(SITE, 'favicon.svg'), FAVICON);
+writeFileSync(join(SITE, 'sitemap.xml'), gerarSitemap(itens));
+writeFileSync(join(SITE, 'robots.txt'), ROBOTS);
 writeFileSync(join(SITE, '.nojekyll'), '');
 const nAnuncios = gerarAnuncios(itens);
 
 const semFoto = itens.filter((i) => !i.fotos.length).map((i) => i.slug);
-console.log(`docs/ gerado — ${itens.length} itens, ${nFotos} fotos, ${categorias.length} categorias`);
-console.log(`anuncios/ gerado — ${nAnuncios} textos + TODOS-ANUNCIOS.md`);
+console.log(`docs/ — ${itens.length} itens, ${nPaginas} páginas de produto, ${nFotos} fotos, ${nCartoes} cartões`);
+console.log(`anuncios/ — ${nAnuncios} textos + TODOS-ANUNCIOS.md`);
 if (semFoto.length) console.log(`ilustração (sem foto real): ${semFoto.join(', ')}`);

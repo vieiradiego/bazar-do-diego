@@ -3,7 +3,7 @@
 **Preço:** R$ 44 · 56% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** mouse-logitech-pebble-01.jpg, mouse-logitech-pebble-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-logitech-pebble
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/
 
 ## Título para o Marketplace
 Mouse Logitech Pebble 2 M350s sem fio
@@ -14,7 +14,7 @@ Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambide
 Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 44, 56% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/
 
 ## Legenda para o Instagram
 Mouse Logitech Pebble 2 M350s sem fio — R$ 44
@@ -23,6 +23,6 @@ Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambide
 
 Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 44, 56% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos

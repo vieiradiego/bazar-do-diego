@@ -3,7 +3,7 @@
 **Preço:** R$ 585 · 30% abaixo do novo
 **Categoria:** PC e Hardware
 **Fotos:** fonte-corsair-rm850i-01.jpg, fonte-corsair-rm850i-02.jpg, fonte-corsair-rm850i-03.jpg, fonte-corsair-rm850i-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-fonte-corsair-rm850i
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/
 
 ## Título para o Marketplace
 Fonte Corsair RM850i 850W 80 Plus Gold Modular
@@ -14,7 +14,7 @@ Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento total
 Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 585, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/
 
 ## Legenda para o Instagram
 Fonte Corsair RM850i 850W 80 Plus Gold Modular — R$ 585
@@ -23,6 +23,6 @@ Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento total
 
 Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 585, 30% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup

@@ -40,7 +40,7 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 **Preço:** R$ 2.699
 **Categoria:** Eletrônicos
 **Fotos:** notebook-dell-01.jpg, notebook-dell-02.jpg, notebook-dell-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-notebook-dell
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
 
 ## Título para o Marketplace
 Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
@@ -49,14 +49,14 @@ Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
 Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
 
 ## Legenda para o Instagram
 Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — R$ 2.699
 
 Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -67,7 +67,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 2.511 · 26% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** tablet-galaxy-tab-s9-fe-01.jpg, tablet-galaxy-tab-s9-fe-02.jpg, tablet-galaxy-tab-s9-fe-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-tablet-galaxy-tab-s9-fe
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/tablet-galaxy-tab-s9-fe/
 
 ## Título para o Marketplace
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB
@@ -78,7 +78,7 @@ Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen origi
 Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.511, 26% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/tablet-galaxy-tab-s9-fe/
 
 ## Legenda para o Instagram
 Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB — R$ 2.511
@@ -87,7 +87,7 @@ Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen origi
 
 Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.511, 26% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -98,7 +98,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 1.169
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bicicleta-masculina
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/
 
 ## Título para o Marketplace
 Bicicleta Masculina — MTB aro 29
@@ -107,14 +107,14 @@ Bicicleta Masculina — MTB aro 29
 Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/
 
 ## Legenda para o Instagram
 Bicicleta Masculina — MTB aro 29 — R$ 1.169
 
 Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
 
@@ -125,7 +125,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 1.079
 **Categoria:** Esporte e Bike
 **Fotos:** bicicleta-feminina-fks-01.jpg, bicicleta-feminina-fks-02.jpg, bicicleta-feminina-fks-03.jpg, bicicleta-feminina-fks-04.jpg, bicicleta-feminina-fks-05.jpg, bicicleta-feminina-fks-06.jpg, bicicleta-feminina-fks-07.jpg, bicicleta-feminina-fks-08.jpg, bicicleta-feminina-fks-09.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bicicleta-feminina-fks
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-feminina-fks/
 
 ## Título para o Marketplace
 Bicicleta Feminina FKS SPEC — MTB aro 29
@@ -134,14 +134,14 @@ Bicicleta Feminina FKS SPEC — MTB aro 29
 Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-feminina-fks/
 
 ## Legenda para o Instagram
 Bicicleta Feminina FKS SPEC — MTB aro 29 — R$ 1.079
 
 Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
 
@@ -152,7 +152,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 585 · 30% abaixo do novo
 **Categoria:** PC e Hardware
 **Fotos:** fonte-corsair-rm850i-01.jpg, fonte-corsair-rm850i-02.jpg, fonte-corsair-rm850i-03.jpg, fonte-corsair-rm850i-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-fonte-corsair-rm850i
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/
 
 ## Título para o Marketplace
 Fonte Corsair RM850i 850W 80 Plus Gold Modular
@@ -163,7 +163,7 @@ Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento total
 Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 585, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/
 
 ## Legenda para o Instagram
 Fonte Corsair RM850i 850W 80 Plus Gold Modular — R$ 585
@@ -172,9 +172,9 @@ Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento total
 
 Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 585, 30% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -183,7 +183,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 539 (cada) · 50% abaixo do novo
 **Categoria:** PC e Hardware
 **Fotos:** memoria-corsair-ddr4-16gb-01.jpg, memoria-corsair-ddr4-16gb-02.jpg, memoria-corsair-ddr4-16gb-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-memoria-corsair-ddr4-16gb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/memoria-corsair-ddr4-16gb/
 
 ## Título para o Marketplace
 Memória Corsair Vengeance LPX 16GB DDR4 2400MHz
@@ -196,7 +196,7 @@ Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 539, 50% abaixo.
 Disponíveis: 2 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/memoria-corsair-ddr4-16gb/
 
 ## Legenda para o Instagram
 Memória Corsair Vengeance LPX 16GB DDR4 2400MHz — R$ 539 cada
@@ -205,9 +205,9 @@ Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V 
 
 Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 539, 50% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -216,7 +216,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 431
 **Categoria:** Brinquedos
 **Fotos:** lego-game-boy-01.jpg, lego-game-boy-02.jpg, lego-game-boy-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-lego-game-boy
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/lego-game-boy/
 
 ## Título para o Marketplace
 LEGO Game Boy 72046 — lacrado
@@ -225,14 +225,14 @@ LEGO Game Boy 72046 — lacrado
 Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/lego-game-boy/
 
 ## Legenda para o Instagram
 LEGO Game Boy 72046 — lacrado — R$ 431
 
 Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #lego #colecionador #brinquedos
 
@@ -243,7 +243,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 359
 **Categoria:** PC e Hardware
 **Fotos:** watercooler-masterliquid-240-01.jpg, watercooler-masterliquid-240-02.jpg, watercooler-masterliquid-240-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-watercooler-masterliquid-240
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/watercooler-masterliquid-240/
 
 ## Título para o Marketplace
 Water Cooler Cooler Master MasterLiquid 240
@@ -252,16 +252,16 @@ Water Cooler Cooler Master MasterLiquid 240
 Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/watercooler-masterliquid-240/
 
 ## Legenda para o Instagram
 Water Cooler Cooler Master MasterLiquid 240 — R$ 359
 
 Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -270,7 +270,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 359
 **Categoria:** PC e Hardware
 **Fotos:** hd-seagate-3tb-01.jpg, hd-seagate-3tb-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-seagate-3tb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-seagate-3tb/
 
 ## Título para o Marketplace
 HD Seagate Desktop 3TB — SATA 3.5
@@ -279,16 +279,16 @@ HD Seagate Desktop 3TB — SATA 3.5
 HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-seagate-3tb/
 
 ## Legenda para o Instagram
 HD Seagate Desktop 3TB — SATA 3.5 — R$ 359
 
 HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -297,7 +297,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 341 · 47% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg, teclado-logitech-gpro-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-logitech-gpro
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/
 
 ## Título para o Marketplace
 Teclado Mecânico Gamer Logitech G PRO TKL
@@ -308,7 +308,7 @@ Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 341, 47% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/
 
 ## Legenda para o Instagram
 Teclado Mecânico Gamer Logitech G PRO TKL — R$ 341
@@ -317,7 +317,7 @@ Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout 
 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 341, 47% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -328,7 +328,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 287
 **Categoria:** PC e Hardware
 **Fotos:** fans-corsair-sp140-01.jpg, fans-corsair-sp140-02.jpg, fans-corsair-sp140-03.jpg, fans-corsair-sp140-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-fans-corsair-sp140
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fans-corsair-sp140/
 
 ## Título para o Marketplace
 Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE
@@ -337,16 +337,16 @@ Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE
 Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fans-corsair-sp140/
 
 ## Legenda para o Instagram
 Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE — R$ 287
 
 Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -355,7 +355,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 269 · 54% abaixo do novo
 **Categoria:** PC e Hardware
 **Fotos:** hd-wd-purple-2tb-01.jpg, hd-wd-purple-2tb-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-wd-purple-2tb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/
 
 ## Título para o Marketplace
 HD WD Purple 2TB — SATA 3.5 para CFTV
@@ -366,7 +366,7 @@ HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha
 Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 269, 54% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/
 
 ## Legenda para o Instagram
 HD WD Purple 2TB — SATA 3.5 para CFTV — R$ 269
@@ -375,9 +375,9 @@ HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha
 
 Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 269, 54% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -386,7 +386,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 233 (cada) · 37% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** airtags-01.jpg, airtags-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-airtags
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/airtags/
 
 ## Título para o Marketplace
 Apple AirTag 2ª geração
@@ -399,7 +399,7 @@ Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 233, 37% abaixo.
 Disponíveis: 3 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/airtags/
 
 ## Legenda para o Instagram
 Apple AirTag 2ª geração — R$ 233 cada
@@ -408,7 +408,7 @@ AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Un
 
 Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 233, 37% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -419,7 +419,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 224 (cada) · 24% abaixo do novo
 **Categoria:** Casa
 **Fotos:** cadeiras-pingo-01.jpg, cadeiras-pingo-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cadeiras-pingo
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/
 
 ## Título para o Marketplace
 Cadeira Pingo — assento gota com pés de madeira
@@ -432,7 +432,7 @@ Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 224, 24% ab
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/
 
 ## Legenda para o Instagram
 Cadeira Pingo — assento gota com pés de madeira — R$ 224 cada
@@ -441,7 +441,7 @@ Cadeira design Pingo com assento em polipropileno no formato gota e pés de made
 
 Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 224, 24% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
@@ -452,7 +452,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 224 · 65% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-kit-01.jpg, abafador-howard-leight-kit-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-abafador-howard-leight-kit
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/
 
 ## Título para o Marketplace
 Abafador Eletrônico Howard Leight + óculos + estojo
@@ -463,7 +463,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplif
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 224, 65% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + óculos + estojo — R$ 224
@@ -472,7 +472,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplif
 
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 224, 65% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao
 
@@ -483,7 +483,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 220
 **Categoria:** Esporte e Bike
 **Fotos:** — (pendente)
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-suporte-crianca
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/
 
 ## Título para o Marketplace
 Cadeirinha de bicicleta para criança
@@ -492,14 +492,14 @@ Cadeirinha de bicicleta para criança
 Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/
 
 ## Legenda para o Instagram
 Cadeirinha de bicicleta para criança — R$ 220
 
 Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
 
@@ -510,7 +510,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 207
 **Categoria:** Eletrônicos
 **Fotos:** roteador-tplink-01.jpg, roteador-tplink-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-roteador-tplink
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/roteador-tplink/
 
 ## Título para o Marketplace
 Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)
@@ -519,14 +519,14 @@ Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)
 Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/roteador-tplink/
 
 ## Legenda para o Instagram
 Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300) — R$ 207
 
 Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -537,7 +537,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 171 · 74% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** abafador-howard-leight-01.jpg, abafador-howard-leight-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-abafador-howard-leight
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/
 
 ## Título para o Marketplace
 Abafador Eletrônico Howard Leight + estojo
@@ -548,7 +548,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 171, 74% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/
 
 ## Legenda para o Instagram
 Abafador Eletrônico Howard Leight + estojo — R$ 171
@@ -557,7 +557,7 @@ Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável
 
 Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 171, 74% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao
 
@@ -568,7 +568,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 170
 **Categoria:** Esporte e Bike
 **Fotos:** capacete-rockrider-01.jpg, capacete-rockrider-02.jpg, capacete-rockrider-03.jpg, capacete-rockrider-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-capacete-rockrider
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
 
 ## Título para o Marketplace
 Capacete Rockrider Decathlon — tam. 59-62
@@ -577,14 +577,14 @@ Capacete Rockrider Decathlon — tam. 59-62
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
 
 ## Legenda para o Instagram
 Capacete Rockrider Decathlon — tam. 59-62 — R$ 170
 
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
 
@@ -595,7 +595,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 116
 **Categoria:** PC e Hardware
 **Fotos:** hd-toshiba-1tb-01.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-hd-toshiba-1tb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-toshiba-1tb/
 
 ## Título para o Marketplace
 HD Toshiba 1TB 2.5 para notebook — 5400RPM
@@ -604,16 +604,16 @@ HD Toshiba 1TB 2.5 para notebook — 5400RPM
 HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-toshiba-1tb/
 
 ## Legenda para o Instagram
 HD Toshiba 1TB 2.5 para notebook — 5400RPM — R$ 116
 
 HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -622,7 +622,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 116
 **Categoria:** PC e Hardware
 **Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-ssd-corsair-240gb
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
 
 ## Título para o Marketplace
 SSD Corsair Force LE 240GB — SATA 3
@@ -631,16 +631,16 @@ SSD Corsair Force LE 240GB — SATA 3
 SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
 
 ## Legenda para o Instagram
 SSD Corsair Force LE 240GB — SATA 3 — R$ 116
 
 SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
-#bazar #desapego #caxiasdosul
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -649,7 +649,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 99 (cada)
 **Categoria:** Acessórios
 **Fotos:** bolsa-trader-joes-01.jpg, bolsa-trader-joes-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-bolsa-trader-joes
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/bolsa-trader-joes/
 
 ## Título para o Marketplace
 Bolsa Trader Joe's — sacola de lona importada
@@ -660,14 +660,14 @@ Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/bolsa-trader-joes/
 
 ## Legenda para o Instagram
 Bolsa Trader Joe's — sacola de lona importada — R$ 99 cada
 
 Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com fundo e alças reforçadas em azul-marinho, bolso interno. Novas, com etiqueta. Preço por unidade.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #acessorios #importado
 
@@ -678,7 +678,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 89
 **Categoria:** Eletrônicos
 **Fotos:** teclado-hp-slim-01.jpg, teclado-hp-slim-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-teclado-hp-slim
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/
 
 ## Título para o Marketplace
 Teclado HP slim USB empresarial
@@ -687,14 +687,14 @@ Teclado HP slim USB empresarial
 Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/
 
 ## Legenda para o Instagram
 Teclado HP slim USB empresarial — R$ 89
 
 Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -705,7 +705,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 63 · 36% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** kit-limpeza-01.jpg, kit-limpeza-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-kit-limpeza
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/
 
 ## Título para o Marketplace
 Kit de limpeza e manutenção
@@ -716,7 +716,7 @@ Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de 
 Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 63, 36% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/
 
 ## Legenda para o Instagram
 Kit de limpeza e manutenção — R$ 63
@@ -725,7 +725,7 @@ Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de 
 
 Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 63, 36% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao
 
@@ -736,7 +736,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 53
 **Categoria:** Tiro Esportivo
 **Fotos:** oculos-protetor-3m-01.jpg, oculos-protetor-3m-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-oculos-protetor-3m
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/
 
 ## Título para o Marketplace
 Óculos de proteção + protetor auricular 3M + estojo
@@ -745,14 +745,14 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/
 
 ## Legenda para o Instagram
 Óculos de proteção + protetor auricular 3M + estojo — R$ 53
 
 Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao
 
@@ -763,7 +763,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 44 · 56% abaixo do novo
 **Categoria:** Eletrônicos
 **Fotos:** mouse-logitech-pebble-01.jpg, mouse-logitech-pebble-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-logitech-pebble
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/
 
 ## Título para o Marketplace
 Mouse Logitech Pebble 2 M350s sem fio
@@ -774,7 +774,7 @@ Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambide
 Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 44, 56% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/
 
 ## Legenda para o Instagram
 Mouse Logitech Pebble 2 M350s sem fio — R$ 44
@@ -783,7 +783,7 @@ Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambide
 
 Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 44, 56% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -794,7 +794,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 41 (cada) · 18% abaixo do novo
 **Categoria:** Esporte e Bike
 **Fotos:** gancho-bike-decathlon-01.jpg, gancho-bike-decathlon-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-gancho-bike-decathlon
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/
 
 ## Título para o Marketplace
 Gancho de parede e teto para bicicleta — Decathlon
@@ -807,7 +807,7 @@ Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 41, 18% abai
 Disponíveis: 2 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/
 
 ## Legenda para o Instagram
 Gancho de parede e teto para bicicleta — Decathlon — R$ 41 cada
@@ -816,7 +816,7 @@ Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta
 
 Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 41, 18% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
 
@@ -827,7 +827,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 35
 **Categoria:** Eletrônicos
 **Fotos:** mouse-c3tech-01.jpg, mouse-c3tech-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-mouse-c3tech
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-c3tech/
 
 ## Título para o Marketplace
 Mouse sem fio C3 Tech M-W20BK
@@ -836,14 +836,14 @@ Mouse sem fio C3 Tech M-W20BK
 Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/mouse-c3tech/
 
 ## Legenda para o Instagram
 Mouse sem fio C3 Tech M-W20BK — R$ 35
 
 Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
@@ -854,7 +854,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555
 **Preço:** R$ 31 (cada) · 18% abaixo do novo
 **Categoria:** Acessórios
 **Fotos:** cheirinhos-little-trees-01.jpg, cheirinhos-little-trees-02.jpg, cheirinhos-little-trees-03.jpg, cheirinhos-little-trees-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/#item-cheirinhos-little-trees
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/cheirinhos-little-trees/
 
 ## Título para o Marketplace
 Cheirinho Little Trees — pack com 3
@@ -867,7 +867,7 @@ Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 31, 18% abaixo.
 Disponíveis: 4 unidades (preço por unidade).
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/cheirinhos-little-trees/
 
 ## Legenda para o Instagram
 Cheirinho Little Trees — pack com 3 — R$ 31 cada
@@ -876,6 +876,6 @@ Aromatizante Little Trees original importado, pack com 3 unidades lacrado. Dispo
 
 Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 31, 18% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp (54) 99184-5555.
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #acessorios #importado
