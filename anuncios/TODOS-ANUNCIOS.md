@@ -5,7 +5,7 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
 1. **Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB** — R$ 2.699 · `anuncios/notebook-dell.md`
 2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.511 · `anuncios/tablet-galaxy-tab-s9-fe.md`
-3. **Bicicleta Masculina — MTB aro 29** — R$ 1.169 · `anuncios/bicicleta-masculina.md`
+3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.169 · `anuncios/bicicleta-masculina.md`
 4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.079 · `anuncios/bicicleta-feminina-fks.md`
 5. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 585 · `anuncios/fonte-corsair-rm850i.md`
 6. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 539 · `anuncios/memoria-corsair-ddr4-16gb.md`
@@ -22,16 +22,17 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 17. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 207 · `anuncios/roteador-tplink.md`
 18. **Abafador Eletrônico Howard Leight + estojo** — R$ 171 · `anuncios/abafador-howard-leight.md`
 19. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 170 · `anuncios/capacete-rockrider.md`
-20. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 116 · `anuncios/hd-toshiba-1tb.md`
-21. **SSD Corsair Force LE 240GB — SATA 3** — R$ 116 · `anuncios/ssd-corsair-240gb.md`
-22. **Bolsa Trader Joe's — sacola de lona importada** — R$ 99 · `anuncios/bolsa-trader-joes.md`
-23. **Teclado HP slim USB empresarial** — R$ 89 · `anuncios/teclado-hp-slim.md`
-24. **Kit de limpeza e manutenção** — R$ 63 · `anuncios/kit-limpeza.md`
-25. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 53 · `anuncios/oculos-protetor-3m.md`
-26. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 44 · `anuncios/mouse-logitech-pebble.md`
-27. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 41 · `anuncios/gancho-bike-decathlon.md`
-28. **Mouse sem fio C3 Tech M-W20BK** — R$ 35 · `anuncios/mouse-c3tech.md`
-29. **Cheirinho Little Trees — pack com 3** — R$ 31 · `anuncios/cheirinhos-little-trees.md`
+20. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 149 · `anuncios/caneca-stanley.md`
+21. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 116 · `anuncios/hd-toshiba-1tb.md`
+22. **SSD Corsair Force LE 240GB — SATA 3** — R$ 116 · `anuncios/ssd-corsair-240gb.md`
+23. **Bolsa Trader Joe's — sacola de lona importada** — R$ 99 · `anuncios/bolsa-trader-joes.md`
+24. **Teclado HP slim USB empresarial** — R$ 89 · `anuncios/teclado-hp-slim.md`
+25. **Kit de limpeza e manutenção** — R$ 63 · `anuncios/kit-limpeza.md`
+26. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 53 · `anuncios/oculos-protetor-3m.md`
+27. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 44 · `anuncios/mouse-logitech-pebble.md`
+28. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 41 · `anuncios/gancho-bike-decathlon.md`
+29. **Mouse sem fio C3 Tech M-W20BK** — R$ 35 · `anuncios/mouse-c3tech.md`
+30. **Cheirinho Little Trees — pack com 3** — R$ 31 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -93,26 +94,26 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
-# Bicicleta Masculina — MTB aro 29
+# Bicicleta Masculina FKS SPEC — MTB aro 29
 
 **Preço:** R$ 1.169
 **Categoria:** Esporte e Bike
-**Fotos:** — (pendente)
+**Fotos:** bicicleta-masculina-01.jpg, bicicleta-masculina-02.jpg, bicicleta-masculina-03.jpg, bicicleta-masculina-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/
 
 ## Título para o Marketplace
-Bicicleta Masculina — MTB aro 29
+Bicicleta Masculina FKS SPEC — MTB aro 29
 
 ## Descrição para o Marketplace
-Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
+Mountain bike FKS SPEC aro 29 em amarelo neon, quadro de alumínio com freio a disco nas duas rodas e suspensão dianteira. Câmbio Shimano de 21 marchas, guidão reto e selim acolchoado. Acompanha garrafa com suporte, pedais de plataforma e descanso lateral. Bem conservada, pronta para pedalar.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/
 
 ## Legenda para o Instagram
-Bicicleta Masculina — MTB aro 29 — R$ 1.169
+Bicicleta Masculina FKS SPEC — MTB aro 29 — R$ 1.169
 
-Mountain bike masculina aro 29 em ótimo estado de conservação. Fotos detalhadas em breve — chame no WhatsApp que envio na hora.
+Mountain bike FKS SPEC aro 29 em amarelo neon, quadro de alumínio com freio a disco nas duas rodas e suspensão dianteira. Câmbio Shimano de 21 marchas, guidão reto e selim acolchoado. Acompanha garrafa com suporte, pedais de plataforma e descanso lateral. Bem conservada, pronta para pedalar.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
@@ -587,6 +588,37 @@ Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste g
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
+
+---
+
+# Caneca Térmica Stanley Beer Stein 709ml — nova lacrada
+
+**Preço:** R$ 149 · 21% abaixo do novo
+**Categoria:** Casa
+**Fotos:** caneca-stanley-01.jpg, caneca-stanley-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/caneca-stanley/
+
+## Título para o Marketplace
+Caneca Térmica Stanley Beer Stein 709ml — nova lacrada
+
+## Descrição para o Marketplace
+Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure "The Big Grip", em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil — só se acha em estoque remanescente de revenda.
+
+Novo custa cerca de R$ 189 (Rei dos Parafusos) — aqui sai por R$ 149, 21% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/caneca-stanley/
+
+## Legenda para o Instagram
+Caneca Térmica Stanley Beer Stein 709ml — nova lacrada — R$ 149
+
+Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure "The Big Grip", em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil — só se acha em estoque remanescente de revenda.
+
+Novo custa cerca de R$ 189 (Rei dos Parafusos) — aqui sai por R$ 149, 21% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
 ---
 
