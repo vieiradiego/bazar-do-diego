@@ -84,12 +84,16 @@ const planos = [];
 for (const item of itens) {
   if (so && item.slug !== so) continue;
   const querem = [];
-  if (existsSync(join(ROOT, 'docs', 'social', 'cartaz', `${item.slug}.jpg`))) querem.push(`${item.slug}.jpg`);
+  // O cartaz do preço NÃO pode ser reaproveitado da biblioteca: ele muda toda
+  // vez que o preço muda, e a cópia antiga tem o valor velho estampado. Vai
+  // na lista de import forçado, que roda depois da busca na biblioteca.
+  const cartaz = existsSync(join(ROOT, 'docs', 'social', 'cartaz', `${item.slug}.jpg`))
+    ? `${item.slug}.jpg` : null;
   querem.push(...editadasDe(item.slug));
   querem.push(...(originaisDe[item.slug] ?? [])
     .map((o) => o.arquivo)
     .filter((a) => existsSync(join(ROOT, 'fotos', a))));
-  if (querem.length) planos.push({ slug: item.slug, album: nomeAlbum(item.nome), querem });
+  if (querem.length || cartaz) planos.push({ slug: item.slug, album: nomeAlbum(item.nome), querem, cartaz });
 }
 
 if (!executar) {
@@ -110,6 +114,24 @@ console.log(`Pasta "${PASTA_NOVA}" pronta.\n`);
 
 let totalOk = 0, totalFalta = 0;
 for (const p of planos) {
+  // 1º: o cartaz do preço, importado do disco. Entra antes de tudo porque a
+  // primeira foto do álbum é a capa, e é ela que o Diego procura na hora de
+  // publicar. Nunca vem da biblioteca — ver comentário na montagem do plano.
+  if (p.cartaz) {
+    const c = join(ROOT, 'docs', 'social', 'cartaz', p.cartaz);
+    const rc = rodar(`tell application "Photos"
+  set nova to folder "${asEsc(PASTA_NOVA)}"
+  if not (exists album "${asEsc(p.album)}" in nova) then make new album named "${asEsc(p.album)}" at nova
+  set destino to album "${asEsc(p.album)}" in nova
+  with timeout of 300 seconds
+    import {POSIX file "${asEsc(c)}"} into destino without skip check duplicates
+    return (count of media items in destino) as text
+  end timeout
+end tell`);
+    // Preço inalterado: o Photos reconhece a duplicata e não importa nada. Aí
+    // reaproveitar da biblioteca é o certo — é a mesma imagem.
+    if (!(rc.ok && Number(rc.saida) > 0)) p.querem.unshift(p.cartaz);
+  }
   // procura cada arquivo desejado, na ordem, dentro do álbum antigo, e adiciona
   // ao álbum novo. Só o PRIMEIRO com cada nome — é isso que elimina a duplicata.
   const r = rodar(`tell application "Photos"
