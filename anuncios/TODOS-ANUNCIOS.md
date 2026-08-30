@@ -7,32 +7,35 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
 3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
 4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
-5. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
-6. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
-7. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
-8. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
-9. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
-10. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
-11. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
-12. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-13. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
-14. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
-15. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-16. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
-17. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
-18. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
-19. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
-20. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
-21. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
-22. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
-23. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
-24. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
-25. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
-26. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
-27. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
-28. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
-29. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-30. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
+5. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 890 · `anuncios/rack-quadrinhos.md`
+6. **Armário baixo azul turquesa com porta de vidro** — R$ 850 · `anuncios/armario-turquesa.md`
+7. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
+8. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
+9. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
+10. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
+11. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
+12. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
+13. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
+14. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
+15. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+16. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
+17. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
+18. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+19. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
+20. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
+21. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
+22. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
+23. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
+24. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
+25. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
+26. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
+27. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
+28. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
+29. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
+30. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
+31. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
+32. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+33. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -145,6 +148,60 @@ Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas dua
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
+
+---
+
+# Rack aparador de madeira maciça com tampo de quadrinhos
+
+**Preço:** R$ 890
+**Categoria:** Casa
+**Fotos:** rack-quadrinhos-01.jpg, rack-quadrinhos-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
+
+## Título para o Marketplace
+Rack aparador de madeira maciça com tampo de quadrinhos
+
+## Descrição para o Marketplace
+Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
+
+## Legenda para o Instagram
+Rack aparador de madeira maciça com tampo de quadrinhos — R$ 890
+
+Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
+
+---
+
+# Armário baixo azul turquesa com porta de vidro
+
+**Preço:** R$ 850
+**Categoria:** Casa
+**Fotos:** armario-turquesa-01.jpg, armario-turquesa-02.jpg, armario-turquesa-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
+
+## Título para o Marketplace
+Armário baixo azul turquesa com porta de vidro
+
+## Descrição para o Marketplace
+Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
+
+## Legenda para o Instagram
+Armário baixo azul turquesa com porta de vidro — R$ 850
+
+Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
 ---
 
@@ -321,6 +378,39 @@ Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
+# Poltrona de pallet com rodízios — estofado pop art
+
+**Preço:** R$ 350 (cada) · 24% abaixo do novo
+**Categoria:** Casa
+**Fotos:** poltrona-pallet-01.jpg, poltrona-pallet-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/poltrona-pallet/
+
+## Título para o Marketplace
+Poltrona de pallet com rodízios — estofado pop art
+
+## Descrição para o Marketplace
+Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios — dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor.
+
+Novo custa cerca de R$ 460 (Pallet SP) — aqui sai por R$ 350, 24% abaixo.
+
+Disponíveis: 2 unidades (preço por unidade).
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/poltrona-pallet/
+
+## Legenda para o Instagram
+Poltrona de pallet com rodízios — estofado pop art — R$ 350 cada
+
+Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios — dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor.
+
+Novo custa cerca de R$ 460 (Pallet SP) — aqui sai por R$ 350, 24% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
 ---
 
