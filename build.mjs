@@ -450,7 +450,9 @@ const ESTILOS = `
 // ---------- pedaços reaproveitados ----------
 function galeriaHTML(item, { zoom = true } = {}) {
   if (!item.fotos.length) {
-    return `<div class="visual"><div class="ilustra">${ILUSTRACAO[item.slug] ?? ''}<span>Ilustração — fotos reais em breve</span></div></div>`;
+    // item já vendido não promete foto que não vai mais chegar
+    const legenda = item.vendido ? 'Vendido' : 'Ilustração — fotos reais em breve';
+    return `<div class="visual"><div class="ilustra">${ILUSTRACAO[item.slug] ?? marca(96)}<span>${legenda}</span></div></div>`;
   }
   return `<div class="visual">
       <div class="trilho">${item.fotos

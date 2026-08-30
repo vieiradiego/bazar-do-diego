@@ -3,66 +3,38 @@
 Gerado por `build.mjs` a partir de `catalogo.csv`. Ordem sugerida de publicação:
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
-1. **Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB** — R$ 2.969 · `anuncios/notebook-dell.md`
-2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
-3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
-4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
-5. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
-6. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
-7. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 549 · `anuncios/rack-quadrinhos.md`
-8. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
-9. **Armário baixo azul turquesa com porta de vidro** — R$ 399 · `anuncios/armario-turquesa.md`
-10. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
-11. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
-12. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
-13. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
-14. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
-15. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-16. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
-17. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
-18. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-19. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
-20. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
-21. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
-22. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
-23. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
-24. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
-25. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
-26. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
-27. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
-28. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
-29. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
-30. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
-31. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
-32. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-33. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
-
----
-
-# Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB
-
-**Preço:** R$ 2.969
-**Categoria:** Eletrônicos
-**Fotos:** notebook-dell-01.jpg, notebook-dell-02.jpg, notebook-dell-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
-
-## Título para o Marketplace
-Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB
-
-## Descrição para o Marketplace
-Dell Inspiron 14 5402 na cor Platinum Silver. Processador Intel Core i7-1165G7 de 11ª geração (4 núcleos, 8 threads, 12MB de cache, até 4.7 GHz), 16GB de RAM DDR4 3200MHz em dois pentes de 8GB trabalhando em dual channel, e SSD NVMe de 512GB. Placa de vídeo dedicada NVIDIA GeForce MX330 de 2GB GDDR5. Tela de 14 polegadas Full HD 1920x1080 antirreflexo, de borda fina. Teclado retroiluminado com leitor de digital no botão de ligar, bateria de 53Wh e fonte de 65W. Windows 10 Home original de fábrica. Funcionando perfeitamente, sem travamentos.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
-
-## Legenda para o Instagram
-Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB — R$ 2.969
-
-Dell Inspiron 14 5402 na cor Platinum Silver. Processador Intel Core i7-1165G7 de 11ª geração (4 núcleos, 8 threads, 12MB de cache, até 4.7 GHz), 16GB de RAM DDR4 3200MHz em dois pentes de 8GB trabalhando em dual channel, e SSD NVMe de 512GB. Placa de vídeo dedicada NVIDIA GeForce MX330 de 2GB GDDR5. Tela de 14 polegadas Full HD 1920x1080 antirreflexo, de borda fina. Teclado retroiluminado com leitor de digital no botão de ligar, bateria de 53Wh e fonte de 65W. Windows 10 Home original de fábrica. Funcionando perfeitamente, sem travamentos.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+1. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
+2. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
+3. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
+4. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
+5. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
+6. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 549 · `anuncios/rack-quadrinhos.md`
+7. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
+8. **Armário baixo azul turquesa com porta de vidro** — R$ 399 · `anuncios/armario-turquesa.md`
+9. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
+10. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
+11. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
+12. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
+13. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
+14. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+15. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
+16. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
+17. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+18. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
+19. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
+20. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
+21. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
+22. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
+23. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
+24. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
+25. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
+26. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
+27. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
+28. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
+29. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
+30. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
+31. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+32. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 

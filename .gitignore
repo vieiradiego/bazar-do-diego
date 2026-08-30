@@ -11,6 +11,9 @@ Bazar do Diego Vieira.xlsx
 # A barra inicial ancora na raiz: sem ela, docs/fotos/ do site também seria ignorada.
 /fotos/
 
+# Registro de vendas — tem nome de comprador, não pode ir para repo público.
+vendas.csv
+
 # Vídeos
 *.MOV
 *.mov
