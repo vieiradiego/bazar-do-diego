@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const FOTOS = join(ROOT, 'fotos-ecommerce');
 const URL_SITE = 'https://vieiradiego.github.io/bazar-do-diego/';
-const CIDADE = 'Caxias do Sul — RS';
+const CIDADE = 'Caxias do Sul, RS';
 const TMP = join(ROOT, '.xlsx-tmp');
 
 // ---------- CSV in ----------
@@ -60,7 +60,7 @@ const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i)
     link: `${URL_SITE}item/${i.slug}/`,
     descricaoAnuncio: [
       i.descricao,
-      desconto ? `Novo custa cerca de R$ ${brl(ref)} (${i.fonte_referencia}) — aqui sai por R$ ${brl(preco)}, ${desconto}% abaixo.` : '',
+      desconto ? `Novo custa cerca de R$ ${brl(ref)} em ${i.fonte_referencia}. Aqui sai por R$ ${brl(preco)}, ${desconto}% abaixo.` : '',
       qtd > 1 ? `Disponíveis: ${qtd} unidades (preço por unidade).` : '',
       `Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.`,
     ].filter(Boolean).join('\n\n'),

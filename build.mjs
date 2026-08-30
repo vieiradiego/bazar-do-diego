@@ -22,7 +22,7 @@ const FOTOS = join(ROOT, 'fotos-ecommerce');
 const SITE = join(ROOT, 'docs');
 const WHATSAPP = '5554991845555';
 const FONE = '+55 54 99184-5555';
-const CIDADE = 'Caxias do Sul — RS';
+const CIDADE = 'Caxias do Sul, RS';
 const URL_SITE = 'https://vieiradiego.github.io/bazar-do-diego/';
 // duas resoluções: a da grade carrega rápido, a grande é a que o visor amplia.
 // Antes servíamos 1000px em tudo — no zoom de 2,6x num celular 3x isso vira
@@ -479,13 +479,13 @@ const ESTILOS = `
 function galeriaHTML(item, { zoom = true } = {}) {
   if (!item.fotos.length) {
     // item já vendido não promete foto que não vai mais chegar
-    const legenda = item.vendido ? 'Vendido' : 'Ilustração — fotos reais em breve';
+    const legenda = item.vendido ? 'Vendido' : 'Ilustração, fotos reais em breve';
     return `<div class="visual"><div class="ilustra">${ILUSTRACAO[item.slug] ?? marca(96)}<span>${legenda}</span></div></div>`;
   }
   return `<div class="visual">
       <div class="trilho">${item.fotos
         .map((f, i) => `<button class="quadro" type="button" data-i="${i}" aria-label="Ampliar foto ${i + 1} de ${item.fotos.length}">
-          <img src="${item.base}fotos/${f}" alt="${esc(item.nome)} — foto ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" width="1100" height="1100">
+          <img src="${item.base}fotos/${f}" alt="${esc(item.nome)}, foto ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" width="1100" height="1100">
         </button>`).join('')}</div>
       ${item.fotos.length > 1 ? `<div class="pontos" aria-hidden="true">${item.fotos.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}
       ${zoom ? `<span class="dica-zoom" aria-hidden="true">${ico.lupa}</span>` : ''}
@@ -743,7 +743,7 @@ const SCRIPT = `
         clearTimeout(voltar);
         btn.classList.add('feito');
         btn.innerHTML = ICO_OK + '<span>Copiado!</span>';
-        avisar('Link copiado — é só colar onde quiser');
+        avisar('Link copiado, é só colar onde quiser');
         voltar = setTimeout(function(){
           btn.classList.remove('feito');
           btn.innerHTML = ICO_ELO + '<span>' + original + '</span>';
@@ -769,7 +769,7 @@ const SCRIPT = `
     btn.addEventListener('click', async function(){
       var it = btn.closest('.item');
       var link = it.dataset.url;
-      var texto = it.dataset.nome + ' — R$ ' + it.dataset.preco
+      var texto = it.dataset.nome + '\\nR$ ' + it.dataset.preco
         + '\\nBazar do Diego, retirada em ${CIDADE}.\\n' + link;
       var rotulo = btn.querySelector('span');
       var original = rotulo ? rotulo.textContent : '';
@@ -780,7 +780,7 @@ const SCRIPT = `
         if (arq && navigator.canShare && navigator.canShare({ files: [arq] })){
           await navigator.share({ files: [arq], text: texto });
         } else if (navigator.share){
-          await navigator.share({ title: it.dataset.nome + ' — Bazar do Diego', text: texto, url: link });
+          await navigator.share({ title: it.dataset.nome + ' no Bazar do Diego', text: texto, url: link });
         } else {
           avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
         }
@@ -813,7 +813,7 @@ const VISOR = `
 const RODAPE = (base) => `<footer>
   <div class="larg">
     <a class="marca" href="${base}">${marca(19)}<b>Bazar do Diego</b></a>
-    <p>Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada. Itens usados vendidos no estado em que se encontram — pode conferir tudo antes de levar.</p>
+    <p>Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada. Itens em estado de uso, sem detalhes. Pode conferir tudo antes de levar.</p>
     <a class="btn primario" href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">${ico.whats}<span>${FONE}</span></a>
   </div>
 </footer>`;
@@ -839,7 +839,7 @@ function paginaIndex(itens, categorias) {
 <html lang="pt-BR">
 <head>
 ${cabeca({
-  titulo: 'Bazar do Diego — desapego com preço bom em Caxias do Sul',
+  titulo: 'Bazar do Diego, desapego com preço bom em Caxias do Sul',
   descricao: `${disponiveis} itens em ótimo estado com preço abaixo do que custa novo: eletrônicos, peças de PC, bicicletas, móveis e acessórios. Retirada em Caxias do Sul.`,
   url: URL_SITE, imagem: `${URL_SITE}social/capa.jpg`, json, base: './',
 })}
@@ -924,7 +924,7 @@ function paginaProduto(item, vizinhos) {
 <html lang="pt-BR">
 <head>
 ${cabeca({
-  titulo: `${item.nome} — R$ ${brl(item.preco)} · Bazar do Diego`,
+  titulo: `${item.nome} por R$ ${brl(item.preco)} · Bazar do Diego`,
   descricao: `${item.descricao.slice(0, 155)}`,
   url: urlItem(item.slug), imagem: imagemSocial(item), tipo: 'product', json, base: '../../',
 })}
@@ -1014,7 +1014,7 @@ const HASHTAGS = {
 
 function anuncioMD(item) {
   const comparacao = item.desconto
-    ? `\n\nNovo custa cerca de R$ ${brl(item.ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.`
+    ? `\n\nNovo custa cerca de R$ ${brl(item.ref)} em ${item.fonte_referencia}. Aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.`
     : '';
   const unidades = item.qtd > 1 ? `\n\nDisponíveis: ${item.qtd} unidades (preço por unidade).` : '';
   const tags = `#bazar #desapego #caxiasdosul ${HASHTAGS[item.categoria] ?? ''}`.trim();
@@ -1023,7 +1023,7 @@ function anuncioMD(item) {
 
 **Preço:** R$ ${brl(item.preco)}${item.qtd > 1 ? ' (cada)' : ''}${item.desconto ? ` · ${item.desconto}% abaixo do novo` : ''}
 **Categoria:** ${item.categoria}
-**Fotos:** ${item.fotos.length ? item.fotos.join(', ') : '— (pendente)'}
+**Fotos:** ${item.fotos.length ? item.fotos.join(', ') : '(pendente)'}
 **Link direto:** ${urlItem(item.slug)}
 
 ## Título para o Marketplace
@@ -1036,7 +1036,8 @@ Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.
 Página do item: ${urlItem(item.slug)}
 
 ## Legenda para o Instagram
-${item.nome} — R$ ${brl(item.preco)}${item.qtd > 1 ? ' cada' : ''}
+${item.nome}
+R$ ${brl(item.preco)}${item.qtd > 1 ? ' cada' : ''}
 
 ${item.descricao}${comparacao}
 
@@ -1054,12 +1055,12 @@ function gerarAnuncios(itens) {
   for (const item of publicaveis) writeFileSync(join(dir, `${item.slug}.md`), anuncioMD(item));
 
   const porValor = [...publicaveis].sort((a, b) => b.preco - a.preco);
-  writeFileSync(join(dir, 'TODOS-ANUNCIOS.md'), `# Todos os anúncios — Bazar do Diego
+  writeFileSync(join(dir, 'TODOS-ANUNCIOS.md'), `# Todos os anúncios do Bazar do Diego
 
 Gerado por \`build.mjs\` a partir de \`catalogo.csv\`. Ordem sugerida de publicação:
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
-${porValor.map((i, n) => `${n + 1}. **${i.nome}** — R$ ${brl(i.preco)} · \`anuncios/${i.slug}.md\``).join('\n')}
+${porValor.map((i, n) => `${n + 1}. **${i.nome}** · R$ ${brl(i.preco)} · \`anuncios/${i.slug}.md\``).join('\n')}
 
 ---
 
@@ -1161,15 +1162,39 @@ const CATEGORIA_FB = {
   'Tiro Esportivo': 'Esportes e lazer → Equipamentos esportivos',
 };
 
-const nomeAlbum = (nome) => {
-  const curto = nome.split(/ — | - /)[0].trim();
-  return `Bazar · ${curto.length > 40 ? curto.slice(0, 38) + '…' : curto}`;
+// Nome do álbum no app Fotos. Curto o bastante para bater o olho na lista do
+// iPhone, e cortado em palavra inteira: antes cortava em 38 caracteres secos e
+// saía coisa como "Howard Leight + es…".
+const nomeAlbumBase = (nome, limite = 38) => {
+  let c = nome.split(/ — | - |, /)[0].trim();
+  if (c.length > limite) c = c.slice(0, limite).replace(/\s+\S*$/, '');
+  // não terminar em preposição solta nem no "+" de um conjunto
+  c = c.replace(/\s+(?:de|do|da|com|para|em|no|na|e|\+)$/i, '').replace(/\s*\+$/, '').trim();
+  return `Bazar · ${c}`;
 };
+
+// Dois itens podem encurtar para o mesmo nome (os dois abafadores Howard Leight
+// faziam isso, e os dois álbuns viravam um só no app Fotos). Aqui a lista
+// inteira é resolvida de uma vez e o repetido ganha um qualificador.
+function mapaAlbuns(itens) {
+  const usados = new Set();
+  const mapa = new Map();
+  for (const item of itens) {
+    // corte curto primeiro; colidiu, tenta um corte maior, que costuma já
+    // separar os dois (o que distingue está justamente no fim do nome)
+    let nome = nomeAlbumBase(item.nome);
+    if (usados.has(nome)) nome = nomeAlbumBase(item.nome, 60);
+    for (let n = 2; usados.has(nome); n++) nome = `${nomeAlbumBase(item.nome, 60)} ${n}`;
+    usados.add(nome);
+    mapa.set(item.slug, nome);
+  }
+  return mapa;
+}
 
 function descricaoAnuncio(item) {
   return [
     item.descricao,
-    item.desconto ? `Novo custa cerca de R$ ${brl(item.ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.` : '',
+    item.desconto ? `Novo custa cerca de R$ ${brl(item.ref)} em ${item.fonte_referencia}. Aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.` : '',
     item.qtd > 1 ? `Disponíveis: ${item.qtd} unidades (preço por unidade).` : '',
     `Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.`,
     `Mais fotos e o catálogo completo: ${urlItem(item.slug)}`,
@@ -1177,6 +1202,7 @@ function descricaoAnuncio(item) {
 }
 
 function paginaPublicar(itens) {
+  const albuns = mapaAlbuns(itens);
   const fila = itens.filter((i) => !i.vendido).sort((a, b) => b.preco - a.preco);
   return `<!doctype html>
 <html lang="pt-BR">
@@ -1184,7 +1210,7 @@ function paginaPublicar(itens) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Publicar no Marketplace — Bazar do Diego</title>
+<title>Publicar no Marketplace · Bazar do Diego</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <style>${ESTILOS}
   .passos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 4px}
@@ -1197,6 +1223,14 @@ function paginaPublicar(itens) {
   .pub{background:var(--cartao);border:1px solid var(--traco);border-radius:var(--raio);
     padding:16px 16px 18px;display:flex;flex-direction:column;gap:11px}
   .pub.pronto{opacity:.5}
+  /* precisa vir depois do display:flex do .pub, senão o filtro não esconde nada */
+  .pub[hidden]{display:none}
+  .filtros{display:flex;gap:7px}
+  .filtro{appearance:none;border:1px solid var(--traco);background:transparent;color:var(--pedra);
+    font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .filtro[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--fundo)}
+  .vazio{text-align:center;color:var(--terciaria);padding:38px 0;font-size:15px}
+  .vazio[hidden]{display:none}
   .pub .topo-item{display:flex;align-items:flex-start;gap:12px}
   .pub .topo-item h2{flex:1;font-size:17px}
   .pub .val{font-size:17px;font-weight:600;white-space:nowrap}
@@ -1208,6 +1242,8 @@ function paginaPublicar(itens) {
   .cartaz{display:block;text-decoration:none;border-radius:14px;overflow:hidden;
     border:1px solid var(--traco);background:#fff}
   .cartaz img{width:100%;height:auto;display:block}
+  .story{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--secundaria)}
+  .story a{color:var(--tinta);font-weight:600}
   .cartaz span{display:block;padding:9px 12px;font-size:12px;color:var(--terciaria);
     background:var(--areia);text-align:center}
   .linha{display:flex;gap:8px;flex-wrap:wrap}
@@ -1230,7 +1266,7 @@ function paginaPublicar(itens) {
 <header class="capa larg" style="padding:34px 0 18px">
   <a class="marca" href="../">${marca(19)}<b>Bazar do Diego</b></a>
   <h1 style="font-size:clamp(28px,7vw,40px);margin-top:14px">Publicar no Marketplace</h1>
-  <p class="chamada" style="font-size:16px;max-width:44ch">Copie o texto, abra o Marketplace e escolha as fotos pelo álbum do item. Sem automação — só menos digitação.</p>
+  <p class="chamada" style="font-size:16px;max-width:44ch">Copie o texto, abra o Marketplace e escolha as fotos pelo álbum do item. Sem automação, só menos digitação.</p>
 </header>
 
 <div class="placar">
@@ -1238,13 +1274,18 @@ function paginaPublicar(itens) {
     <span id="placar-txt">0 de ${fila.length} publicados</span>
     <span class="barrinha"><i id="barrinha"></i></span>
   </div>
+  <div class="larg filtros" style="margin-top:10px">
+    <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+    <button class="filtro" type="button" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+    <button class="filtro" type="button" data-filtro="publicados" aria-pressed="false">Publicados</button>
+  </div>
 </div>
 
 <main class="larg">
   <div class="passos">
     <div class="passo"><b>1</b><span>Toque em copiar o título e a descrição</span></div>
     <div class="passo"><b>2</b><span>Abra o Marketplace e cole nos campos</span></div>
-    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum — o cartaz do preço vem primeiro</span></div>
+    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum, o cartaz do preço vem primeiro</span></div>
   </div>
 
   <div class="fila">
@@ -1260,7 +1301,10 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
       ${item.fotos.length ? `<a class="cartaz" href="../social/cartaz/${item.slug}.jpg" target="_blank" rel="noopener">
         <img src="../social/cartaz/${item.slug}.jpg" alt="Cartaz com o preço de ${esc(item.nome)}" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
-      </a>` : ''}
+      </a>
+      <p class="story"><a href="../social/story/${item.slug}.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>` : ''}
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">${esc(descricaoAnuncio(item))}</div>
       <div class="linha">
@@ -1269,11 +1313,12 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
         <button class="btn secundario copiar" type="button" data-campo="preco">${ico.elo}<span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> ${esc(CATEGORIA_FB[item.categoria] ?? item.categoria)}<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `cartaz do preço + ${item.fotos.length} tratadas + originais` : 'sem foto ainda'}</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › ${esc(albuns.get(item.slug))} · ${item.fotos.length ? `cartaz do preço + ${item.fotos.length} tratadas + originais` : 'sem foto ainda'}</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>`).join('\n')}
   </div>
+  <p class="vazio" id="vazio" hidden></p>
 </main>
 
 <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
@@ -1316,10 +1361,41 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
   var placar = document.getElementById('placar-txt');
   var barra = document.getElementById('barrinha');
 
+  var vazio = document.getElementById('vazio');
+  var botoesFiltro = Array.prototype.slice.call(document.querySelectorAll('.filtro'));
+  var filtroAtual = 'todos';
+
+  function filtrarFila(){
+    var visiveis = 0;
+    cartoes.forEach(function(c){
+      var pronto = c.classList.contains('pronto');
+      var mostra = filtroAtual === 'todos'
+        || (filtroAtual === 'publicados' && pronto)
+        || (filtroAtual === 'pendentes' && !pronto);
+      c.hidden = !mostra;
+      if (mostra) visiveis++;
+    });
+    botoesFiltro.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.filtro === filtroAtual));
+    });
+    vazio.textContent = filtroAtual === 'publicados'
+      ? 'Você ainda não marcou nenhum como publicado.'
+      : 'Tudo publicado. Não sobrou nenhum pendente.';
+    vazio.hidden = visiveis > 0;
+  }
+
+  botoesFiltro.forEach(function(b){
+    b.addEventListener('click', function(){
+      filtroAtual = b.dataset.filtro;
+      filtrarFila();
+    });
+  });
+
   function atualizar(){
     var n = cartoes.filter(function(c){ return c.classList.contains('pronto'); }).length;
     placar.textContent = n + ' de ' + cartoes.length + ' publicados';
     barra.style.width = (cartoes.length ? (n / cartoes.length * 100) : 0) + '%';
+    filtrarFila();
   }
 
   var jaFeitos = lidos();
@@ -1357,6 +1433,11 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
 }
 
 mkdirSync(join(SITE, 'publicar'), { recursive: true });
+// fonte única do nome de cada álbum: as ferramentas do app Fotos leem daqui em
+// vez de recalcular, senão painel e álbum divergem quando a regra muda
+writeFileSync(join(ROOT, 'albuns.csv'),
+  'slug,album\n' + [...mapaAlbuns(itens)].map(([s, a]) => `${s},"${a.replace(/"/g, '""')}"`).join('\n') + '\n');
+
 const painel = paginaPublicar(itens);
 conferirScript(painel.replace(/<meta property="og:[^>]*>/g, '') + '<meta property="og:image"><meta property="og:url"><meta property="og:title"><meta property="og:description">', 'publicar');
 writeFileSync(join(SITE, 'publicar', 'index.html'), painel);

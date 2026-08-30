@@ -49,10 +49,15 @@ function parseCSV(text) {
     .map((r) => Object.fromEntries(header.map((h, i) => [h, (r[i] ?? '').trim()])));
 }
 
-// tem que gerar exatamente o mesmo nome que albuns.mjs, senão não acha o álbum
-function nomeAlbum(nome) {
-  const curto = nome.split(/ — | - /)[0].trim();
-  return `Bazar · ${curto.length > 40 ? curto.slice(0, 38) + '…' : curto}`;
+// O nome do álbum vem de albuns.csv, escrito pelo build. É fonte única: se cada
+// ferramenta calculasse o nome por conta própria, uma mudança na regra faria o
+// painel apontar para um álbum que não existe.
+const ALBUM_DE = Object.fromEntries(
+  parseCSV(readFileSync(join(ROOT, 'albuns.csv'), 'utf8')).map((r) => [r.slug, r.album]));
+function nomeAlbum(slug) {
+  const n = ALBUM_DE[slug];
+  if (!n) throw new Error(`sem nome de álbum para "${slug}" em albuns.csv — rode node build.mjs antes`);
+  return n;
 }
 
 const asEsc = (s) => s.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -93,7 +98,7 @@ for (const item of itens) {
   querem.push(...(originaisDe[item.slug] ?? [])
     .map((o) => o.arquivo)
     .filter((a) => existsSync(join(ROOT, 'fotos', a))));
-  if (querem.length || cartaz) planos.push({ slug: item.slug, album: nomeAlbum(item.nome), querem, cartaz });
+  if (querem.length || cartaz) planos.push({ slug: item.slug, album: nomeAlbum(item.slug), querem, cartaz });
 }
 
 if (!executar) {

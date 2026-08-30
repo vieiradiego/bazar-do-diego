@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Publicar no Marketplace — Bazar do Diego</title>
+<title>Publicar no Marketplace · Bazar do Diego</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <style>
   :root{
@@ -249,6 +249,14 @@
   .pub{background:var(--cartao);border:1px solid var(--traco);border-radius:var(--raio);
     padding:16px 16px 18px;display:flex;flex-direction:column;gap:11px}
   .pub.pronto{opacity:.5}
+  /* precisa vir depois do display:flex do .pub, senão o filtro não esconde nada */
+  .pub[hidden]{display:none}
+  .filtros{display:flex;gap:7px}
+  .filtro{appearance:none;border:1px solid var(--traco);background:transparent;color:var(--pedra);
+    font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .filtro[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--fundo)}
+  .vazio{text-align:center;color:var(--terciaria);padding:38px 0;font-size:15px}
+  .vazio[hidden]{display:none}
   .pub .topo-item{display:flex;align-items:flex-start;gap:12px}
   .pub .topo-item h2{flex:1;font-size:17px}
   .pub .val{font-size:17px;font-weight:600;white-space:nowrap}
@@ -260,6 +268,8 @@
   .cartaz{display:block;text-decoration:none;border-radius:14px;overflow:hidden;
     border:1px solid var(--traco);background:#fff}
   .cartaz img{width:100%;height:auto;display:block}
+  .story{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--secundaria)}
+  .story a{color:var(--tinta);font-weight:600}
   .cartaz span{display:block;padding:9px 12px;font-size:12px;color:var(--terciaria);
     background:var(--areia);text-align:center}
   .linha{display:flex;gap:8px;flex-wrap:wrap}
@@ -282,7 +292,7 @@
 <header class="capa larg" style="padding:34px 0 18px">
   <a class="marca" href="../"><svg viewBox="0 0 48 48" width="19" height="19" fill="none" aria-hidden="true"><path d="M25.6 4.5H39.5a4 4 0 0 1 4 4v13.9a4 4 0 0 1-1.17 2.83L24.4 43.16a4 4 0 0 1-5.66 0L4.84 29.26a4 4 0 0 1 0-5.66L22.77 5.67a4 4 0 0 1 2.83-1.17Z" stroke="currentColor" stroke-width="3.2"/><circle cx="33.4" cy="14.6" r="3.4" fill="currentColor"/></svg><b>Bazar do Diego</b></a>
   <h1 style="font-size:clamp(28px,7vw,40px);margin-top:14px">Publicar no Marketplace</h1>
-  <p class="chamada" style="font-size:16px;max-width:44ch">Copie o texto, abra o Marketplace e escolha as fotos pelo álbum do item. Sem automação — só menos digitação.</p>
+  <p class="chamada" style="font-size:16px;max-width:44ch">Copie o texto, abra o Marketplace e escolha as fotos pelo álbum do item. Sem automação, só menos digitação.</p>
 </header>
 
 <div class="placar">
@@ -290,24 +300,29 @@
     <span id="placar-txt">0 de 40 publicados</span>
     <span class="barrinha"><i id="barrinha"></i></span>
   </div>
+  <div class="larg filtros" style="margin-top:10px">
+    <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+    <button class="filtro" type="button" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+    <button class="filtro" type="button" data-filtro="publicados" aria-pressed="false">Publicados</button>
+  </div>
 </div>
 
 <main class="larg">
   <div class="passos">
     <div class="passo"><b>1</b><span>Toque em copiar o título e a descrição</span></div>
     <div class="passo"><b>2</b><span>Abra o Marketplace e cole nos campos</span></div>
-    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum — o cartaz do preço vem primeiro</span></div>
+    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum, o cartaz do preço vem primeiro</span></div>
   </div>
 
   <div class="fila">
     <article class="pub item" data-slug="tablet-galaxy-tab-s9-fe"
       data-titulo="Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB"
       data-preco="2.762"
-      data-desc="Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado, sem marcas de uso na tela.
+      data-desc="Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado e tela sem detalhes. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.762, 18% abaixo.
+Novo custa cerca de R$ 3.385 em Amazon. Aqui sai por R$ 2.762, 18% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/tablet-galaxy-tab-s9-fe/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/tablet-galaxy-tab-s9-fe/">
@@ -319,12 +334,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/tablet-galaxy-tab-s9-fe.jpg" alt="Cartaz com o preço de Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/tablet-galaxy-tab-s9-fe.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado, sem marcas de uso na tela.
+      <div class="campo">Galaxy Tab S9 FE Plus com 128GB de armazenamento, Wi-Fi. Acompanha a S Pen original e capa com suporte. Tela grande, ótima para leitura, estudo e streaming. Bateria em bom estado e tela sem detalhes. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.762, 18% abaixo.
+Novo custa cerca de R$ 3.385 em Amazon. Aqui sai por R$ 2.762, 18% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/tablet-galaxy-tab-s9-fe/</div>
       <div class="linha">
@@ -333,16 +351,16 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi… — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Tablet Samsung Galaxy Tab S9 FE · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="placa-video-gtx-1080ti"
       data-titulo="Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB"
       data-preco="1.450"
-      data-desc="Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits — a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete: boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando.
+      data-desc="Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits, a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete, boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/">
@@ -354,10 +372,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/placa-video-gtx-1080ti.jpg" alt="Cartaz com o preço de Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/placa-video-gtx-1080ti.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits — a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete: boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando.
+      <div class="campo">Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits, a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete, boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/</div>
       <div class="linha">
@@ -366,31 +387,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Placa de Vídeo EVGA GeForce GTX 1080 T… — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Placa de Vídeo EVGA GeForce GTX 1080 · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="bicicleta-masculina"
-      data-titulo="Bicicleta Masculina FKS SPEC — MTB aro 29"
+      data-titulo="Bicicleta Masculina FKS SPEC MTB aro 29"
       data-preco="1.286"
       data-desc="Mountain bike FKS SPEC aro 29 em amarelo neon, quadro de alumínio com freio a disco nas duas rodas e suspensão dianteira. Câmbio Shimano de 21 marchas, guidão reto e selim acolchoado. Acompanha garrafa com suporte, pedais de plataforma e descanso lateral. Bem conservada, pronta para pedalar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/">
       <div class="topo-item">
-        <h2>Bicicleta Masculina FKS SPEC — MTB aro 29</h2>
+        <h2>Bicicleta Masculina FKS SPEC MTB aro 29</h2>
         <span class="val">R$ 1.286</span>
       </div>
       <a class="cartaz" href="../social/cartaz/bicicleta-masculina.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/bicicleta-masculina.jpg" alt="Cartaz com o preço de Bicicleta Masculina FKS SPEC — MTB aro 29" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/bicicleta-masculina.jpg" alt="Cartaz com o preço de Bicicleta Masculina FKS SPEC MTB aro 29" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/bicicleta-masculina.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Mountain bike FKS SPEC aro 29 em amarelo neon, quadro de alumínio com freio a disco nas duas rodas e suspensão dianteira. Câmbio Shimano de 21 marchas, guidão reto e selim acolchoado. Acompanha garrafa com suporte, pedais de plataforma e descanso lateral. Bem conservada, pronta para pedalar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-masculina/</div>
       <div class="linha">
@@ -399,31 +423,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Bicicletas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bicicleta Masculina FKS SPEC — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bicicleta Masculina FKS SPEC MTB aro · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="bicicleta-feminina-fks"
-      data-titulo="Bicicleta Feminina FKS SPEC — MTB aro 29"
+      data-titulo="Bicicleta Feminina FKS SPEC MTB aro 29"
       data-preco="1.187"
       data-desc="Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-feminina-fks/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-feminina-fks/">
       <div class="topo-item">
-        <h2>Bicicleta Feminina FKS SPEC — MTB aro 29</h2>
+        <h2>Bicicleta Feminina FKS SPEC MTB aro 29</h2>
         <span class="val">R$ 1.187</span>
       </div>
       <a class="cartaz" href="../social/cartaz/bicicleta-feminina-fks.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/bicicleta-feminina-fks.jpg" alt="Cartaz com o preço de Bicicleta Feminina FKS SPEC — MTB aro 29" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/bicicleta-feminina-fks.jpg" alt="Cartaz com o preço de Bicicleta Feminina FKS SPEC MTB aro 29" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/bicicleta-feminina-fks.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Mountain bike aro 29 quadro em alumínio 6061, 21 marchas, freio a disco nas duas rodas e suspensão dianteira com trava. Selim Yamada, pedais com refletivo e descanso lateral. Cor rosa/preto. Pronta para pedalar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bicicleta-feminina-fks/</div>
       <div class="linha">
@@ -432,31 +459,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Bicicletas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bicicleta Feminina FKS SPEC — cartaz do preço + 9 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bicicleta Feminina FKS SPEC MTB aro 29 · cartaz do preço + 9 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="placa-mae-x370-taichi"
-      data-titulo="Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire"
+      data-titulo="Placa-Mãe ASRock X370 Taichi AM4 com Wi-Fi, SLI e CrossFire"
       data-preco="680"
       data-desc="Placa-mãe ASRock X370 Taichi, socket AM4, formato ATX. É a linha topo da ASRock na época: VRM reforçado de 12 fases, dois slots M.2 (um deles Ultra M.2 32Gb/s), 8 portas SATA3, Wi-Fi 802.11ac com antena, áudio Purity Sound 4 e suporte a NVIDIA SLI e AMD CrossFireX. Aceita do Ryzen de 1ª geração até o 5000 com a BIOS atualizada, o que a torna uma base barata para montar ou reformar uma máquina AM4. Acompanha a caixa original, e o painel traseiro de conexões está fotografado em detalhe para você conferir cada porta antes de vir buscar. Combina direto com o Ryzen 7 1800X que também está no bazar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/">
       <div class="topo-item">
-        <h2>Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire</h2>
+        <h2>Placa-Mãe ASRock X370 Taichi AM4 com Wi-Fi, SLI e CrossFire</h2>
         <span class="val">R$ 680</span>
       </div>
       <a class="cartaz" href="../social/cartaz/placa-mae-x370-taichi.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/placa-mae-x370-taichi.jpg" alt="Cartaz com o preço de Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/placa-mae-x370-taichi.jpg" alt="Cartaz com o preço de Placa-Mãe ASRock X370 Taichi AM4 com Wi-Fi, SLI e CrossFire" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/placa-mae-x370-taichi.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Placa-mãe ASRock X370 Taichi, socket AM4, formato ATX. É a linha topo da ASRock na época: VRM reforçado de 12 fases, dois slots M.2 (um deles Ultra M.2 32Gb/s), 8 portas SATA3, Wi-Fi 802.11ac com antena, áudio Purity Sound 4 e suporte a NVIDIA SLI e AMD CrossFireX. Aceita do Ryzen de 1ª geração até o 5000 com a BIOS atualizada, o que a torna uma base barata para montar ou reformar uma máquina AM4. Acompanha a caixa original, e o painel traseiro de conexões está fotografado em detalhe para você conferir cada porta antes de vir buscar. Combina direto com o Ryzen 7 1800X que também está no bazar.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/</div>
       <div class="linha">
@@ -465,8 +495,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Placa-Mãe ASRock X370 Taichi — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Placa-Mãe ASRock X370 Taichi AM4 · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="fonte-corsair-rm850i"
@@ -474,9 +504,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="644"
       data-desc="Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento totalmente modular. Linha RMi, superior à RMe atual: traz monitoramento digital por USB via Corsair Link (tensão, corrente, temperatura e rotação em tempo real) e capacitores japoneses. Acompanha a bolsa original com todos os cabos modulares e o cabo de força. Ventoinha silenciosa com modo zero RPM em baixa carga. Funcionando perfeitamente.
 
-Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 644, 23% abaixo.
+Novo custa cerca de R$ 831,99 em KaBuM (RM850e). Aqui sai por R$ 644, 23% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/">
@@ -488,12 +518,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/fonte-corsair-rm850i.jpg" alt="Cartaz com o preço de Fonte Corsair RM850i 850W 80 Plus Gold Modular" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/fonte-corsair-rm850i.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento totalmente modular. Linha RMi, superior à RMe atual: traz monitoramento digital por USB via Corsair Link (tensão, corrente, temperatura e rotação em tempo real) e capacitores japoneses. Acompanha a bolsa original com todos os cabos modulares e o cabo de força. Ventoinha silenciosa com modo zero RPM em baixa carga. Funcionando perfeitamente.
 
-Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 644, 23% abaixo.
+Novo custa cerca de R$ 831,99 em KaBuM (RM850e). Aqui sai por R$ 644, 23% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/fonte-corsair-rm850i/</div>
       <div class="linha">
@@ -502,31 +535,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Fonte Corsair RM850i 850W 80 Plus Gold… — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Fonte Corsair RM850i 850W 80 Plus · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="gabinete-haf-xb"
-      data-titulo="Gabinete Cooler Master HAF XB EVO — cubo ATX com alças"
+      data-titulo="Gabinete Cooler Master HAF XB EVO cubo ATX com alças"
       data-preco="599"
-      data-desc="Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa — a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL — a caixa tem marcas de uso, mas ajuda muito se você precisar transportar ou revender depois.
+      data-desc="Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa: a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL, o que ajuda muito se você precisar transportar ou revender depois. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/">
       <div class="topo-item">
-        <h2>Gabinete Cooler Master HAF XB EVO — cubo ATX com alças</h2>
+        <h2>Gabinete Cooler Master HAF XB EVO cubo ATX com alças</h2>
         <span class="val">R$ 599</span>
       </div>
       <a class="cartaz" href="../social/cartaz/gabinete-haf-xb.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/gabinete-haf-xb.jpg" alt="Cartaz com o preço de Gabinete Cooler Master HAF XB EVO — cubo ATX com alças" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/gabinete-haf-xb.jpg" alt="Cartaz com o preço de Gabinete Cooler Master HAF XB EVO cubo ATX com alças" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/gabinete-haf-xb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa — a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL — a caixa tem marcas de uso, mas ajuda muito se você precisar transportar ou revender depois.
+      <div class="campo">Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa: a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL, o que ajuda muito se você precisar transportar ou revender depois. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/</div>
       <div class="linha">
@@ -535,20 +571,20 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Gabinete Cooler Master HAF XB EVO — cartaz do preço + 5 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Gabinete Cooler Master HAF XB EVO · cartaz do preço + 5 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="memoria-corsair-ddr4-16gb"
       data-titulo="Memória Corsair Vengeance LPX 16GB DDR4 2400MHz"
       data-preco="593"
-      data-desc="Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V — part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente.
+      data-desc="Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V, part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 593, 45% abaixo.
+Novo custa cerca de R$ 1.079,90 em KaBuM. Aqui sai por R$ 593, 45% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/memoria-corsair-ddr4-16gb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/memoria-corsair-ddr4-16gb/">
@@ -560,14 +596,17 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/memoria-corsair-ddr4-16gb.jpg" alt="Cartaz com o preço de Memória Corsair Vengeance LPX 16GB DDR4 2400MHz" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/memoria-corsair-ddr4-16gb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V — part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente.
+      <div class="campo">Memória Corsair Vengeance LPX DDR4 de 16GB, 2400MHz, CL14 (14-16-16-31), 1.20V, part number CMK16GX4M1A2400C14. Dissipador de alumínio em perfil baixo, compatível com qualquer cooler. São duas unidades idênticas, do mesmo lote: levando as duas você fecha 32GB em dual channel. Testadas e funcionando, sem erro de memória. Preço por pente. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 1.079,90 (KaBuM) — aqui sai por R$ 593, 45% abaixo.
+Novo custa cerca de R$ 1.079,90 em KaBuM. Aqui sai por R$ 593, 45% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/memoria-corsair-ddr4-16gb/</div>
       <div class="linha">
@@ -576,16 +615,16 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Memória Corsair Vengeance LPX 16GB DDR… — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Memória Corsair Vengeance LPX 16GB · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="rack-quadrinhos"
       data-titulo="Rack aparador de madeira maciça com tampo de quadrinhos"
       data-preco="549"
-      data-desc="Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+      data-desc="Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão, uma peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/">
@@ -597,10 +636,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/rack-quadrinhos.jpg" alt="Cartaz com o preço de Rack aparador de madeira maciça com tampo de quadrinhos" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/rack-quadrinhos.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+      <div class="campo">Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão, uma peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/</div>
       <div class="linha">
@@ -609,31 +651,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Rack aparador de madeira maciça com ta… — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Rack aparador de madeira maciça · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="lego-game-boy"
-      data-titulo="LEGO Game Boy 72046 — lacrado"
+      data-titulo="LEGO Game Boy 72046 lacrado"
       data-preco="474"
       data-desc="Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/lego-game-boy/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/lego-game-boy/">
       <div class="topo-item">
-        <h2>LEGO Game Boy 72046 — lacrado</h2>
+        <h2>LEGO Game Boy 72046 lacrado</h2>
         <span class="val">R$ 474</span>
       </div>
       <a class="cartaz" href="../social/cartaz/lego-game-boy.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/lego-game-boy.jpg" alt="Cartaz com o preço de LEGO Game Boy 72046 — lacrado" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/lego-game-boy.jpg" alt="Cartaz com o preço de LEGO Game Boy 72046 lacrado" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/lego-game-boy.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunca aberta. Réplica do Game Boy clássico com cartuchos montáveis. Item de colecionador.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/lego-game-boy/</div>
       <div class="linha">
@@ -642,31 +687,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Brinquedos e jogos<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · LEGO Game Boy 72046 — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · LEGO Game Boy 72046 lacrado · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="ryzen-7-1800x"
-      data-titulo="Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4"
+      data-titulo="Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads"
       data-preco="430"
-      data-desc="Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming — tarefas que se beneficiam de muitos threads. Não acompanha cooler (o 1800X sempre foi vendido sem). Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar.
+      data-desc="Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming, tarefas que se beneficiam de muitos threads. Não acompanha cooler, porque o 1800X sempre foi vendido sem. Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ryzen-7-1800x/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/ryzen-7-1800x/">
       <div class="topo-item">
-        <h2>Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4</h2>
+        <h2>Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads</h2>
         <span class="val">R$ 430</span>
       </div>
       <a class="cartaz" href="../social/cartaz/ryzen-7-1800x.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/ryzen-7-1800x.jpg" alt="Cartaz com o preço de Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/ryzen-7-1800x.jpg" alt="Cartaz com o preço de Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/ryzen-7-1800x.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming — tarefas que se beneficiam de muitos threads. Não acompanha cooler (o 1800X sempre foi vendido sem). Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar.
+      <div class="campo">Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming, tarefas que se beneficiam de muitos threads. Não acompanha cooler, porque o 1800X sempre foi vendido sem. Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ryzen-7-1800x/</div>
       <div class="linha">
@@ -675,16 +723,16 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Processador AMD Ryzen 7 1800X — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Processador AMD Ryzen 7 1800X AM4 · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="armario-turquesa"
       data-titulo="Armário baixo azul turquesa com porta de vidro"
       data-preco="399"
-      data-desc="Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+      data-desc="Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal, em que a pátina é justamente o charme da peça. Bom para sala, cozinha ou como aparador de louças. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/">
@@ -696,10 +744,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/armario-turquesa.jpg" alt="Cartaz com o preço de Armário baixo azul turquesa com porta de vidro" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/armario-turquesa.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+      <div class="campo">Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal, em que a pátina é justamente o charme da peça. Bom para sala, cozinha ou como aparador de louças. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/</div>
       <div class="linha">
@@ -708,31 +759,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Armário baixo azul turquesa com porta … — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Armário baixo azul turquesa com porta · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="ssd-xpg-512gb"
-      data-titulo="SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s"
+      data-titulo="SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s"
       data-preco="399"
-      data-desc="SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4 (part number ASX8100NP-512GT-C, conferido na etiqueta — dá para ler nas fotos). Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM — bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e te mando o print antes da compra. Vale o aviso honesto: os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA, e hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM. É justamente por isso que este usado faz sentido.
+      data-desc="SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4, part number ASX8100NP-512GT-C, conferido na etiqueta e legível nas fotos. Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM, bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e mando o print antes da compra. Vale saber que os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA: hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM, e é por isso que este aqui vale a pena. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/">
       <div class="topo-item">
-        <h2>SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s</h2>
+        <h2>SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s</h2>
         <span class="val">R$ 399</span>
       </div>
       <a class="cartaz" href="../social/cartaz/ssd-xpg-512gb.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/ssd-xpg-512gb.jpg" alt="Cartaz com o preço de SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/ssd-xpg-512gb.jpg" alt="Cartaz com o preço de SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/ssd-xpg-512gb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4 (part number ASX8100NP-512GT-C, conferido na etiqueta — dá para ler nas fotos). Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM — bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e te mando o print antes da compra. Vale o aviso honesto: os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA, e hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM. É justamente por isso que este usado faz sentido.
+      <div class="campo">SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4, part number ASX8100NP-512GT-C, conferido na etiqueta e legível nas fotos. Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM, bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e mando o print antes da compra. Vale saber que os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA: hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM, e é por isso que este aqui vale a pena. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/</div>
       <div class="linha">
@@ -741,18 +795,18 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · SSD XPG SX8100 512GB — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · SSD XPG SX8100 512GB M.2 NVMe de 3500 · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="mouse-logitech-g903"
       data-titulo="Mouse Gamer Logitech G903 LIGHTSPEED sem fio"
       data-preco="399"
-      data-desc="Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro (dá para trocar os botões de lado). A conexão LIGHTSPEED da Logitech tem latência de mouse com fio — é a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY (o pad não acompanha). Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões (é o que deixa o mouse ambidestro). Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667 — dá para ler na foto. Funcionando, sem clique duplo. Honestidade sobre o estado: a base tem riscos de uso, normais em mouse que rodou bastante; a parte de cima e os botões estão bem.
+      data-desc="Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro, já que dá para trocar os botões de lado. A conexão LIGHTSPEED da Logitech tem latência de mouse com fio, a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY, que não acompanha. Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões, que é o que deixa o mouse ambidestro. Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667, legível na foto. Funcionando, sem clique duplo. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 861,71 (KaBuM) — aqui sai por R$ 399, 54% abaixo.
+Novo custa cerca de R$ 861,71 em KaBuM. Aqui sai por R$ 399, 54% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/">
@@ -764,12 +818,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/mouse-logitech-g903.jpg" alt="Cartaz com o preço de Mouse Gamer Logitech G903 LIGHTSPEED sem fio" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/mouse-logitech-g903.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro (dá para trocar os botões de lado). A conexão LIGHTSPEED da Logitech tem latência de mouse com fio — é a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY (o pad não acompanha). Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões (é o que deixa o mouse ambidestro). Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667 — dá para ler na foto. Funcionando, sem clique duplo. Honestidade sobre o estado: a base tem riscos de uso, normais em mouse que rodou bastante; a parte de cima e os botões estão bem.
+      <div class="campo">Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro, já que dá para trocar os botões de lado. A conexão LIGHTSPEED da Logitech tem latência de mouse com fio, a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY, que não acompanha. Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões, que é o que deixa o mouse ambidestro. Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667, legível na foto. Funcionando, sem clique duplo. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 861,71 (KaBuM) — aqui sai por R$ 399, 54% abaixo.
+Novo custa cerca de R$ 861,71 em KaBuM. Aqui sai por R$ 399, 54% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/</div>
       <div class="linha">
@@ -778,16 +835,16 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse Gamer Logitech G903 LIGHTSPEED s… — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse Gamer Logitech G903 LIGHTSPEED · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="watercooler-masterliquid-240"
       data-titulo="Water Cooler Cooler Master MasterLiquid 240"
       data-preco="395"
-      data-desc="Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
+      data-desc="Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. As duas ventoinhas do radiador vão à parte: o kit Corsair SP140 que também está no bazar encaixa direto. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/watercooler-masterliquid-240/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/watercooler-masterliquid-240/">
@@ -799,10 +856,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/watercooler-masterliquid-240.jpg" alt="Cartaz com o preço de Water Cooler Cooler Master MasterLiquid 240" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/watercooler-masterliquid-240.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. ATENÇÃO: não acompanha as duas ventoinhas do radiador — leve junto o kit Corsair SP140 se precisar.
+      <div class="campo">Water cooler all-in-one Cooler Master MasterLiquid 240, radiador de 240mm com bomba de dupla câmara e perfil baixo. Acompanha a caixa original, o espumado interno e os suportes de instalação. Refrigeração líquida fechada, sem manutenção. As duas ventoinhas do radiador vão à parte: o kit Corsair SP140 que também está no bazar encaixa direto. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/watercooler-masterliquid-240/</div>
       <div class="linha">
@@ -811,31 +871,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Water Cooler Cooler Master MasterLiqui… — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Water Cooler Cooler Master · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="hd-seagate-3tb"
-      data-titulo="HD Seagate Desktop 3TB — SATA 3.5"
+      data-titulo="HD Seagate Desktop 3TB SATA 3.5"
       data-preco="395"
-      data-desc="HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
+      data-desc="HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bastante espaço por pouco dinheiro, bom para armazenamento em massa, backup e biblioteca de mídia. Rodo o teste SMART e mando o print antes da compra, para você conferir a saúde do disco antes de fechar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/hd-seagate-3tb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/hd-seagate-3tb/">
       <div class="topo-item">
-        <h2>HD Seagate Desktop 3TB — SATA 3.5</h2>
+        <h2>HD Seagate Desktop 3TB SATA 3.5</h2>
         <span class="val">R$ 395</span>
       </div>
       <a class="cartaz" href="../social/cartaz/hd-seagate-3tb.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/hd-seagate-3tb.jpg" alt="Cartaz com o preço de HD Seagate Desktop 3TB — SATA 3.5" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/hd-seagate-3tb.jpg" alt="Cartaz com o preço de HD Seagate Desktop 3TB SATA 3.5" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/hd-seagate-3tb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bom para armazenamento em massa, backup e biblioteca de mídia. Disco usado — posso rodar o teste SMART e mandar o print antes da compra. Preço abaixo do mercado justamente por ser um disco antigo: leve isso em conta e não use como única cópia dos seus arquivos.
+      <div class="campo">HD Seagate Desktop de 3TB, modelo ST3000DM003, SATA 3.5 polegadas. Bastante espaço por pouco dinheiro, bom para armazenamento em massa, backup e biblioteca de mídia. Rodo o teste SMART e mando o print antes da compra, para você conferir a saúde do disco antes de fechar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/hd-seagate-3tb/</div>
       <div class="linha">
@@ -844,8 +907,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · HD Seagate Desktop 3TB — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · HD Seagate Desktop 3TB SATA 3.5 · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="teclado-logitech-gpro"
@@ -853,9 +916,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="375"
       data-desc="Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
-Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
+Novo custa cerca de R$ 639,99 em KaBuM. Aqui sai por R$ 375, 41% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/">
@@ -867,12 +930,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/teclado-logitech-gpro.jpg" alt="Cartaz com o preço de Teclado Mecânico Gamer Logitech G PRO TKL" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/teclado-logitech-gpro.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
-Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
+Novo custa cerca de R$ 639,99 em KaBuM. Aqui sai por R$ 375, 41% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/</div>
       <div class="linha">
@@ -881,39 +947,42 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Teclado Mecânico Gamer Logitech G PRO … — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Teclado Mecânico Gamer Logitech G PRO · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="poltrona-pallet"
-      data-titulo="Poltrona de pallet com rodízios — estofado pop art"
+      data-titulo="Poltrona de pallet com rodízios e estofado pop art"
       data-preco="350"
-      data-desc="Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios — dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor.
+      data-desc="Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios, então dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 460 (Pallet SP) — aqui sai por R$ 350, 24% abaixo.
+Novo custa cerca de R$ 460 em Pallet SP. Aqui sai por R$ 350, 24% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/poltrona-pallet/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/poltrona-pallet/">
       <div class="topo-item">
-        <h2>Poltrona de pallet com rodízios — estofado pop art</h2>
+        <h2>Poltrona de pallet com rodízios e estofado pop art</h2>
         <span class="val">R$ 350</span>
       </div>
       <a class="cartaz" href="../social/cartaz/poltrona-pallet.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/poltrona-pallet.jpg" alt="Cartaz com o preço de Poltrona de pallet com rodízios — estofado pop art" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/poltrona-pallet.jpg" alt="Cartaz com o preço de Poltrona de pallet com rodízios e estofado pop art" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/poltrona-pallet.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios — dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor.
+      <div class="campo">Poltrona de um lugar feita sobre pallet de madeira maciça envernizada, montada em quatro rodízios, então dá para mudar de canto sem esforço. Almofadas soltas de assento e encosto em tecido colorido com estampa pop art. São duas unidades iguais, ótimas para varanda, home office ou canto de leitura. Preço por unidade; levando as duas, faço preço melhor. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 460 (Pallet SP) — aqui sai por R$ 350, 24% abaixo.
+Novo custa cerca de R$ 460 em Pallet SP. Aqui sai por R$ 350, 24% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/poltrona-pallet/</div>
       <div class="linha">
@@ -922,31 +991,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Poltrona de pallet com rodízios — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Poltrona de pallet com rodízios · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="fans-corsair-sp140"
-      data-titulo="Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE"
+      data-titulo="Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE"
       data-preco="316"
       data-desc="Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/fans-corsair-sp140/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/fans-corsair-sp140/">
       <div class="topo-item">
-        <h2>Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE</h2>
+        <h2>Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE</h2>
         <span class="val">R$ 316</span>
       </div>
       <a class="cartaz" href="../social/cartaz/fans-corsair-sp140.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/fans-corsair-sp140.jpg" alt="Cartaz com o preço de Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/fans-corsair-sp140.jpg" alt="Cartaz com o preço de Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/fans-corsair-sp140.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Kit Corsair SP140 RGB PRO com duas ventoinhas de 140mm RGB endereçáveis e a controladora Lighting Node CORE, tudo na caixa original. Cada ventoinha tem 8 LEDs RGB independentes, controlados pelo software iCUE. Alta pressão estática, indicadas para radiador de water cooler ou entrada de ar do gabinete. Acompanha os cabos e os parafusos.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/fans-corsair-sp140/</div>
       <div class="linha">
@@ -955,31 +1027,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Kit Corsair SP140 RGB PRO — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Kit Corsair SP140 RGB PRO com 2 · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="controle-xbox-series"
-      data-titulo="Controle Xbox Series X|S sem fio — Carbon Black"
+      data-titulo="Controle Xbox Series X|S sem fio Carbon Black"
       data-preco="299"
       data-desc="Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/">
       <div class="topo-item">
-        <h2>Controle Xbox Series X|S sem fio — Carbon Black</h2>
+        <h2>Controle Xbox Series X|S sem fio Carbon Black</h2>
         <span class="val">R$ 299</span>
       </div>
       <a class="cartaz" href="../social/cartaz/controle-xbox-series.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/controle-xbox-series.jpg" alt="Cartaz com o preço de Controle Xbox Series X|S sem fio — Carbon Black" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/controle-xbox-series.jpg" alt="Cartaz com o preço de Controle Xbox Series X|S sem fio Carbon Black" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/controle-xbox-series.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/</div>
       <div class="linha">
@@ -988,35 +1063,38 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Controle Xbox Series X|S sem fio — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Controle Xbox Series X|S sem fio · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="hd-wd-purple-2tb"
-      data-titulo="HD WD Purple 2TB — SATA 3.5 para CFTV"
+      data-titulo="HD WD Purple 2TB SATA 3.5 para CFTV"
       data-preco="296"
-      data-desc="HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras. Fabricado em 2015, então é um disco com bastante uso — posso rodar o teste SMART e mandar o print antes da compra, para você ver horas ligadas e setores realocados. Preço já considera a idade do disco.
+      data-desc="HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. A linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras, então é um disco projetado para trabalhar sem parar. Fabricado em 2015. Rodo o teste SMART e mando o print antes da compra, com horas ligadas e setores realocados, para você comprar sabendo exatamente o que está levando. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 296, 49% abaixo.
+Novo custa cerca de R$ 582 em Net Computadores (WD22PURZ). Aqui sai por R$ 296, 49% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/">
       <div class="topo-item">
-        <h2>HD WD Purple 2TB — SATA 3.5 para CFTV</h2>
+        <h2>HD WD Purple 2TB SATA 3.5 para CFTV</h2>
         <span class="val">R$ 296</span>
       </div>
       <a class="cartaz" href="../social/cartaz/hd-wd-purple-2tb.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/hd-wd-purple-2tb.jpg" alt="Cartaz com o preço de HD WD Purple 2TB — SATA 3.5 para CFTV" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/hd-wd-purple-2tb.jpg" alt="Cartaz com o preço de HD WD Purple 2TB SATA 3.5 para CFTV" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/hd-wd-purple-2tb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. Linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras. Fabricado em 2015, então é um disco com bastante uso — posso rodar o teste SMART e mandar o print antes da compra, para você ver horas ligadas e setores realocados. Preço já considera a idade do disco.
+      <div class="campo">HD Western Digital Purple de 2TB, modelo WD20PURX, SATA com 64MB de cache. A linha Purple é feita para gravação 24/7 em DVR e NVR de câmeras, então é um disco projetado para trabalhar sem parar. Fabricado em 2015. Rodo o teste SMART e mando o print antes da compra, com horas ligadas e setores realocados, para você comprar sabendo exatamente o que está levando. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 296, 49% abaixo.
+Novo custa cerca de R$ 582 em Net Computadores (WD22PURZ). Aqui sai por R$ 296, 49% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/hd-wd-purple-2tb/</div>
       <div class="linha">
@@ -1025,8 +1103,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · HD WD Purple 2TB — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · HD WD Purple 2TB SATA 3.5 para CFTV · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="airtags"
@@ -1034,11 +1112,11 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="256"
       data-desc="AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
 
-Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 256, 31% abaixo.
+Novo custa cerca de R$ 369 em Apple Brasil. Aqui sai por R$ 256, 31% abaixo.
 
 Disponíveis: 3 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/airtags/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/airtags/">
@@ -1050,14 +1128,17 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/airtags.jpg" alt="Cartaz com o preço de Apple AirTag 2ª geração" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/airtags.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">AirTag da Apple para rastrear chaves, mochila, mala ou carro pelo app Buscar. Unidades avulsas, em ótimo estado. Bateria substituível (CR2032). Preço por unidade.
 
-Novo custa cerca de R$ 369 (Apple Brasil) — aqui sai por R$ 256, 31% abaixo.
+Novo custa cerca de R$ 369 em Apple Brasil. Aqui sai por R$ 256, 31% abaixo.
 
 Disponíveis: 3 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/airtags/</div>
       <div class="linha">
@@ -1066,39 +1147,42 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Apple AirTag 2ª geração — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Apple AirTag 2ª geração · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="cadeiras-pingo"
-      data-titulo="Cadeira Pingo — assento gota com pés de madeira"
+      data-titulo="Cadeira Pingo com assento gota e pés de madeira"
       data-preco="246"
       data-desc="Cadeira design Pingo com assento em polipropileno no formato gota e pés de madeira maciça com estrutura metálica cruzada. Suporta até 120kg. Disponíveis 2 turquesa e 2 vermelhas. Sem rachaduras ou manchas. Preço por unidade.
 
-Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 246, 17% abaixo.
+Novo custa cerca de R$ 295,65 em Móveis do Limar. Aqui sai por R$ 246, 17% abaixo.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/">
       <div class="topo-item">
-        <h2>Cadeira Pingo — assento gota com pés de madeira</h2>
+        <h2>Cadeira Pingo com assento gota e pés de madeira</h2>
         <span class="val">R$ 246</span>
       </div>
       <a class="cartaz" href="../social/cartaz/cadeiras-pingo.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/cadeiras-pingo.jpg" alt="Cartaz com o preço de Cadeira Pingo — assento gota com pés de madeira" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/cadeiras-pingo.jpg" alt="Cartaz com o preço de Cadeira Pingo com assento gota e pés de madeira" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/cadeiras-pingo.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Cadeira design Pingo com assento em polipropileno no formato gota e pés de madeira maciça com estrutura metálica cruzada. Suporta até 120kg. Disponíveis 2 turquesa e 2 vermelhas. Sem rachaduras ou manchas. Preço por unidade.
 
-Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 246, 17% abaixo.
+Novo custa cerca de R$ 295,65 em Móveis do Limar. Aqui sai por R$ 246, 17% abaixo.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/</div>
       <div class="linha">
@@ -1107,18 +1191,18 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cadeira Pingo — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cadeira Pingo com assento gota e pés · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="abafador-howard-leight-kit"
       data-titulo="Abafador Eletrônico Howard Leight + óculos + estojo"
       data-preco="246"
-      data-desc="Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
+      data-desc="Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), que amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 246, 62% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 246, 62% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/">
@@ -1130,12 +1214,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/abafador-howard-leight-kit.jpg" alt="Cartaz com o preço de Abafador Eletrônico Howard Leight + óculos + estojo" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/abafador-howard-leight-kit.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
+      <div class="campo">Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), que amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 246, 62% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 246, 62% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/</div>
       <div class="linha">
@@ -1144,16 +1231,16 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Equipamentos esportivos<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Abafador Eletrônico Howard Leight + óc… — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Abafador Eletrônico Howard Leight · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="suporte-crianca"
       data-titulo="Cadeirinha de bicicleta para criança"
       data-preco="242"
-      data-desc="Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
+      data-desc="Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve: chame no WhatsApp que envio na hora. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/">
@@ -1163,9 +1250,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       </div>
       
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
+      <div class="campo">Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve: chame no WhatsApp que envio na hora. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/</div>
       <div class="linha">
@@ -1174,8 +1261,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Bicicletas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cadeirinha de bicicleta para criança — sem foto ainda</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cadeirinha de bicicleta para criança · sem foto ainda</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="roteador-tplink"
@@ -1183,7 +1270,7 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="228"
       data-desc="Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/roteador-tplink/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/roteador-tplink/">
@@ -1195,10 +1282,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/roteador-tplink.jpg" alt="Cartaz com o preço de Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/roteador-tplink.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Roteador TP-Link N750 dual band (2.4GHz + 5GHz), portas gigabit e 3 antenas destacáveis. Modelo TL-WDR4300. Funcionando perfeitamente, resetado de fábrica antes da entrega.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/roteador-tplink/</div>
       <div class="linha">
@@ -1207,8 +1297,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Roteador TP-Link N750 Dual Band Gigabi… — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Roteador TP-Link N750 Dual Band · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="abafador-howard-leight"
@@ -1216,9 +1306,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="188"
       data-desc="Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável, com estojo rígido. Amplificação de som ambiente e corte automático de ruído. Funcionando, pilhas testadas.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 188, 71% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 188, 71% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/">
@@ -1230,12 +1320,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/abafador-howard-leight.jpg" alt="Cartaz com o preço de Abafador Eletrônico Howard Leight + estojo" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/abafador-howard-leight.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), dobrável, com estojo rígido. Amplificação de som ambiente e corte automático de ruído. Funcionando, pilhas testadas.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 188, 71% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 188, 71% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/</div>
       <div class="linha">
@@ -1244,31 +1337,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Equipamentos esportivos<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Abafador Eletrônico Howard Leight + es… — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Abafador Eletrônico Howard Leight + estojo · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="capacete-rockrider"
-      data-titulo="Capacete Rockrider Decathlon — tam. 59-62"
+      data-titulo="Capacete Rockrider Decathlon tamanho 59 a 62"
       data-preco="187"
       data-desc="Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/">
       <div class="topo-item">
-        <h2>Capacete Rockrider Decathlon — tam. 59-62</h2>
+        <h2>Capacete Rockrider Decathlon tamanho 59 a 62</h2>
         <span class="val">R$ 187</span>
       </div>
       <a class="cartaz" href="../social/cartaz/capacete-rockrider.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/capacete-rockrider.jpg" alt="Cartaz com o preço de Capacete Rockrider Decathlon — tam. 59-62" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/capacete-rockrider.jpg" alt="Cartaz com o preço de Capacete Rockrider Decathlon tamanho 59 a 62" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/capacete-rockrider.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/</div>
       <div class="linha">
@@ -1277,35 +1373,38 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Bicicletas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Capacete Rockrider Decathlon — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Capacete Rockrider Decathlon tamanho · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="caneca-stanley"
-      data-titulo="Caneca Térmica Stanley Beer Stein 709ml — nova lacrada"
+      data-titulo="Caneca Térmica Stanley Beer Stein 709ml nova lacrada"
       data-preco="164"
-      data-desc="Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure &quot;The Big Grip&quot;, em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil — só se acha em estoque remanescente de revenda.
+      data-desc="Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure &quot;The Big Grip&quot;, em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil, só se acha em estoque remanescente de revenda.
 
-Novo custa cerca de R$ 189 (Rei dos Parafusos) — aqui sai por R$ 164, 13% abaixo.
+Novo custa cerca de R$ 189 em Rei dos Parafusos. Aqui sai por R$ 164, 13% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/caneca-stanley/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/caneca-stanley/">
       <div class="topo-item">
-        <h2>Caneca Térmica Stanley Beer Stein 709ml — nova lacrada</h2>
+        <h2>Caneca Térmica Stanley Beer Stein 709ml nova lacrada</h2>
         <span class="val">R$ 164</span>
       </div>
       <a class="cartaz" href="../social/cartaz/caneca-stanley.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/caneca-stanley.jpg" alt="Cartaz com o preço de Caneca Térmica Stanley Beer Stein 709ml — nova lacrada" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/caneca-stanley.jpg" alt="Cartaz com o preço de Caneca Térmica Stanley Beer Stein 709ml nova lacrada" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/caneca-stanley.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure &quot;The Big Grip&quot;, em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil — só se acha em estoque remanescente de revenda.
+      <div class="campo">Caneca térmica Stanley Beer Stein de 709ml (24oz), linha Adventure &quot;The Big Grip&quot;, em aço inox com isolamento a vácuo e cor branca (Polar). Mantém a bebida gelada por 5 horas, e por 20 horas com gelo. NOVA, lacrada na caixa original, nunca usada. Modelo já fora de linha na Stanley Brasil, só se acha em estoque remanescente de revenda.
 
-Novo custa cerca de R$ 189 (Rei dos Parafusos) — aqui sai por R$ 164, 13% abaixo.
+Novo custa cerca de R$ 189 em Rei dos Parafusos. Aqui sai por R$ 164, 13% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/caneca-stanley/</div>
       <div class="linha">
@@ -1314,31 +1413,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Caneca Térmica Stanley Beer Stein 709ml — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Caneca Térmica Stanley Beer Stein · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="controle-xbox-360"
-      data-titulo="Controle Xbox 360 sem fio preto — original Microsoft"
+      data-titulo="Controle Xbox 360 sem fio preto original Microsoft"
       data-preco="149"
-      data-desc="Controle sem fio original da Microsoft para Xbox 360, preto. Original de fábrica, não é genérico — e isso faz diferença de verdade: os controles paralelos que aparecem por R$ 80 têm analógico frouxo e param de funcionar em pouco tempo. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga — você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360 (não acompanha). Todos os botões e os analógicos funcionando.
+      data-desc="Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/">
       <div class="topo-item">
-        <h2>Controle Xbox 360 sem fio preto — original Microsoft</h2>
+        <h2>Controle Xbox 360 sem fio preto original Microsoft</h2>
         <span class="val">R$ 149</span>
       </div>
       <a class="cartaz" href="../social/cartaz/controle-xbox-360.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/controle-xbox-360.jpg" alt="Cartaz com o preço de Controle Xbox 360 sem fio preto — original Microsoft" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/controle-xbox-360.jpg" alt="Cartaz com o preço de Controle Xbox 360 sem fio preto original Microsoft" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/controle-xbox-360.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Controle sem fio original da Microsoft para Xbox 360, preto. Original de fábrica, não é genérico — e isso faz diferença de verdade: os controles paralelos que aparecem por R$ 80 têm analógico frouxo e param de funcionar em pouco tempo. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga — você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360 (não acompanha). Todos os botões e os analógicos funcionando.
+      <div class="campo">Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/</div>
       <div class="linha">
@@ -1347,31 +1449,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Controle Xbox 360 sem fio preto — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Controle Xbox 360 sem fio preto · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="ssd-corsair-240gb"
-      data-titulo="SSD Corsair Force LE 240GB — SATA 3"
+      data-titulo="SSD Corsair Force LE 240GB SATA 3"
       data-preco="128"
-      data-desc="SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original.
+      data-desc="SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas, part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook mais antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/">
       <div class="topo-item">
-        <h2>SSD Corsair Force LE 240GB — SATA 3</h2>
+        <h2>SSD Corsair Force LE 240GB SATA 3</h2>
         <span class="val">R$ 128</span>
       </div>
       <a class="cartaz" href="../social/cartaz/ssd-corsair-240gb.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/ssd-corsair-240gb.jpg" alt="Cartaz com o preço de SSD Corsair Force LE 240GB — SATA 3" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/ssd-corsair-240gb.jpg" alt="Cartaz com o preço de SSD Corsair Force LE 240GB SATA 3" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/ssd-corsair-240gb.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original.
+      <div class="campo">SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas, part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook mais antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/</div>
       <div class="linha">
@@ -1380,35 +1485,38 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Peças e acessórios de computador<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · SSD Corsair Force LE 240GB — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · SSD Corsair Force LE 240GB SATA 3 · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="bolsa-trader-joes"
-      data-titulo="Bolsa Trader Joe's — sacola de lona importada"
+      data-titulo="Bolsa Trader Joe's de lona importada"
       data-preco="109"
       data-desc="Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com fundo e alças reforçadas em azul-marinho, bolso interno. Novas, com etiqueta. Preço por unidade.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bolsa-trader-joes/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/bolsa-trader-joes/">
       <div class="topo-item">
-        <h2>Bolsa Trader Joe's — sacola de lona importada</h2>
+        <h2>Bolsa Trader Joe's de lona importada</h2>
         <span class="val">R$ 109</span>
       </div>
       <a class="cartaz" href="../social/cartaz/bolsa-trader-joes.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/bolsa-trader-joes.jpg" alt="Cartaz com o preço de Bolsa Trader Joe's — sacola de lona importada" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/bolsa-trader-joes.jpg" alt="Cartaz com o preço de Bolsa Trader Joe's de lona importada" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/bolsa-trader-joes.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Sacola reutilizável Trader Joe's original, trazida dos EUA. Lona resistente com fundo e alças reforçadas em azul-marinho, bolso interno. Novas, com etiqueta. Preço por unidade.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/bolsa-trader-joes/</div>
       <div class="linha">
@@ -1417,8 +1525,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Utilidades domésticas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bolsa Trader Joe's — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Bolsa Trader Joe's de lona importada · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="teclado-hp-slim"
@@ -1426,7 +1534,7 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="98"
       data-desc="Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/">
@@ -1438,10 +1546,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/teclado-hp-slim.jpg" alt="Cartaz com o preço de Teclado HP slim USB empresarial" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/teclado-hp-slim.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/</div>
       <div class="linha">
@@ -1450,8 +1561,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Teclado HP slim USB empresarial — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Teclado HP slim USB empresarial · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="kit-limpeza"
@@ -1459,9 +1570,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="69"
       data-desc="Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
 
-Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 69, 30% abaixo.
+Novo custa cerca de R$ 99 em CopShop Brasil. Aqui sai por R$ 69, 30% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/">
@@ -1473,12 +1584,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/kit-limpeza.jpg" alt="Cartaz com o preço de Kit de limpeza e manutenção" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/kit-limpeza.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
 
-Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 69, 30% abaixo.
+Novo custa cerca de R$ 99 em CopShop Brasil. Aqui sai por R$ 69, 30% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/</div>
       <div class="linha">
@@ -1487,8 +1601,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Equipamentos esportivos<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Kit de limpeza e manutenção — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Kit de limpeza e manutenção · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="oculos-protetor-3m"
@@ -1496,7 +1610,7 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="58"
       data-desc="Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/">
@@ -1508,10 +1622,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/oculos-protetor-3m.jpg" alt="Cartaz com o preço de Óculos de proteção + protetor auricular 3M + estojo" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/oculos-protetor-3m.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Óculos de proteção com lente transparente antirrisco, protetor auricular 3M com cordão em caixinha própria e bolsa de tecido + estojo rígido. Conjunto completo de EPI.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/oculos-protetor-3m/</div>
       <div class="linha">
@@ -1520,31 +1637,34 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Equipamentos esportivos<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Óculos de proteção + protetor auricula… — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Óculos de proteção + protetor · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="suporte-tablet"
-      data-titulo="Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°"
+      data-titulo="Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°"
       data-preco="55"
-      data-desc="Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360° — dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, então o suporte fica plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Em ótimo estado — nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar.
+      data-desc="Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360°, então dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, deixando o suporte plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/suporte-tablet/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/suporte-tablet/">
       <div class="topo-item">
-        <h2>Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°</h2>
+        <h2>Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°</h2>
         <span class="val">R$ 55</span>
       </div>
       <a class="cartaz" href="../social/cartaz/suporte-tablet.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/suporte-tablet.jpg" alt="Cartaz com o preço de Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/suporte-tablet.jpg" alt="Cartaz com o preço de Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/suporte-tablet.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
-      <div class="campo">Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360° — dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, então o suporte fica plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Em ótimo estado — nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar.
+      <div class="campo">Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360°, então dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, deixando o suporte plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/suporte-tablet/</div>
       <div class="linha">
@@ -1553,8 +1673,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Móveis<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Suporte de Mesa para Tablet ECOODA — cartaz do preço + 3 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Suporte de Mesa ECOODA para Tablet · cartaz do preço + 3 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="mouse-logitech-pebble"
@@ -1562,9 +1682,9 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="48"
       data-desc="Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambidestro. Conexão Bluetooth. Compacto, ideal para levar na mochila junto com o notebook.
 
-Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 48, 52% abaixo.
+Novo custa cerca de R$ 99,90 em KaBuM. Aqui sai por R$ 48, 52% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/">
@@ -1576,12 +1696,15 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/mouse-logitech-pebble.jpg" alt="Cartaz com o preço de Mouse Logitech Pebble 2 M350s sem fio" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/mouse-logitech-pebble.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Mouse sem fio Logitech Pebble 2 M350s com clique silencioso e design slim ambidestro. Conexão Bluetooth. Compacto, ideal para levar na mochila junto com o notebook.
 
-Novo custa cerca de R$ 99,90 (KaBuM) — aqui sai por R$ 48, 52% abaixo.
+Novo custa cerca de R$ 99,90 em KaBuM. Aqui sai por R$ 48, 52% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-pebble/</div>
       <div class="linha">
@@ -1590,39 +1713,42 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse Logitech Pebble 2 M350s sem fio — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse Logitech Pebble 2 M350s sem fio · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="gancho-bike-decathlon"
-      data-titulo="Gancho de parede e teto para bicicleta — Decathlon"
+      data-titulo="Gancho Decathlon de parede e teto para bicicleta"
       data-preco="45"
       data-desc="Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta até 25kg, compatível com bikes de 16 a 29 polegadas e elétricas. Novo, ainda na embalagem. Preço por unidade.
 
-Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45, 10% abaixo.
+Novo custa cerca de R$ 49,99 em Decathlon Brasil. Aqui sai por R$ 45, 10% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/">
       <div class="topo-item">
-        <h2>Gancho de parede e teto para bicicleta — Decathlon</h2>
+        <h2>Gancho Decathlon de parede e teto para bicicleta</h2>
         <span class="val">R$ 45</span>
       </div>
       <a class="cartaz" href="../social/cartaz/gancho-bike-decathlon.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/gancho-bike-decathlon.jpg" alt="Cartaz com o preço de Gancho de parede e teto para bicicleta — Decathlon" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/gancho-bike-decathlon.jpg" alt="Cartaz com o preço de Gancho Decathlon de parede e teto para bicicleta" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/gancho-bike-decathlon.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta até 25kg, compatível com bikes de 16 a 29 polegadas e elétricas. Novo, ainda na embalagem. Preço por unidade.
 
-Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45, 10% abaixo.
+Novo custa cerca de R$ 49,99 em Decathlon Brasil. Aqui sai por R$ 45, 10% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/</div>
       <div class="linha">
@@ -1631,8 +1757,8 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Esportes e lazer → Bicicletas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Gancho de parede e teto para bicicleta — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Gancho Decathlon de parede e teto · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="mouse-c3tech"
@@ -1640,7 +1766,7 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
       data-preco="39"
       data-desc="Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-c3tech/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/mouse-c3tech/">
@@ -1652,10 +1778,13 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <img src="../social/cartaz/mouse-c3tech.jpg" alt="Cartaz com o preço de Mouse sem fio C3 Tech M-W20BK" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/mouse-c3tech.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Mouse sem fio C3 Tech M-W20BK, 2.4GHz com receptor USB, 1000dpi, cor preta. Botão de ajuste de DPI. Funcionando perfeitamente.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/mouse-c3tech/</div>
       <div class="linha">
@@ -1664,39 +1793,42 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Eletrônicos → Informática<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse sem fio C3 Tech M-W20BK — cartaz do preço + 2 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Mouse sem fio C3 Tech M-W20BK · cartaz do preço + 2 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
     <article class="pub item" data-slug="cheirinhos-little-trees"
-      data-titulo="Cheirinho Little Trees — pack com 3"
+      data-titulo="Cheirinho Little Trees pack com 3"
       data-preco="34"
       data-desc="Aromatizante Little Trees original importado, pack com 3 unidades lacrado. Disponíveis: 2 packs Black Ice, 1 Supernova e 1 Caribbean Colada. Preço por pack.
 
-Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 34, 10% abaixo.
+Novo custa cerca de R$ 37,90 em Mercado Livre. Aqui sai por R$ 34, 10% abaixo.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/cheirinhos-little-trees/"
       data-link="https://vieiradiego.github.io/bazar-do-diego/item/cheirinhos-little-trees/">
       <div class="topo-item">
-        <h2>Cheirinho Little Trees — pack com 3</h2>
+        <h2>Cheirinho Little Trees pack com 3</h2>
         <span class="val">R$ 34</span>
       </div>
       <a class="cartaz" href="../social/cartaz/cheirinhos-little-trees.jpg" target="_blank" rel="noopener">
-        <img src="../social/cartaz/cheirinhos-little-trees.jpg" alt="Cartaz com o preço de Cheirinho Little Trees — pack com 3" loading="lazy" width="1080" height="1080">
+        <img src="../social/cartaz/cheirinhos-little-trees.jpg" alt="Cartaz com o preço de Cheirinho Little Trees pack com 3" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
+      <p class="story"><a href="../social/story/cheirinhos-little-trees.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
+        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
+        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">Aromatizante Little Trees original importado, pack com 3 unidades lacrado. Disponíveis: 2 packs Black Ice, 1 Supernova e 1 Caribbean Colada. Preço por pack.
 
-Novo custa cerca de R$ 37,90 (Mercado Livre) — aqui sai por R$ 34, 10% abaixo.
+Novo custa cerca de R$ 37,90 em Mercado Livre. Aqui sai por R$ 34, 10% abaixo.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 
 Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/item/cheirinhos-little-trees/</div>
       <div class="linha">
@@ -1705,11 +1837,12 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
         <button class="btn secundario copiar" type="button" data-campo="preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Copiar preço</span></button>
       </div>
       <p class="info"><b>Categoria:</b> Casa e jardim → Utilidades domésticas<br>
-        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cheirinho Little Trees — cartaz do preço + 4 tratadas + originais</p>
+        <b>Estado:</b> Em estado de uso, sem detalhes · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › Bazar · Cheirinho Little Trees pack com 3 · cartaz do preço + 4 tratadas + originais</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>
   </div>
+  <p class="vazio" id="vazio" hidden></p>
 </main>
 
 <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
@@ -1752,10 +1885,41 @@ Mais fotos e o catálogo completo: https://vieiradiego.github.io/bazar-do-diego/
   var placar = document.getElementById('placar-txt');
   var barra = document.getElementById('barrinha');
 
+  var vazio = document.getElementById('vazio');
+  var botoesFiltro = Array.prototype.slice.call(document.querySelectorAll('.filtro'));
+  var filtroAtual = 'todos';
+
+  function filtrarFila(){
+    var visiveis = 0;
+    cartoes.forEach(function(c){
+      var pronto = c.classList.contains('pronto');
+      var mostra = filtroAtual === 'todos'
+        || (filtroAtual === 'publicados' && pronto)
+        || (filtroAtual === 'pendentes' && !pronto);
+      c.hidden = !mostra;
+      if (mostra) visiveis++;
+    });
+    botoesFiltro.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.filtro === filtroAtual));
+    });
+    vazio.textContent = filtroAtual === 'publicados'
+      ? 'Você ainda não marcou nenhum como publicado.'
+      : 'Tudo publicado. Não sobrou nenhum pendente.';
+    vazio.hidden = visiveis > 0;
+  }
+
+  botoesFiltro.forEach(function(b){
+    b.addEventListener('click', function(){
+      filtroAtual = b.dataset.filtro;
+      filtrarFila();
+    });
+  });
+
   function atualizar(){
     var n = cartoes.filter(function(c){ return c.classList.contains('pronto'); }).length;
     placar.textContent = n + ' de ' + cartoes.length + ' publicados';
     barra.style.width = (cartoes.length ? (n / cartoes.length * 100) : 0) + '%';
+    filtrarFila();
   }
 
   var jaFeitos = lidos();

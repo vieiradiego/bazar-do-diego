@@ -1,4 +1,4 @@
-# Capacete Rockrider Decathlon — tam. 59-62
+# Capacete Rockrider Decathlon tamanho 59 a 62
 
 **Preço:** R$ 187
 **Categoria:** Esporte e Bike
@@ -6,19 +6,20 @@
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
 
 ## Título para o Marketplace
-Capacete Rockrider Decathlon — tam. 59-62
+Capacete Rockrider Decathlon tamanho 59 a 62
 
 ## Descrição para o Marketplace
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
 
 ## Legenda para o Instagram
-Capacete Rockrider Decathlon — tam. 59-62 — R$ 187
+Capacete Rockrider Decathlon tamanho 59 a 62
+R$ 187
 
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29

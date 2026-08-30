@@ -1,4 +1,4 @@
-# Cadeira Pingo — assento gota com pés de madeira
+# Cadeira Pingo com assento gota e pés de madeira
 
 **Preço:** R$ 246 (cada) · 17% abaixo do novo
 **Categoria:** Casa
@@ -6,25 +6,26 @@
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/
 
 ## Título para o Marketplace
-Cadeira Pingo — assento gota com pés de madeira
+Cadeira Pingo com assento gota e pés de madeira
 
 ## Descrição para o Marketplace
 Cadeira design Pingo com assento em polipropileno no formato gota e pés de madeira maciça com estrutura metálica cruzada. Suporta até 120kg. Disponíveis 2 turquesa e 2 vermelhas. Sem rachaduras ou manchas. Preço por unidade.
 
-Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 246, 17% abaixo.
+Novo custa cerca de R$ 295,65 em Móveis do Limar. Aqui sai por R$ 246, 17% abaixo.
 
 Disponíveis: 4 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/cadeiras-pingo/
 
 ## Legenda para o Instagram
-Cadeira Pingo — assento gota com pés de madeira — R$ 246 cada
+Cadeira Pingo com assento gota e pés de madeira
+R$ 246 cada
 
 Cadeira design Pingo com assento em polipropileno no formato gota e pés de madeira maciça com estrutura metálica cruzada. Suporta até 120kg. Disponíveis 2 turquesa e 2 vermelhas. Sem rachaduras ou manchas. Preço por unidade.
 
-Novo custa cerca de R$ 295,65 (Móveis do Limar) — aqui sai por R$ 246, 17% abaixo.
+Novo custa cerca de R$ 295,65 em Móveis do Limar. Aqui sai por R$ 246, 17% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa

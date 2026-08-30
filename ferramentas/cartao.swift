@@ -313,7 +313,7 @@ if modo == "capa" {
     grafite.setFill()
     NSRect(x: 0, y: 0, width: L, height: A).fill()
     // bloco centrado: marca, título, subtítulo e a pílula da cidade
-    let cidade = "Caxias do Sul — RS"
+    let cidade = "Caxias do Sul, RS"
     let corPil = areia.withAlphaComponent(0.82)
     let aC = atributos(20, .regular, corPil, alinha: .center)
     let lc = larguraDe(cidade, aC) + 52

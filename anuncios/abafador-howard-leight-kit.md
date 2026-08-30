@@ -9,20 +9,21 @@
 Abafador Eletrônico Howard Leight + óculos + estojo
 
 ## Descrição para o Marketplace
-Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
+Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), que amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 246, 62% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 246, 62% abaixo.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight-kit/
 
 ## Legenda para o Instagram
-Abafador Eletrônico Howard Leight + óculos + estojo — R$ 246
+Abafador Eletrônico Howard Leight + óculos + estojo
+R$ 246
 
-Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell) — amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas.
+Protetor auricular eletrônico Howard Leight Impact Sport (Honeywell), que amplifica sons ambientes e corta o ruído de impacto. Acompanha óculos de proteção lente amarela e estojo rígido. Funcionando, pilhas testadas. Em estado de uso, sem detalhes.
 
-Novo custa cerca de R$ 649 (Bazar Militar) — aqui sai por R$ 246, 62% abaixo.
+Novo custa cerca de R$ 649 em Bazar Militar. Aqui sai por R$ 246, 62% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao

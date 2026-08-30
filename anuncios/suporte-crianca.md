@@ -2,23 +2,24 @@
 
 **Preço:** R$ 242
 **Categoria:** Esporte e Bike
-**Fotos:** — (pendente)
+**Fotos:** (pendente)
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/
 
 ## Título para o Marketplace
 Cadeirinha de bicicleta para criança
 
 ## Descrição para o Marketplace
-Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
+Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve: chame no WhatsApp que envio na hora. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/suporte-crianca/
 
 ## Legenda para o Instagram
-Cadeirinha de bicicleta para criança — R$ 242
+Cadeirinha de bicicleta para criança
+R$ 242
 
-Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve — chame no WhatsApp que envio na hora.
+Cadeirinha para transporte de criança na bicicleta, com cinto de segurança e apoio para os pés. Fotos em breve: chame no WhatsApp que envio na hora. Em estado de uso, sem detalhes.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29

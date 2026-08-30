@@ -1,4 +1,4 @@
-# Gancho de parede e teto para bicicleta — Decathlon
+# Gancho Decathlon de parede e teto para bicicleta
 
 **Preço:** R$ 45 (cada) · 10% abaixo do novo
 **Categoria:** Esporte e Bike
@@ -6,25 +6,26 @@
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/
 
 ## Título para o Marketplace
-Gancho de parede e teto para bicicleta — Decathlon
+Gancho Decathlon de parede e teto para bicicleta
 
 ## Descrição para o Marketplace
 Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta até 25kg, compatível com bikes de 16 a 29 polegadas e elétricas. Novo, ainda na embalagem. Preço por unidade.
 
-Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45, 10% abaixo.
+Novo custa cerca de R$ 49,99 em Decathlon Brasil. Aqui sai por R$ 45, 10% abaixo.
 
 Disponíveis: 2 unidades (preço por unidade).
 
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/gancho-bike-decathlon/
 
 ## Legenda para o Instagram
-Gancho de parede e teto para bicicleta — Decathlon — R$ 45 cada
+Gancho Decathlon de parede e teto para bicicleta
+R$ 45 cada
 
 Suporte gancho Decathlon para pendurar a bicicleta na parede ou no teto. Suporta até 25kg, compatível com bikes de 16 a 29 polegadas e elétricas. Novo, ainda na embalagem. Preço por unidade.
 
-Novo custa cerca de R$ 49,99 (Decathlon Brasil) — aqui sai por R$ 45, 10% abaixo.
+Novo custa cerca de R$ 49,99 em Decathlon Brasil. Aqui sai por R$ 45, 10% abaixo.
 
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #bike #ciclismo #mtb #aro29
