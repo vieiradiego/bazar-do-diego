@@ -23,9 +23,9 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 18. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
 19. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
 20. **HD Externo Seagate Portable 2TB — USB 3.0** — R$ 299 · `anuncios/hd-externo-seagate-2tb.md`
-21. **Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável** — R$ 299 · `anuncios/fone-jbl.md`
-22. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-23. **Controle Xbox Series X|S sem fio — Carbon Black** — R$ 259 · `anuncios/controle-xbox-series.md`
+21. **Controle Xbox Series X|S sem fio — Carbon Black** — R$ 299 · `anuncios/controle-xbox-series.md`
+22. **Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável** — R$ 299 · `anuncios/fone-jbl.md`
+23. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
 24. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
 25. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
 26. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
@@ -617,6 +617,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# Controle Xbox Series X|S sem fio — Carbon Black
+
+**Preço:** R$ 299
+**Categoria:** Eletrônicos
+**Fotos:** controle-xbox-series-01.jpg, controle-xbox-series-02.jpg, controle-xbox-series-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
+
+## Título para o Marketplace
+Controle Xbox Series X|S sem fio — Carbon Black
+
+## Descrição para o Marketplace
+Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
+
+## Legenda para o Instagram
+Controle Xbox Series X|S sem fio — Carbon Black — R$ 299
+
+Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
 # Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável
 
 **Preço:** R$ 299
@@ -672,37 +699,6 @@ Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 296
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #pcgamer #hardware #setup
-
----
-
-# Controle Xbox Series X|S sem fio — Carbon Black
-
-**Preço:** R$ 259 · 25% abaixo do novo
-**Categoria:** Eletrônicos
-**Fotos:** controle-xbox-series-01.jpg, controle-xbox-series-02.jpg, controle-xbox-series-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
-
-## Título para o Marketplace
-Controle Xbox Series X|S sem fio — Carbon Black
-
-## Descrição para o Marketplace
-Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
-
-Novo custa cerca de R$ 345 (Amazon) — aqui sai por R$ 259, 25% abaixo.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
-
-## Legenda para o Instagram
-Controle Xbox Series X|S sem fio — Carbon Black — R$ 259
-
-Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
-
-Novo custa cerca de R$ 345 (Amazon) — aqui sai por R$ 259, 25% abaixo.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
