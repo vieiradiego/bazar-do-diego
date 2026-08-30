@@ -4,37 +4,48 @@ Gerado por `build.mjs` a partir de `catalogo.csv`. Ordem sugerida de publicaçã
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
 1. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
-2. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
-3. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
-4. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
-5. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
-6. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 549 · `anuncios/rack-quadrinhos.md`
-7. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
-8. **Armário baixo azul turquesa com porta de vidro** — R$ 399 · `anuncios/armario-turquesa.md`
-9. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
-10. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
-11. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
-12. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
-13. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
-14. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-15. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
-16. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
-17. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-18. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
-19. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
-20. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
-21. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
-22. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
-23. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
-24. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
-25. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
-26. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
-27. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
-28. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
-29. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
-30. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
-31. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-32. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
+2. **Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB** — R$ 1.450 · `anuncios/placa-video-gtx-1080ti.md`
+3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
+4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
+5. **Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire** — R$ 680 · `anuncios/placa-mae-x370-taichi.md`
+6. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
+7. **Gabinete Cooler Master HAF XB EVO — cubo ATX com alças** — R$ 599 · `anuncios/gabinete-haf-xb.md`
+8. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
+9. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 549 · `anuncios/rack-quadrinhos.md`
+10. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
+11. **Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4** — R$ 430 · `anuncios/ryzen-7-1800x.md`
+12. **Armário baixo azul turquesa com porta de vidro** — R$ 399 · `anuncios/armario-turquesa.md`
+13. **SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s** — R$ 399 · `anuncios/ssd-xpg-512gb.md`
+14. **Mouse Gamer Logitech G903 LIGHTSPEED sem fio** — R$ 399 · `anuncios/mouse-logitech-g903.md`
+15. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
+16. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
+17. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
+18. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
+19. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
+20. **HD Externo Seagate Portable 2TB — USB 3.0** — R$ 299 · `anuncios/hd-externo-seagate-2tb.md`
+21. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+22. **Controle Xbox Series X|S sem fio — Carbon Black** — R$ 259 · `anuncios/controle-xbox-series.md`
+23. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
+24. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
+25. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+26. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
+27. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
+28. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
+29. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
+30. **Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável** — R$ 169 · `anuncios/fone-jbl.md`
+31. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
+32. **Controle Xbox 360 sem fio preto — original Microsoft** — R$ 149 · `anuncios/controle-xbox-360.md`
+33. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
+34. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
+35. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
+36. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
+37. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
+38. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
+39. **Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°** — R$ 55 · `anuncios/suporte-tablet.md`
+40. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
+41. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
+42. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+43. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -66,6 +77,33 @@ Novo custa cerca de R$ 3.385 (Amazon) — aqui sai por R$ 2.762, 18% abaixo.
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
+# Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB
+
+**Preço:** R$ 1.450
+**Categoria:** PC e Hardware
+**Fotos:** placa-video-gtx-1080ti-01.jpg, placa-video-gtx-1080ti-02.jpg, placa-video-gtx-1080ti-03.jpg, placa-video-gtx-1080ti-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/
+
+## Título para o Marketplace
+Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB
+
+## Descrição para o Marketplace
+Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits — a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete: boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/
+
+## Legenda para o Instagram
+Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB — R$ 1.450
+
+Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits — a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete: boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -123,6 +161,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire
+
+**Preço:** R$ 680
+**Categoria:** PC e Hardware
+**Fotos:** placa-mae-x370-taichi-01.jpg, placa-mae-x370-taichi-02.jpg, placa-mae-x370-taichi-03.jpg, placa-mae-x370-taichi-04.jpg, placa-mae-x370-taichi-05.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/
+
+## Título para o Marketplace
+Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire
+
+## Descrição para o Marketplace
+Placa-mãe ASRock X370 Taichi, socket AM4, formato ATX. É a linha topo da ASRock na época: VRM reforçado de 12 fases, dois slots M.2 (um deles Ultra M.2 32Gb/s), 8 portas SATA3, Wi-Fi 802.11ac com antena, áudio Purity Sound 4 e suporte a NVIDIA SLI e AMD CrossFireX. Aceita do Ryzen de 1ª geração até o 5000 com a BIOS atualizada, o que a torna uma base barata para montar ou reformar uma máquina AM4. Acompanha a caixa original, e o painel traseiro de conexões está fotografado em detalhe para você conferir cada porta antes de vir buscar. Combina direto com o Ryzen 7 1800X que também está no bazar.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/
+
+## Legenda para o Instagram
+Placa-Mãe ASRock X370 Taichi — AM4, Wi-Fi, SLI e CrossFire — R$ 680
+
+Placa-mãe ASRock X370 Taichi, socket AM4, formato ATX. É a linha topo da ASRock na época: VRM reforçado de 12 fases, dois slots M.2 (um deles Ultra M.2 32Gb/s), 8 portas SATA3, Wi-Fi 802.11ac com antena, áudio Purity Sound 4 e suporte a NVIDIA SLI e AMD CrossFireX. Aceita do Ryzen de 1ª geração até o 5000 com a BIOS atualizada, o que a torna uma base barata para montar ou reformar uma máquina AM4. Acompanha a caixa original, e o painel traseiro de conexões está fotografado em detalhe para você conferir cada porta antes de vir buscar. Combina direto com o Ryzen 7 1800X que também está no bazar.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
 # Fonte Corsair RM850i 850W 80 Plus Gold Modular
 
 **Preço:** R$ 644 · 23% abaixo do novo
@@ -147,6 +212,33 @@ Fonte Corsair RM850i 850W 80 Plus Gold Modular — R$ 644
 Fonte Corsair RM850i, 850W reais, certificação 80 Plus Gold e cabeamento totalmente modular. Linha RMi, superior à RMe atual: traz monitoramento digital por USB via Corsair Link (tensão, corrente, temperatura e rotação em tempo real) e capacitores japoneses. Acompanha a bolsa original com todos os cabos modulares e o cabo de força. Ventoinha silenciosa com modo zero RPM em baixa carga. Funcionando perfeitamente.
 
 Novo custa cerca de R$ 831,99 (KaBuM (RM850e)) — aqui sai por R$ 644, 23% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
+# Gabinete Cooler Master HAF XB EVO — cubo ATX com alças
+
+**Preço:** R$ 599
+**Categoria:** PC e Hardware
+**Fotos:** gabinete-haf-xb-01.jpg, gabinete-haf-xb-02.jpg, gabinete-haf-xb-03.jpg, gabinete-haf-xb-04.jpg, gabinete-haf-xb-05.jpg, gabinete-haf-xb-06.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/
+
+## Título para o Marketplace
+Gabinete Cooler Master HAF XB EVO — cubo ATX com alças
+
+## Descrição para o Marketplace
+Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa — a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL — a caixa tem marcas de uso, mas ajuda muito se você precisar transportar ou revender depois.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/
+
+## Legenda para o Instagram
+Gabinete Cooler Master HAF XB EVO — cubo ATX com alças — R$ 599
+
+Gabinete Cooler Master HAF XB EVO (RC-902XB), o cubo horizontal que também funciona como bancada de testes. Suporta placas ATX, tem duas alças de transporte, gaveta de placa-mãe removível (você monta a máquina na mesa e depois encaixa), duas baias hot-swap de 3.5 polegadas na frente e espaço para radiador de 240mm no topo. Aceita placa de vídeo longa — a GTX 1080 Ti que está aqui no bazar entra sem apertar. Modelo descontinuado e muito procurado por quem monta PC de LAN ou bancada. Vai completo, com as duas alças, o painel frontal e os parafusos, e ACOMPANHA A CAIXA ORIGINAL — a caixa tem marcas de uso, mas ajuda muito se você precisar transportar ou revender depois.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
@@ -241,6 +333,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4
+
+**Preço:** R$ 430
+**Categoria:** PC e Hardware
+**Fotos:** ryzen-7-1800x-01.jpg, ryzen-7-1800x-02.jpg, ryzen-7-1800x-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ryzen-7-1800x/
+
+## Título para o Marketplace
+Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4
+
+## Descrição para o Marketplace
+Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming — tarefas que se beneficiam de muitos threads. Não acompanha cooler (o 1800X sempre foi vendido sem). Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ryzen-7-1800x/
+
+## Legenda para o Instagram
+Processador AMD Ryzen 7 1800X — 8 núcleos e 16 threads, AM4 — R$ 430
+
+Processador AMD Ryzen 7 1800X: 8 núcleos e 16 threads, 3.6 GHz de base e 4.0 GHz de turbo, socket AM4, 16MB de cache L3, multiplicador destravado para overclock. Foi o carro-chefe da AMD no lançamento do Ryzen e continua muito capaz para edição de vídeo, compilação, virtualização e streaming — tarefas que se beneficiam de muitos threads. Não acompanha cooler (o 1800X sempre foi vendido sem). Funcionando perfeitamente, sem pino torto. Fecha o kit com a X370 Taichi que também está no bazar.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
 # Armário baixo azul turquesa com porta de vidro
 
 **Preço:** R$ 399
@@ -265,6 +384,64 @@ Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerc
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
+
+---
+
+# SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s
+
+**Preço:** R$ 399
+**Categoria:** PC e Hardware
+**Fotos:** ssd-xpg-512gb-01.jpg, ssd-xpg-512gb-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/
+
+## Título para o Marketplace
+SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s
+
+## Descrição para o Marketplace
+SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4 (part number ASX8100NP-512GT-C, conferido na etiqueta — dá para ler nas fotos). Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM — bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e te mando o print antes da compra. Vale o aviso honesto: os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA, e hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM. É justamente por isso que este usado faz sentido.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/
+
+## Legenda para o Instagram
+SSD XPG SX8100 512GB — M.2 NVMe, 3500 MB/s — R$ 399
+
+SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4 (part number ASX8100NP-512GT-C, conferido na etiqueta — dá para ler nas fotos). Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM — bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e te mando o print antes da compra. Vale o aviso honesto: os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA, e hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM. É justamente por isso que este usado faz sentido.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
+# Mouse Gamer Logitech G903 LIGHTSPEED sem fio
+
+**Preço:** R$ 399 · 54% abaixo do novo
+**Categoria:** Eletrônicos
+**Fotos:** mouse-logitech-g903-01.jpg, mouse-logitech-g903-02.jpg, mouse-logitech-g903-03.jpg, mouse-logitech-g903-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/
+
+## Título para o Marketplace
+Mouse Gamer Logitech G903 LIGHTSPEED sem fio
+
+## Descrição para o Marketplace
+Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro (dá para trocar os botões de lado). A conexão LIGHTSPEED da Logitech tem latência de mouse com fio — é a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY (o pad não acompanha). Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões (é o que deixa o mouse ambidestro). Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667 — dá para ler na foto. Funcionando, sem clique duplo. Honestidade sobre o estado: a base tem riscos de uso, normais em mouse que rodou bastante; a parte de cima e os botões estão bem.
+
+Novo custa cerca de R$ 861,71 (KaBuM) — aqui sai por R$ 399, 54% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/
+
+## Legenda para o Instagram
+Mouse Gamer Logitech G903 LIGHTSPEED sem fio — R$ 399
+
+Mouse gamer Logitech G903 LIGHTSPEED, sem fio, com sensor de alta precisão, botões laterais configuráveis e formato ambidestro (dá para trocar os botões de lado). A conexão LIGHTSPEED da Logitech tem latência de mouse com fio — é a mesma tecnologia da linha PRO usada em campeonato. Recarregável, e compatível com o mouse pad de carga POWERPLAY (o pad não acompanha). Acompanha a CAIXA ORIGINAL, o cabo trançado de recarga, o adaptador extensor USB e os painéis laterais magnéticos que trocam a configuração dos botões (é o que deixa o mouse ambidestro). Modelo conferido na etiqueta da base: G903 LIGHTSPEED, P/N 810-006667 — dá para ler na foto. Funcionando, sem clique duplo. Honestidade sobre o estado: a base tem riscos de uso, normais em mouse que rodou bastante; a parte de cima e os botões estão bem.
+
+Novo custa cerca de R$ 861,71 (KaBuM) — aqui sai por R$ 399, 54% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
@@ -333,7 +510,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 Teclado Mecânico Gamer Logitech G PRO TKL
 
 ## Descrição para o Marketplace
-Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
+Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
 
@@ -343,7 +520,7 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/teclado-logit
 ## Legenda para o Instagram
 Teclado Mecânico Gamer Logitech G PRO TKL — R$ 375
 
-Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
+Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
 
@@ -413,6 +590,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# HD Externo Seagate Portable 2TB — USB 3.0
+
+**Preço:** R$ 299
+**Categoria:** PC e Hardware
+**Fotos:** hd-externo-seagate-2tb-01.jpg, hd-externo-seagate-2tb-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-externo-seagate-2tb/
+
+## Título para o Marketplace
+HD Externo Seagate Portable 2TB — USB 3.0
+
+## Descrição para o Marketplace
+HD externo portátil Seagate de 2TB, USB 3.0, formato 2.5 polegadas. Não precisa de fonte: liga só no cabo USB. Funciona direto no Windows, no Mac e em console, e é o tamanho certo para backup de fotos, biblioteca de filmes ou levar projeto de um lugar para o outro. Disco usado — rodo o teste SMART e te mando o print antes de fechar. Como todo HD com quilometragem, use como cópia extra e não como a única cópia dos seus arquivos.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-externo-seagate-2tb/
+
+## Legenda para o Instagram
+HD Externo Seagate Portable 2TB — USB 3.0 — R$ 299
+
+HD externo portátil Seagate de 2TB, USB 3.0, formato 2.5 polegadas. Não precisa de fonte: liga só no cabo USB. Funciona direto no Windows, no Mac e em console, e é o tamanho certo para backup de fotos, biblioteca de filmes ou levar projeto de um lugar para o outro. Disco usado — rodo o teste SMART e te mando o print antes de fechar. Como todo HD com quilometragem, use como cópia extra e não como a única cópia dos seus arquivos.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
 # HD WD Purple 2TB — SATA 3.5 para CFTV
 
 **Preço:** R$ 296 · 49% abaixo do novo
@@ -441,6 +645,37 @@ Novo custa cerca de R$ 582 (Net Computadores (WD22PURZ)) — aqui sai por R$ 296
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #pcgamer #hardware #setup
+
+---
+
+# Controle Xbox Series X|S sem fio — Carbon Black
+
+**Preço:** R$ 259 · 25% abaixo do novo
+**Categoria:** Eletrônicos
+**Fotos:** controle-xbox-series-01.jpg, controle-xbox-series-02.jpg, controle-xbox-series-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
+
+## Título para o Marketplace
+Controle Xbox Series X|S sem fio — Carbon Black
+
+## Descrição para o Marketplace
+Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
+
+Novo custa cerca de R$ 345 (Amazon) — aqui sai por R$ 259, 25% abaixo.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-series/
+
+## Legenda para o Instagram
+Controle Xbox Series X|S sem fio — Carbon Black — R$ 259
+
+Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
+
+Novo custa cerca de R$ 345 (Amazon) — aqui sai por R$ 259, 25% abaixo.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
@@ -653,6 +888,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável
+
+**Preço:** R$ 169
+**Categoria:** Eletrônicos
+**Fotos:** fone-jbl-01.jpg, fone-jbl-02.jpg, fone-jbl-03.jpg, fone-jbl-04.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fone-jbl/
+
+## Título para o Marketplace
+Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável
+
+## Descrição para o Marketplace
+Fone de ouvido JBL over-ear (a concha cobre a orelha inteira), dobrável, em preto com acabamento cromado. Tem controles na própria concha — volume, play e atender chamada — e microfone embutido, ou seja, funciona sem fio por Bluetooth para música e ligação. Acompanha o ESTOJO RÍGIDO de transporte e o cabo trançado destacável com controle em linha — ou seja, também funciona ligado na tomada P2 de qualquer aparelho, sem depender da bateria. Dois avisos honestos: as almofadas mostram marcas de uso (dá para ver nas fotos), e é um fone de alguns anos — a bateria não tem mais a autonomia de um zero-quilômetro, mas o modo com fio resolve. O modelo exato não está legível na carcaça; se você quiser eu abro e confiro antes de fechar negócio.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fone-jbl/
+
+## Legenda para o Instagram
+Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável — R$ 169
+
+Fone de ouvido JBL over-ear (a concha cobre a orelha inteira), dobrável, em preto com acabamento cromado. Tem controles na própria concha — volume, play e atender chamada — e microfone embutido, ou seja, funciona sem fio por Bluetooth para música e ligação. Acompanha o ESTOJO RÍGIDO de transporte e o cabo trançado destacável com controle em linha — ou seja, também funciona ligado na tomada P2 de qualquer aparelho, sem depender da bateria. Dois avisos honestos: as almofadas mostram marcas de uso (dá para ver nas fotos), e é um fone de alguns anos — a bateria não tem mais a autonomia de um zero-quilômetro, mas o modo com fio resolve. O modelo exato não está legível na carcaça; se você quiser eu abro e confiro antes de fechar negócio.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
+
+---
+
 # Caneca Térmica Stanley Beer Stein 709ml — nova lacrada
 
 **Preço:** R$ 164 · 13% abaixo do novo
@@ -681,6 +943,33 @@ Novo custa cerca de R$ 189 (Rei dos Parafusos) — aqui sai por R$ 164, 13% abai
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
+
+---
+
+# Controle Xbox 360 sem fio preto — original Microsoft
+
+**Preço:** R$ 149
+**Categoria:** Eletrônicos
+**Fotos:** controle-xbox-360-01.jpg, controle-xbox-360-02.jpg, controle-xbox-360-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
+
+## Título para o Marketplace
+Controle Xbox 360 sem fio preto — original Microsoft
+
+## Descrição para o Marketplace
+Controle sem fio original da Microsoft para Xbox 360, preto. Original de fábrica, não é genérico — e isso faz diferença de verdade: os controles paralelos que aparecem por R$ 80 têm analógico frouxo e param de funcionar em pouco tempo. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga — você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360 (não acompanha). Todos os botões e os analógicos funcionando.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
+
+## Legenda para o Instagram
+Controle Xbox 360 sem fio preto — original Microsoft — R$ 149
+
+Controle sem fio original da Microsoft para Xbox 360, preto. Original de fábrica, não é genérico — e isso faz diferença de verdade: os controles paralelos que aparecem por R$ 80 têm analógico frouxo e param de funcionar em pouco tempo. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga — você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360 (não acompanha). Todos os botões e os analógicos funcionando.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
@@ -715,14 +1004,14 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 **Preço:** R$ 128
 **Categoria:** PC e Hardware
-**Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg
+**Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg, ssd-corsair-240gb-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
 
 ## Título para o Marketplace
 SSD Corsair Force LE 240GB — SATA 3
 
 ## Descrição para o Marketplace
-SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
+SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
@@ -730,7 +1019,7 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-2
 ## Legenda para o Instagram
 SSD Corsair Force LE 240GB — SATA 3 — R$ 128
 
-SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos.
+SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas — part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
@@ -849,6 +1138,33 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/oculos-protet
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #tiroesportivo #epi #protecao
+
+---
+
+# Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°
+
+**Preço:** R$ 55
+**Categoria:** Casa
+**Fotos:** suporte-tablet-01.jpg, suporte-tablet-02.jpg, suporte-tablet-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/suporte-tablet/
+
+## Título para o Marketplace
+Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°
+
+## Descrição para o Marketplace
+Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360° — dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, então o suporte fica plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Em ótimo estado — nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/suporte-tablet/
+
+## Legenda para o Instagram
+Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360° — R$ 55
+
+Suporte de mesa para tablet da ECOODA, em alumínio maciço. A base é quadrada e pesada, com disco giratório de 360° — dá para virar a tela para quem está do outro lado da mesa sem levantar o aparelho. O braço é articulado em duas juntas e dobra por completo, então o suporte fica plano para guardar ou viajar. A altura e o ângulo de inclinação são ajustáveis, e o apoio é forrado para não riscar. Serve para tablet e iPad de qualquer tamanho até uns 13 polegadas, e também para celular e leitor. Em ótimo estado — nas fotos ele aparece com um Galaxy Tab S9 FE+ de 12,4 polegadas encaixado, que é justamente o tablet que também está à venda aqui no bazar.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
 ---
 

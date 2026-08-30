@@ -9,7 +9,7 @@
 Teclado Mecânico Gamer Logitech G PRO TKL
 
 ## Descrição para o Marketplace
-Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
+Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
 
@@ -19,7 +19,7 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/teclado-logit
 ## Legenda para o Instagram
 Teclado Mecânico Gamer Logitech G PRO TKL — R$ 375
 
-Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Todas as teclas funcionando, sem falhas.
+Teclado mecânico Logitech G PRO no formato TKL (sem teclado numérico), layout US. Switches GX Blue Clicky, iluminação RGB LIGHTSYNC e cabo destacável. Acompanha a CAIXA ORIGINAL. Todas as teclas funcionando, sem falhas.
 
 Novo custa cerca de R$ 639,99 (KaBuM) — aqui sai por R$ 375, 41% abaixo.
 
