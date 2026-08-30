@@ -3,7 +3,7 @@
 Gerado por `build.mjs` a partir de `catalogo.csv`. Ordem sugerida de publicação:
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
-1. **Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB** — R$ 2.969 · `anuncios/notebook-dell.md`
+1. **Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB** — R$ 2.969 · `anuncios/notebook-dell.md`
 2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
 3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
 4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
@@ -39,7 +39,7 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
 ---
 
-# Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
+# Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB
 
 **Preço:** R$ 2.969
 **Categoria:** Eletrônicos
@@ -47,18 +47,18 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
 
 ## Título para o Marketplace
-Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
+Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB
 
 ## Descrição para o Marketplace
-Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
+Dell Inspiron 14 5402 na cor Platinum Silver. Processador Intel Core i7-1165G7 de 11ª geração (4 núcleos, 8 threads, 12MB de cache, até 4.7 GHz), 16GB de RAM DDR4 3200MHz em dois pentes de 8GB trabalhando em dual channel, e SSD NVMe de 512GB. Placa de vídeo dedicada NVIDIA GeForce MX330 de 2GB GDDR5. Tela de 14 polegadas Full HD 1920x1080 antirreflexo, de borda fina. Teclado retroiluminado com leitor de digital no botão de ligar, bateria de 53Wh e fonte de 65W. Windows 10 Home original de fábrica. Funcionando perfeitamente, sem travamentos.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
 
 ## Legenda para o Instagram
-Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — R$ 2.969
+Notebook Dell Inspiron 14 5402 — i7 11ª geração, 16GB, SSD 512GB — R$ 2.969
 
-Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
+Dell Inspiron 14 5402 na cor Platinum Silver. Processador Intel Core i7-1165G7 de 11ª geração (4 núcleos, 8 threads, 12MB de cache, até 4.7 GHz), 16GB de RAM DDR4 3200MHz em dois pentes de 8GB trabalhando em dual channel, e SSD NVMe de 512GB. Placa de vídeo dedicada NVIDIA GeForce MX330 de 2GB GDDR5. Tela de 14 polegadas Full HD 1920x1080 antirreflexo, de borda fina. Teclado retroiluminado com leitor de digital no botão de ligar, bateria de 53Wh e fonte de 65W. Windows 10 Home original de fábrica. Funcionando perfeitamente, sem travamentos.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
