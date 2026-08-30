@@ -112,6 +112,22 @@ end tell`);
 if (!criaPasta.ok) { console.error(`não consegui criar a pasta: ${criaPasta.saida}`); process.exit(1); }
 console.log(`Pasta "${PASTA_NOVA}" pronta.\n`);
 
+// De onde reaproveitar as fotos já importadas. A pasta antiga some assim que o
+// Diego a apaga à mão, e a partir daí a própria pasta nova é a fonte — é o que
+// faz uma troca de capa depois da migração continuar funcionando.
+const temVelha = rodar(`tell application "Photos"
+  if exists folder "${asEsc(PASTA_VELHA)}" then return "sim"
+  return "nao"
+end tell`).saida === 'sim';
+const FONTES = temVelha ? [PASTA_NOVA, PASTA_VELHA] : [PASTA_NOVA];
+// A lista de álbuns tem que ser capturada ANTES do laço: criar o álbum de
+// destino muda a lista da pasta e o AppleScript estoura com "Invalid index"
+// se estiver iterando `albums of folder` direto.
+const capturaFontes = FONTES
+  .map((f, i) => `  set _fonte${i} to albums of folder "${asEsc(f)}"`).join('\n');
+const varreFontes = (corpo) => FONTES.map((_, i) =>
+  `repeat with a in _fonte${i}\n${corpo}\nend repeat`).join('\n');
+
 let totalOk = 0, totalFalta = 0;
 for (const p of planos) {
   // 1º: o cartaz do preço, importado do disco. Entra antes de tudo porque a
@@ -123,37 +139,44 @@ for (const p of planos) {
   set nova to folder "${asEsc(PASTA_NOVA)}"
   if not (exists album "${asEsc(p.album)}" in nova) then make new album named "${asEsc(p.album)}" at nova
   set destino to album "${asEsc(p.album)}" in nova
+  -- se o álbum já tem um cartaz, não importa de novo: uma execução que morreu
+  -- no meio depois de importar o cartaz colocaria uma segunda cópia aqui
+  repeat with m in media items of destino
+    if (filename of m) is "${asEsc(p.cartaz)}" then return "JA_TEM"
+  end repeat
   with timeout of 300 seconds
     import {POSIX file "${asEsc(c)}"} into destino without skip check duplicates
     return (count of media items in destino) as text
   end timeout
 end tell`);
+    if (rc.ok && rc.saida === 'JA_TEM') rc.saida = '1';
     // Preço inalterado: o Photos reconhece a duplicata e não importa nada. Aí
     // reaproveitar da biblioteca é o certo — é a mesma imagem.
     if (!(rc.ok && Number(rc.saida) > 0)) p.querem.unshift(p.cartaz);
   }
-  // procura cada arquivo desejado, na ordem, dentro do álbum antigo, e adiciona
-  // ao álbum novo. Só o PRIMEIRO com cada nome — é isso que elimina a duplicata.
+  // Procura cada arquivo desejado, na ordem, em TODOS os álbuns das pastas de
+  // origem, e adiciona ao álbum novo. Só o PRIMEIRO com cada nome — é isso que
+  // elimina a duplicata. Varrer todos os álbuns (e não só o de mesmo nome)
+  // cobre o produto que foi renomeado no catálogo depois do primeiro import.
   const r = rodar(`tell application "Photos"
-  set velha to folder "${asEsc(PASTA_VELHA)}"
   set nova to folder "${asEsc(PASTA_NOVA)}"
   if not (exists album "${asEsc(p.album)}" in nova) then make new album named "${asEsc(p.album)}" at nova
   set destino to album "${asEsc(p.album)}" in nova
-  if not (exists album "${asEsc(p.album)}" in velha) then return "SEM_ORIGEM"
-  set origem to album "${asEsc(p.album)}" in velha
-  set disponiveis to media items of origem
+${capturaFontes}
   set escolhidos to {}
   set faltando to ""
-  with timeout of 300 seconds
+  with timeout of 600 seconds
     repeat with alvo in {${lista(p.querem)}}
       set achou to false
-      repeat with m in disponiveis
-        if (filename of m) is (alvo as text) then
-          set end of escolhidos to contents of m
-          set achou to true
-          exit repeat
-        end if
-      end repeat
+${varreFontes(`        if not achou then
+          repeat with m in media items of a
+            if (filename of m) is (alvo as text) then
+              set end of escolhidos to contents of m
+              set achou to true
+              exit repeat
+            end if
+          end repeat
+        end if`)}
       if not achou then set faltando to faltando & (alvo as text) & " "
     end repeat
     if (count of escolhidos) > 0 then add escolhidos to destino
@@ -162,49 +185,11 @@ end tell`);
 end tell`);
 
   if (!r.ok) { console.log(`  ERRO   ${p.album}  ${r.saida}`); continue; }
-
-  // Sem álbum de origem (produto renomeado depois do primeiro import, por
-  // exemplo): nada a reaproveitar, então tudo vira import.
-  let [n, faltando] = r.saida === 'SEM_ORIGEM' ? ['0', p.querem.join(' ')] : r.saida.split('|');
+  let [n, faltando] = r.saida.split('|');
   const faltas = (faltando || '').trim().split(/\s+/).filter(Boolean);
 
-  // Segunda tentativa: varre TODOS os álbuns da pasta antiga. Cobre o produto
-  // que foi renomeado no catálogo depois do primeiro import — o álbum dele tem
-  // outro nome e não bate no passo anterior.
-  let recuperadas = 0;
-  if (faltas.length) {
-    const r2 = rodar(`tell application "Photos"
-  set velha to folder "${asEsc(PASTA_VELHA)}"
-  set destino to album "${asEsc(p.album)}" in folder "${asEsc(PASTA_NOVA)}"
-  set escolhidos to {}
-  set aindaFalta to ""
-  with timeout of 300 seconds
-    repeat with alvo in {${lista(faltas)}}
-      set achou to false
-      repeat with a in albums of velha
-        repeat with m in media items of a
-          if (filename of m) is (alvo as text) then
-            set end of escolhidos to contents of m
-            set achou to true
-            exit repeat
-          end if
-        end repeat
-        if achou then exit repeat
-      end repeat
-      if not achou then set aindaFalta to aindaFalta & (alvo as text) & " "
-    end repeat
-    if (count of escolhidos) > 0 then add escolhidos to destino
-    return ((count of media items in destino) as text) & "|" & aindaFalta
-  end timeout
-end tell`);
-    if (r2.ok && r2.saida.includes('|')) {
-      const [n2, resta] = r2.saida.split('|');
-      recuperadas = Number(n2) - Number(n);
-      n = n2;
-      faltas.length = 0;
-      faltas.push(...(resta || '').trim().split(/\s+/).filter(Boolean));
-    }
-  }
+  // a varredura acima já cobre o que a busca por álbum de mesmo nome perdia
+  const recuperadas = 0;
 
   // o que não estava na biblioteca (foto processada depois do import antigo)
   // entra por import mesmo — aqui não há risco de duplicar, o álbum é novo.
