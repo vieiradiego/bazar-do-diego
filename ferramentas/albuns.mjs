@@ -97,11 +97,14 @@ console.log(executar ? `Criando álbuns na pasta "${PASTA}" do app Fotos…\n`
 
 for (const item of itens) {
   if (soUm && item.slug !== soUm) continue;
+  // cartaz com o preço primeiro: vira a capa do álbum e é fácil de achar
+  const cartaz = join(ROOT, 'docs', 'social', 'cartaz', `${item.slug}.jpg`);
+  const comCartaz = existsSync(cartaz) ? [cartaz] : [];
   const edit = editadasDe(item.slug).map((f) => join(DIR_EDIT, f));
   const orig = (originaisDe[item.slug] ?? [])
     .map((o) => join(ROOT, 'fotos', o.arquivo))
     .filter((p) => existsSync(p));
-  const arquivos = [...edit, ...orig];   // tratadas primeiro: são as de anunciar
+  const arquivos = [...comCartaz, ...edit, ...orig];
   if (!arquivos.length) {
     console.log(`  —      ${item.nome.slice(0, 46).padEnd(48)} sem fotos, pulado`);
     continue;
@@ -110,7 +113,7 @@ for (const item of itens) {
   totalFotos += arquivos.length;
   feitos++;
   if (!executar) {
-    console.log(`  ${String(arquivos.length).padStart(2)} fotos  ${album.padEnd(46)} (${edit.length} tratadas + ${orig.length} originais)`);
+    console.log(`  ${String(arquivos.length).padStart(2)} fotos  ${album.padEnd(46)} (${comCartaz.length} cartaz + ${edit.length} tratadas + ${orig.length} originais)`);
     continue;
   }
   const r = criarAlbum(album, arquivos);

@@ -155,16 +155,22 @@ function gerarCartoes(itens) {
   execFileSync(CARTAO, ['capa', join(dest, 'capa.jpg')], { stdio: 'ignore' });
   execFileSync(CARTAO, ['icone', join(SITE, 'icone-180.png'), '180'], { stdio: 'ignore' });
 
+  const destCartaz = join(dest, 'cartaz');
+  mkdirSync(destCartaz, { recursive: true });
+
   let n = 0;
   for (const item of itens) {
     if (!item.fotos.length) continue;   // sem foto real, cai na capa
-    const args = ['produto', join(dest, `${item.slug}.jpg`),
+    const comuns = [
       '--foto', join(FOTOS, item.fotos[0]),
       '--nome', item.nome,
       '--preco', `R$ ${brl(item.preco)}`,
       '--qtd', String(item.qtd)];
-    if (item.desconto) args.push('--ref', `R$ ${brl(item.ref)}`, '--desconto', String(item.desconto));
-    execFileSync(CARTAO, args, { stdio: 'ignore' });
+    if (item.desconto) comuns.push('--ref', `R$ ${brl(item.ref)}`, '--desconto', String(item.desconto));
+    // 1200x630 para a prévia do link
+    execFileSync(CARTAO, ['produto', join(dest, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
+    // 1080x1080 para anexar no anúncio do Marketplace e no Instagram
+    execFileSync(CARTAO, ['cartaz', join(destCartaz, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
     n++;
   }
   return n;
@@ -1143,6 +1149,11 @@ function paginaPublicar(itens) {
     position:relative}
   .campo.aberto{max-height:none}
   .rot{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--terciaria);margin:0}
+  .cartaz{display:block;text-decoration:none;border-radius:14px;overflow:hidden;
+    border:1px solid var(--traco);background:#fff}
+  .cartaz img{width:100%;height:auto;display:block}
+  .cartaz span{display:block;padding:9px 12px;font-size:12px;color:var(--terciaria);
+    background:var(--areia);text-align:center}
   .linha{display:flex;gap:8px;flex-wrap:wrap}
   .linha .btn{flex:1;min-width:130px;font-size:15px;padding:10px 12px;min-height:44px}
   .info{font-size:12.5px;color:var(--terciaria);margin:0;line-height:1.5}
@@ -1177,7 +1188,7 @@ function paginaPublicar(itens) {
   <div class="passos">
     <div class="passo"><b>1</b><span>Toque em copiar o título e a descrição</span></div>
     <div class="passo"><b>2</b><span>Abra o Marketplace e cole nos campos</span></div>
-    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum do item</span></div>
+    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum — o cartaz do preço vem primeiro</span></div>
   </div>
 
   <div class="fila">
@@ -1190,6 +1201,10 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
         <h2>${esc(item.nome)}</h2>
         <span class="val">R$ ${brl(item.preco)}</span>
       </div>
+      ${item.fotos.length ? `<a class="cartaz" href="../social/cartaz/${item.slug}.jpg" target="_blank" rel="noopener">
+        <img src="../social/cartaz/${item.slug}.jpg" alt="Cartaz com o preço de ${esc(item.nome)}" loading="lazy" width="1080" height="1080">
+        <span>Segure a imagem para salvar nas Fotos</span>
+      </a>` : ''}
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">${esc(descricaoAnuncio(item))}</div>
       <div class="linha">
@@ -1199,7 +1214,7 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
       </div>
       <p class="info"><b>Categoria:</b> ${esc(CATEGORIA_FB[item.categoria] ?? item.categoria)}<br>
         <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `${item.fotos.length} tratadas, use as primeiras` : 'sem foto ainda'}</p>
+        <b>Álbum no Fotos:</b> ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `cartaz do preço + ${item.fotos.length} tratadas + originais` : 'sem foto ainda'}</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>`).join('\n')}
   </div>

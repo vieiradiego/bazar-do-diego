@@ -139,6 +139,77 @@ if modo == "icone" {
     exit(0)
 }
 
+// ---------- cartaz quadrado 1080x1080 para anexar no anúncio ----------
+// O cartão 1200x630 é o formato da prévia de link. Para o Marketplace e o
+// Instagram o que serve é quadrado: foto em cima, faixa com o preço embaixo.
+if modo == "cartaz" {
+    let S: CGFloat = 1080, hFoto: CGFloat = 700
+    let img = NSImage(size: NSSize(width: S, height: S))
+    img.lockFocus()
+    NSColor.white.setFill()
+    NSRect(x: 0, y: 0, width: S, height: S).fill()
+
+    if let caminho = arg("foto"), let foto = NSImage(contentsOfFile: caminho) {
+        // preenche a área da foto sem distorcer (recorta o excedente)
+        let t = foto.size
+        let escala = max(S / t.width, hFoto / t.height)
+        let w = t.width * escala, h = t.height * escala
+        NSGraphicsContext.current?.saveGraphicsState()
+        NSBezierPath(rect: NSRect(x: 0, y: S - hFoto, width: S, height: hFoto)).setClip()
+        foto.draw(in: NSRect(x: (S - w) / 2, y: S - hFoto + (hFoto - h) / 2, width: w, height: h),
+                  from: .zero, operation: .sourceOver, fraction: 1.0)
+        NSGraphicsContext.current?.restoreGraphicsState()
+    }
+
+    let nome = arg("nome") ?? "Item"
+    let preco = arg("preco") ?? ""
+    let ref = arg("ref")
+    let desconto = arg("desconto")
+    let qtd = Int(arg("qtd") ?? "1") ?? 1
+    let m: CGFloat = 52
+    var y = S - hFoto - 34
+
+    marca(x: m, y: y - 22, lado: 22, cor: terciaria)
+    texto("BAZAR DO DIEGO", atributos(13, .semibold, terciaria, kern: 1.3),
+          x: m + 32, yTopo: y - 4, largura: S - m - 32)
+    y -= 48
+
+    y -= texto(nome, atributos(34, .semibold, grafite, kern: -0.7, alturaLinha: 40),
+               x: m, yTopo: y, largura: S - 2 * m, maxLinhas: 2)
+    y -= 22
+
+    let aPreco = atributos(64, .semibold, grafite, kern: -1.5)
+    texto(preco, aPreco, x: m, yTopo: y, largura: S - 2 * m)
+    var xDir = m + larguraDe(preco, aPreco) + 16
+    if qtd > 1 {
+        let aCada = atributos(20, .regular, terciaria)
+        texto("cada", aCada, x: xDir, yTopo: y - 34, largura: 80)
+        xDir += larguraDe("cada", aCada) + 14
+    }
+    if let ref, !ref.isEmpty {
+        texto(ref, atributos(22, .regular, terciaria, risco: true),
+              x: xDir, yTopo: y - 32, largura: S - xDir - m)
+    }
+
+    if let desconto, !desconto.isEmpty {
+        let rot = "Economize \(desconto)%"
+        let aR = atributos(19, .medium, economia)
+        let lr = larguraDe(rot, aR) + 32
+        ecoFundo.setFill()
+        NSBezierPath(roundedRect: NSRect(x: S - m - lr, y: 44, width: lr, height: 40),
+                     xRadius: 20, yRadius: 20).fill()
+        texto(rot, atributos(19, .medium, economia, alinha: .center),
+              x: S - m - lr, yTopo: 44 + 29, largura: lr)
+    }
+    texto("Retirada em Caxias do Sul", atributos(19, .regular, pedra),
+          x: m, yTopo: 44 + 29, largura: S - 2 * m)
+
+    img.unlockFocus()
+    gravar(img, saida)
+    print("cartaz \(nome.prefix(38))")
+    exit(0)
+}
+
 let img = NSImage(size: NSSize(width: L, height: A))
 img.lockFocus()
 
