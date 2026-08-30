@@ -1,6 +1,6 @@
 # Capacete Rockrider Decathlon — tam. 59-62
 
-**Preço:** R$ 170
+**Preço:** R$ 187
 **Categoria:** Esporte e Bike
 **Fotos:** capacete-rockrider-01.jpg, capacete-rockrider-02.jpg, capacete-rockrider-03.jpg, capacete-rockrider-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/capacete-rockrider/
 
 ## Legenda para o Instagram
-Capacete Rockrider Decathlon — tam. 59-62 — R$ 170
+Capacete Rockrider Decathlon — tam. 59-62 — R$ 187
 
 Capacete de ciclismo Rockrider (Decathlon), tamanho 59-62cm (adulto G). Ajuste giratório na nuca, boa ventilação, sem trincas ou quedas. Cor cinza/azul.
 

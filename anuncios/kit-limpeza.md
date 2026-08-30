@@ -1,6 +1,6 @@
 # Kit de limpeza e manutenção
 
-**Preço:** R$ 63 · 36% abaixo do novo
+**Preço:** R$ 69 · 30% abaixo do novo
 **Categoria:** Tiro Esportivo
 **Fotos:** kit-limpeza-01.jpg, kit-limpeza-02.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/
@@ -11,17 +11,17 @@ Kit de limpeza e manutenção
 ## Descrição para o Marketplace
 Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
 
-Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 63, 36% abaixo.
+Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 69, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/kit-limpeza/
 
 ## Legenda para o Instagram
-Kit de limpeza e manutenção — R$ 63
+Kit de limpeza e manutenção — R$ 69
 
 Kit completo de limpeza e manutenção em estojo de madeira: hastes, escovas de cerdas e latão, escovilhões, ponteiras e frascos de óleo lubrificante e solvente. Pouco usado.
 
-Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 63, 36% abaixo.
+Novo custa cerca de R$ 99 (CopShop Brasil) — aqui sai por R$ 69, 30% abaixo.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 

@@ -1,6 +1,6 @@
 # Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB
 
-**Preço:** R$ 2.699
+**Preço:** R$ 2.969
 **Categoria:** Eletrônicos
 **Fotos:** notebook-dell-01.jpg, notebook-dell-02.jpg, notebook-dell-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/notebook-dell/
 
 ## Legenda para o Instagram
-Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — R$ 2.699
+Notebook Dell Inspiron i7 — 16GB RAM, SSD 512GB — R$ 2.969
 
 Notebook Dell Inspiron com processador Intel Core i7, 16GB de memória RAM e SSD de 512GB. Placa de vídeo NVIDIA dedicada. Tela sem bordas, acabamento em alumínio. Funcionando perfeitamente, sem travamentos. Ideal para trabalho, estudo e edição leve.
 

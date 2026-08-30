@@ -1,6 +1,6 @@
 # Teclado HP slim USB empresarial
 
-**Preço:** R$ 89
+**Preço:** R$ 98
 **Categoria:** Eletrônicos
 **Fotos:** teclado-hp-slim-01.jpg, teclado-hp-slim-02.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/
@@ -15,7 +15,7 @@ Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
 Página do item: https://vieiradiego.github.io/bazar-do-diego/item/teclado-hp-slim/
 
 ## Legenda para o Instagram
-Teclado HP slim USB empresarial — R$ 89
+Teclado HP slim USB empresarial — R$ 98
 
 Teclado HP slim com fio USB, layout ABNT2 completo com teclado numérico. Perfil baixo, digitação silenciosa. Linha empresarial, bem conservado e funcionando.
 
