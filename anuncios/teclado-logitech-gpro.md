@@ -2,7 +2,7 @@
 
 **Preço:** R$ 375 · 41% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg, teclado-logitech-gpro-03.jpg
+**Fotos:** teclado-logitech-gpro-01.jpg, teclado-logitech-gpro-02.jpg, teclado-logitech-gpro-03.jpg, teclado-logitech-gpro-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/teclado-logitech-gpro/
 
 ## Título para o Marketplace

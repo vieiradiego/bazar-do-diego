@@ -106,7 +106,7 @@ func marca(x: CGFloat, y: CGFloat, lado: CGFloat, cor: NSColor) {
 func gravar(_ img: NSImage, _ caminho: String, png: Bool = false) {
     guard let tiff = img.tiffRepresentation, let rep = NSBitmapImageRep(data: tiff) else { exit(1) }
     let tipo: NSBitmapImageRep.FileType = png ? .png : .jpeg
-    let props: [NSBitmapImageRep.PropertyKey: Any] = png ? [:] : [.compressionFactor: 0.88]
+    let props: [NSBitmapImageRep.PropertyKey: Any] = png ? [:] : [.compressionFactor: 0.74]
     guard let dados = rep.representation(using: tipo, properties: props) else { exit(1) }
     let url = URL(fileURLWithPath: caminho)
     try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)

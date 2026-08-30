@@ -29,8 +29,39 @@ func hexColor(_ s: String) -> CIColor {
                    blue: CGFloat(v & 0xFF) / 255.0)
 }
 let bgColor = hexColor(bgHex)
-let canvasSize: CGFloat = 1080
-let margin: CGFloat = 90
+// resolução do master; sobe com FOTOECOM_LADO=2048 para gerar em alta
+let canvasSize: CGFloat = CGFloat(Double(ProcessInfo.processInfo.environment["FOTOECOM_LADO"] ?? "") ?? 1080)
+let margin: CGFloat = canvasSize * 0.0833   // ~90px em 1080
+
+// "comparar a b": diferença média entre duas imagens reduzidas a 64x64 cinza.
+// Serve para conferir que o reprocessamento em alta manteve a mesma orientação.
+if mode == "comparar" {
+    func miniatura(_ caminho: String) -> [Double]? {
+        guard let img = CIImage(contentsOf: URL(fileURLWithPath: caminho),
+                                options: [.applyOrientationProperty: true]) else { return nil }
+        let ctx2 = CIContext()
+        let e = img.transformed(by: CGAffineTransform(translationX: -img.extent.origin.x,
+                                                      y: -img.extent.origin.y))
+        let s = CGAffineTransform(scaleX: 64 / e.extent.width, y: 64 / e.extent.height)
+        guard let cg = ctx2.createCGImage(e.transformed(by: s),
+                                          from: CGRect(x: 0, y: 0, width: 64, height: 64)) else { return nil }
+        let rep = NSBitmapImageRep(cgImage: cg)
+        var out: [Double] = []
+        for y in 0..<64 { for x in 0..<64 {
+            if let c = rep.colorAt(x: x, y: y) {
+                out.append(Double(c.brightnessComponent))
+            }
+        } }
+        return out.count == 64 * 64 ? out : nil
+    }
+    guard let a = miniatura(args[1]), let b = miniatura(args[2]) else {
+        print("erro"); exit(1)
+    }
+    var soma = 0.0
+    for i in 0..<a.count { soma += abs(a[i] - b[i]) }
+    print(String(format: "%.4f", soma / Double(a.count)))
+    exit(0)
+}
 
 guard var image = CIImage(contentsOf: inputURL, options: [.applyOrientationProperty: true]) else {
     FileHandle.standardError.write("erro: nao consegui ler \(inputURL.path)\n".data(using: .utf8)!)

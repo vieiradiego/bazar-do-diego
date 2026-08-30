@@ -23,7 +23,12 @@ const WHATSAPP = '5554991845555';
 const FONE = '+55 54 99184-5555';
 const CIDADE = 'Caxias do Sul — RS';
 const URL_SITE = 'https://vieiradiego.github.io/bazar-do-diego/';
-const LARGURA_WEB = 1000;
+// duas resoluções: a da grade carrega rápido, a grande é a que o visor amplia.
+// Antes servíamos 1000px em tudo — no zoom de 2,6x num celular 3x isso vira
+// uma ampliação de 3x sobre o pixel real, e é por isso que ficava borrado.
+const LARGURA_GRADE = 1100;   // grade: 350 CSS px em tela 3x pede ~1050
+const LARGURA_GRANDE = 1600;  // visor: cobre a tela cheia e dá folga real no zoom
+const QUALIDADE = '80';
 
 const urlItem = (slug) => `${URL_SITE}item/${slug}/`;
 
@@ -119,14 +124,16 @@ function fotosDoItem(slug) {
 
 function prepararFotos(itens) {
   const dest = join(SITE, 'fotos');
-  mkdirSync(dest, { recursive: true });
+  const destG = join(dest, 'g');
+  mkdirSync(destG, { recursive: true });
   let n = 0;
   for (const item of itens) {
     for (const f of item.fotos) {
-      execFileSync('/usr/bin/sips', [
-        '-s', 'format', 'jpeg', '-s', 'formatOptions', '72', '-Z', String(LARGURA_WEB),
-        join(FOTOS, f), '--out', join(dest, f),
-      ], { stdio: 'ignore' });
+      const origem = join(FOTOS, f);
+      execFileSync('/usr/bin/sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', QUALIDADE,
+        '-Z', String(LARGURA_GRADE), origem, '--out', join(dest, f)], { stdio: 'ignore' });
+      execFileSync('/usr/bin/sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', QUALIDADE,
+        '-Z', String(LARGURA_GRANDE), origem, '--out', join(destG, f)], { stdio: 'ignore' });
       n++;
     }
   }
@@ -175,6 +182,13 @@ function gerarCartoes(itens) {
     execFileSync(CARTAO, ['cartaz', join(destCartaz, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
     // 1080x1920 para o story do Instagram, entregue pelo botão Compartilhar
     execFileSync(CARTAO, ['story', join(destStory, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
+    // WhatsApp, Facebook e Instagram recomprimem a prévia de qualquer jeito —
+    // guardar em qualidade máxima só engorda o site
+    for (const p of [join(dest, `${item.slug}.jpg`), join(destCartaz, `${item.slug}.jpg`),
+                     join(destStory, `${item.slug}.jpg`)]) {
+      execFileSync('/usr/bin/sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '58', p, '--out', p],
+        { stdio: 'ignore' });
+    }
     n++;
   }
   return n;
@@ -457,7 +471,7 @@ function galeriaHTML(item, { zoom = true } = {}) {
   return `<div class="visual">
       <div class="trilho">${item.fotos
         .map((f, i) => `<button class="quadro" type="button" data-i="${i}" aria-label="Ampliar foto ${i + 1} de ${item.fotos.length}">
-          <img src="${item.base}fotos/${f}" alt="${esc(item.nome)} — foto ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" width="1000" height="1000">
+          <img src="${item.base}fotos/${f}" alt="${esc(item.nome)} — foto ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" width="1100" height="1100">
         </button>`).join('')}</div>
       ${item.fotos.length > 1 ? `<div class="pontos" aria-hidden="true">${item.fotos.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}
       ${zoom ? `<span class="dica-zoom" aria-hidden="true">${ico.lupa}</span>` : ''}
@@ -469,7 +483,7 @@ const dadosDoItem = (item) =>
   ` data-ref="${item.desconto ? brl(item.ref) : ''}" data-desconto="${item.desconto ?? ''}"` +
   ` data-qtd="${item.qtd}" data-slug="${item.slug}"` +
   (item.fotos.length ? ` data-story="${item.base}social/story/${item.slug}.jpg"` : '') +
-  ` data-fotos='${JSON.stringify(item.fotos.map((f) => item.base + 'fotos/' + f))}'`;
+  ` data-fotos='${JSON.stringify(item.fotos.map((f) => item.base + 'fotos/g/' + f))}'`;   // visor amplia a versão grande
 
 function precosHTML(item) {
   return `<p class="precos">
