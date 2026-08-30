@@ -1087,3 +1087,206 @@ const semFoto = itens.filter((i) => !i.fotos.length).map((i) => i.slug);
 console.log(`docs/ — ${itens.length} itens, ${nPaginas} páginas de produto, ${nFotos} fotos, ${nCartoes} cartões`);
 console.log(`anuncios/ — ${nAnuncios} textos + TODOS-ANUNCIOS.md`);
 if (semFoto.length) console.log(`ilustração (sem foto real): ${semFoto.join(', ')}`);
+
+// ---------- painel de publicação (uso pessoal, fora do índice do Google) ----------
+const CATEGORIA_FB = {
+  'Eletrônicos': 'Eletrônicos → Informática',
+  'PC e Hardware': 'Eletrônicos → Peças e acessórios de computador',
+  'Esporte e Bike': 'Esportes e lazer → Bicicletas',
+  'Casa': 'Casa e jardim → Móveis',
+  'Brinquedos': 'Brinquedos e jogos',
+  'Acessórios': 'Casa e jardim → Utilidades domésticas',
+  'Tiro Esportivo': 'Esportes e lazer → Equipamentos esportivos',
+};
+
+const nomeAlbum = (nome) => {
+  const curto = nome.split(/ — | - /)[0].trim();
+  return `Bazar · ${curto.length > 40 ? curto.slice(0, 38) + '…' : curto}`;
+};
+
+function descricaoAnuncio(item) {
+  return [
+    item.descricao,
+    item.desconto ? `Novo custa cerca de R$ ${brl(item.ref)} (${item.fonte_referencia}) — aqui sai por R$ ${brl(item.preco)}, ${item.desconto}% abaixo.` : '',
+    item.qtd > 1 ? `Disponíveis: ${item.qtd} unidades (preço por unidade).` : '',
+    `Retirada em ${CIDADE}. Pagamento em dinheiro ou Pix na retirada.`,
+    `Mais fotos e o catálogo completo: ${urlItem(item.slug)}`,
+  ].filter(Boolean).join('\n\n');
+}
+
+function paginaPublicar(itens) {
+  const fila = itens.filter((i) => !i.vendido).sort((a, b) => b.preco - a.preco);
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Publicar no Marketplace — Bazar do Diego</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>${ESTILOS}
+  .passos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 4px}
+  .passo{background:var(--areia);border-radius:14px;padding:12px 10px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:6px}
+  .passo b{width:22px;height:22px;border-radius:50%;background:var(--tinta);color:var(--fundo);
+    font-size:12px;display:flex;align-items:center;justify-content:center}
+  .passo span{font-size:11.5px;color:var(--pedra);line-height:1.3}
+  .fila{display:flex;flex-direction:column;gap:16px;padding:16px 0 40px}
+  .pub{background:var(--cartao);border:1px solid var(--traco);border-radius:var(--raio);
+    padding:16px 16px 18px;display:flex;flex-direction:column;gap:11px}
+  .pub.pronto{opacity:.5}
+  .pub .topo-item{display:flex;align-items:flex-start;gap:12px}
+  .pub .topo-item h2{flex:1;font-size:17px}
+  .pub .val{font-size:17px;font-weight:600;white-space:nowrap}
+  .campo{background:var(--areia);border-radius:12px;padding:11px 13px;font-size:13.5px;
+    line-height:1.5;color:var(--pedra);white-space:pre-wrap;max-height:6.5em;overflow:hidden;
+    position:relative}
+  .campo.aberto{max-height:none}
+  .rot{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--terciaria);margin:0}
+  .linha{display:flex;gap:8px;flex-wrap:wrap}
+  .linha .btn{flex:1;min-width:130px;font-size:15px;padding:10px 12px;min-height:44px}
+  .info{font-size:12.5px;color:var(--terciaria);margin:0;line-height:1.5}
+  .info b{color:var(--pedra);font-weight:500}
+  .marcar{display:flex;align-items:center;gap:9px;font-size:14px;cursor:pointer;
+    padding-top:4px;color:var(--pedra)}
+  .marcar input{width:20px;height:20px;accent-color:var(--economia)}
+  .placar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--fundo) 88%,transparent);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--traco);padding:11px 0;font-size:14px;color:var(--pedra)}
+  .placar .larg{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .barrinha{flex:1;height:6px;border-radius:3px;background:var(--traco);overflow:hidden}
+  .barrinha i{display:block;height:100%;background:var(--economia);width:0;transition:width .3s}
+</style>
+</head>
+<body>
+
+<header class="capa larg" style="padding:34px 0 18px">
+  <a class="marca" href="../">${marca(19)}<b>Bazar do Diego</b></a>
+  <h1 style="font-size:clamp(28px,7vw,40px);margin-top:14px">Publicar no Marketplace</h1>
+  <p class="chamada" style="font-size:16px;max-width:44ch">Copie o texto, abra o Marketplace e escolha as fotos pelo álbum do item. Sem automação — só menos digitação.</p>
+</header>
+
+<div class="placar">
+  <div class="larg">
+    <span id="placar-txt">0 de ${fila.length} publicados</span>
+    <span class="barrinha"><i id="barrinha"></i></span>
+  </div>
+</div>
+
+<main class="larg">
+  <div class="passos">
+    <div class="passo"><b>1</b><span>Toque em copiar o título e a descrição</span></div>
+    <div class="passo"><b>2</b><span>Abra o Marketplace e cole nos campos</span></div>
+    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum do item</span></div>
+  </div>
+
+  <div class="fila">
+${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
+      data-titulo="${esc(item.nome.slice(0, 99))}"
+      data-preco="${brl(item.preco)}"
+      data-desc="${esc(descricaoAnuncio(item))}"
+      data-link="${urlItem(item.slug)}">
+      <div class="topo-item">
+        <h2>${esc(item.nome)}</h2>
+        <span class="val">R$ ${brl(item.preco)}</span>
+      </div>
+      <p class="rot">DESCRIÇÃO</p>
+      <div class="campo">${esc(descricaoAnuncio(item))}</div>
+      <div class="linha">
+        <button class="btn secundario copiar" type="button" data-campo="titulo">${ico.elo}<span>Copiar título</span></button>
+        <button class="btn secundario copiar" type="button" data-campo="desc">${ico.elo}<span>Copiar descrição</span></button>
+        <button class="btn secundario copiar" type="button" data-campo="preco">${ico.elo}<span>Copiar preço</span></button>
+      </div>
+      <p class="info"><b>Categoria:</b> ${esc(CATEGORIA_FB[item.categoria] ?? item.categoria)}<br>
+        <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
+        <b>Álbum no Fotos:</b> ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `${item.fotos.length} tratadas, use as primeiras` : 'sem foto ainda'}</p>
+      <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
+    </article>`).join('\n')}
+  </div>
+</main>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var elAviso = document.getElementById('aviso'), tAviso;
+  function avisar(txt){
+    elAviso.textContent = txt; elAviso.classList.add('on');
+    clearTimeout(tAviso); tAviso = setTimeout(function(){ elAviso.classList.remove('on'); }, 2400);
+  }
+
+  async function copiar(texto){
+    try {
+      if (navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(texto); return true;
+      }
+    } catch(e){ /* plano B */ }
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = texto; ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, texto.length);
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch(e){ return false; }
+  }
+
+  var CHAVE = 'bazar-publicados';
+  function lidos(){
+    try { return JSON.parse(localStorage.getItem(CHAVE) || '[]'); } catch(e){ return []; }
+  }
+  function salvar(lista){
+    try { localStorage.setItem(CHAVE, JSON.stringify(lista)); } catch(e){ /* aba anônima */ }
+  }
+
+  var cartoes = Array.prototype.slice.call(document.querySelectorAll('.pub'));
+  var placar = document.getElementById('placar-txt');
+  var barra = document.getElementById('barrinha');
+
+  function atualizar(){
+    var n = cartoes.filter(function(c){ return c.classList.contains('pronto'); }).length;
+    placar.textContent = n + ' de ' + cartoes.length + ' publicados';
+    barra.style.width = (cartoes.length ? (n / cartoes.length * 100) : 0) + '%';
+  }
+
+  var jaFeitos = lidos();
+  cartoes.forEach(function(c){
+    var check = c.querySelector('.feito-check');
+    if (jaFeitos.indexOf(c.dataset.slug) !== -1){ check.checked = true; c.classList.add('pronto'); }
+    check.addEventListener('change', function(){
+      c.classList.toggle('pronto', check.checked);
+      var lista = lidos().filter(function(s){ return s !== c.dataset.slug; });
+      if (check.checked) lista.push(c.dataset.slug);
+      salvar(lista);
+      atualizar();
+    });
+    c.querySelector('.campo').addEventListener('click', function(e){
+      e.currentTarget.classList.toggle('aberto');
+    });
+  });
+  atualizar();
+
+  var ROTULOS = { titulo:'Título copiado', desc:'Descrição copiada', preco:'Preço copiado' };
+  document.querySelectorAll('.copiar').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var c = btn.closest('.pub');
+      var campo = btn.dataset.campo;
+      var texto = campo === 'titulo' ? c.dataset.titulo
+                : campo === 'preco' ? c.dataset.preco
+                : c.dataset.desc;
+      avisar(await copiar(texto) ? ROTULOS[campo] : 'Não consegui copiar');
+    });
+  });
+})();
+</script>
+</body>
+</html>`;
+}
+
+mkdirSync(join(SITE, 'publicar'), { recursive: true });
+const painel = paginaPublicar(itens);
+conferirScript(painel.replace(/<meta property="og:[^>]*>/g, '') + '<meta property="og:image"><meta property="og:url"><meta property="og:title"><meta property="og:description">', 'publicar');
+writeFileSync(join(SITE, 'publicar', 'index.html'), painel);
+console.log(`docs/publicar/ — painel com ${itens.filter((i) => !i.vendido).length} itens na fila`);

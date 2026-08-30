@@ -7,11 +7,11 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 2. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** — R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
 3. **Bicicleta Masculina FKS SPEC — MTB aro 29** — R$ 1.286 · `anuncios/bicicleta-masculina.md`
 4. **Bicicleta Feminina FKS SPEC — MTB aro 29** — R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
-5. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 890 · `anuncios/rack-quadrinhos.md`
-6. **Armário baixo azul turquesa com porta de vidro** — R$ 850 · `anuncios/armario-turquesa.md`
-7. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
-8. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
-9. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
+5. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** — R$ 644 · `anuncios/fonte-corsair-rm850i.md`
+6. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** — R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
+7. **Rack aparador de madeira maciça com tampo de quadrinhos** — R$ 549 · `anuncios/rack-quadrinhos.md`
+8. **LEGO Game Boy 72046 — lacrado** — R$ 474 · `anuncios/lego-game-boy.md`
+9. **Armário baixo azul turquesa com porta de vidro** — R$ 399 · `anuncios/armario-turquesa.md`
 10. **Water Cooler Cooler Master MasterLiquid 240** — R$ 395 · `anuncios/watercooler-masterliquid-240.md`
 11. **HD Seagate Desktop 3TB — SATA 3.5** — R$ 395 · `anuncios/hd-seagate-3tb.md`
 12. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
@@ -151,60 +151,6 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
-# Rack aparador de madeira maciça com tampo de quadrinhos
-
-**Preço:** R$ 890
-**Categoria:** Casa
-**Fotos:** rack-quadrinhos-01.jpg, rack-quadrinhos-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
-
-## Título para o Marketplace
-Rack aparador de madeira maciça com tampo de quadrinhos
-
-## Descrição para o Marketplace
-Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
-
-## Legenda para o Instagram
-Rack aparador de madeira maciça com tampo de quadrinhos — R$ 890
-
-Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #decoracao #moveis #casa
-
----
-
-# Armário baixo azul turquesa com porta de vidro
-
-**Preço:** R$ 850
-**Categoria:** Casa
-**Fotos:** armario-turquesa-01.jpg, armario-turquesa-02.jpg, armario-turquesa-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
-
-## Título para o Marketplace
-Armário baixo azul turquesa com porta de vidro
-
-## Descrição para o Marketplace
-Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
-
-## Legenda para o Instagram
-Armário baixo azul turquesa com porta de vidro — R$ 850
-
-Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #decoracao #moveis #casa
-
----
-
 # Fonte Corsair RM850i 850W 80 Plus Gold Modular
 
 **Preço:** R$ 644 · 23% abaixo do novo
@@ -269,6 +215,33 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
+# Rack aparador de madeira maciça com tampo de quadrinhos
+
+**Preço:** R$ 549
+**Categoria:** Casa
+**Fotos:** rack-quadrinhos-01.jpg, rack-quadrinhos-02.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
+
+## Título para o Marketplace
+Rack aparador de madeira maciça com tampo de quadrinhos
+
+## Descrição para o Marketplace
+Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/rack-quadrinhos/
+
+## Legenda para o Instagram
+Rack aparador de madeira maciça com tampo de quadrinhos — R$ 549
+
+Rack aparador em madeira maciça com acabamento nogueira, sobre rodízios industriais. Tem duas gavetas com puxadores metálicos tipo alça, dois nichos abertos com prateleira e um vão inferior. O tampo é de vidro sobre uma colagem de quadrinhos feita à mão — peça única, não existe outra igual. Serve de rack de TV, aparador de entrada ou bancada de apoio.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
+
+---
+
 # LEGO Game Boy 72046 — lacrado
 
 **Preço:** R$ 474
@@ -293,6 +266,33 @@ Set LEGO Game Boy (72046) com 421 peças, indicado para 18+. Caixa LACRADA, nunc
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #lego #colecionador #brinquedos
+
+---
+
+# Armário baixo azul turquesa com porta de vidro
+
+**Preço:** R$ 399
+**Categoria:** Casa
+**Fotos:** armario-turquesa-01.jpg, armario-turquesa-02.jpg, armario-turquesa-03.jpg
+**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
+
+## Título para o Marketplace
+Armário baixo azul turquesa com porta de vidro
+
+## Descrição para o Marketplace
+Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+
+Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
+Página do item: https://vieiradiego.github.io/bazar-do-diego/item/armario-turquesa/
+
+## Legenda para o Instagram
+Armário baixo azul turquesa com porta de vidro — R$ 399
+
+Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerca de 1 metro de largura, sobre rodízios. De um lado, porta com vidro e prateleira interna; do outro, três prateleiras abertas. Estilo provençal com o desgaste que dá o charme da peça. Bom para sala, cozinha ou como aparador de louças.
+
+Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
+
+#bazar #desapego #caxiasdosul #decoracao #moveis #casa
 
 ---
 
