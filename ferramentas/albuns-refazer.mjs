@@ -19,7 +19,8 @@
 //
 // Nada é apagado da biblioteca. Nenhuma foto é removida.
 
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, copyFileSync, mkdirSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -76,6 +77,15 @@ const editadasDe = (slug) => {
   return readdirSync(DIR_EDIT).filter((f) => re.test(f)).sort();
 };
 
+// o story precisa de nome próprio dentro do álbum; copia para um temporário
+const TMP = join(tmpdir(), 'bazar-story');
+function copiaStory(slug) {
+  mkdirSync(TMP, { recursive: true });
+  const destino = join(TMP, `${slug}-story.jpg`);
+  copyFileSync(join(ROOT, 'docs', 'social', 'story', `${slug}.jpg`), destino);
+  return destino;
+}
+
 function rodar(script) {
   try {
     return { ok: true, saida: execFileSync('/usr/bin/osascript', ['-e', script], { encoding: 'utf8', timeout: 300000 }).trim() };
@@ -94,16 +104,25 @@ for (const item of itens) {
   // na lista de import forçado, que roda depois da busca na biblioteca.
   const cartaz = existsSync(join(ROOT, 'docs', 'social', 'cartaz', `${item.slug}.jpg`))
     ? `${item.slug}.jpg` : null;
+  // A imagem 9:16 do story entra no álbum junto. É o que permite publicar o
+  // story abrindo o Instagram já na conta certa e escolhendo da galeria, sem
+  // passar pela extensão de compartilhamento, que insiste em outra conta.
+  const story = existsSync(join(ROOT, 'docs', 'social', 'story', `${item.slug}.jpg`))
+    ? `${item.slug}-story.jpg` : null;
   querem.push(...editadasDe(item.slug));
   querem.push(...(originaisDe[item.slug] ?? [])
     .map((o) => o.arquivo)
     .filter((a) => existsSync(join(ROOT, 'fotos', a))));
-  if (querem.length || cartaz) planos.push({ slug: item.slug, album: nomeAlbum(item.slug), querem, cartaz });
+  if (querem.length || cartaz || story) planos.push({ slug: item.slug, album: nomeAlbum(item.slug), querem, cartaz, story });
 }
 
+const totalDe = (p) => p.querem.length + (p.cartaz ? 1 : 0) + (p.story ? 1 : 0);
 if (!executar) {
-  for (const p of planos) console.log(`  ${String(p.querem.length).padStart(2)} fotos  ${p.album}`);
-  console.log(`\n${planos.length} álbuns · ${planos.reduce((a, p) => a + p.querem.length, 0)} fotos (simulação)`);
+  for (const p of planos) {
+    const extras = [p.cartaz && 'cartaz', p.story && 'story'].filter(Boolean).join(' + ');
+    console.log(`  ${String(totalDe(p)).padStart(2)} fotos  ${p.album.padEnd(48)}${extras}`);
+  }
+  console.log(`\n${planos.length} álbuns · ${planos.reduce((a, p) => a + totalDe(p), 0)} fotos (simulação)`);
   console.log(`\nPasta nova: "${PASTA_NOVA}". A antiga "${PASTA_VELHA}" fica intacta,`);
   console.log('para você apagar à mão no Fotos depois de conferir.');
   process.exit(0);
@@ -138,8 +157,13 @@ for (const p of planos) {
   // 1º: o cartaz do preço, importado do disco. Entra antes de tudo porque a
   // primeira foto do álbum é a capa, e é ela que o Diego procura na hora de
   // publicar. Nunca vem da biblioteca — ver comentário na montagem do plano.
-  if (p.cartaz) {
-    const c = join(ROOT, 'docs', 'social', 'cartaz', p.cartaz);
+  for (const marca of [
+    p.cartaz && { arquivo: p.cartaz, origem: join(ROOT, 'docs', 'social', 'cartaz', p.cartaz) },
+    // o story é copiado com nome próprio: no disco ele se chama <slug>.jpg
+    // igual ao cartaz, e dois arquivos de mesmo nome no álbum confundem
+    p.story && { arquivo: p.story, origem: copiaStory(p.slug) },
+  ].filter(Boolean)) {
+    const c = marca.origem;
     const rc = rodar(`tell application "Photos"
   set nova to folder "${asEsc(PASTA_NOVA)}"
   if not (exists album "${asEsc(p.album)}" in nova) then make new album named "${asEsc(p.album)}" at nova
@@ -147,7 +171,7 @@ for (const p of planos) {
   -- se o álbum já tem um cartaz, não importa de novo: uma execução que morreu
   -- no meio depois de importar o cartaz colocaria uma segunda cópia aqui
   repeat with m in media items of destino
-    if (filename of m) is "${asEsc(p.cartaz)}" then return "JA_TEM"
+    if (filename of m) is "${asEsc(marca.arquivo)}" then return "JA_TEM"
   end repeat
   with timeout of 300 seconds
     import {POSIX file "${asEsc(c)}"} into destino without skip check duplicates
@@ -157,7 +181,7 @@ end tell`);
     if (rc.ok && rc.saida === 'JA_TEM') rc.saida = '1';
     // Preço inalterado: o Photos reconhece a duplicata e não importa nada. Aí
     // reaproveitar da biblioteca é o certo — é a mesma imagem.
-    if (!(rc.ok && Number(rc.saida) > 0)) p.querem.unshift(p.cartaz);
+    if (!(rc.ok && Number(rc.saida) > 0)) p.querem.unshift(marca.arquivo);
   }
   // Procura cada arquivo desejado, na ordem, em TODOS os álbuns das pastas de
   // origem, e adiciona ao álbum novo. Só o PRIMEIRO com cada nome — é isso que
@@ -182,7 +206,7 @@ ${varreFontes(`        if not achou then
             end if
           end repeat
         end if`)}
-      if not achou then set faltando to faltando & (alvo as text) & " "
+      if not achou then set faltando to faltando & (alvo as text) & "|"
     end repeat
     if (count of escolhidos) > 0 then add escolhidos to destino
     return ((count of media items in destino) as text) & "|" & faltando
@@ -191,7 +215,7 @@ end tell`);
 
   if (!r.ok) { console.log(`  ERRO   ${p.album}  ${r.saida}`); continue; }
   let [n, faltando] = r.saida.split('|');
-  const faltas = (faltando || '').trim().split(/\s+/).filter(Boolean);
+  const faltas = (faltando || '').split('|').map((s) => s.trim()).filter(Boolean);
 
   // a varredura acima já cobre o que a busca por álbum de mesmo nome perdia
   const recuperadas = 0;

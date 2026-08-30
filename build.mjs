@@ -1285,7 +1285,7 @@ function paginaPublicar(itens) {
   <div class="passos">
     <div class="passo"><b>1</b><span>Toque em copiar o título e a descrição</span></div>
     <div class="passo"><b>2</b><span>Abra o Marketplace e cole nos campos</span></div>
-    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum, o cartaz do preço vem primeiro</span></div>
+    <div class="passo"><b>3</b><span>Escolha as fotos pelo álbum do item, que traz o cartaz do preço e a imagem do story</span></div>
   </div>
 
   <div class="fila">
@@ -1302,9 +1302,10 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
         <img src="../social/cartaz/${item.slug}.jpg" alt="Cartaz com o preço de ${esc(item.nome)}" loading="lazy" width="1080" height="1080">
         <span>Segure a imagem para salvar nas Fotos</span>
       </a>
-      <p class="story"><a href="../social/story/${item.slug}.jpg" target="_blank" rel="noopener">Abrir o story 9:16</a>,
-        segure a imagem, "Adicionar às Fotos". Depois publique de dentro do Instagram, já na conta certa:
-        assim o story não passa pelo compartilhamento e não cai na conta errada.</p>` : ''}
+      <p class="story">Para o story do Instagram, use o <b>${esc(item.slug)}-story.jpg</b>, que já está
+        no álbum do item. Abra o Instagram na conta certa, Story, e escolha da galeria: assim não passa pelo
+        compartilhamento, que teima em publicar por outra conta.
+        <a href="../social/story/${item.slug}.jpg" target="_blank" rel="noopener">Ver a imagem</a>.</p>` : ''}
       <p class="rot">DESCRIÇÃO</p>
       <div class="campo">${esc(descricaoAnuncio(item))}</div>
       <div class="linha">
