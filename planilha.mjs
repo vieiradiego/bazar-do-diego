@@ -67,6 +67,23 @@ const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i)
   };
 });
 
+// ---------- vendas ----------
+// vendas.csv fica fora do git: tem nome de comprador. Se não existir (clone
+// limpo), a planilha sai só com o catálogo, sem a aba de vendas.
+const vendas = existsSync(join(ROOT, 'vendas.csv'))
+  ? parseCSV(readFileSync(join(ROOT, 'vendas.csv'), 'utf8'))
+  : [];
+const vendaDe = Object.fromEntries(vendas.map((v) => [v.slug, v]));
+
+const dataBR = (s) => (/^\d{4}-\d{2}-\d{2}$/.test(s || '') ? s.split('-').reverse().join('/') : (s || ''));
+
+for (const i of itens) {
+  const v = vendaDe[i.slug];
+  i.comprador = v?.comprador ?? '';
+  i.vendidoPor = v ? Number(v.valor_combinado || 0) : null;
+  i.entrega = dataBR(v?.data_entrega);
+}
+
 const ordem = { disponivel: 0, reservado: 1, vendido: 2 };
 itens.sort((a, b) => (ordem[a.status] ?? 0) - (ordem[b.status] ?? 0) || b.preco - a.preco);
 
@@ -76,6 +93,9 @@ const COLUNAS = [
   { t: 'Item', l: 42, v: (i) => i.nome },
   { t: 'Categoria', l: 16, v: (i) => i.categoria },
   { t: 'Status', l: 12, v: (i) => i.status },
+  { t: 'Vendido para', l: 18, v: (i) => i.comprador },
+  { t: 'Vendido por (R$)', l: 15, n: true, v: (i) => i.vendidoPor ?? '' },
+  { t: 'Entrega', l: 12, v: (i) => i.entrega },
   { t: 'Qtd', l: 6, n: true, v: (i) => i.qtd },
   { t: 'Preço (R$)', l: 12, n: true, v: (i) => i.preco },
   { t: 'Preço novo (R$)', l: 15, n: true, v: (i) => i.ref ?? '' },
@@ -102,27 +122,58 @@ const colLetra = (n) => {
   return s;
 };
 
-const linhas = [
-  `<row r="1" ht="30" customHeight="1">${COLUNAS.map((c, j) => celula(colLetra(j + 1) + '1', c.t, 1)).join('')}</row>`,
-  ...itens.map((it, i) => {
-    const r = i + 2;
-    const alt = it.urls.length > 1 ? Math.min(120, 16 + it.urls.slice(1).length * 13) : 34;
-    return `<row r="${r}" ht="${alt}" customHeight="1">${COLUNAS
-      .map((c, j) => celula(colLetra(j + 1) + r, c.v(it), c.n ? 3 : 2, c.n))
-      .join('')}</row>`;
-  }),
+// ---------- aba de vendas ----------
+const COL_VENDAS = [
+  { t: 'Data da venda', l: 14, v: (v) => dataBR(v.data) },
+  { t: 'Item', l: 46, v: (v) => v.item },
+  { t: 'Comprador', l: 20, v: (v) => v.comprador },
+  { t: 'Combinado (R$)', l: 15, n: true, v: (v) => Number(v.valor_combinado || 0) },
+  { t: 'Recebido (R$)', l: 14, n: true, v: (v) => Number(v.valor_recebido || 0) },
+  { t: 'Abatido de dívida (R$)', l: 20, n: true, v: (v) => Number(v.abatido_divida || 0) },
+  { t: 'A receber (R$)', l: 14, n: true,
+    v: (v) => Number(v.valor_combinado || 0) - Number(v.valor_recebido || 0) - Number(v.abatido_divida || 0) },
+  // sem data de entrega numa venda real quer dizer que já foi entregue; na
+  // linha de total não quer dizer nada, por isso o _total
+  { t: 'Entrega', l: 12, v: (v) => (v._total ? '' : dataBR(v.data_entrega) || 'entregue') },
+  { t: 'Observação', l: 56, v: (v) => v.observacao },
 ];
+// linha de somatório no fim, para conferir o caixa de bate-pronto
+const somaVendas = (campo) => vendas.reduce((a, v) => a + Number(v[campo] || 0), 0);
+const TOTAL_VENDAS = {
+  _total: true, data: '', item: 'TOTAL', comprador: '', observacao: '', data_entrega: '',
+  valor_combinado: somaVendas('valor_combinado'),
+  valor_recebido: somaVendas('valor_recebido'),
+  abatido_divida: somaVendas('abatido_divida'),
+};
 
-const sheet = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+function montarSheet(colunas, dados, { alturaDe = () => 34, primeira = false } = {}) {
+  const linhas = [
+    `<row r="1" ht="30" customHeight="1">${colunas.map((c, j) => celula(colLetra(j + 1) + '1', c.t, 1)).join('')}</row>`,
+    ...dados.map((d, i) => {
+      const r = i + 2;
+      return `<row r="${r}" ht="${alturaDe(d)}" customHeight="1">${colunas
+        .map((c, j) => celula(colLetra(j + 1) + r, c.v(d), c.n ? 3 : 2, c.n))
+        .join('')}</row>`;
+    }),
+  ];
+  const fim = `${colLetra(colunas.length)}${dados.length + 1}`;
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
 <sheetPr><outlinePr summaryBelow="1" summaryRight="1"/></sheetPr>
-<dimension ref="A1:${colLetra(COLUNAS.length)}${itens.length + 1}"/>
-<sheetViews><sheetView tabSelected="1" workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>
+<dimension ref="A1:${fim}"/>
+<sheetViews><sheetView${primeira ? ' tabSelected="1"' : ''} workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>
 <sheetFormatPr defaultRowHeight="15"/>
-<cols>${COLUNAS.map((c, j) => `<col min="${j + 1}" max="${j + 1}" width="${c.l}" customWidth="1"/>`).join('')}</cols>
+<cols>${colunas.map((c, j) => `<col min="${j + 1}" max="${j + 1}" width="${c.l}" customWidth="1"/>`).join('')}</cols>
 <sheetData>${linhas.join('')}</sheetData>
-<autoFilter ref="A1:${colLetra(COLUNAS.length)}${itens.length + 1}"/>
+<autoFilter ref="A1:${fim}"/>
 </worksheet>`;
+}
+
+const sheet = montarSheet(COLUNAS, itens, {
+  primeira: true,
+  alturaDe: (it) => (it.urls.length > 1 ? Math.min(120, 16 + it.urls.slice(1).length * 13) : 34),
+});
+const sheetVendas = montarSheet(COL_VENDAS, [...vendas, TOTAL_VENDAS]);
 
 const styles = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
@@ -153,6 +204,7 @@ const arquivos = {
 <Default Extension="xml" ContentType="application/xml"/>
 <Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>
 <Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>
+${vendas.length ? '<Override PartName="/xl/worksheets/sheet2.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>' : ''}
 <Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>
 </Types>`,
   '_rels/.rels': `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -161,14 +213,16 @@ const arquivos = {
 </Relationships>`,
   'xl/workbook.xml': `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
-<sheets><sheet name="Bazar" sheetId="1" r:id="rId1"/></sheets>
+<sheets><sheet name="Bazar" sheetId="1" r:id="rId1"/>${vendas.length ? '<sheet name="Vendas" sheetId="2" r:id="rId3"/>' : ''}</sheets>
 </workbook>`,
   'xl/_rels/workbook.xml.rels': `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
 <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>
 <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+${vendas.length ? '<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/>' : ''}
 </Relationships>`,
   'xl/worksheets/sheet1.xml': sheet,
+  ...(vendas.length ? { 'xl/worksheets/sheet2.xml': sheetVendas } : {}),
   'xl/styles.xml': styles,
 };
 
@@ -208,5 +262,14 @@ if (existsSync(join(ROOT, 'docs'))) {
   writeFileSync(join(ROOT, 'docs', 'facebook-catalogo.csv'), conteudoFB);
 }
 
-console.log(`Bazar do Diego - Catalogo.xlsx — ${itens.length} itens x ${COLUNAS.length} colunas`);
-console.log(`facebook-catalogo.csv — ${linhasFB.length} itens com foto`);
+console.log(`Bazar do Diego - Catalogo.xlsx`);
+console.log(`  aba "Bazar"  — ${itens.length} itens x ${COLUNAS.length} colunas`);
+if (vendas.length) {
+  const receber = vendas.reduce((a, v) =>
+    a + Number(v.valor_combinado || 0) - Number(v.valor_recebido || 0) - Number(v.abatido_divida || 0), 0);
+  console.log(`  aba "Vendas" — ${vendas.length} vendas, R$ ${brl(somaVendas('valor_combinado'))}` +
+    (receber ? ` (R$ ${brl(receber)} a receber)` : ''));
+} else {
+  console.log('  sem aba de vendas: vendas.csv não existe aqui (fica fora do git)');
+}
+console.log(`facebook-catalogo.csv — ${linhasFB.length} itens com foto (só disponíveis, sem dado de comprador)`);

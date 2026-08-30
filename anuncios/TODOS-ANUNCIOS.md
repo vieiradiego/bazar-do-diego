@@ -35,17 +35,16 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 30. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
 31. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
 32. **Controle Xbox 360 sem fio preto — original Microsoft** — R$ 149 · `anuncios/controle-xbox-360.md`
-33. **HD Toshiba 1TB 2.5 para notebook — 5400RPM** — R$ 128 · `anuncios/hd-toshiba-1tb.md`
-34. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
-35. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
-36. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
-37. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
-38. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
-39. **Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°** — R$ 55 · `anuncios/suporte-tablet.md`
-40. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
-41. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
-42. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-43. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
+33. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
+34. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
+35. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
+36. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
+37. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
+38. **Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°** — R$ 55 · `anuncios/suporte-tablet.md`
+39. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
+40. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
+41. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+42. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -966,33 +965,6 @@ Controle sem fio original da Microsoft para Xbox 360, preto. Original de fábric
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
-
----
-
-# HD Toshiba 1TB 2.5 para notebook — 5400RPM
-
-**Preço:** R$ 128
-**Categoria:** PC e Hardware
-**Fotos:** hd-toshiba-1tb-01.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-toshiba-1tb/
-
-## Título para o Marketplace
-HD Toshiba 1TB 2.5 para notebook — 5400RPM
-
-## Descrição para o Marketplace
-HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-toshiba-1tb/
-
-## Legenda para o Instagram
-HD Toshiba 1TB 2.5 para notebook — 5400RPM — R$ 128
-
-HD Toshiba de 1TB no formato 2.5 polegadas, modelo MQ01ABD100, SATA 5400RPM. Serve para notebook ou para montar um HD externo com um case USB. Fabricado em 2015 — posso rodar o teste SMART e mandar o print antes da compra. Boa opção de capacidade barata para guardar arquivos.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
