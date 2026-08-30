@@ -40,25 +40,28 @@ const catalogo = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map(
 const vendas = existsSync(join(ROOT, 'vendas.csv'))
   ? parseCSV(readFileSync(join(ROOT, 'vendas.csv'), 'utf8')).map((v) => ({
       ...v, combinado: Number(v.valor_combinado), recebido: Number(v.valor_recebido || 0),
+      abatido: Number(v.abatido_divida || 0),
     }))
   : [];
 
 const soma = (a, f) => a.reduce((s, x) => s + f(x), 0);
 const combinado = soma(vendas, (v) => v.combinado);
-const recebido = soma(vendas, (v) => v.recebido);
-const aReceber = combinado - recebido;
+const recebido = soma(vendas, (v) => v.recebido);   // dinheiro que entrou
+const abatido = soma(vendas, (v) => v.abatido);     // dívida sua que deixou de existir
+const aReceber = combinado - recebido - abatido;
 
 console.log('\n' + regua());
 console.log('  VENDAS REGISTRADAS');
 console.log(regua());
-console.log(`  ${col('item', 40)}${col('comprador', 17)}${dir('combinado', 11)}${dir('recebido', 11)}`);
+console.log(`  ${col('item', 38)}${col('comprador', 16)}${dir('venda', 10)}${dir('em caixa', 10)}${dir('dívida', 10)}`);
 for (const v of vendas) {
-  const falta = v.combinado - v.recebido;
-  console.log(`  ${col(v.item.slice(0, 38), 40)}${col(v.comprador.slice(0, 15), 17)}${dir(brl(v.combinado), 11)}${dir(brl(v.recebido), 11)}${falta > 0 ? '   falta R$ ' + brl(falta) : ''}`);
+  const falta = v.combinado - v.recebido - v.abatido;
+  console.log(`  ${col(v.item.slice(0, 36), 38)}${col(v.comprador.slice(0, 14), 16)}${dir(brl(v.combinado), 10)}${dir(brl(v.recebido), 10)}${dir(v.abatido ? brl(v.abatido) : '—', 10)}${falta > 0 ? '  falta ' + brl(falta) : ''}`);
 }
 console.log('  ' + regua(74));
-console.log(`  ${col('TOTAL', 57)}${dir(brl(combinado), 11)}${dir(brl(recebido), 11)}`);
-if (aReceber > 0) console.log(`  ${col('A RECEBER', 57)}${dir('', 11)}${dir(brl(aReceber), 11)}`);
+console.log(`  ${col('TOTAL', 54)}${dir(brl(combinado), 10)}${dir(brl(recebido), 10)}${dir(abatido ? brl(abatido) : '—', 10)}`);
+if (aReceber > 0) console.log(`  ${col('A RECEBER', 54)}${dir('', 10)}${dir(brl(aReceber), 10)}`);
+if (abatido) console.log(`\n  A coluna "dívida" é valor que você deixou de dever — não entra em caixa,\n  mas vale o mesmo no seu bolso.`);
 
 // quanto se deixou na mesa em relação ao preço de anúncio
 console.log('\n' + regua());
@@ -97,9 +100,11 @@ console.log(`  ${col('TOTAL À VENDA', 24)}${dir(restante.length, 3)} itens ${di
 console.log('\n' + regua());
 console.log('  RESUMO');
 console.log(regua());
-console.log(`  Já vendido (combinado)          R$ ${dir(brl(combinado), 12)}`);
-console.log(`  Recebido em caixa               R$ ${dir(brl(recebido), 12)}`);
+console.log(`  Já vendido                      R$ ${dir(brl(combinado), 12)}`);
+console.log(`    em dinheiro no caixa          R$ ${dir(brl(recebido), 12)}`);
+if (abatido) console.log(`    em dívida sua quitada         R$ ${dir(brl(abatido), 12)}`);
 if (aReceber > 0) console.log(`  A receber                       R$ ${dir(brl(aReceber), 12)}`);
+else console.log(`  A receber                       ${dir('nada pendente', 15)}`);
 console.log(`  Ainda à venda (anunciado)       R$ ${dir(brl(valorRestante), 12)}`);
 console.log(`  ${regua(48)}`);
 console.log(`  Bazar inteiro                   R$ ${dir(brl(combinado + valorRestante), 12)}`);
