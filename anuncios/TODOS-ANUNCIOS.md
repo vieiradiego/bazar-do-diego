@@ -22,29 +22,27 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 17. **Teclado Mecânico Gamer Logitech G PRO TKL** — R$ 375 · `anuncios/teclado-logitech-gpro.md`
 18. **Poltrona de pallet com rodízios — estofado pop art** — R$ 350 · `anuncios/poltrona-pallet.md`
 19. **Kit Corsair SP140 RGB PRO — 2 ventoinhas 140mm + Lighting Node CORE** — R$ 316 · `anuncios/fans-corsair-sp140.md`
-20. **HD Externo Seagate Portable 2TB — USB 3.0** — R$ 299 · `anuncios/hd-externo-seagate-2tb.md`
-21. **Controle Xbox Series X|S sem fio — Carbon Black** — R$ 299 · `anuncios/controle-xbox-series.md`
-22. **Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável** — R$ 299 · `anuncios/fone-jbl.md`
-23. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-24. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
-25. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
-26. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-27. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
-28. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
-29. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
-30. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
-31. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
-32. **Controle Xbox 360 sem fio preto — original Microsoft** — R$ 149 · `anuncios/controle-xbox-360.md`
-33. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
-34. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
-35. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
-36. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
-37. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
-38. **Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°** — R$ 55 · `anuncios/suporte-tablet.md`
-39. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
-40. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
-41. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
-42. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
+20. **Controle Xbox Series X|S sem fio — Carbon Black** — R$ 299 · `anuncios/controle-xbox-series.md`
+21. **HD WD Purple 2TB — SATA 3.5 para CFTV** — R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+22. **Apple AirTag 2ª geração** — R$ 256 · `anuncios/airtags.md`
+23. **Cadeira Pingo — assento gota com pés de madeira** — R$ 246 · `anuncios/cadeiras-pingo.md`
+24. **Abafador Eletrônico Howard Leight + óculos + estojo** — R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+25. **Cadeirinha de bicicleta para criança** — R$ 242 · `anuncios/suporte-crianca.md`
+26. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** — R$ 228 · `anuncios/roteador-tplink.md`
+27. **Abafador Eletrônico Howard Leight + estojo** — R$ 188 · `anuncios/abafador-howard-leight.md`
+28. **Capacete Rockrider Decathlon — tam. 59-62** — R$ 187 · `anuncios/capacete-rockrider.md`
+29. **Caneca Térmica Stanley Beer Stein 709ml — nova lacrada** — R$ 164 · `anuncios/caneca-stanley.md`
+30. **Controle Xbox 360 sem fio preto — original Microsoft** — R$ 149 · `anuncios/controle-xbox-360.md`
+31. **SSD Corsair Force LE 240GB — SATA 3** — R$ 128 · `anuncios/ssd-corsair-240gb.md`
+32. **Bolsa Trader Joe's — sacola de lona importada** — R$ 109 · `anuncios/bolsa-trader-joes.md`
+33. **Teclado HP slim USB empresarial** — R$ 98 · `anuncios/teclado-hp-slim.md`
+34. **Kit de limpeza e manutenção** — R$ 69 · `anuncios/kit-limpeza.md`
+35. **Óculos de proteção + protetor auricular 3M + estojo** — R$ 58 · `anuncios/oculos-protetor-3m.md`
+36. **Suporte de Mesa para Tablet ECOODA — alumínio, base giratória 360°** — R$ 55 · `anuncios/suporte-tablet.md`
+37. **Mouse Logitech Pebble 2 M350s sem fio** — R$ 48 · `anuncios/mouse-logitech-pebble.md`
+38. **Gancho de parede e teto para bicicleta — Decathlon** — R$ 45 · `anuncios/gancho-bike-decathlon.md`
+39. **Mouse sem fio C3 Tech M-W20BK** — R$ 39 · `anuncios/mouse-c3tech.md`
+40. **Cheirinho Little Trees — pack com 3** — R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -589,33 +587,6 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 ---
 
-# HD Externo Seagate Portable 2TB — USB 3.0
-
-**Preço:** R$ 299
-**Categoria:** PC e Hardware
-**Fotos:** hd-externo-seagate-2tb-01.jpg, hd-externo-seagate-2tb-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/hd-externo-seagate-2tb/
-
-## Título para o Marketplace
-HD Externo Seagate Portable 2TB — USB 3.0
-
-## Descrição para o Marketplace
-HD externo portátil Seagate de 2TB, USB 3.0, formato 2.5 polegadas. Não precisa de fonte: liga só no cabo USB. Funciona direto no Windows, no Mac e em console, e é o tamanho certo para backup de fotos, biblioteca de filmes ou levar projeto de um lugar para o outro. Disco usado — rodo o teste SMART e te mando o print antes de fechar. Como todo HD com quilometragem, use como cópia extra e não como a única cópia dos seus arquivos.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/hd-externo-seagate-2tb/
-
-## Legenda para o Instagram
-HD Externo Seagate Portable 2TB — USB 3.0 — R$ 299
-
-HD externo portátil Seagate de 2TB, USB 3.0, formato 2.5 polegadas. Não precisa de fonte: liga só no cabo USB. Funciona direto no Windows, no Mac e em console, e é o tamanho certo para backup de fotos, biblioteca de filmes ou levar projeto de um lugar para o outro. Disco usado — rodo o teste SMART e te mando o print antes de fechar. Como todo HD com quilometragem, use como cópia extra e não como a única cópia dos seus arquivos.
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
-
----
-
 # Controle Xbox Series X|S sem fio — Carbon Black
 
 **Preço:** R$ 299
@@ -636,33 +607,6 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox
 Controle Xbox Series X|S sem fio — Carbon Black — R$ 299
 
 Controle sem fio do Xbox Series X|S na cor Carbon Black (modelo 1914), o mais recente da Microsoft. Funciona no Xbox Series X|S, no Xbox One, no PC via Bluetooth ou receptor, e no celular. Tem o botão de compartilhamento dedicado, direcional híbrido e pegada emborrachada nos gatilhos. Todos os botões e os dois analógicos testados, sem drift. Usa duas pilhas AA (não acompanham).
-
-Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
-
----
-
-# Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável
-
-**Preço:** R$ 299
-**Categoria:** Eletrônicos
-**Fotos:** fone-jbl-01.jpg, fone-jbl-02.jpg, fone-jbl-03.jpg, fone-jbl-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fone-jbl/
-
-## Título para o Marketplace
-Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável
-
-## Descrição para o Marketplace
-Fone de ouvido JBL over-ear (a concha cobre a orelha inteira), dobrável, em preto com acabamento cromado. Tem controles na própria concha — volume, play e atender chamada — e microfone embutido, ou seja, funciona sem fio por Bluetooth para música e ligação. Acompanha o ESTOJO RÍGIDO de transporte e o cabo trançado destacável com controle em linha — ou seja, também funciona ligado na tomada P2 de qualquer aparelho, sem depender da bateria. Dois avisos honestos: as almofadas mostram marcas de uso (dá para ver nas fotos), e é um fone de alguns anos — a bateria não tem mais a autonomia de um zero-quilômetro, mas o modo com fio resolve. O modelo exato não está legível na carcaça; se você quiser eu abro e confiro antes de fechar negócio.
-
-Retirada em Caxias do Sul — RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fone-jbl/
-
-## Legenda para o Instagram
-Fone de Ouvido JBL Bluetooth Over-Ear com cabo destacável — R$ 299
-
-Fone de ouvido JBL over-ear (a concha cobre a orelha inteira), dobrável, em preto com acabamento cromado. Tem controles na própria concha — volume, play e atender chamada — e microfone embutido, ou seja, funciona sem fio por Bluetooth para música e ligação. Acompanha o ESTOJO RÍGIDO de transporte e o cabo trançado destacável com controle em linha — ou seja, também funciona ligado na tomada P2 de qualquer aparelho, sem depender da bateria. Dois avisos honestos: as almofadas mostram marcas de uso (dá para ver nas fotos), e é um fone de alguns anos — a bateria não tem mais a autonomia de um zero-quilômetro, mas o modo com fio resolve. O modelo exato não está legível na carcaça; se você quiser eu abro e confiro antes de fechar negócio.
 
 Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
