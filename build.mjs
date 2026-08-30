@@ -156,7 +156,9 @@ function gerarCartoes(itens) {
   execFileSync(CARTAO, ['icone', join(SITE, 'icone-180.png'), '180'], { stdio: 'ignore' });
 
   const destCartaz = join(dest, 'cartaz');
+  const destStory = join(dest, 'story');
   mkdirSync(destCartaz, { recursive: true });
+  mkdirSync(destStory, { recursive: true });
 
   let n = 0;
   for (const item of itens) {
@@ -171,6 +173,8 @@ function gerarCartoes(itens) {
     execFileSync(CARTAO, ['produto', join(dest, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
     // 1080x1080 para anexar no anúncio do Marketplace e no Instagram
     execFileSync(CARTAO, ['cartaz', join(destCartaz, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
+    // 1080x1920 para o story do Instagram, entregue pelo botão Compartilhar
+    execFileSync(CARTAO, ['story', join(destStory, `${item.slug}.jpg`), ...comuns], { stdio: 'ignore' });
     n++;
   }
   return n;
@@ -461,7 +465,9 @@ function galeriaHTML(item, { zoom = true } = {}) {
 const dadosDoItem = (item) =>
   `data-url="${urlItem(item.slug)}" data-nome="${esc(item.nome)}" data-preco="${brl(item.preco)}"` +
   ` data-ref="${item.desconto ? brl(item.ref) : ''}" data-desconto="${item.desconto ?? ''}"` +
-  ` data-qtd="${item.qtd}" data-fotos='${JSON.stringify(item.fotos.map((f) => item.base + 'fotos/' + f))}'`;
+  ` data-qtd="${item.qtd}" data-slug="${item.slug}"` +
+  (item.fotos.length ? ` data-story="${item.base}social/story/${item.slug}.jpg"` : '') +
+  ` data-fotos='${JSON.stringify(item.fotos.map((f) => item.base + 'fotos/' + f))}'`;
 
 function precosHTML(item) {
   return `<p class="precos">
@@ -718,14 +724,32 @@ const SCRIPT = `
     });
   });
 
+  // baixa a imagem do story pronta (mesma origem, sem CORS) e devolve como File
+  async function imagemStory(it){
+    if (!it.dataset.story) return null;
+    try {
+      var r = await fetch(it.dataset.story);
+      if (!r.ok) return null;
+      var b = await r.blob();
+      return new File([b], 'bazar-' + it.dataset.slug + '.jpg', { type: 'image/jpeg' });
+    } catch(e){ return null; }
+  }
+
   document.querySelectorAll('.compartilhar').forEach(function(btn){
     btn.addEventListener('click', async function(){
       var it = btn.closest('.item');
       var link = it.dataset.url;
       var texto = it.dataset.nome + ' — R$ ' + it.dataset.preco
-        + '\\nBazar do Diego, retirada em ${CIDADE}.';
+        + '\\nBazar do Diego, retirada em ${CIDADE}.\\n' + link;
+      var rotulo = btn.querySelector('span');
+      var original = rotulo ? rotulo.textContent : '';
+      if (rotulo) rotulo.textContent = 'Preparando…';
       try {
-        if (navigator.share){
+        var arq = await imagemStory(it);
+        // com imagem: o Instagram aceita como story. Sem: cai no link puro.
+        if (arq && navigator.canShare && navigator.canShare({ files: [arq] })){
+          await navigator.share({ files: [arq], text: texto });
+        } else if (navigator.share){
           await navigator.share({ title: it.dataset.nome + ' — Bazar do Diego', text: texto, url: link });
         } else {
           avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
@@ -734,6 +758,8 @@ const SCRIPT = `
         if (!err || err.name !== 'AbortError'){
           avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
         }
+      } finally {
+        if (rotulo) rotulo.textContent = original;
       }
     });
   });

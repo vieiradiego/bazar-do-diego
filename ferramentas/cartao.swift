@@ -139,6 +139,102 @@ if modo == "icone" {
     exit(0)
 }
 
+// ---------- story 1080x1920 para o Instagram ----------
+// O Instagram cobre uns 250px em cima e embaixo com a própria interface, então
+// todo o conteúdo fica entre y=280 e y=1640.
+if modo == "story" {
+    let W: CGFloat = 1080, H: CGFloat = 1920
+    let img = NSImage(size: NSSize(width: W, height: H))
+    img.lockFocus()
+    NSColor.white.setFill()
+    NSRect(x: 0, y: 0, width: W, height: H).fill()
+
+    let nome = arg("nome") ?? "Item"
+    let preco = arg("preco") ?? ""
+    let ref = arg("ref")
+    let desconto = arg("desconto")
+    let temSelo = !(desconto ?? "").isEmpty
+    let qtd = Int(arg("qtd") ?? "1") ?? 1
+    let m: CGFloat = 70
+    let larg = W - 2 * m
+
+    // O Instagram cobre ~250px em cima e embaixo com a própria interface.
+    let topo: CGFloat = 1650, base: CGFloat = 270
+
+    // mede o nome primeiro e dá à foto o espaço que sobrar — assim o texto
+    // nunca invade o rodapé, por mais longo que seja o nome
+    let aNome = atributos(44, .semibold, grafite, kern: -0.9, alturaLinha: 52)
+    let hNome = min(NSAttributedString(string: nome, attributes: aNome)
+        .boundingRect(with: NSSize(width: larg, height: CGFloat.greatestFiniteMagnitude),
+                      options: [.usesLineFragmentOrigin, .usesFontLeading]).height, 156)
+    let hMarca: CGFloat = 42, gapFoto: CGFloat = 54, gapNome: CGFloat = 62
+    let gapPreco: CGFloat = 26, hPreco: CGFloat = 98
+    let hSelo: CGFloat = temSelo ? 76 : 0, hRodape: CGFloat = 104
+    let ocupado = hMarca + gapFoto + gapNome + hNome + gapPreco + hPreco + hSelo + hRodape
+    let lado = min(larg, topo - base - ocupado)
+
+    var y = topo
+    marca(x: m, y: y - hMarca, lado: hMarca, cor: terciaria)
+    texto("BAZAR DO DIEGO", atributos(22, .semibold, terciaria, kern: 2.2),
+          x: m + 58, yTopo: y - 8, largura: larg - 58)
+    y -= hMarca + gapFoto
+
+    if let caminho = arg("foto"), let foto = NSImage(contentsOfFile: caminho) {
+        let t = foto.size
+        let e = max(lado / t.width, lado / t.height)
+        let w = t.width * e, h = t.height * e
+        NSGraphicsContext.current?.saveGraphicsState()
+        NSBezierPath(roundedRect: NSRect(x: (W - lado) / 2, y: y - lado, width: lado, height: lado),
+                     xRadius: 28, yRadius: 28).setClip()
+        foto.draw(in: NSRect(x: (W - lado) / 2 + (lado - w) / 2, y: y - lado + (lado - h) / 2,
+                             width: w, height: h),
+                  from: .zero, operation: .sourceOver, fraction: 1.0)
+        NSGraphicsContext.current?.restoreGraphicsState()
+    }
+    y -= lado + gapNome
+
+    y -= texto(nome, aNome, x: m, yTopo: y, largura: larg, maxLinhas: 3)
+    y -= gapPreco
+
+    let aPreco = atributos(84, .semibold, grafite, kern: -1.9)
+    texto(preco, aPreco, x: m, yTopo: y, largura: larg)
+    var xDir = m + larguraDe(preco, aPreco) + 20
+    if qtd > 1 {
+        let aCada = atributos(26, .regular, terciaria)
+        texto("cada", aCada, x: xDir, yTopo: y - 46, largura: 110)
+        xDir += larguraDe("cada", aCada) + 18
+    }
+    if let ref, !ref.isEmpty {
+        texto(ref, atributos(28, .regular, terciaria, risco: true),
+              x: xDir, yTopo: y - 44, largura: W - xDir - m)
+    }
+    y -= hPreco
+
+    if temSelo, let desconto {
+        let rot = "Economize \(desconto)%"
+        let aR = atributos(26, .medium, economia)
+        let lr = larguraDe(rot, aR) + 44
+        ecoFundo.setFill()
+        NSBezierPath(roundedRect: NSRect(x: m, y: y - 52, width: lr, height: 52),
+                     xRadius: 26, yRadius: 26).fill()
+        texto(rot, atributos(26, .medium, economia, alinha: .center),
+              x: m, yTopo: y - 13, largura: lr)
+        y -= hSelo
+    }
+
+    traco.setFill()
+    NSRect(x: m, y: y - 26, width: larg, height: 1).fill()
+    texto("Retirada em Caxias do Sul", atributos(28, .regular, pedra),
+          x: m, yTopo: y - 56, largura: larg)
+    texto("vieiradiego.github.io/bazar-do-diego", atributos(26, .regular, terciaria),
+          x: m, yTopo: y - 98, largura: larg)
+
+    img.unlockFocus()
+    gravar(img, saida)
+    print("story \(nome.prefix(36))")
+    exit(0)
+}
+
 // ---------- cartaz quadrado 1080x1080 para anexar no anúncio ----------
 // O cartão 1200x630 é o formato da prévia de link. Para o Marketplace e o
 // Instagram o que serve é quadrado: foto em cima, faixa com o preço embaixo.

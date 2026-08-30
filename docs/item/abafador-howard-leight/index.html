@@ -267,7 +267,7 @@
   <a class="marca" href="../../"><svg viewBox="0 0 48 48" width="19" height="19" fill="none" aria-hidden="true"><path d="M25.6 4.5H39.5a4 4 0 0 1 4 4v13.9a4 4 0 0 1-1.17 2.83L24.4 43.16a4 4 0 0 1-5.66 0L4.84 29.26a4 4 0 0 1 0-5.66L22.77 5.67a4 4 0 0 1 2.83-1.17Z" stroke="currentColor" stroke-width="3.2"/><circle cx="33.4" cy="14.6" r="3.4" fill="currentColor"/></svg><b>Bazar do Diego</b></a>
 </div>
 
-<article class="produto item" data-url="https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/" data-nome="Abafador Eletrônico Howard Leight + estojo" data-preco="188" data-ref="649" data-desconto="71" data-qtd="1" data-fotos='["../../fotos/abafador-howard-leight-01.jpg","../../fotos/abafador-howard-leight-02.jpg"]'>
+<article class="produto item" data-url="https://vieiradiego.github.io/bazar-do-diego/item/abafador-howard-leight/" data-nome="Abafador Eletrônico Howard Leight + estojo" data-preco="188" data-ref="649" data-desconto="71" data-qtd="1" data-slug="abafador-howard-leight" data-story="../../social/story/abafador-howard-leight.jpg" data-fotos='["../../fotos/abafador-howard-leight-01.jpg","../../fotos/abafador-howard-leight-02.jpg"]'>
   <div class="visual">
       <div class="trilho"><button class="quadro" type="button" data-i="0" aria-label="Ampliar foto 1 de 2">
           <img src="../../fotos/abafador-howard-leight-01.jpg" alt="Abafador Eletrônico Howard Leight + estojo — foto 1" loading="eager" decoding="async" width="1000" height="1000">
@@ -566,14 +566,32 @@
     });
   });
 
+  // baixa a imagem do story pronta (mesma origem, sem CORS) e devolve como File
+  async function imagemStory(it){
+    if (!it.dataset.story) return null;
+    try {
+      var r = await fetch(it.dataset.story);
+      if (!r.ok) return null;
+      var b = await r.blob();
+      return new File([b], 'bazar-' + it.dataset.slug + '.jpg', { type: 'image/jpeg' });
+    } catch(e){ return null; }
+  }
+
   document.querySelectorAll('.compartilhar').forEach(function(btn){
     btn.addEventListener('click', async function(){
       var it = btn.closest('.item');
       var link = it.dataset.url;
       var texto = it.dataset.nome + ' — R$ ' + it.dataset.preco
-        + '\nBazar do Diego, retirada em Caxias do Sul — RS.';
+        + '\nBazar do Diego, retirada em Caxias do Sul — RS.\n' + link;
+      var rotulo = btn.querySelector('span');
+      var original = rotulo ? rotulo.textContent : '';
+      if (rotulo) rotulo.textContent = 'Preparando…';
       try {
-        if (navigator.share){
+        var arq = await imagemStory(it);
+        // com imagem: o Instagram aceita como story. Sem: cai no link puro.
+        if (arq && navigator.canShare && navigator.canShare({ files: [arq] })){
+          await navigator.share({ files: [arq], text: texto });
+        } else if (navigator.share){
           await navigator.share({ title: it.dataset.nome + ' — Bazar do Diego', text: texto, url: link });
         } else {
           avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
@@ -582,6 +600,8 @@
         if (!err || err.name !== 'AbortError'){
           avisar(await copiar(link) ? 'Link copiado' : 'Não consegui compartilhar');
         }
+      } finally {
+        if (rotulo) rotulo.textContent = original;
       }
     });
   });
