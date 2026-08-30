@@ -2,7 +2,7 @@
 
 **Preço:** R$ 399 · 54% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** mouse-logitech-g903-01.jpg, mouse-logitech-g903-02.jpg, mouse-logitech-g903-03.jpg, mouse-logitech-g903-04.jpg
+**Fotos:** mouse-logitech-g903-01.jpg, mouse-logitech-g903-02.jpg, mouse-logitech-g903-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/
 
 ## Título para o Marketplace

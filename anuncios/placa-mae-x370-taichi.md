@@ -2,7 +2,7 @@
 
 **Preço:** R$ 680
 **Categoria:** PC e Hardware
-**Fotos:** placa-mae-x370-taichi-01.jpg, placa-mae-x370-taichi-02.jpg, placa-mae-x370-taichi-03.jpg, placa-mae-x370-taichi-04.jpg, placa-mae-x370-taichi-05.jpg
+**Fotos:** placa-mae-x370-taichi-01.jpg, placa-mae-x370-taichi-02.jpg, placa-mae-x370-taichi-03.jpg, placa-mae-x370-taichi-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/
 
 ## Título para o Marketplace

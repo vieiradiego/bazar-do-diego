@@ -84,9 +84,13 @@ tell application "Photos"
     make new album named "${asEsc(album)}" at aPasta
   end if
   set oAlbum to album "${asEsc(album)}" in aPasta
-  -- "without skip check duplicates" LIGA a checagem: rodar de novo não duplica
-  import {${lista}} into oAlbum without skip check duplicates
-  return (count of media items in oAlbum) as text
+  -- o padrão do AppleEvent (~2 min) estoura em álbum grande e o import fica
+  -- pela metade sem avisar; aqui damos 10 minutos
+  with timeout of 600 seconds
+    -- "without skip check duplicates" LIGA a checagem: rodar de novo não duplica
+    import {${lista}} into oAlbum without skip check duplicates
+    return (count of media items in oAlbum) as text
+  end timeout
 end tell`);
 }
 

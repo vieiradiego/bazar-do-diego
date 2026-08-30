@@ -2,7 +2,7 @@
 
 **Preço:** R$ 599
 **Categoria:** PC e Hardware
-**Fotos:** gabinete-haf-xb-01.jpg, gabinete-haf-xb-02.jpg, gabinete-haf-xb-03.jpg, gabinete-haf-xb-04.jpg, gabinete-haf-xb-05.jpg, gabinete-haf-xb-06.jpg
+**Fotos:** gabinete-haf-xb-01.jpg, gabinete-haf-xb-02.jpg, gabinete-haf-xb-03.jpg, gabinete-haf-xb-04.jpg, gabinete-haf-xb-05.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/
 
 ## Título para o Marketplace

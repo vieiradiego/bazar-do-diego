@@ -165,7 +165,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 **Preço:** R$ 680
 **Categoria:** PC e Hardware
-**Fotos:** placa-mae-x370-taichi-01.jpg, placa-mae-x370-taichi-02.jpg, placa-mae-x370-taichi-03.jpg, placa-mae-x370-taichi-04.jpg, placa-mae-x370-taichi-05.jpg
+**Fotos:** placa-mae-x370-taichi-01.jpg, placa-mae-x370-taichi-02.jpg, placa-mae-x370-taichi-03.jpg, placa-mae-x370-taichi-04.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/placa-mae-x370-taichi/
 
 ## Título para o Marketplace
@@ -223,7 +223,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 **Preço:** R$ 599
 **Categoria:** PC e Hardware
-**Fotos:** gabinete-haf-xb-01.jpg, gabinete-haf-xb-02.jpg, gabinete-haf-xb-03.jpg, gabinete-haf-xb-04.jpg, gabinete-haf-xb-05.jpg, gabinete-haf-xb-06.jpg
+**Fotos:** gabinete-haf-xb-01.jpg, gabinete-haf-xb-02.jpg, gabinete-haf-xb-03.jpg, gabinete-haf-xb-04.jpg, gabinete-haf-xb-05.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/gabinete-haf-xb/
 
 ## Título para o Marketplace
@@ -418,7 +418,7 @@ Retirada em Caxias do Sul — RS. Chama no direct ou no WhatsApp +55 54 99184-55
 
 **Preço:** R$ 399 · 54% abaixo do novo
 **Categoria:** Eletrônicos
-**Fotos:** mouse-logitech-g903-01.jpg, mouse-logitech-g903-02.jpg, mouse-logitech-g903-03.jpg, mouse-logitech-g903-04.jpg
+**Fotos:** mouse-logitech-g903-01.jpg, mouse-logitech-g903-02.jpg, mouse-logitech-g903-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/mouse-logitech-g903/
 
 ## Título para o Marketplace

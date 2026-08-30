@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const FOTOS = join(ROOT, 'fotos-ecommerce');
@@ -128,6 +129,19 @@ function prepararFotos(itens) {
   mkdirSync(destG, { recursive: true });
   let n = 0;
   for (const item of itens) {
+    // Trava: duas fotos idênticas no mesmo produto viram foto repetida no
+    // carrossel e no álbum do Fotos. Já aconteceu por processar a mesma
+    // original duas vezes na receita — o build precisa recusar isso.
+    const porHash = new Map();
+    for (const f of item.fotos) {
+      const h = createHash('md5').update(readFileSync(join(FOTOS, f))).digest('hex');
+      if (porHash.has(h)) {
+        throw new Error(`build: ${item.slug}: "${f}" é idêntica a "${porHash.get(h)}". ` +
+          'Provavelmente a mesma original foi processada duas vezes em receita-fotos.csv — ' +
+          'apague uma das duas linhas e o arquivo correspondente em fotos-ecommerce/.');
+      }
+      porHash.set(h, f);
+    }
     for (const f of item.fotos) {
       const origem = join(FOTOS, f);
       execFileSync('/usr/bin/sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', QUALIDADE,
@@ -1256,7 +1270,7 @@ ${fila.map((item) => `    <article class="pub item" data-slug="${item.slug}"
       </div>
       <p class="info"><b>Categoria:</b> ${esc(CATEGORIA_FB[item.categoria] ?? item.categoria)}<br>
         <b>Estado:</b> Usado — em boas condições · <b>Local:</b> Caxias do Sul, RS<br>
-        <b>Álbum no Fotos:</b> ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `cartaz do preço + ${item.fotos.length} tratadas + originais` : 'sem foto ainda'}</p>
+        <b>Álbum no Fotos:</b> pasta “Bazar do Diego (atual)” › ${esc(nomeAlbum(item.nome))} — ${item.fotos.length ? `cartaz do preço + ${item.fotos.length} tratadas + originais` : 'sem foto ainda'}</p>
       <label class="marcar"><input type="checkbox" class="feito-check"><span>Já publiquei este</span></label>
     </article>`).join('\n')}
   </div>
