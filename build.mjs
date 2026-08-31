@@ -23,6 +23,10 @@ const SITE = join(ROOT, 'docs');
 const WHATSAPP = '5554991845555';
 const FONE = '+55 54 99184-5555';
 const CIDADE = 'Caxias do Sul, RS';
+// Taxa de intermediação do PagBank no crédito. Só serve para explicar de onde
+// vem a diferença: o valor que aparece no site é sempre o do link de pagamento,
+// lido do catálogo, nunca calculado aqui.
+const TAXA_CARTAO = '4,99%';
 const URL_SITE = 'https://vieiradiego.github.io/bazar-do-diego/';
 // duas resoluções: a da grade carrega rápido, a grande é a que o visor amplia.
 // Antes servíamos 1000px em tudo — no zoom de 2,6x num celular 3x isso vira
@@ -121,6 +125,21 @@ function fotosDoItem(slug) {
   // só <slug>-NN.jpg — evita que "abafador-x" capture fotos de "abafador-x-kit"
   const re = new RegExp(`^${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-\\d+\\.jpe?g$`, 'i');
   return readdirSync(FOTOS).filter((f) => re.test(f)).sort();
+}
+
+// Link de pagamento e preço no cartão andam sempre juntos. Só um dos dois
+// significaria ou um botão sem valor, ou um valor anunciado que não bate com o
+// que o comprador vai ver no PagBank.
+function conferirPagamento(itens) {
+  for (const i of itens) {
+    if (!!i.linkPagamento !== !!i.precoCartao) {
+      throw new Error(`build: ${i.slug}: preencha link_pagamento e preco_cartao juntos no catalogo.csv ` +
+        `(link=${i.linkPagamento || 'vazio'}, preço=${i.precoCartao || 'vazio'}).`);
+    }
+    if (i.precoCartao && i.precoCartao < i.preco) {
+      throw new Error(`build: ${i.slug}: preco_cartao (${i.precoCartao}) menor que o preço à vista (${i.preco}).`);
+    }
+  }
 }
 
 function prepararFotos(itens) {
@@ -383,6 +402,12 @@ const ESTILOS = `
   .cada{font-size:13px;color:var(--terciaria)}
   .ref{font-size:15px;color:var(--terciaria);text-decoration:line-through}
   .off{font-size:13px;font-weight:500;color:var(--economia)}
+  .cartao{margin:3px 0 0;font-size:13px;color:var(--terciaria)}
+  .pagar{margin:38px auto 0;padding:22px 20px;background:var(--cartao);
+    border:1px solid var(--traco);border-radius:var(--raio)}
+  .pagar h2{font-size:18px;margin:0 0 8px}
+  .pagar p{margin:0 0 12px;font-size:15px;line-height:1.55;color:var(--pedra)}
+  .pagar p:last-child{margin-bottom:0}
   .fonte{font-size:12px;color:var(--terciaria);margin:-3px 0 0}
   .acoes{display:flex;flex-direction:column;gap:8px;margin-top:12px}
   .acoes .primario,.acoes .inativo{width:100%}
@@ -504,6 +529,7 @@ function precosHTML(item) {
       <span class="preco">R$ ${brl(item.preco)}</span>${item.qtd > 1 && !item.vendido ? '<span class="cada">cada</span>' : ''}
       ${item.desconto ? `<span class="ref">R$ ${brl(item.ref)}</span><span class="off">Economize ${item.desconto}%</span>` : ''}
     </p>
+    ${!item.vendido && item.precoCartao ? `<p class="cartao">no cartão R$ ${brl(item.precoCartao)}, parcelas a sua escolha</p>` : ''}
     ${item.desconto ? `<p class="fonte">Novo em ${esc(item.fonte_referencia)}</p>` : ''}`;
 }
 
@@ -963,6 +989,16 @@ ${vizinhos.length ? `<section class="tambem">
   </div>
 </section>` : ''}
 
+${!item.vendido && item.linkPagamento ? `<section class="pagar larg">
+  <h2>Prefere pagar no cartão?</h2>
+  <p>À vista, em dinheiro ou Pix na retirada, sai por <b>R$ ${brl(item.preco)}</b>.
+    No cartão de crédito fica <b>R$ ${brl(item.precoCartao)}</b>: a diferença é a taxa de
+    intermediação de ${TAXA_CARTAO} que o PagBank cobra, não é acréscimo meu.
+    O número de parcelas você escolhe na própria página de pagamento.</p>
+  <p><a class="btn primario" href="${esc(item.linkPagamento)}" target="_blank" rel="noopener">Pagar R$ ${brl(item.precoCartao)} no cartão</a></p>
+  <p class="fonte">Pagamento processado pelo PagBank. Combine a retirada pelo WhatsApp antes ou depois de pagar, como preferir.</p>
+</section>` : ''}
+
 ${item.vendido ? '' : `<div class="acao-fixa">
   <span class="valor"><b>R$ ${brl(item.preco)}</b>${item.qtd > 1 ? '<span>cada</span>' : ''}</span>
   <a class="btn primario" href="https://wa.me/${WHATSAPP}?text=${msg}" target="_blank" rel="noopener">${ico.whats}<span>Tenho interesse</span></a>
@@ -1107,6 +1143,8 @@ const itens = parseCSV(readFileSync(join(ROOT, 'catalogo.csv'), 'utf8')).map((i)
     preco,
     ref,
     desconto: ref && ref > preco ? Math.round(((ref - preco) / ref) * 100) : null,
+    precoCartao: i.preco_cartao ? Number(i.preco_cartao) : null,
+    linkPagamento: i.link_pagamento || '',
     qtd: Number(i.quantidade || 1),
     vendido: i.status === 'vendido',
     base: './',
@@ -1119,6 +1157,7 @@ const categorias = [...new Set(itens.map((i) => i.categoria))];
 
 rmSync(SITE, { recursive: true, force: true });
 mkdirSync(SITE, { recursive: true });
+conferirPagamento(itens);
 const nFotos = prepararFotos(itens);
 const nCartoes = gerarCartoes(itens);
 
