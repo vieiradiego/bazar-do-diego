@@ -1,0 +1,30 @@
+import { JSDOM, VirtualConsole } from 'jsdom';
+import { readFileSync } from 'node:fs';
+const erros = [];
+const vc = new VirtualConsole(); vc.on('jsdomError', e => erros.push(e.message.split('\n')[0]));
+const dom = new JSDOM(readFileSync('docs/publicar/index.html','utf8'),
+  { runScripts:'dangerously', pretendToBeVisual:true, virtualConsole:vc, url:'https://vieiradiego.github.io/bazar-do-diego/publicar/' });
+const { window } = dom, d = window.document;
+const chk=(n,o)=>console.log((o?'  ok    ':'  FALHA ')+n);
+console.log('erros de execução:', erros.length ? erros.join(' | ') : 'nenhum');
+const cards=[...d.querySelectorAll('.pub')];
+const { readFileSync: lerCsv } = await import('node:fs');
+const naFila = [...lerCsv('catalogo.csv','utf8').matchAll(/,disponivel,/g)].length;
+chk(`${cards.length} itens na fila (disponíveis no catálogo: ${naFila})`, cards.length === naFila);
+chk('fora do índice do Google', d.querySelector('meta[name=robots]')?.content.includes('noindex'));
+chk('botões de copiar (3 por item)', d.querySelectorAll('.copiar').length===cards.length*3);
+chk('marcador de publicado', d.querySelectorAll('.feito-check').length===cards.length);
+chk('placar', !!d.getElementById('placar-txt'));
+// marca dois como publicados e confere placar + persistência
+cards[0].querySelector('.feito-check').checked = true;
+cards[0].querySelector('.feito-check').dispatchEvent(new window.Event('change'));
+cards[1].querySelector('.feito-check').checked = true;
+cards[1].querySelector('.feito-check').dispatchEvent(new window.Event('change'));
+chk('placar conta os marcados', d.getElementById('placar-txt').textContent === `2 de ${cards.length} publicados`);
+chk('grava no navegador', JSON.parse(window.localStorage.getItem('bazar-publicados')).length === 2);
+chk('cartão marcado fica apagado', cards[0].classList.contains('pronto'));
+const c0=cards[0];
+console.log('\n  exemplo — ' + c0.dataset.titulo.slice(0,50));
+console.log('  preço:', c0.dataset.preco, '| link:', c0.dataset.link);
+console.log('  descrição (1a linha):', c0.dataset.desc.split('\n')[0].slice(0,72)+'...');
+console.log('  ' + [...c0.querySelectorAll('.info b')].map(b=>b.textContent).join(' / '));

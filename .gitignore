@@ -20,3 +20,6 @@ vendas.csv
 
 # macOS
 .DS_Store
+
+# dependências dos testes
+node_modules/

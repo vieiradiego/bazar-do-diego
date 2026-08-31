@@ -1,0 +1,28 @@
+import { JSDOM, VirtualConsole } from 'jsdom';
+import { readFileSync } from 'node:fs';
+const alvo = process.argv[2];
+const erros = [];
+const vc = new VirtualConsole();
+vc.on('jsdomError', e => erros.push(e.message.split('\n')[0]));
+const dom = new JSDOM(readFileSync(alvo,'utf8'), { runScripts:'dangerously', pretendToBeVisual:true, virtualConsole:vc, beforeParse(w){
+  w.matchMedia = () => ({matches:false, addEventListener(){}, addListener(){}});
+  w.IntersectionObserver = class { observe(){} unobserve(){} disconnect(){} };
+  w.Element.prototype.scrollTo = () => {};
+  w.Element.prototype.scrollIntoView = () => {};
+}});
+const d = dom.window.document;
+const chk = (n,o)=>console.log((o?'  ok   ':'  FALHA ')+n);
+console.log('erros de execução:', erros.length ? erros.join(' | ') : 'nenhum');
+chk('tem .item com data-url', !!d.querySelector('.item[data-url]'));
+chk('og:image aponta para o cartão do item', (d.querySelector('meta[property="og:image"]')?.content||'').includes('/social/'));
+chk('og:url é a página do item', (d.querySelector('meta[property="og:url"]')?.content||'').includes('/item/'));
+chk('canonical presente', !!d.querySelector('link[rel=canonical]'));
+chk('JSON-LD Product', [...d.querySelectorAll('script[type="application/ld+json"]')].some(s=>JSON.parse(s.textContent)['@type']==='Product'));
+chk('JSON-LD com preço e moeda', [...d.querySelectorAll('script[type="application/ld+json"]')].some(s=>{const j=JSON.parse(s.textContent);return j.offers?.priceCurrency==='BRL'&&j.offers?.price}));
+chk('botão WhatsApp', !!d.querySelector('a[href*="wa.me"]'));
+chk('copiar link e compartilhar', !!d.querySelector('.copiar-link') && !!d.querySelector('.compartilhar'));
+chk('visor de zoom', !!d.getElementById('visor'));
+chk('favicon svg', !!d.querySelector('link[rel=icon][href$=".svg"]'));
+chk('volta para o catálogo', !!d.querySelector('.voltar'));
+console.log('  título:', d.title);
+console.log('  og:image:', d.querySelector('meta[property="og:image"]').content);

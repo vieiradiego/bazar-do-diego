@@ -1,0 +1,13 @@
+{
+  "name": "bazar-do-diego",
+  "private": true,
+  "type": "module",
+  "description": "Site, anúncios e ferramentas do Bazar do Diego. Sem dependência em produção: só o jsdom, para os testes.",
+  "scripts": {
+    "build": "node build.mjs && node planilha.mjs",
+    "test": "node testes/rodar.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0"
+  }
+}
