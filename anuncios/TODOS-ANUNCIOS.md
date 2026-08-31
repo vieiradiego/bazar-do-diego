@@ -15,34 +15,33 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 10. **LEGO Game Boy 72046 lacrado** · R$ 474 · `anuncios/lego-game-boy.md`
 11. **Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads** · R$ 430 · `anuncios/ryzen-7-1800x.md`
 12. **Armário baixo azul turquesa com porta de vidro** · R$ 399 · `anuncios/armario-turquesa.md`
-13. **SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s** · R$ 399 · `anuncios/ssd-xpg-512gb.md`
-14. **Mouse Gamer Logitech G903 LIGHTSPEED sem fio** · R$ 399 · `anuncios/mouse-logitech-g903.md`
-15. **Water Cooler Cooler Master MasterLiquid 240** · R$ 395 · `anuncios/watercooler-masterliquid-240.md`
-16. **HD Seagate Desktop 3TB SATA 3.5** · R$ 395 · `anuncios/hd-seagate-3tb.md`
-17. **Teclado Mecânico Gamer Logitech G PRO TKL** · R$ 375 · `anuncios/teclado-logitech-gpro.md`
-18. **Poltrona de pallet com rodízios e estofado pop art** · R$ 350 · `anuncios/poltrona-pallet.md`
-19. **Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE** · R$ 316 · `anuncios/fans-corsair-sp140.md`
-20. **Controle Xbox Series X|S sem fio Carbon Black** · R$ 299 · `anuncios/controle-xbox-series.md`
-21. **HD WD Purple 2TB SATA 3.5 para CFTV** · R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-22. **Apple AirTag 2ª geração** · R$ 256 · `anuncios/airtags.md`
-23. **Cadeira Pingo com assento gota e pés de madeira** · R$ 246 · `anuncios/cadeiras-pingo.md`
-24. **Abafador Eletrônico Howard Leight + óculos + estojo** · R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-25. **Cadeirinha de bicicleta para criança** · R$ 242 · `anuncios/suporte-crianca.md`
-26. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** · R$ 228 · `anuncios/roteador-tplink.md`
-27. **Abafador Eletrônico Howard Leight + estojo** · R$ 188 · `anuncios/abafador-howard-leight.md`
-28. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
-29. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
-30. **Fire TV Stick Lite com controle Alexa por voz** · R$ 160 · `anuncios/fire-tv-stick.md`
-31. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
-32. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
-33. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
-34. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
-35. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
-36. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
-37. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
-38. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
-39. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
-40. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
+13. **Mouse Gamer Logitech G903 LIGHTSPEED sem fio** · R$ 399 · `anuncios/mouse-logitech-g903.md`
+14. **Water Cooler Cooler Master MasterLiquid 240** · R$ 395 · `anuncios/watercooler-masterliquid-240.md`
+15. **HD Seagate Desktop 3TB SATA 3.5** · R$ 395 · `anuncios/hd-seagate-3tb.md`
+16. **Teclado Mecânico Gamer Logitech G PRO TKL** · R$ 375 · `anuncios/teclado-logitech-gpro.md`
+17. **Poltrona de pallet com rodízios e estofado pop art** · R$ 350 · `anuncios/poltrona-pallet.md`
+18. **Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE** · R$ 316 · `anuncios/fans-corsair-sp140.md`
+19. **Controle Xbox Series X|S sem fio Carbon Black** · R$ 299 · `anuncios/controle-xbox-series.md`
+20. **HD WD Purple 2TB SATA 3.5 para CFTV** · R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+21. **Apple AirTag 2ª geração** · R$ 256 · `anuncios/airtags.md`
+22. **Cadeira Pingo com assento gota e pés de madeira** · R$ 246 · `anuncios/cadeiras-pingo.md`
+23. **Abafador Eletrônico Howard Leight + óculos + estojo** · R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+24. **Cadeirinha de bicicleta para criança** · R$ 242 · `anuncios/suporte-crianca.md`
+25. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** · R$ 228 · `anuncios/roteador-tplink.md`
+26. **Abafador Eletrônico Howard Leight + estojo** · R$ 188 · `anuncios/abafador-howard-leight.md`
+27. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
+28. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
+29. **Fire TV Stick Lite com controle Alexa por voz** · R$ 160 · `anuncios/fire-tv-stick.md`
+30. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
+31. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
+32. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
+33. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
+34. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
+35. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
+36. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
+37. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
+38. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
+39. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -393,34 +392,6 @@ Armário baixo em madeira pintada de azul turquesa com pátina envelhecida, cerc
 Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
-
----
-
-# SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s
-
-**Preço:** R$ 399
-**Categoria:** PC e Hardware
-**Fotos:** ssd-xpg-512gb-01.jpg, ssd-xpg-512gb-02.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/
-
-## Título para o Marketplace
-SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s
-
-## Descrição para o Marketplace
-SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4, part number ASX8100NP-512GT-C, conferido na etiqueta e legível nas fotos. Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM, bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e mando o print antes da compra. Vale saber que os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA: hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM, e é por isso que este aqui vale a pena. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-xpg-512gb/
-
-## Legenda para o Instagram
-SSD XPG SX8100 512GB M.2 NVMe de 3500 MB/s
-R$ 399
-
-SSD ADATA XPG SX8100 de 512GB, M.2 2280 NVMe PCIe Gen3x4, part number ASX8100NP-512GT-C, conferido na etiqueta e legível nas fotos. Leitura de até 3500 MB/s e gravação de até 3000 MB/s, memória 3D TLC com cache DRAM, bem acima do que entregam os NVMe de entrada sem DRAM. Funcionando, sem setores realocados; rodo o teste de saúde e mando o print antes da compra. Vale saber que os preços de SSD subiram muito desde o fim de 2025 por causa da demanda de memória para IA: hoje um NVMe novo de 512GB não sai por menos de R$ 620 na KaBuM, e é por isso que este aqui vale a pena. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
