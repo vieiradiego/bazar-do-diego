@@ -33,17 +33,16 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 28. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
 29. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
 30. **Fire TV Stick Lite com controle Alexa por voz** · R$ 160 · `anuncios/fire-tv-stick.md`
-31. **Controle Xbox 360 sem fio preto original Microsoft** · R$ 150 · `anuncios/controle-xbox-360.md`
-32. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
-33. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
-34. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
-35. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
-36. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
-37. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
-38. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
-39. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
-40. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
-41. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
+31. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
+32. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
+33. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
+34. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
+35. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
+36. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
+37. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
+38. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
+39. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
+40. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -936,34 +935,6 @@ Fire TV Stick Lite com controle Alexa por voz
 R$ 160
 
 Amazon Fire TV Stick Lite, modelo S3L46N, o aparelho que transforma qualquer TV com entrada HDMI em Smart TV. Roda Netflix, Prime Video, Disney+, YouTube, Globoplay, Spotify e o que mais você quiser instalar. Vídeo em 1080p Full HD a 60 quadros, com suporte a HDR10, HDR10+ e HLG. Acompanha o controle remoto original Alexa Voice Remote Lite, com comando de voz, mais a fonte de alimentação original, o cabo micro USB e o extensor HDMI, que salva quando a traseira da TV é apertada. Vale saber: o controle da versão Lite não traz os botões de volume e de liga e desliga da TV, então para isso você segue usando o controle da própria TV. Testo ligado junto com você na hora da retirada. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
-
----
-
-# Controle Xbox 360 sem fio preto original Microsoft
-
-**Preço:** R$ 150
-**Categoria:** Eletrônicos
-**Fotos:** controle-xbox-360-01.jpg, controle-xbox-360-02.jpg, controle-xbox-360-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
-
-## Título para o Marketplace
-Controle Xbox 360 sem fio preto original Microsoft
-
-## Descrição para o Marketplace
-Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
-
-## Legenda para o Instagram
-Controle Xbox 360 sem fio preto original Microsoft
-R$ 150
-
-Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
 
 Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
