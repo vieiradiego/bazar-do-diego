@@ -16,6 +16,10 @@
 //
 //   node ferramentas/albuns-refazer.mjs             simula
 //   node ferramentas/albuns-refazer.mjs --executar  cria a pasta nova
+//   node ferramentas/albuns-refazer.mjs --executar --limpo --so <slug>
+//       use quando o PREÇO do item mudar: aposenta o álbum antigo (que tem o
+//       cartaz e o story com o valor velho) e monta um novo, já com o valor
+//       certo. O antigo vira "ZZ apagar · <slug>" para você apagar à mão.
 //
 // Nada é apagado da biblioteca. Nenhuma foto é removida.
 
@@ -31,6 +35,11 @@ const PASTA_NOVA = 'Bazar do Diego (atual)';
 
 const executar = process.argv.includes('--executar');
 const so = process.argv.includes('--so') ? process.argv[process.argv.indexOf('--so') + 1] : null;
+// --limpo: para usar quando o PREÇO muda. O cartaz e o story trazem o valor
+// estampado, mas continuam com o mesmo nome de arquivo, e a trava anti-duplicata
+// os daria por presentes, deixando o preço velho no álbum. Como o app Fotos não
+// deixa remover foto de álbum, o jeito é aposentar o álbum inteiro e refazer.
+const limpo = process.argv.includes('--limpo');
 
 function parseCSV(text) {
   const rows = []; let row = [], field = '', quoted = false;
@@ -152,8 +161,23 @@ const capturaFontes = FONTES
 const varreFontes = (corpo) => FONTES.map((_, i) =>
   `repeat with a in _fonte${i}\n${corpo}\nend repeat`).join('\n');
 
-let totalOk = 0, totalFalta = 0;
+let totalOk = 0, totalFalta = 0, aposentados = 0;
 for (const p of planos) {
+  if (limpo) {
+    // aposenta o álbum atual; as fotos seguem na biblioteca e são reaproveitadas
+    // logo abaixo, então isso não reimporta nada além do cartaz e do story
+    const ra = rodar(`tell application "Photos"
+  set todos to albums of folder "${asEsc(PASTA_NOVA)}"
+  repeat with a in todos
+    if (name of a) is "${asEsc(p.album)}" then
+      set name of a to "ZZ apagar · ${asEsc(p.slug)}"
+      return "ok"
+    end if
+  end repeat
+  return "nao tinha"
+end tell`);
+    if (ra.ok && ra.saida === 'ok') aposentados++;
+  }
   // 1º: o cartaz do preço, importado do disco. Entra antes de tudo porque a
   // primeira foto do álbum é a capa, e é ela que o Diego procura na hora de
   // publicar. Nunca vem da biblioteca — ver comentário na montagem do plano.
@@ -254,6 +278,10 @@ end tell`);
 }
 
 console.log(`\n${planos.length} álbuns · ${totalOk} fotos${totalFalta ? ` · ${totalFalta} não estavam na biblioteca` : ''}`);
+if (aposentados) {
+  console.log(`\n${aposentados} álbum(ns) com preço velho viraram "ZZ apagar · <slug>".`);
+  console.log('Apague à mão no app Fotos quando quiser: o app não deixa apagar álbum por script.');
+}
 console.log(`\nConfira a pasta "${PASTA_NOVA}" no app Fotos. Estando certa, apague a`);
 console.log(`pasta "${PASTA_VELHA}" à mão (clique direito na pasta > Apagar) — o app não`);
 console.log('deixa apagar álbum por script. Apagar a pasta não apaga nenhuma foto da');

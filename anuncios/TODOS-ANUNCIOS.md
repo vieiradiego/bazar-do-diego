@@ -33,7 +33,7 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 28. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
 29. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
 30. **Fire TV Stick Lite com controle Alexa por voz** · R$ 160 · `anuncios/fire-tv-stick.md`
-31. **Controle Xbox 360 sem fio preto original Microsoft** · R$ 149 · `anuncios/controle-xbox-360.md`
+31. **Controle Xbox 360 sem fio preto original Microsoft** · R$ 150 · `anuncios/controle-xbox-360.md`
 32. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
 33. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
 34. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
@@ -945,7 +945,7 @@ Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 # Controle Xbox 360 sem fio preto original Microsoft
 
-**Preço:** R$ 149
+**Preço:** R$ 150
 **Categoria:** Eletrônicos
 **Fotos:** controle-xbox-360-01.jpg, controle-xbox-360-02.jpg, controle-xbox-360-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
@@ -961,7 +961,7 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox
 
 ## Legenda para o Instagram
 Controle Xbox 360 sem fio preto original Microsoft
-R$ 149
+R$ 150
 
 Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
 

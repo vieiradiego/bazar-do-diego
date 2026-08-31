@@ -1,6 +1,6 @@
 # Controle Xbox 360 sem fio preto original Microsoft
 
-**Preço:** R$ 149
+**Preço:** R$ 150
 **Categoria:** Eletrônicos
 **Fotos:** controle-xbox-360-01.jpg, controle-xbox-360-02.jpg, controle-xbox-360-03.jpg
 **Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox-360/
@@ -16,7 +16,7 @@ Página do item: https://vieiradiego.github.io/bazar-do-diego/item/controle-xbox
 
 ## Legenda para o Instagram
 Controle Xbox 360 sem fio preto original Microsoft
-R$ 149
+R$ 150
 
 Controle sem fio original da Microsoft para Xbox 360, preto. É original de fábrica, com a durabilidade e a precisão de analógico que só o original entrega. Acompanha o pacote de BATERIA RECARREGÁVEL e o cabo USB de recarga, então você não precisa ficar comprando pilha, é só plugar. Serve também no PC com o receptor sem fio de Xbox 360, que não acompanha. Todos os botões e os analógicos funcionando. Em estado de uso, sem detalhes.
 
