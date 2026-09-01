@@ -31,17 +31,16 @@ do item de maior valor para o menor (os caros atraem mais contatos no começo).
 26. **Abafador Eletrônico Howard Leight + estojo** · R$ 188 · `anuncios/abafador-howard-leight.md`
 27. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
 28. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
-29. **Fire TV Stick Lite com controle Alexa por voz** · R$ 160 · `anuncios/fire-tv-stick.md`
-30. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
-31. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
-32. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
-33. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
-34. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
-35. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
-36. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
-37. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
-38. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
-39. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
+29. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
+30. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
+31. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
+32. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
+33. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
+34. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
+35. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
+36. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
+37. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
+38. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -882,34 +881,6 @@ Novo custa cerca de R$ 189 em Rei dos Parafusos. Aqui sai por R$ 164, 13% abaixo
 Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
-
----
-
-# Fire TV Stick Lite com controle Alexa por voz
-
-**Preço:** R$ 160
-**Categoria:** Eletrônicos
-**Fotos:** fire-tv-stick-01.jpg, fire-tv-stick-02.jpg, fire-tv-stick-03.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/fire-tv-stick/
-
-## Título para o Marketplace
-Fire TV Stick Lite com controle Alexa por voz
-
-## Descrição para o Marketplace
-Amazon Fire TV Stick Lite, modelo S3L46N, o aparelho que transforma qualquer TV com entrada HDMI em Smart TV. Roda Netflix, Prime Video, Disney+, YouTube, Globoplay, Spotify e o que mais você quiser instalar. Vídeo em 1080p Full HD a 60 quadros, com suporte a HDR10, HDR10+ e HLG. Acompanha o controle remoto original Alexa Voice Remote Lite, com comando de voz, mais a fonte de alimentação original, o cabo micro USB e o extensor HDMI, que salva quando a traseira da TV é apertada. Vale saber: o controle da versão Lite não traz os botões de volume e de liga e desliga da TV, então para isso você segue usando o controle da própria TV. Testo ligado junto com você na hora da retirada. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/fire-tv-stick/
-
-## Legenda para o Instagram
-Fire TV Stick Lite com controle Alexa por voz
-R$ 160
-
-Amazon Fire TV Stick Lite, modelo S3L46N, o aparelho que transforma qualquer TV com entrada HDMI em Smart TV. Roda Netflix, Prime Video, Disney+, YouTube, Globoplay, Spotify e o que mais você quiser instalar. Vídeo em 1080p Full HD a 60 quadros, com suporte a HDR10, HDR10+ e HLG. Acompanha o controle remoto original Alexa Voice Remote Lite, com comando de voz, mais a fonte de alimentação original, o cabo micro USB e o extensor HDMI, que salva quando a traseira da TV é apertada. Vale saber: o controle da versão Lite não traz os botões de volume e de liga e desliga da TV, então para isso você segue usando o controle da própria TV. Testo ligado junto com você na hora da retirada. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
 
 ---
 
