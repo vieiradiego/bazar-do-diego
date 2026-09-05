@@ -4,43 +4,41 @@ Gerado por `build.mjs` a partir de `catalogo.csv`. Ordem sugerida de publicaçã
 do item de maior valor para o menor (os caros atraem mais contatos no começo).
 
 1. **Tablet Samsung Galaxy Tab S9 FE+ Wi-Fi 128GB** · R$ 2.762 · `anuncios/tablet-galaxy-tab-s9-fe.md`
-2. **Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB** · R$ 1.450 · `anuncios/placa-video-gtx-1080ti.md`
-3. **Bicicleta Masculina FKS SPEC MTB aro 29** · R$ 1.286 · `anuncios/bicicleta-masculina.md`
-4. **Bicicleta Feminina FKS SPEC MTB aro 29** · R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
-5. **Placa-Mãe ASRock X370 Taichi AM4 com Wi-Fi, SLI e CrossFire** · R$ 680 · `anuncios/placa-mae-x370-taichi.md`
-6. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** · R$ 644 · `anuncios/fonte-corsair-rm850i.md`
-7. **Gabinete Cooler Master HAF XB EVO cubo ATX com alças** · R$ 599 · `anuncios/gabinete-haf-xb.md`
-8. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** · R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
-9. **Rack aparador de madeira maciça com tampo de quadrinhos** · R$ 549 · `anuncios/rack-quadrinhos.md`
-10. **LEGO Game Boy 72046 lacrado** · R$ 474 · `anuncios/lego-game-boy.md`
-11. **Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads** · R$ 430 · `anuncios/ryzen-7-1800x.md`
-12. **Armário baixo azul turquesa com porta de vidro** · R$ 399 · `anuncios/armario-turquesa.md`
-13. **Mouse Gamer Logitech G903 LIGHTSPEED sem fio** · R$ 399 · `anuncios/mouse-logitech-g903.md`
-14. **Water Cooler Cooler Master MasterLiquid 240** · R$ 395 · `anuncios/watercooler-masterliquid-240.md`
-15. **HD Seagate Desktop 3TB SATA 3.5** · R$ 395 · `anuncios/hd-seagate-3tb.md`
-16. **Teclado Mecânico Gamer Logitech G PRO TKL** · R$ 375 · `anuncios/teclado-logitech-gpro.md`
-17. **Poltrona de pallet com rodízios e estofado pop art** · R$ 350 · `anuncios/poltrona-pallet.md`
-18. **Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE** · R$ 316 · `anuncios/fans-corsair-sp140.md`
-19. **Controle Xbox Series X|S sem fio Carbon Black** · R$ 299 · `anuncios/controle-xbox-series.md`
-20. **HD WD Purple 2TB SATA 3.5 para CFTV** · R$ 296 · `anuncios/hd-wd-purple-2tb.md`
-21. **Apple AirTag 2ª geração** · R$ 256 · `anuncios/airtags.md`
-22. **Cadeira Pingo com assento gota e pés de madeira** · R$ 246 · `anuncios/cadeiras-pingo.md`
-23. **Abafador Eletrônico Howard Leight + óculos + estojo** · R$ 246 · `anuncios/abafador-howard-leight-kit.md`
-24. **Cadeirinha de bicicleta para criança** · R$ 242 · `anuncios/suporte-crianca.md`
-25. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** · R$ 228 · `anuncios/roteador-tplink.md`
-26. **Abafador Eletrônico Howard Leight + estojo** · R$ 188 · `anuncios/abafador-howard-leight.md`
-27. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
-28. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
-29. **SSD Corsair Force LE 240GB SATA 3** · R$ 128 · `anuncios/ssd-corsair-240gb.md`
-30. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
-31. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
-32. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
-33. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
-34. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
-35. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
-36. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
-37. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
-38. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
+2. **Bicicleta Masculina FKS SPEC MTB aro 29** · R$ 1.286 · `anuncios/bicicleta-masculina.md`
+3. **Bicicleta Feminina FKS SPEC MTB aro 29** · R$ 1.187 · `anuncios/bicicleta-feminina-fks.md`
+4. **Placa-Mãe ASRock X370 Taichi AM4 com Wi-Fi, SLI e CrossFire** · R$ 680 · `anuncios/placa-mae-x370-taichi.md`
+5. **Fonte Corsair RM850i 850W 80 Plus Gold Modular** · R$ 644 · `anuncios/fonte-corsair-rm850i.md`
+6. **Gabinete Cooler Master HAF XB EVO cubo ATX com alças** · R$ 599 · `anuncios/gabinete-haf-xb.md`
+7. **Memória Corsair Vengeance LPX 16GB DDR4 2400MHz** · R$ 593 · `anuncios/memoria-corsair-ddr4-16gb.md`
+8. **Rack aparador de madeira maciça com tampo de quadrinhos** · R$ 549 · `anuncios/rack-quadrinhos.md`
+9. **LEGO Game Boy 72046 lacrado** · R$ 474 · `anuncios/lego-game-boy.md`
+10. **Processador AMD Ryzen 7 1800X AM4 de 8 núcleos e 16 threads** · R$ 430 · `anuncios/ryzen-7-1800x.md`
+11. **Armário baixo azul turquesa com porta de vidro** · R$ 399 · `anuncios/armario-turquesa.md`
+12. **Mouse Gamer Logitech G903 LIGHTSPEED sem fio** · R$ 399 · `anuncios/mouse-logitech-g903.md`
+13. **Water Cooler Cooler Master MasterLiquid 240** · R$ 395 · `anuncios/watercooler-masterliquid-240.md`
+14. **HD Seagate Desktop 3TB SATA 3.5** · R$ 395 · `anuncios/hd-seagate-3tb.md`
+15. **Teclado Mecânico Gamer Logitech G PRO TKL** · R$ 375 · `anuncios/teclado-logitech-gpro.md`
+16. **Poltrona de pallet com rodízios e estofado pop art** · R$ 350 · `anuncios/poltrona-pallet.md`
+17. **Kit Corsair SP140 RGB PRO com 2 ventoinhas 140mm e Lighting Node CORE** · R$ 316 · `anuncios/fans-corsair-sp140.md`
+18. **Controle Xbox Series X|S sem fio Carbon Black** · R$ 299 · `anuncios/controle-xbox-series.md`
+19. **HD WD Purple 2TB SATA 3.5 para CFTV** · R$ 296 · `anuncios/hd-wd-purple-2tb.md`
+20. **Apple AirTag 2ª geração** · R$ 256 · `anuncios/airtags.md`
+21. **Cadeira Pingo com assento gota e pés de madeira** · R$ 246 · `anuncios/cadeiras-pingo.md`
+22. **Abafador Eletrônico Howard Leight + óculos + estojo** · R$ 246 · `anuncios/abafador-howard-leight-kit.md`
+23. **Cadeirinha de bicicleta para criança** · R$ 242 · `anuncios/suporte-crianca.md`
+24. **Roteador TP-Link N750 Dual Band Gigabit (TL-WDR4300)** · R$ 228 · `anuncios/roteador-tplink.md`
+25. **Abafador Eletrônico Howard Leight + estojo** · R$ 188 · `anuncios/abafador-howard-leight.md`
+26. **Capacete Rockrider Decathlon tamanho 59 a 62** · R$ 187 · `anuncios/capacete-rockrider.md`
+27. **Caneca Térmica Stanley Beer Stein 709ml nova lacrada** · R$ 164 · `anuncios/caneca-stanley.md`
+28. **Bolsa Trader Joe's de lona importada** · R$ 109 · `anuncios/bolsa-trader-joes.md`
+29. **Teclado HP slim USB empresarial** · R$ 98 · `anuncios/teclado-hp-slim.md`
+30. **Kit de limpeza e manutenção** · R$ 69 · `anuncios/kit-limpeza.md`
+31. **Óculos de proteção + protetor auricular 3M + estojo** · R$ 58 · `anuncios/oculos-protetor-3m.md`
+32. **Suporte de Mesa ECOODA para Tablet em alumínio com base giratória 360°** · R$ 55 · `anuncios/suporte-tablet.md`
+33. **Mouse Logitech Pebble 2 M350s sem fio** · R$ 48 · `anuncios/mouse-logitech-pebble.md`
+34. **Gancho Decathlon de parede e teto para bicicleta** · R$ 45 · `anuncios/gancho-bike-decathlon.md`
+35. **Mouse sem fio C3 Tech M-W20BK** · R$ 39 · `anuncios/mouse-c3tech.md`
+36. **Cheirinho Little Trees pack com 3** · R$ 34 · `anuncios/cheirinhos-little-trees.md`
 
 ---
 
@@ -73,34 +71,6 @@ Novo custa cerca de R$ 3.385 em Amazon. Aqui sai por R$ 2.762, 18% abaixo.
 Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #eletronicos #tecnologia #usadoseminovos
-
----
-
-# Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB
-
-**Preço:** R$ 1.450
-**Categoria:** PC e Hardware
-**Fotos:** placa-video-gtx-1080ti-01.jpg, placa-video-gtx-1080ti-02.jpg, placa-video-gtx-1080ti-03.jpg, placa-video-gtx-1080ti-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/
-
-## Título para o Marketplace
-Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB
-
-## Descrição para o Marketplace
-Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits, a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete, boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/placa-video-gtx-1080ti/
-
-## Legenda para o Instagram
-Placa de Vídeo EVGA GeForce GTX 1080 Ti Founders Edition 11GB
-R$ 1.450
-
-Placa de vídeo EVGA GeForce GTX 1080 Ti Founders Edition, 11GB GDDR5X e barramento de 352 bits, a placa topo de linha da geração Pascal. Carcaça de metal com cooler blower, que joga o ar quente para fora do gabinete, boa notícia em gabinete apertado. Ainda entrega jogo em 1440p com folga e serve muito bem para renderização e CUDA. Acompanha a CAIXA ORIGINAL com o berço plástico e o adaptador de energia. Nunca foi usada em mineração. Testo junto com você na hora da retirada, ligada e rodando. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
@@ -881,34 +851,6 @@ Novo custa cerca de R$ 189 em Rei dos Parafusos. Aqui sai por R$ 164, 13% abaixo
 Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
 
 #bazar #desapego #caxiasdosul #decoracao #moveis #casa
-
----
-
-# SSD Corsair Force LE 240GB SATA 3
-
-**Preço:** R$ 128
-**Categoria:** PC e Hardware
-**Fotos:** ssd-corsair-240gb-01.jpg, ssd-corsair-240gb-02.jpg, ssd-corsair-240gb-03.jpg, ssd-corsair-240gb-04.jpg
-**Link direto:** https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
-
-## Título para o Marketplace
-SSD Corsair Force LE 240GB SATA 3
-
-## Descrição para o Marketplace
-SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas, part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook mais antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Pagamento em dinheiro ou Pix na retirada.
-Página do item: https://vieiradiego.github.io/bazar-do-diego/item/ssd-corsair-240gb/
-
-## Legenda para o Instagram
-SSD Corsair Force LE 240GB SATA 3
-R$ 128
-
-SSD Corsair Force LE de 240GB, SATA 3, formato 2.5 polegadas, part number CSSD-F240GBLEB. Ótimo para dar sobrevida a um PC ou notebook mais antigo trocando o HD mecânico pelo SSD: o boot e a abertura de programas ficam muito mais rápidos. Funcionando, sem setores defeituosos. Acompanha a caixa original. Em estado de uso, sem detalhes.
-
-Retirada em Caxias do Sul, RS. Chama no direct ou no WhatsApp +55 54 99184-5555.
-
-#bazar #desapego #caxiasdosul #pcgamer #hardware #setup
 
 ---
 
